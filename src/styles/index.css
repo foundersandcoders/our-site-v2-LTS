@@ -60,7 +60,7 @@
 @import './_variables';
 
 /* fonts */
-@import './_fonts';
+/* @import './_fonts'; */
 
 /* your own custom styles */
-@import './_custom';
+/* @import './_custom'; */
