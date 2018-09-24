@@ -15,15 +15,25 @@
   --serif: georgia, serif;
   --code: consolas, monaco, monospace;
 
-  --font-size-headline: 6rem;
-  --font-size-subheadline: 5rem;
-  --font-size-1: 3rem;
-  --font-size-2: 2.25rem;
-  --font-size-3: 1.5rem;
-  --font-size-4: 1.25rem;
-  --font-size-5: 1rem;
-  --font-size-6: 0.875rem;
-  --font-size-7: 0.75rem;
+  --font-size-headline: 140px;
+  --font-size-subheadline: 58px;
+  --font-size-1: 48px;
+  --font-size-2: 32px;
+  --font-size-3: 28px;
+  --font-size-4: 20px;
+  --font-size-5: 16px;
+  --font-size-6: 14px;
+  --font-size-7: 12px;
+
+  --line-height-headline: 130px;
+  --line-height-subheadline: 62px;
+  --line-height-1: 52px;
+  --line-height-2: 36px;
+  --line-height-3: 32px;
+  --line-height-4: 24px;
+  --line-height-5: 20px;
+  --line-height-6: 18px;
+  --line-height-7: 16px;
 
   --letter-spacing-tight: -0.05em;
   --letter-spacing-1: 0.1em;
@@ -34,13 +44,13 @@
   --line-height-copy: 1.5;
 
   --spacing-none: 0;
-  --spacing-extra-small: 0.25rem;
-  --spacing-small: 0.5rem;
-  --spacing-medium: 1rem;
-  --spacing-large: 2rem;
-  --spacing-extra-large: 4rem;
-  --spacing-extra-extra-large: 8rem;
-  --spacing-extra-extra-extra-large: 16rem;
+  --spacing-extra-small: 8px;
+  --spacing-small: 16px;
+  --spacing-medium: 24px;
+  --spacing-large: 48px;
+  --spacing-extra-large: 64px;
+  --spacing-extra-extra-large: 80px;
+  --spacing-extra-extra-extra-large: 100px;
 
   --height-1: 1rem;
   --height-2: 2rem;
@@ -85,17 +95,25 @@
   --box-shadow-4: 2px 2px 8px 0px rgba(0, 0, 0, 0.2);
   --box-shadow-5: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
 
+  /* brand colours */
   --black: #000;
-  --near-black: #111;
   --dark-gray: #333;
+  --white: #fff;
+  --near-white: #fcfff7;
+  --green: #00be00;
+
+  /* colombia flag :) */
+  --yellow: #ffe500;
+  --blue: #0805ec;
+  --red: #ff2800;
+
+  --near-black: #111;
   --mid-gray: #555;
   --gray: #777;
   --silver: #999;
   --light-silver: #aaa;
   --moon-gray: #ccc;
   --light-gray: #eee;
-  --near-white: #f4f4f4;
-  --white: #fff;
 
   --transparent: transparent;
 
@@ -126,11 +144,9 @@
   --white-0125: rgba(255, 255, 255, 0.0125);
 
   --dark-red: #e7040f;
-  --red: #ff4136;
   --light-red: #ff725c;
   --orange: #ff6300;
   --gold: #ffb700;
-  --yellow: #ffd700;
   --light-yellow: #fbf1a9;
   --purple: #5e2ca5;
   --light-purple: #a463f2;
@@ -139,11 +155,9 @@
   --pink: #ff80cc;
   --light-pink: #ffa3d7;
   --dark-green: #137752;
-  --green: #19a974;
   --light-green: #9eebcf;
   --navy: #001b44;
   --dark-blue: #00449e;
-  --blue: #357edd;
   --light-blue: #96ccff;
   --lightest-blue: #cdecff;
   --washed-blue: #f6fffe;

@@ -1,19 +1,20 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Founders & Coders',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'founders-and-coders-website',
+        short_name: 'fac',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        background_color: '#fff',
+        theme_color: '#fff',
+        display: 'browser',
+        // TODO: add site icon
+        // icon: '', // This path is relative to the root of the site.
       },
     },
     {
