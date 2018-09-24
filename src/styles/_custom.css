@@ -1,0 +1,18 @@
+.vw-100 {
+  width: 100vw;
+}
+
+body {
+  height: 100%;
+}
+
+/* * {
+  overflow: initial !important;
+} */
+/* * {
+  overflow-x: hidden;
+} */
+
+.sticky {
+  position: sticky !important;
+}
