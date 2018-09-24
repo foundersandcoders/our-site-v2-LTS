@@ -1,3 +1,49 @@
+/* Fonts */
+
+@font-face {
+  font-family: 'Eesti';
+  src: url('../assets/fonts/GT-Eesti-Text-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Eesti';
+  src: url('../assets/fonts/GT-Eesti-Text-Regular-Italic.ttf')
+    format('truetype'); /* Safari, Android, iOS */
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Eesti';
+  src: url('../assets/fonts/GT-Eesti-Text-Medium.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Eesti';
+  src: url('../assets/fonts/GT-Eesti-Text-Medium-Italic.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Eesti';
+  src: url('../assets/fonts/GT-Eesti-Text-Light.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Eesti';
+  src: url('../assets/fonts/GT-Eesti-Text-Light-Italic.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-weight: 300;
+  font-style: italic;
+}
+
+.eesti {
+  font-family: 'Eesti';
+}
+
 .headline {
   line-height: var(--line-height-headline);
   font-size: var(--font-size-headline);
