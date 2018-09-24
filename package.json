@@ -1,22 +1,24 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "founders-and-coders-website",
+  "description": "The home of F&C exciting new brand and website!",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "InFact <hello@infactcoop.com>",
   "dependencies": {
     "autoprefixer": "^9.1.5",
-    "gatsby": "^2.0.0",
+    "gatsby": "^2.0.7",
+    "gatsby-link": "^2.0.1",
     "gatsby-plugin-manifest": "^2.0.2",
     "gatsby-plugin-offline": "^2.0.5",
     "gatsby-plugin-postcss": "^2.0.0",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "postcss-clean": "^1.1.0",
-    "postcss-custom-media": "^7.0.3",
-    "postcss-custom-properties": "^8.0.4",
+    "postcss-custom-media": "^7.0.4",
+    "postcss-custom-properties": "^8.0.5",
     "postcss-import": "^12.0.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
+    "styled-components": "^3.4.9",
     "tachyons-aspect-ratios": "^1.0.1",
     "tachyons-custom": "^4.9.5"
   },
@@ -31,7 +33,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.14.2"
+    "babel-eslint": "^8.0.2",
+    "eslint": "^4.1.1",
+    "eslint-config-esnext": "^2.0.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-recommended": "^3.0.0",
+    "prettier": "^1.14.3"
   },
   "repository": {
     "type": "git",
