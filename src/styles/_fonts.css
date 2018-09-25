@@ -47,46 +47,61 @@
 .headline {
   line-height: var(--line-height-headline);
   font-size: var(--font-size-headline);
+  letter-spacing: 15.08px;
 }
 
 .subheadline {
   line-height: var(--line-height-subheadline);
   font-size: var(--font-size-subheadline);
+  letter-spacing: 6.23px;
 }
 
 .font-1 {
   line-height: var(--line-height-1);
   font-size: var(--font-size-1);
+  letter-spacing: 5.15px;
 }
 
 .font-2 {
   line-height: var(--line-height-2);
   font-size: var(--font-size-2);
+  letter-spacing: 3.44px;
+}
+
+.font-2d5 {
+  line-height: 48px;
+  font-size: var(--font-size-2);
+  letter-spacing: 3.44px;
 }
 
 .font-3 {
   line-height: var(--line-height-3);
   font-size: var(--font-size-3);
+  letter-spacing: 3.01px;
 }
 
 .font-4 {
   line-height: var(--line-height-4);
   font-size: var(--font-size-4);
+  letter-spacing: 2.15px;
 }
 
 .font-5 {
   line-height: var(--line-height-5);
   font-size: var(--font-size-5);
+  letter-spacing: 1.72px;
 }
 
 .font-6 {
   line-height: var(--line-height-6);
   font-size: var(--font-size-6);
+  letter-spacing: 0.24px;
 }
 
 .font-7 {
   line-height: var(--line-height-7);
   font-size: var(--font-size-7);
+  letter-spacing: 0.21px;
 }
 
 @media (--breakpoint-not-small) {
