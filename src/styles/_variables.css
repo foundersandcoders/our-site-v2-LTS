@@ -96,8 +96,9 @@
   --box-shadow-5: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
 
   /* brand colours */
-  --black: #000;
+  --black: #121212;
   --dark-gray: #333;
+  --gray: #878787;
   --white: #fff;
   --near-white: #fcfff7;
   --green: #00be00;
@@ -109,7 +110,6 @@
 
   --near-black: #111;
   --mid-gray: #555;
-  --gray: #777;
   --silver: #999;
   --light-silver: #aaa;
   --moon-gray: #ccc;
