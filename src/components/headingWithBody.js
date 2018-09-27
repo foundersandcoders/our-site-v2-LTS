@@ -1,5 +1,5 @@
 import React from 'react'
-import OffsetUnderlineText from './underline-text'
+import OffsetUnderlineText from './underlineText'
 
 const HeadingWithBody = ({ title, children }) => (
   <div className="flex justify-between">
