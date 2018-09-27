@@ -1,9 +1,9 @@
-import React from 'react'
-import Layout from '../components/layout'
-import HeadingBody from '../components/headingWithBody'
-import StaffCard from '../components/staffCard'
+import React from "react"
+import Layout from "../components/layout"
+import HeadingBody from "../components/headingWithBody"
+import StaffCard from "../components/staffCard"
 
-import profile from '../assets/photos/profile-placeholder.png'
+import profile from "../assets/photos/profile-placeholder.png"
 
 const IndexPage = () => (
   <Layout>
