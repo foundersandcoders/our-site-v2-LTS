@@ -1,30 +1,33 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 
-import questionCorner from "../assets/icons/question-corner.svg"
+import questionCornerYellow from "../assets/icons/question-corner-yellow.svg"
+import questionCornerGreen from "../assets/icons/question-corner-green.svg"
+import questionCornerBlue from "../assets/icons/question-corner-blue.svg"
+import questionCornerRed from "../assets/icons/question-corner-red.svg"
 import questionArrow from "../assets/icons/question-arrow.svg"
 import questionCross from "../assets/icons/question-cross.svg"
 import questionDivider from "../assets/icons/question-divider.svg"
 
 const Wrapper = styled.div.attrs({
-  className: "relative",
+  className: "relative mh1 mb4",
 })`
   width: 462px;
   overflow: hidden;
-  transition: all 1s;
-  max-height: ${({ collapsed }) => (collapsed ? "147px" : "215px")};
+  transition: all 0.75s;
+  max-height: ${({ collapsed }) => (collapsed ? "147px" : "462px")};
 `
 
 const Question = styled.div.attrs({ className: "mt3" })``
 
 const Answer = styled.div.attrs({
-  className: ({ collapsed }) => (collapsed ? "mb0" : "mb4"),
+  className: ({ collapsed }) => `font-4 fw3 ${collapsed ? "mb0" : "mb4"}`,
 })`
-  transition: all 0.55s ease-out;
+  transition: all 0.35s ease-out;
   p {
     overflow: hidden;
-    transition: all 0.8s ease-out;
-    max-height: ${({ collapsed }) => (collapsed ? "0" : "48px")};
+    transition: all 0.5s ease-out;
+    max-height: ${({ collapsed }) => (collapsed ? "0" : "96px")};
   }
 `
 
@@ -44,25 +47,20 @@ class CollapsableQuestion extends Component {
 
   render() {
     const { collapsed } = this.state
+    const { children, question, colour } = this.props
+
     return (
       <Wrapper>
         <img
-          src={questionCorner}
+          src={colourToCornerIcon(colour)}
           className="absolute top-0 left-0"
           alt="colourful corner"
         />
 
         <Question>
-          <p className="mb4">Where and when are your courses?</p>
+          <p className="mb4 font-4">{question}</p>
         </Question>
-
-        <Answer collapsed={collapsed}>
-          <p className="fw3">
-            Each course runs for sixteen weeks at Space4 in Finsbury Park,
-            <span className="fw5"> five days a week from 10:00 to 18:00. </span>
-            We do not offer part-time or remote courses.
-          </p>
-        </Answer>
+        <Answer collapsed={collapsed}>{children}</Answer>
         <div className="flex items-center">
           <img src={questionDivider} alt="divider" />
           <img
@@ -75,6 +73,19 @@ class CollapsableQuestion extends Component {
         </div>
       </Wrapper>
     )
+  }
+}
+
+const colourToCornerIcon = colour => {
+  switch (colour) {
+    case "yellow":
+      return questionCornerYellow
+    case "blue":
+      return questionCornerBlue
+    case "green":
+      return questionCornerGreen
+    case "red":
+      return questionCornerRed
   }
 }
 
