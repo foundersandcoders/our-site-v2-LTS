@@ -1,24 +1,34 @@
 import React, { Component } from 'react'
+import Link from 'gatsby-link'
 import styled from 'styled-components'
+
+import homeSplash from '../assets/splashes/homeSplash.png'
 import bez from '../assets/portraits/bez.png'
+
 import Layout from '../components/layout'
-import TestimonialCard from '../components/TestimonialCard'
 import HeadingBody from '../components/headingWithBody'
+import Carousel from '../components/Carousel'
+import Cursor from '../components/Cursor'
+import OffsetUnderlineText from '../components/underlineText'
+import TestimonialCard from '../components/TestimonialCard'
 
-const _Carousel = styled.section.attrs({
-  className: 'flex relative items-center justify-around',
+const Panel = styled.section.attrs({
+  className: ({ justify = 'between', cursor = '' }) =>
+    `flex justify-${justify} ${cursor}`,
 })`
-  width: 300vw;
-  transform: ${({ scrollY }) => `translateX(${-0.08 * scrollY}vw)`};
+  height: ${({ height }) => height};
+  width: ${({ width = 'inherit' }) => width};
 `
 
-const _Container = styled.div.attrs({
-  className: 'relative db w-100 flex',
-})`
-  height: 200vw;
-`
+const Splash = styled.img.attrs({
+  className: 'w-100 mv7',
+})``
 
-const _StaffCard = () => (
+const _BigText = styled.h1.attrs({
+  className: ({ colour = 'black' }) => `headline fw5 w-70 ${colour}`,
+})``
+
+const Bez = () => (
   <TestimonialCard
     firstName="Besart"
     secondName="Hoxhaj"
@@ -30,53 +40,61 @@ const _StaffCard = () => (
   />
 )
 
-const _CarouselContainer = styled.div.attrs({
-  className: 'sticky w-100 overflow-hidden top-0',
-})`
-  height: 100vh;
-`
-
 class IndexPage extends Component {
   state = {
-    scrollY: 0,
+    next: false,
   }
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
-  }
-
-  handleScroll = () => {
-    var doc = document.documentElement
-    var top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0)
+  handleMouseNextElement = () => {
     this.setState({
-      scrollY: top,
+      next: !this.state.next,
     })
   }
 
   render() {
+    const { scrollY } = this.props
+    const { next } = this.state
     return (
       <Layout>
+        <Cursor next={next} />
         <main>
+          <Panel height="70vh" justify="end">
+            <_BigText className="pt5">we are Founders and Coders</_BigText>
+          </Panel>
           <HeadingBody title="Overview">
             Founders and Coders CIC is a UK-based nonprofit that develops and
             runs tuition-free, peer-led training programmes in web development,
             guided by our core values of cooperation, inclusion and social
             impact.
           </HeadingBody>
-          <_Container>
-            <_CarouselContainer>
-              <_Carousel scrollY={this.state.scrollY}>
-                <_StaffCard />
-                <_StaffCard />
-                <_StaffCard />
-                <_StaffCard />
-              </_Carousel>
-            </_CarouselContainer>
-          </_Container>
+          <Splash src={homeSplash} />
+          <Carousel scrollY={scrollY}>
+            <Bez />
+            <Bez />
+            <Bez />
+            <Bez />
+          </Carousel>
+          <Link
+            className="bg-black flex items-center justify-center pv5 vh-100 pointer link"
+            onMouseEnter={this.handleMouseNextElement}
+            onMouseLeave={this.handleMouseNextElement}
+            to="/about"
+          >
+            <Panel>
+              <OffsetUnderlineText
+                className="ml5"
+                underlineColour="blue"
+                colour="white"
+                underlineWidth="4px"
+                fontSize="font-5"
+                fontWeight="fw3"
+                title="Next"
+              >
+                Next
+              </OffsetUnderlineText>
+              <_BigText colour="white">What is Founders and Coders?</_BigText>
+            </Panel>
+          </Link>
         </main>
       </Layout>
     )

@@ -4,14 +4,12 @@
 
 body {
   font-family: 'Eesti';
+  cursor: url('../assets/ui/arrow_down_blue.svg'), auto;
 }
 
-/* * {
-  overflow: initial !important;
-} */
-/* * {
-  overflow-x: hidden;
-} */
+.vh-100 {
+  height: 100vh;
+}
 
 .sticky {
   position: sticky !important;
