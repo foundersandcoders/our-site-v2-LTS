@@ -1,13 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const _Photo = styled.div.attrs({
-  className: 'ba bw3 b--yellow',
+const _Photo = styled.img.attrs({
+  className: 'absolute top-0 ba bw3 b--yellow',
 })`
-  width: 60%;
-  height: 90%;
-  background: ${({ src }) => `url('${src}') center bottom no-repeat`};
-  background-size: contain;
+  height: 80%;
+  left: 20%;
 `
 
 const TestimonialContainer = styled.div.attrs({
@@ -34,13 +32,13 @@ const TestimonialText = styled.p.attrs({
 })``
 
 const TestimonialTextContainer = styled.div.attrs({
-  className: 'absolute left-0 top-2',
+  className: 'absolute left-0 top-2 z-2',
 })`
   width: fit-content;
 `
 
 const Quote = styled.div.attrs({
-  className: 'absolute right-0 top-3 i font-3 ph3 pt3 pb2 bg-white',
+  className: 'absolute right-0 top-2 i font-3 ph3 pt3 pb2 bg-white',
 })`
   width: 50%;
   letter-spacing: 0;
