@@ -3,8 +3,8 @@
 }
 
 body {
-  font-family: 'Eesti';
-  cursor: url('../assets/ui/arrow_down_blue.svg'), auto;
+  font-family: "Eesti";
+  cursor: url("../assets/ui/arrow_down_blue.svg"), auto;
 }
 
 .vh-100 {

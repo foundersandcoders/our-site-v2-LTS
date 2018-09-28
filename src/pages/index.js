@@ -1,31 +1,30 @@
-import React, { Component } from 'react'
-import Link from 'gatsby-link'
-import styled from 'styled-components'
+import React, { Component } from "react"
+import Link from "gatsby-link"
+import styled from "styled-components"
 
-import homeSplash from '../assets/splashes/homeSplash.png'
-import bez from '../assets/portraits/bez.png'
+import homeSplash from "../assets/splashes/homeSplash.png"
+import bez from "../assets/portraits/bez.png"
 
-import Layout from '../components/layout'
-import HeadingBody from '../components/headingWithBody'
-import Carousel from '../components/Carousel'
-import Cursor from '../components/Cursor'
-import OffsetUnderlineText from '../components/underlineText'
-import TestimonialCard from '../components/TestimonialCard'
+import Layout from "../components/layout"
+import HeadingBody from "../components/headingWithBody"
+import Carousel from "../components/Carousel"
+import Cursor from "../components/Cursor"
+import OffsetUnderlineText from "../components/underlineText"
+import TestimonialCard from "../components/TestimonialCard"
 
 const Panel = styled.section.attrs({
-  className: ({ justify = 'between', cursor = '' }) =>
+  className: ({ justify = "between", cursor = "" }) =>
     `flex justify-${justify} ${cursor}`,
 })`
   height: ${({ height }) => height};
-  width: ${({ width = 'inherit' }) => width};
+  width: ${({ width = "inherit" }) => width};
 `
 
 const Splash = styled.img.attrs({
-  className: 'w-100 mv7',
+  className: "w-100 mv7",
 })``
-
 const _BigText = styled.h1.attrs({
-  className: ({ colour = 'black' }) => `headline fw5 w-70 ${colour}`,
+  className: ({ colour = "black" }) => `headline fw5 w-70 ${colour}`,
 })``
 
 const Bez = () => (
@@ -52,7 +51,6 @@ class IndexPage extends Component {
   }
 
   render() {
-    const { scrollY } = this.props
     const { next } = this.state
     return (
       <Layout>
@@ -68,7 +66,7 @@ class IndexPage extends Component {
             impact.
           </HeadingBody>
           <Splash src={homeSplash} />
-          <Carousel scrollY={scrollY}>
+          <Carousel>
             <Bez />
             <Bez />
             <Bez />
