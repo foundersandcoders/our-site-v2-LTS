@@ -7,7 +7,7 @@ import { StaticQuery, graphql } from "gatsby"
 import "../styles/index.css"
 
 import Header from "./header"
-import StickyMenuTriangle from "./menu"
+import Menu from "./menu"
 
 const AppWrapper = styled.div.attrs({
   className: "center",
@@ -39,7 +39,7 @@ const Layout = ({ children }) => (
         </Helmet>
         <AppWrapper>
           <Header siteTitle={data.site.siteMetadata.title} />
-          <StickyMenuTriangle active={true} />
+          <Menu />
           <div>{children}</div>
         </AppWrapper>
       </>
