@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const OffsetUnderline = styled.p.attrs({
-  className: ({ fontSize, fontWeight }) =>
-    `relative ${fontSize} ${fontWeight} `,
+  className: ({ fontSize, fontWeight, colour }) =>
+    `relative ${fontSize} ${fontWeight} ${colour} z-1`,
 })`
   height: fit-content;
 
@@ -24,13 +24,17 @@ const OffsetUnderlineText = ({
   fontWeight,
   title,
   underlineColour,
+  colour,
+  className,
   underlineWidth,
 }) => (
   <OffsetUnderline
     fontSize={fontSize}
+    className={className}
     underlineColour={underlineColour}
     underlineWidth={underlineWidth}
     fontWeight={fontWeight}
+    colour={colour}
   >
     {title}
   </OffsetUnderline>
