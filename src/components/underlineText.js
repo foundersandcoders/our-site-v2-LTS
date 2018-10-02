@@ -7,6 +7,7 @@ const OffsetUnderline = styled.p.attrs({
     `relative ${fontSize} ${fontWeight} ${colour} z-1`,
 })`
   height: fit-content;
+  width: fit-content;
 
   &:after {
     position: absolute;

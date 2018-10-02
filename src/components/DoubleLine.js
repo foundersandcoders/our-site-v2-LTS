@@ -1,5 +1,6 @@
 import React from "react"
 import double_line_green from "../assets/icons/double_line_green.svg"
+import double_line_blue from "../assets/icons/double_line_blue.svg"
 import styled from "styled-components"
 
 const _DoubleLine = styled.img.attrs({
@@ -20,4 +21,11 @@ const GreenLine = () => (
   </_DoubleLineContainer>
 )
 
-export { GreenLine }
+const BlueLine = () => (
+  <_DoubleLineContainer>
+    <div className="w-75">
+      <_DoubleLine src={double_line_blue} />
+    </div>
+  </_DoubleLineContainer>
+)
+export { GreenLine, BlueLine }

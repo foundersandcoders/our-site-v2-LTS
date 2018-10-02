@@ -1,8 +1,20 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import down_cursor from "../assets/ui/arrow_down_blue.svg"
+import down_cursor_blue from "../assets/ui/arrow_down_blue.svg"
+import down_cursor_red from "../assets/ui/arrow_down_red.svg"
+import down_cursor_green from "../assets/ui/arrow_down_green.svg"
 import right_cursor from "../assets/ui/arrow_right_yellow.svg"
 
+const returnCursorColour = ({ next, colour }) => {
+  switch (colour) {
+    case "red":
+      return next ? right_cursor : down_cursor_red
+    case "blue":
+      return next ? right_cursor : down_cursor_blue
+    case "green":
+      return next ? right_cursor : down_cursor_green
+  }
+}
 const _Cursor = styled.div.attrs({
   className: "absolute z-999",
   style: ({ left, top }) => ({ left, top }),
@@ -11,8 +23,8 @@ const _Cursor = styled.div.attrs({
   height: ${({ next }) => (next ? "10rem" : "15rem")};
   opacity: ${({ scrolling }) => (scrolling ? "0" : "1")};
   transition: opacity 0.3s;
-  background: url(${({ next }) => (next ? right_cursor : down_cursor)}) center
-    bottom no-repeat;
+  background: url(${({ next, colour }) => returnCursorColour({ next, colour })})
+    center bottom no-repeat;
   background-size: contain;
   pointer-events: none;
 `
@@ -67,12 +79,13 @@ class Cursor extends Component {
 
   render() {
     const { mouseX, mouseY, scrolling } = this.state
-    const { next } = this.props
+    const { next, colour } = this.props
     return (
       <_Cursor
         left={mouseX}
         top={mouseY}
         next={next}
+        colour={colour}
         scrolling={scrolling ? "scrolling" : undefined}
       />
     )
