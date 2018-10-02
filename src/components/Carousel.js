@@ -1,12 +1,32 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 
-import stripes from "../assets/backgrounds/stripes.svg"
+import stripey_small from "../assets/ui/stripey_small.svg"
 
 const _OuterContainer = styled.div.attrs({
   className: "relative db w-100 flex",
 })`
-  background: url(${stripes}) repeat;
+  background: url(${stripey_small}) repeat;
+  clip-path: polygon(
+    0 100%,
+    0 1.5%,
+    3% 3%,
+    10% 0,
+    17% 3%,
+    24% 0,
+    31% 3%,
+    38% 0,
+    45% 3%,
+    52% 0,
+    59% 3%,
+    66% 0,
+    73% 3%,
+    80% 0,
+    87% 3%,
+    94% 0,
+    100% 3%,
+    100% 100%
+  );
   background-attachment: fixed;
   height: 170vw;
 `

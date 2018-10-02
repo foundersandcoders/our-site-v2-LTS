@@ -1,16 +1,10 @@
-import React from 'react'
-import OffsetUnderlineText from './underlineText'
+import React from "react"
+import { SmallUnderline } from "./underlineText"
 
-const HeadingWithBody = ({ title, children }) => (
-  <div className="flex justify-between">
-    <OffsetUnderlineText
-      underlineColour="yellow"
-      underlineWidth="4px"
-      fontSize="font-5"
-      fontWeight="fw3"
-      title={title}
-    />
-    <div className="font-2d5 fw3 w-70">{children}</div>
+const HeadingWithBody = ({ title, className = "", children }) => (
+  <div className={`flex justify-between ${className}`}>
+    <SmallUnderline>{title}</SmallUnderline>
+    <div className="font-2d5 fw3 w-75">{children}</div>
   </div>
 )
 
