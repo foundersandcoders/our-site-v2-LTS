@@ -1,15 +1,15 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'gatsby'
+import React from "react"
+import styled from "styled-components"
+import { Link } from "gatsby"
 
-import logo from '../assets/logos/fac-logo-black.svg'
+import logo from "../assets/logos/fac-logo-black.svg"
 
 const _Header = styled.header.attrs({
-  className: 'flex pv6 justify-between',
+  className: "flex pt6 justify-between",
 })``
 
 const _TopNav = styled.nav.attrs({
-  className: 'flex w-70 justify-between',
+  className: "flex w-75 justify-between",
 })``
 
 const TopNav = () => (
@@ -24,7 +24,7 @@ const TopNav = () => (
 
 const _TopLink = styled(Link).attrs({
   className:
-    'flex flex-column justify-between b--gray bw1 bt link black fw3 font-6 w4 h3 pt1',
+    "flex flex-column justify-between b--gray bw1 bt link black fw3 font-6 w4 h3 pt1",
 })`
   &:hover {
     border-color: var(--blue);
