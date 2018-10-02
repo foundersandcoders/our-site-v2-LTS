@@ -58,7 +58,7 @@ class AboutPage extends Component {
     const { next } = this.state
     return (
       <Layout>
-        <Cursor next={next} />
+        <Cursor next={next} colour="red" />
         <Panel justify="end" className="mt7 mb6">
           <div className="w-75">
             <BigUnderline>What is Founders and Coders?</BigUnderline>

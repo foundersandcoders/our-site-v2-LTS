@@ -46,7 +46,7 @@ class IndexPage extends Component {
     const { next } = this.state
     return (
       <Layout>
-        <Cursor next={next} />
+        <Cursor next={next} colour="blue" />
         <main>
           <Panel height="70vh" justify="end">
             <_BigText className="pt5">we are Founders and Coders</_BigText>
