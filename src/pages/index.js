@@ -1,34 +1,26 @@
 import React, { Component } from "react"
-import Link from "gatsby-link"
 import styled from "styled-components"
 
 import homeSplash from "../assets/splashes/homeSplash.png"
 import bez from "../assets/portraits/bez.png"
 
+import { Panel, NextPanel } from "../components/Panel"
 import Layout from "../components/layout"
 import HeadingBody from "../components/headingWithBody"
 import Carousel from "../components/Carousel"
 import Cursor from "../components/Cursor"
-import OffsetUnderlineText from "../components/underlineText"
-import TestimonialCard from "../components/TestimonialCard"
-
-const Panel = styled.section.attrs({
-  className: ({ justify = "between", cursor = "" }) =>
-    `flex justify-${justify} ${cursor}`,
-})`
-  height: ${({ height }) => height};
-  width: ${({ width = "inherit" }) => width};
-`
+import { Card } from "../components/Card"
 
 const Splash = styled.img.attrs({
   className: "w-100 mv7",
 })``
+
 const _BigText = styled.h1.attrs({
   className: ({ colour = "black" }) => `headline fw5 w-70 ${colour}`,
 })``
 
 const Bez = () => (
-  <TestimonialCard
+  <Card
     firstName="Besart"
     secondName="Hoxhaj"
     title="FAC cohort #2"
@@ -72,27 +64,9 @@ class IndexPage extends Component {
             <Bez />
             <Bez />
           </Carousel>
-          <Link
-            className="bg-black flex items-center justify-center pv5 vh-100 pointer link"
-            onMouseEnter={this.handleMouseNextElement}
-            onMouseLeave={this.handleMouseNextElement}
-            to="/about"
-          >
-            <Panel>
-              <OffsetUnderlineText
-                className="ml5"
-                underlineColour="blue"
-                colour="white"
-                underlineWidth="4px"
-                fontSize="font-5"
-                fontWeight="fw3"
-                title="Next"
-              >
-                Next
-              </OffsetUnderlineText>
-              <_BigText colour="white">What is Founders and Coders?</_BigText>
-            </Panel>
-          </Link>
+          <NextPanel onMouseOver={this.handleMouseNextElement} to="/about">
+            What is Founders and Coders?
+          </NextPanel>
         </main>
       </Layout>
     )
