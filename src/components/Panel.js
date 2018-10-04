@@ -39,4 +39,17 @@ const NextPanel = ({ onMouseOver, to, children }) => (
   </Link>
 )
 
-export { Panel, NextPanel }
+const ExtendedPanel = styled.section.attrs({
+  className: ({ className }) => `${className} bg-light-gray`,
+})`
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 9999px 0 0 var(--light-gray);
+  }
+`
+
+export { Panel, NextPanel, ExtendedPanel }
