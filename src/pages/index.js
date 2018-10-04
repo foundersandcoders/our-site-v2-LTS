@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import homeSplash from "../assets/splashes/homeSplash.png"
 import bez from "../assets/portraits/bez.png"
-
+import { TESTIMONIAL_CAROUSEL } from "../constants"
 import { Panel, NextPanel } from "../components/Panel"
 import Layout from "../components/layout"
 import HeadingBody from "../components/headingWithBody"
@@ -58,7 +58,7 @@ class IndexPage extends Component {
             impact.
           </HeadingBody>
           <Splash src={homeSplash} />
-          <Carousel>
+          <Carousel type={TESTIMONIAL_CAROUSEL} carouselWidth="220vw">
             <Bez />
             <Bez />
             <Bez />

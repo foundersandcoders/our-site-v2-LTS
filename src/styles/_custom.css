@@ -14,3 +14,7 @@ body {
 .sticky {
   position: sticky !important;
 }
+
+.pt-180 {
+  padding-top: 180px;
+}
