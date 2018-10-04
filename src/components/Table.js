@@ -2,15 +2,11 @@ import React from "react"
 import styled from "styled-components"
 
 const _Table = styled.table.attrs({
-  className: "fw3 font-4",
-})`
-  //   border-collapse: seperate;
-  //   border-style: hidden;
-  //   border-spacing: 12px 12px;
-`
+  className: "fw3 font-4 mb6",
+})``
 
 const _HeaderCell = styled.th.attrs({
-  className: ({ topColour }) => `b bt bw3 tl b--${topColour} pb3 pt1 mh2`,
+  className: ({ topColour }) => `b bt bw3 tl b--${topColour} pt1`,
 })`
   width: 156px;
 `
@@ -57,6 +53,13 @@ const Table = () => (
         <_Cell>28th October 2019 - 21st February 2020</_Cell>
       </_Row>
     </tbody>
+    <tfoot>
+      <tr>
+        <td colSpan="5" className="pt4">
+          * Applications close at midnight GMT on the final day of the window.
+        </td>
+      </tr>
+    </tfoot>
   </_Table>
 )
 
