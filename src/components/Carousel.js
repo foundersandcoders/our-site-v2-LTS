@@ -5,6 +5,22 @@ import stripey_small from "../assets/ui/stripey_small.svg"
 
 import { TESTIMONIAL_CAROUSEL, APPLICATION_CAROUSEL } from "../constants"
 import HeadingWithBody from "./headingWithBody"
+import { mouseOnCarousel, mouseOff } from "./Cursor"
+
+const _ApplicationsStatus = styled.section.attrs({
+  className: ({ areOpen }) =>
+    `pv3 left-0 bottom-0 absolute w-100 tc font-3 bg-${
+      areOpen ? "blue white" : "yellow black"
+    }`,
+})``
+
+const ApplicationsStatus = ({ areOpen }) => (
+  <_ApplicationsStatus areOpen={areOpen}>
+    {areOpen
+      ? "Applications are now open! APPLY HERE"
+      : "Applications are currently closed. Please express interest HERE."}
+  </_ApplicationsStatus>
+)
 
 const _OuterContainer = styled.div.attrs({
   className: "relative db w-100 flex carousel",
@@ -80,11 +96,15 @@ class Carousel extends Component {
 
   render() {
     const { scrollY } = this.state
-    const { type, children, carouselWidth } = this.props
+    const { type, children, carouselWidth, component } = this.props
     switch (type) {
       case TESTIMONIAL_CAROUSEL:
         return (
-          <_OuterContainer carouselWidth={carouselWidth}>
+          <_OuterContainer
+            carouselWidth={carouselWidth}
+            onMouseEnter={() => mouseOnCarousel(component)}
+            onMouseLeave={() => mouseOff(component)}
+          >
             <_InnerContainer>
               <_Carousel scrollY={scrollY} carouselWidth={carouselWidth}>
                 {children}
@@ -94,7 +114,11 @@ class Carousel extends Component {
         )
       case APPLICATION_CAROUSEL:
         return (
-          <_OuterApplicationContainer carouselWidth={carouselWidth}>
+          <_OuterApplicationContainer
+            carouselWidth={carouselWidth}
+            onMouseEnter={() => mouseOnCarousel(component)}
+            onMouseLeave={() => mouseOff(component)}
+          >
             <_InnerApplicationContainer>
               <HeadingWithBody
                 title="How do I apply?"
@@ -104,6 +128,7 @@ class Carousel extends Component {
                   {children}
                 </_Carousel>
               </HeadingWithBody>
+              <ApplicationsStatus areOpen={true} />
             </_InnerApplicationContainer>
           </_OuterApplicationContainer>
         )

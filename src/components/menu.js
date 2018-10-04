@@ -11,7 +11,8 @@ const StickyMenuTriangle = styled.div.attrs({
   top: calc((100vh - 5rem) * 0.5);
   height: 5rem;
   width: 5rem;
-  z-index: 2;
+  z-index: 12;
+  left: 0;
 
   background: ${({ active }) =>
     active
@@ -27,10 +28,11 @@ const MenuContainer = styled.div.attrs({
   max-width: 1440px;
   height: 100vh;
   width: ${props => (props.active ? "100vw" : "0")};
-  transition: 0.8s;
-  transition-delay: 0.1s;
+  transition: 0.5s;
+  // transition-delay: 0.2s;
   top: 0;
-  z-index: 2;
+  left: 0;
+  z-index: 11;
 `
 
 const MenuSidebar = styled.div.attrs({
@@ -38,39 +40,39 @@ const MenuSidebar = styled.div.attrs({
 })`
   height: 100vh;
   width: ${props => (props.active ? "30vw" : "0")};
-  transition: 0.8s;
-  transition-delay: 0.1s;
+  transition: 0.5s;
+  // transition-delay: 0.1s;
 `
 const MenuMain = styled.div.attrs({
   className: "pv6 mv5",
 })`
   height: 100vh;
   width: ${props => (props.active ? "70vw" : "0")};
-  transition: 0.8s;
-  transition-delay: 0.1s;
+  transition: 0.5s;
+  // transition-delay: 0.1s;
 `
 
 const MenuNumber = styled.div.attrs({})`
   padding-top: 3px;
   font-size: ${({ active }) => (active ? "16px" : "0px")};
-  transition: 0.8s;
-  transition-delay: 0.1s;
+  transition: 0.5s;
+  // transition-delay: 0.1s;
 `
 
 const Logo = styled.img.attrs({
   className: "border-box pa5-ns",
 })`
   width: ${({ active }) => (active ? "100%" : "0")};
-  transition: 0.8s;
-  transition-delay: 0.1s;
+  transition: 0.5s;
+  // transition-delay: 0.1s;
 `
 
 const MenuImage = styled.div.attrs({
   className: "pl3 ttu",
 })`
   font-size: ${({ active }) => (active ? "48px" : "0px")};
-  transition: 0.8s;
-  transition-delay: 0.1s;
+  transition: 0.5s;
+  // transition-delay: 0.1s;
 
   -webkit-text-stroke: 1px black;
   color: white;
@@ -84,8 +86,8 @@ const MenuItemContainer = styled.div.attrs({
   className: "border-box pl5 pv3 flex justify-start items-top",
 })`
   width: ${({ active }) => (active ? "100%" : "0")};
-  transition: 0.8s;
-  transition-delay: 0.1s;
+  transition: 0.3s;
+  // transition-delay: 0.2s;
 `
 
 const MenuItem = ({ number, item, active, link }) => (
