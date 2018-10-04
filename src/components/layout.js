@@ -2,12 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
-
 import { StaticQuery, graphql } from "gatsby"
 
 import "../styles/index.css"
 
 import Header from "./header"
+import Menu from "./menu"
 
 const AppWrapper = styled.div.attrs({
   className: "center",
@@ -39,6 +39,7 @@ const Layout = ({ children }) => (
         </Helmet>
         <AppWrapper>
           <Header siteTitle={data.site.siteMetadata.title} />
+          <Menu />
           <div>{children}</div>
         </AppWrapper>
       </>
