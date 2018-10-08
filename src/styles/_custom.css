@@ -5,6 +5,7 @@
 body {
   font-family: "Eesti";
   cursor: url("../assets/ui/arrow_down_blue.svg"), auto;
+  overflow-x: hidden;
 }
 
 .vh-100 {
