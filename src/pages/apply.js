@@ -1,45 +1,22 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 
+import Layout from "../components/Layout"
 import { APPLICATION_CAROUSEL, DOWN_CURSOR } from "../constants"
-import Layout from "../components/layout"
-import { Panel, NextPanel, ExtendedPanel } from "../components/Panel"
 
+import { Panel, NextPanel, ExtendedPanel } from "../components/Panel"
+import Step from "../components/Step"
 import Table from "../components/Table"
 import Carousel from "../components/Carousel"
 import { Cursor } from "../components/Cursor"
-import HeadingWithBody from "../components/headingWithBody"
-import { BigUnderline, MassiveUnderline } from "../components/underlineText"
-import { BlueLine } from "../components/DoubleLine"
-
-const _Step = styled.div.attrs({
-  className: ({ step }) =>
-    `flex flex-column justify-between ${step && "bt bb bw1 b--black-20"}`,
-})`
-  width: 30vw;
-  height: 60vh;
-`
-
-const _Heading = styled.h2.attrs({
-  className: "fw5 b font-3",
-})``
-
-const _SubHeading = styled.h3.attrs({
-  className: "fw5 b font-4",
-})``
+import HeadingWithBody from "../components/HeadingWithBody"
+import { BigUnderline, _SubHeading } from "../components/Text"
+import DoubleLine from "../components/DoubleLine"
 
 const _ListItem = styled.li`
   list-style-type: circle;
   list-style-position: inside;
 `
-
-const Step = ({ step, title, colour, children }) => (
-  <_Step step={step && title}>
-    {step && <MassiveUnderline colour={colour}>{step}</MassiveUnderline>}
-    {title && <_Heading>{title}</_Heading>}
-    <div className="font-4 fw3">{children}</div>
-  </_Step>
-)
 
 class ApplyPage extends Component {
   state = {
@@ -63,7 +40,7 @@ class ApplyPage extends Component {
             initiative, and believe strongly in the value of community and
             helping others.
           </HeadingWithBody>
-          <BlueLine />
+          <DoubleLine colour="blue" />
           <HeadingWithBody title="What you need to know">
             <Table />
           </HeadingWithBody>
@@ -72,6 +49,7 @@ class ApplyPage extends Component {
               carouselWidth="200vw"
               type={APPLICATION_CAROUSEL}
               component={this}
+              applicationsAreOpen={false}
             >
               <Step
                 step="01"
@@ -153,7 +131,7 @@ class ApplyPage extends Component {
             </Carousel>
           </ExtendedPanel>
 
-          <NextPanel component={this} to="/hire">
+          <NextPanel component={this} to="/hire" topBorder>
             Hire our graduates
           </NextPanel>
         </main>
