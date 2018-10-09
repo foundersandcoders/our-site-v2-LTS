@@ -8,7 +8,9 @@ import CollapsableQuestion from "../components/collapsable-q"
 import { BigUnderline } from "../components/underlineText"
 import { Panel, NextPanel } from "../components/Panel"
 import HeadingWithBody from "../components/headingWithBody"
-import { GreenLine } from "../components/DoubleLine"
+import { ColouredLine } from "../components/DoubleLine"
+import green from "../assets/icons/double_line_green.svg"
+
 import Cursor from "../components/Cursor"
 import { Dan, Ines } from "../components/Card"
 
@@ -71,7 +73,7 @@ class AboutPage extends Component {
           learn more about our cooperative learning community? Read on for all
           your questions answered.
         </HeadingWithBody>
-        <GreenLine />
+        <ColouredLine colour={green} />
         <HeadingWithBody title="More information">
           <div>
             <div className="flex">

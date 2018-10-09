@@ -53,12 +53,12 @@ class CollapsableQuestion extends Component {
       <Wrapper>
         <img
           src={colourToCornerIcon(colour)}
-          className="absolute top-0 left-0"
+          className="absolute mt2 left-0"
           alt="colourful corner"
         />
 
         <Question>
-          <p className="mb4 font-4">{question}</p>
+          <p className="mb5 mt4 font-4">{question}</p>
         </Question>
         <Answer collapsed={collapsed}>{children}</Answer>
         <div className="flex items-center">

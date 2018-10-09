@@ -1,7 +1,20 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.onCreateWebpackConfig = ({ actions }) => {
+  const config = {
+    entry: "./src/index.js",
+    output: {
+      filename: "bundle.js",
+    },
+    module: {
+      // configuration regarding modules
+      rules: [
+        // rules for modules (configure loaders, parser options, etc.)
+        {
+          test: /flickity/,
+          loader: "imports-loader?define=>false&this=>window",
+        },
+      ],
+    },
+  }
 
-// You can delete this file if you're not using it
+  actions.replaceWebpackConfig(config)
+}
