@@ -14,3 +14,11 @@ body {
 .sticky {
   position: sticky !important;
 }
+
+.pt-180 {
+  padding-top: 180px;
+}
+
+.min-828 {
+  min-height: 828px;
+}

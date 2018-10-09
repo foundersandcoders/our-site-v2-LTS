@@ -1,70 +1,58 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 
-import homeSplash from "../assets/splashes/homeSplash.png"
-import bez from "../assets/portraits/bez.png"
+import home_splash from "../assets/splashes/home_splash.png"
 
+import Layout from "../components/Layout"
+import { TESTIMONIAL_CAROUSEL, DOWN_CURSOR } from "../constants"
+
+import { _BigText } from "../components/Text"
+import HeadingBody from "../components/HeadingWithBody"
 import { Panel, NextPanel } from "../components/Panel"
-import Layout from "../components/layout"
-import HeadingBody from "../components/headingWithBody"
 import Carousel from "../components/Carousel"
-import Cursor from "../components/Cursor"
-import { Card } from "../components/Card"
+import { Cursor } from "../components/Cursor"
+import { Bez } from "../components/Card"
+import DoubleLine from "../components/DoubleLine"
 
 const Splash = styled.img.attrs({
-  className: "w-100 mv7",
+  className: "w-100 mb7 pb2",
 })``
-
-const _BigText = styled.h1.attrs({
-  className: ({ colour = "black" }) => `headline fw5 w-70 ${colour}`,
-})``
-
-const Bez = () => (
-  <Card
-    firstName="Besart"
-    secondName="Hoxhaj"
-    title="FAC cohort #2"
-    img={bez}
-    width="50vw"
-    height="80vh"
-    quote="“The most valuable thing I’ve taken away from the course is the community. 100%. On a personal level it helped me find a real sense of purpose when I needed one, brought on by the amount of people that have worked so hard and how much energy has been invested in it to keep it going.”"
-  />
-)
 
 class IndexPage extends Component {
   state = {
-    next: false,
-  }
-
-  handleMouseNextElement = () => {
-    this.setState({
-      next: !this.state.next,
-    })
+    cursor: DOWN_CURSOR,
   }
 
   render() {
-    const { next } = this.state
+    const { cursor } = this.state
     return (
       <Layout>
-        <Cursor next={next} />
+        <Cursor cursor={cursor} colour="blue" />
         <main>
-          <Panel height="70vh" justify="end">
+          <Panel justify="end">
             <_BigText className="pt5">we are Founders and Coders</_BigText>
           </Panel>
+          <DoubleLine colour="yellow" />
+          <Splash src={home_splash} />
           <HeadingBody title="Overview">
             Founders and Coders CIC is a UK-based nonprofit that develops and
             runs tuition-free, peer-led training programmes in web development,
             guided by our core values of cooperation, inclusion and social
-            impact.
+            impact. We proudly collaborate with Mercy Corps and the UK
+            government to deliver programmes in the Middle East and Africa.
           </HeadingBody>
-          <Splash src={homeSplash} />
-          <Carousel>
+
+          <Carousel
+            type={TESTIMONIAL_CAROUSEL}
+            carouselWidth="220vw"
+            component={this}
+          >
             <Bez />
             <Bez />
             <Bez />
             <Bez />
           </Carousel>
-          <NextPanel onMouseOver={this.handleMouseNextElement} to="/about">
+          <NextPanel component={this} to="/about">
             What is Founders and Coders?
           </NextPanel>
         </main>

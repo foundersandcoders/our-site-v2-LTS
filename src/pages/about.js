@@ -3,15 +3,15 @@ import styled from "styled-components"
 
 import stripey_small from "../assets/ui/stripey_small.svg"
 
-import Layout from "../components/layout"
-import CollapsableQuestion from "../components/collapsable-q"
-import { BigUnderline } from "../components/underlineText"
-import { Panel, NextPanel } from "../components/Panel"
-import HeadingWithBody from "../components/headingWithBody"
-import { ColouredLine } from "../components/DoubleLine"
-import green from "../assets/icons/double_line_green.svg"
+import Layout from "../components/Layout"
+import { DOWN_CURSOR } from "../constants"
 
-import Cursor from "../components/Cursor"
+import { BigUnderline } from "../components/Text"
+import CollapsableQuestion from "../components/Question"
+import { Panel, NextPanel } from "../components/Panel"
+import HeadingWithBody from "../components/HeadingWithBody"
+import DoubleLine from "../components/DoubleLine"
+import { Cursor } from "../components/Cursor"
 import { Dan, Ines } from "../components/Card"
 
 const Footnote = styled.p.attrs({
@@ -47,20 +47,14 @@ const StaffPanel = styled(Panel).attrs({
 
 class AboutPage extends Component {
   state = {
-    next: false,
-  }
-
-  handleMouseNextElement = () => {
-    this.setState({
-      next: !this.state.next,
-    })
+    cursor: DOWN_CURSOR,
   }
 
   render() {
-    const { next } = this.state
+    const { cursor } = this.state
     return (
       <Layout>
-        <Cursor next={next} />
+        <Cursor cursor={cursor} colour="red" />
         <Panel justify="end" className="mt7 mb6">
           <div className="w-75">
             <BigUnderline>What is Founders and Coders?</BigUnderline>
@@ -73,7 +67,7 @@ class AboutPage extends Component {
           learn more about our cooperative learning community? Read on for all
           your questions answered.
         </HeadingWithBody>
-        <ColouredLine colour={green} />
+        <DoubleLine colour="green" />
         <HeadingWithBody title="More information">
           <div>
             <div className="flex">
@@ -335,7 +329,7 @@ class AboutPage extends Component {
           <Ines />
           <Dan />
         </StaffPanel>
-        <NextPanel onMouseOver={this.handleMouseNextElement} to={"/apply"}>
+        <NextPanel component={this} to={"/apply"}>
           Apply to our course
         </NextPanel>
       </Layout>

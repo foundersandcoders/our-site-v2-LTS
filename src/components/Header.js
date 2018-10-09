@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import logo from "../assets/logos/fac-logo-black.svg"
+import logo from "../assets/logos/fac_logo_black.svg"
 
 const _Header = styled.header.attrs({
   className: "flex pt6 justify-between",

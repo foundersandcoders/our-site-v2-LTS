@@ -6,8 +6,9 @@ import QuoteCarousel from "../components/quoteCarousel"
 import { BigUnderline } from "../components/underlineText"
 import { Panel, NextPanel } from "../components/Panel"
 import HeadingWithBody from "../components/headingWithBody"
-import { ColouredLine } from "../components/DoubleLine"
+import { DoubleLine } from "../components/DoubleLine"
 import red from "../assets/icons/double_line_red.svg"
+import { DOWN_CURSOR } from "../constants"
 
 import Cursor from "../components/Cursor"
 import hireSplash from "../assets/splashes/homeSplash.png"
@@ -18,20 +19,14 @@ const Splash = styled.img.attrs({
 
 class HirePage extends Component {
   state = {
-    next: false,
-  }
-
-  handleMouseNextElement = () => {
-    this.setState({
-      next: !this.state.next,
-    })
+    cursor: DOWN_CURSOR,
   }
 
   render() {
-    const { next } = this.state
+    const { cursor } = this.state
     return (
       <Layout>
-        <Cursor next={next} />
+        <Cursor cursor={cursor} colour="green" />
         <Panel justify="end" className="mt7 mb6">
           <div className="w-75">
             <BigUnderline>Hire our graduates</BigUnderline>
@@ -44,13 +39,10 @@ class HirePage extends Component {
           where our diverse graduates will thrive. Think your company would be a
           good fit? Fill out this short form.
         </HeadingWithBody>
-        <ColouredLine colour={red} />
+        <DoubleLine colour={red} />
         <Splash src={hireSplash} />
         <QuoteCarousel />
-        <NextPanel
-          onMouseOver={this.handleMouseNextElement}
-          to={"/techforbetter"}
-        >
+        <NextPanel component={this} to={"/techforbetter"}>
           Tech for Better programme
         </NextPanel>
       </Layout>
