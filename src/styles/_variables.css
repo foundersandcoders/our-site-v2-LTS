@@ -1,7 +1,5 @@
 /*
-
     VARIABLES
-
 */
 
 @custom-media --breakpoint-not-small screen and (min-width: 40em);
@@ -9,8 +7,8 @@
 @custom-media --breakpoint-large screen and (min-width: 65em);
 
 :root {
-  --sans-serif: -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
-    helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial,
+  --sans-serif: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
+    helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
     sans-serif;
   --serif: georgia, serif;
   --code: consolas, monaco, monospace;
@@ -99,6 +97,7 @@
   --black: #121212;
   --dark-gray: #333;
   --gray: #878787;
+  --light-gray: #efefef;
   --white: #fff;
   --near-white: #fcfff7;
   --green: #00be00;
@@ -113,7 +112,6 @@
   --silver: #999;
   --light-silver: #aaa;
   --moon-gray: #ccc;
-  --light-gray: #eee;
 
   --transparent: transparent;
 

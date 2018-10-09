@@ -3,12 +3,12 @@ import styled from "styled-components"
 
 import homeSplash from "../assets/splashes/homeSplash.png"
 import bez from "../assets/portraits/bez.png"
-
+import { TESTIMONIAL_CAROUSEL, DOWN_CURSOR } from "../constants"
 import { Panel, NextPanel } from "../components/Panel"
 import Layout from "../components/layout"
 import HeadingBody from "../components/headingWithBody"
 import Carousel from "../components/Carousel"
-import Cursor from "../components/Cursor"
+import { Cursor } from "../components/Cursor"
 import { Card } from "../components/Card"
 
 const Splash = styled.img.attrs({
@@ -33,20 +33,14 @@ const Bez = () => (
 
 class IndexPage extends Component {
   state = {
-    next: false,
-  }
-
-  handleMouseNextElement = () => {
-    this.setState({
-      next: !this.state.next,
-    })
+    cursor: DOWN_CURSOR,
   }
 
   render() {
-    const { next } = this.state
+    const { cursor } = this.state
     return (
       <Layout>
-        <Cursor next={next} />
+        <Cursor cursor={cursor} colour="blue" />
         <main>
           <Panel height="70vh" justify="end">
             <_BigText className="pt5">we are Founders and Coders</_BigText>
@@ -58,13 +52,17 @@ class IndexPage extends Component {
             impact.
           </HeadingBody>
           <Splash src={homeSplash} />
-          <Carousel>
+          <Carousel
+            type={TESTIMONIAL_CAROUSEL}
+            carouselWidth="220vw"
+            component={this}
+          >
             <Bez />
             <Bez />
             <Bez />
             <Bez />
           </Carousel>
-          <NextPanel onMouseOver={this.handleMouseNextElement} to="/about">
+          <NextPanel component={this} to="/about">
             What is Founders and Coders?
           </NextPanel>
         </main>

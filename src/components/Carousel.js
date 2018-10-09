@@ -3,8 +3,27 @@ import styled from "styled-components"
 
 import stripey_small from "../assets/ui/stripey_small.svg"
 
+import { TESTIMONIAL_CAROUSEL, APPLICATION_CAROUSEL } from "../constants"
+import HeadingWithBody from "./headingWithBody"
+import { mouseOnCarousel, mouseOff } from "./Cursor"
+
+const _ApplicationsStatus = styled.section.attrs({
+  className: ({ areOpen }) =>
+    `pv3 left-0 bottom-0 absolute w-100 tc font-3 bg-${
+      areOpen ? "blue white" : "yellow black"
+    }`,
+})``
+
+const ApplicationsStatus = ({ areOpen }) => (
+  <_ApplicationsStatus areOpen={areOpen}>
+    {areOpen
+      ? "Applications are now open! APPLY HERE"
+      : "Applications are currently closed. Please express interest HERE."}
+  </_ApplicationsStatus>
+)
+
 const _OuterContainer = styled.div.attrs({
-  className: "relative db w-100 flex",
+  className: "relative db w-100 flex carousel",
 })`
   background: url(${stripey_small}) repeat;
   clip-path: polygon(
@@ -28,7 +47,12 @@ const _OuterContainer = styled.div.attrs({
     100% 100%
   );
   background-attachment: fixed;
-  height: 170vw;
+  height: ${({ carouselWidth }) => carouselWidth};
+`
+const _OuterApplicationContainer = styled.div.attrs({
+  className: "relative db w-100 flex carousel",
+})`
+  height: ${({ carouselWidth }) => carouselWidth};
 `
 const _InnerContainer = styled.div.attrs({
   className: "sticky w-100 overflow-hidden top-0",
@@ -36,13 +60,20 @@ const _InnerContainer = styled.div.attrs({
   padding-top: 11rem;
   height: 100vh;
 `
+const _InnerApplicationContainer = styled.div.attrs({
+  className: "sticky w-100 overflow-hidden top-0 flex justify-between",
+})`
+  padding-top: 11rem;
+  height: 100vh;
+`
 
 const _Carousel = styled.section.attrs({
-  className: "flex relative items-center justify-around",
-  style: ({ scrollY }) => ({ transform: `translateX(${-0.09 * scrollY}vw)` }),
+  className: "flex relative items-center justify-around w-75",
+  style: ({ scrollY }) => ({ transform: `translateX(${0.1 * scrollY}vw)` }),
 })`
+  z-index: -1;
   will-change: transform;
-  width: 250vw;
+  width: ${({ carouselWidth }) => carouselWidth};
 `
 
 class Carousel extends Component {
@@ -57,24 +88,51 @@ class Carousel extends Component {
   }
 
   handleScroll = () => {
-    const doc = document.documentElement
-    const top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0)
-
+    const carousel = document.querySelector(".carousel").getBoundingClientRect()
     this.setState({
-      scrollY: top - 2200,
+      scrollY: carousel.top,
     })
   }
 
   render() {
     const { scrollY } = this.state
-    const { children } = this.props
-    return (
-      <_OuterContainer>
-        <_InnerContainer>
-          <_Carousel scrollY={scrollY}>{children}</_Carousel>
-        </_InnerContainer>
-      </_OuterContainer>
-    )
+    const { type, children, carouselWidth, component } = this.props
+    switch (type) {
+      case TESTIMONIAL_CAROUSEL:
+        return (
+          <_OuterContainer
+            carouselWidth={carouselWidth}
+            onMouseEnter={() => mouseOnCarousel(component)}
+            onMouseLeave={() => mouseOff(component)}
+          >
+            <_InnerContainer>
+              <_Carousel scrollY={scrollY} carouselWidth={carouselWidth}>
+                {children}
+              </_Carousel>
+            </_InnerContainer>
+          </_OuterContainer>
+        )
+      case APPLICATION_CAROUSEL:
+        return (
+          <_OuterApplicationContainer
+            carouselWidth={carouselWidth}
+            onMouseEnter={() => mouseOnCarousel(component)}
+            onMouseLeave={() => mouseOff(component)}
+          >
+            <_InnerApplicationContainer>
+              <HeadingWithBody
+                title="How do I apply?"
+                bgColour="light-gray pr4"
+              >
+                <_Carousel scrollY={scrollY} carouselWidth={carouselWidth}>
+                  {children}
+                </_Carousel>
+              </HeadingWithBody>
+              <ApplicationsStatus areOpen={true} />
+            </_InnerApplicationContainer>
+          </_OuterApplicationContainer>
+        )
+    }
   }
 }
 
