@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-var Flickity = require("react-flickity")
 
 import quotemarks from "../assets/icons/quotemarks.svg"
 
@@ -76,7 +75,7 @@ class QuoteCarousel extends React.Component {
   render() {
     return (
       <QuoteCarouselContainer>
-        <Flickity
+        <div
           className={"carousel"} // default ''
           elementType={"div"} // default 'div'
           options={flickityOptions} // takes flickity options {}
@@ -100,7 +99,7 @@ class QuoteCarousel extends React.Component {
             secondName="Marino"
             company="Unruly"
           />
-        </Flickity>
+        </div>
       </QuoteCarouselContainer>
     )
   }
