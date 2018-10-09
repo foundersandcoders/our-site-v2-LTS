@@ -3,14 +3,15 @@ import styled from "styled-components"
 
 import stripey_small from "../assets/ui/stripey_small.svg"
 
-import Layout from "../components/layout"
-import CollapsableQuestion from "../components/collapsable-q"
-import { BigUnderline } from "../components/underlineText"
-import { Panel, NextPanel } from "../components/Panel"
-import HeadingWithBody from "../components/headingWithBody"
-import { GreenLine } from "../components/DoubleLine"
-import { Cursor } from "../components/Cursor"
+import Layout from "../components/Layout"
 import { DOWN_CURSOR } from "../constants"
+
+import { BigUnderline } from "../components/Text"
+import CollapsableQuestion from "../components/Question"
+import { Panel, NextPanel } from "../components/Panel"
+import HeadingWithBody from "../components/HeadingWithBody"
+import DoubleLine from "../components/DoubleLine"
+import { Cursor } from "../components/Cursor"
 import { Dan, Ines } from "../components/Card"
 
 const Footnote = styled.p.attrs({
@@ -66,7 +67,7 @@ class AboutPage extends Component {
           learn more about our cooperative learning community? Read on for all
           your questions answered.
         </HeadingWithBody>
-        <GreenLine />
+        <DoubleLine colour="green" />
         <HeadingWithBody title="More information">
           <div>
             <div className="flex">

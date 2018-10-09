@@ -130,4 +130,24 @@ const OffsetUnderlineText = ({
   </OffsetUnderline>
 )
 
-export { OffsetUnderlineText, SmallUnderline, BigUnderline, MassiveUnderline }
+const _Heading = styled.h2.attrs({
+  className: "fw5 b font-3",
+})``
+
+const _SubHeading = styled.h3.attrs({
+  className: "fw5 b font-4",
+})``
+
+const _BigText = styled.h1.attrs({
+  className: ({ colour = "black" }) => `headline fw5 w-70 ${colour}`,
+})``
+
+export {
+  OffsetUnderlineText,
+  SmallUnderline,
+  BigUnderline,
+  MassiveUnderline,
+  _Heading,
+  _SubHeading,
+  _BigText,
+}

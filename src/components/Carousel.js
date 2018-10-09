@@ -4,7 +4,7 @@ import styled from "styled-components"
 import stripey_small from "../assets/ui/stripey_small.svg"
 
 import { TESTIMONIAL_CAROUSEL, APPLICATION_CAROUSEL } from "../constants"
-import HeadingWithBody from "./headingWithBody"
+import HeadingWithBody from "./HeadingWithBody"
 import { mouseOnCarousel, mouseOff } from "./Cursor"
 
 const _ApplicationsStatus = styled.section.attrs({
@@ -96,7 +96,13 @@ class Carousel extends Component {
 
   render() {
     const { scrollY } = this.state
-    const { type, children, carouselWidth, component } = this.props
+    const {
+      type,
+      children,
+      carouselWidth,
+      component,
+      applicationsAreOpen,
+    } = this.props
     switch (type) {
       case TESTIMONIAL_CAROUSEL:
         return (
@@ -128,7 +134,9 @@ class Carousel extends Component {
                   {children}
                 </_Carousel>
               </HeadingWithBody>
-              <ApplicationsStatus areOpen={true} />
+              {applicationsAreOpen !== undefined && (
+                <ApplicationsStatus areOpen={applicationsAreOpen} />
+              )}
             </_InnerApplicationContainer>
           </_OuterApplicationContainer>
         )

@@ -6,8 +6,8 @@ import { StaticQuery, graphql } from "gatsby"
 
 import "../styles/index.css"
 
-import Header from "./header"
-import Menu from "./menu"
+import Header from "./Header"
+import Menu from "./Menu"
 
 const AppWrapper = styled.div.attrs({
   className: "center",

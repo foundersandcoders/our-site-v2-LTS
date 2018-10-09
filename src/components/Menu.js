@@ -1,9 +1,9 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import openMenu from "../assets/icons/open-menu-icon.svg"
-import closeMenu from "../assets/icons/close-menu-icon.svg"
+import openMenu from "../assets/icons/open_menu_icon.svg"
+import closeMenu from "../assets/icons/close_menu_icon.svg"
 import { Link } from "gatsby"
-import logo from "../assets/logos/fac-logo-black.svg"
+import logo from "../assets/logos/fac_logo_black.svg"
 
 const StickyMenuTriangle = styled.div.attrs({
   className: "fixed pointer",

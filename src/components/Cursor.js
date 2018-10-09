@@ -50,10 +50,13 @@ const returnCursorImage = ({ cursor, colour }) => {
   return cursorImage[cursor][colour]
 }
 
+
+
 const _Cursor = styled.div.attrs({
   className: "absolute z-999",
   style: ({ left, top }) => ({ left, top }),
 })`
+  overflow: hidden;
   width: ${({ cursor }) =>
     cursor === RIGHT_CURSOR || NEXT_CURSOR ? "15rem" : "10rem"};
   height: 15rem;

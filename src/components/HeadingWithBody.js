@@ -1,5 +1,5 @@
 import React from "react"
-import { SmallUnderline } from "./underlineText"
+import { SmallUnderline } from "./Text"
 
 const HeadingWithBody = ({ title, className = "", bgColour, children }) => (
   <div className={`flex justify-between ${className}`}>

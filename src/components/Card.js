@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 import dan from "../assets/portraits/dan.png"
 import ines from "../assets/portraits/ines.png"
+import bez from "../assets/portraits/bez.png"
 
 const _Photo = styled.img.attrs({
   className: "absolute top-0 ba bw3 b--yellow",
@@ -82,5 +83,16 @@ const Ines = () => (
     img={ines}
   />
 )
+const Bez = () => (
+  <Card
+    firstName="Besart"
+    secondName="Hoxhaj"
+    title="FAC cohort #2"
+    img={bez}
+    width="50vw"
+    height="80vh"
+    quote="“The most valuable thing I’ve taken away from the course is the community. 100%. On a personal level it helped me find a real sense of purpose when I needed one, brought on by the amount of people that have worked so hard and how much energy has been invested in it to keep it going.”"
+  />
+)
 
-export { Card, Dan, Ines }
+export { Card, Dan, Ines, Bez }

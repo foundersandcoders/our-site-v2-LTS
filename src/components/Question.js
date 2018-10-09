@@ -1,13 +1,13 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 
-import questionCornerYellow from "../assets/icons/question-corner-yellow.svg"
-import questionCornerGreen from "../assets/icons/question-corner-green.svg"
-import questionCornerBlue from "../assets/icons/question-corner-blue.svg"
-import questionCornerRed from "../assets/icons/question-corner-red.svg"
-import questionArrow from "../assets/icons/question-arrow.svg"
-import questionCross from "../assets/icons/question-cross.svg"
-import questionDivider from "../assets/icons/question-divider.svg"
+import question_corner_yellow from "../assets/icons/question_corner_yellow.svg"
+import question_corner_green from "../assets/icons/question_corner_green.svg"
+import question_corner_blue from "../assets/icons/question_corner_blue.svg"
+import question_corner_red from "../assets/icons/question_corner_red.svg"
+import question_arrow from "../assets/icons/question_arrow.svg"
+import question_cross from "../assets/icons/question_cross.svg"
+import question_divider from "../assets/icons/question_divider.svg"
 
 const Wrapper = styled.div.attrs({
   className: "relative mh1 mb4",
@@ -62,14 +62,14 @@ class CollapsableQuestion extends Component {
         </Question>
         <Answer collapsed={collapsed}>{children}</Answer>
         <div className="flex items-center">
-          <img src={questionDivider} alt="divider" />
+          <img src={question_divider} alt="divider" />
           <img
             onClick={this.toggleCollapse}
-            src={collapsed ? questionArrow : questionCross}
+            src={collapsed ? question_arrow : question_cross}
             className="mh1 pointer"
             alt="down arrow"
           />
-          <img src={questionDivider} alt="divider" />
+          <img src={question_divider} alt="divider" />
         </div>
       </Wrapper>
     )
@@ -79,13 +79,13 @@ class CollapsableQuestion extends Component {
 const colourToCornerIcon = colour => {
   switch (colour) {
     case "yellow":
-      return questionCornerYellow
+      return question_corner_yellow
     case "blue":
-      return questionCornerBlue
+      return question_corner_blue
     case "green":
-      return questionCornerGreen
+      return question_corner_green
     case "red":
-      return questionCornerRed
+      return question_corner_red
   }
 }
 
