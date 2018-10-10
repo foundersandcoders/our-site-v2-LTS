@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import styled, { css } from "styled-components"
-import Flickity from "react-flickity-component"
 
 import home_splash from "../assets/splashes/home_splash.png"
 import night_zoo_keeper from "../assets/logos/night-zoo-keeper.png"
@@ -15,6 +14,7 @@ import Carousel from "../components/Carousel"
 import { Cursor } from "../components/Cursor"
 import { Bez } from "../components/Card"
 import DoubleLine from "../components/DoubleLine"
+import InfiniteCarousel from "../components/InfiniteCarousel"
 
 const Splash = styled.img.attrs({
   className: "w-100 mb7 pb2",
@@ -30,12 +30,6 @@ const Partner = styled.div.attrs({
     css`
       background-image: url(${src});
     `};
-`
-
-const _Flickity = styled(Flickity).attrs({
-  className: "outline-0 w-100 mb7",
-})`
-  overflow: hidden;
 `
 
 class IndexPage extends Component {
@@ -64,17 +58,7 @@ class IndexPage extends Component {
 
           <section>
             <SmallUnderline>We proudly cooperate with</SmallUnderline>
-            <_Flickity
-              elementType={"div"}
-              options={{
-                initialIndex: 4,
-                prevNextButtons: false,
-                pageDots: false,
-                autoPlay: 1500,
-                wrapAround: true,
-              }}
-              disableImagesLoaded={true}
-            >
+            <InfiniteCarousel>
               <Partner src={night_zoo_keeper} />
               <Partner src={night_zoo_keeper} />
               <Partner src={night_zoo_keeper} />
@@ -84,7 +68,7 @@ class IndexPage extends Component {
               <Partner src={night_zoo_keeper} />
               <Partner src={night_zoo_keeper} />
               <Partner src={night_zoo_keeper} />
-            </_Flickity>
+            </InfiniteCarousel>
           </section>
 
           <Carousel
