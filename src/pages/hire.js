@@ -1,17 +1,20 @@
 import React, { Component } from "react"
 import styled, { css } from "styled-components"
-import FlickityCarousel from "../components/FlickityCarousel"
+
+import { DOWN_CURSOR } from "../constants"
 
 import Layout from "../components/Layout"
 import { BigUnderline } from "../components/Text"
 import { Panel, NextPanel } from "../components/Panel"
 import HeadingWithBody from "../components/HeadingWithBody"
 import DoubleLine from "../components/DoubleLine"
-import { DOWN_CURSOR } from "../constants"
-
 import { Cursor } from "../components/Cursor"
+import FlickityCarousel from "../components/FlickityCarousel"
+import PartnerLogo from "../components/PartnerLogo"
+
 import hireSplash from "../assets/splashes/home_splash.png"
 import quotemarks from "../assets/icons/quotemarks.svg"
+import night_zoo_keeper from "../assets/logos/night-zoo-keeper.png"
 
 const Splash = styled.img.attrs({
   className: "w-100 mb7 pb5",
@@ -122,6 +125,27 @@ class HirePage extends Component {
               secondName="Marino"
               company="Unruly"
             />
+          </FlickityCarousel>
+        </section>
+        <section>
+          <FlickityCarousel
+            options={{
+              initialIndex: 4,
+              prevNextButtons: false,
+              pageDots: false,
+              autoPlay: 1500,
+              wrapAround: true,
+            }}
+          >
+            <PartnerLogo src={night_zoo_keeper} />
+            <PartnerLogo src={night_zoo_keeper} />
+            <PartnerLogo src={night_zoo_keeper} />
+            <PartnerLogo src={night_zoo_keeper} />
+            <PartnerLogo src={night_zoo_keeper} />
+            <PartnerLogo src={night_zoo_keeper} />
+            <PartnerLogo src={night_zoo_keeper} />
+            <PartnerLogo src={night_zoo_keeper} />
+            <PartnerLogo src={night_zoo_keeper} />
           </FlickityCarousel>
         </section>
         <NextPanel component={this} to={"/techforbetter"}>

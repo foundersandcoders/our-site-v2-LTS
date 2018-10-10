@@ -1,12 +1,12 @@
 import React, { Component } from "react"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 import home_splash from "../assets/splashes/home_splash.png"
 import night_zoo_keeper from "../assets/logos/night-zoo-keeper.png"
 
-import Layout from "../components/Layout"
 import { TESTIMONIAL_CAROUSEL, DOWN_CURSOR } from "../constants"
 
+import Layout from "../components/Layout"
 import { _BigText, SmallUnderline } from "../components/Text"
 import HeadingBody from "../components/HeadingWithBody"
 import { Panel, NextPanel } from "../components/Panel"
@@ -15,22 +15,11 @@ import { Cursor } from "../components/Cursor"
 import { Bez } from "../components/Card"
 import DoubleLine from "../components/DoubleLine"
 import FlickityCarousel from "../components/FlickityCarousel"
+import PartnerLogo from "../components/PartnerLogo"
 
 const Splash = styled.img.attrs({
   className: "w-100 mb7 pb2",
 })``
-
-const Partner = styled.div.attrs({
-  className: "h5 w5 mt4",
-})`
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  ${({ src }) =>
-    css`
-      background-image: url(${src});
-    `};
-`
 
 class IndexPage extends Component {
   state = {
@@ -67,15 +56,15 @@ class IndexPage extends Component {
                 wrapAround: true,
               }}
             >
-              <Partner src={night_zoo_keeper} />
-              <Partner src={night_zoo_keeper} />
-              <Partner src={night_zoo_keeper} />
-              <Partner src={night_zoo_keeper} />
-              <Partner src={night_zoo_keeper} />
-              <Partner src={night_zoo_keeper} />
-              <Partner src={night_zoo_keeper} />
-              <Partner src={night_zoo_keeper} />
-              <Partner src={night_zoo_keeper} />
+              <PartnerLogo src={night_zoo_keeper} />
+              <PartnerLogo src={night_zoo_keeper} />
+              <PartnerLogo src={night_zoo_keeper} />
+              <PartnerLogo src={night_zoo_keeper} />
+              <PartnerLogo src={night_zoo_keeper} />
+              <PartnerLogo src={night_zoo_keeper} />
+              <PartnerLogo src={night_zoo_keeper} />
+              <PartnerLogo src={night_zoo_keeper} />
+              <PartnerLogo src={night_zoo_keeper} />
             </FlickityCarousel>
           </section>
 
