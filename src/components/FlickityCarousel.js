@@ -8,17 +8,8 @@ const _Flickity = styled(Flickity).attrs({
   overflow: hidden;
 `
 
-const InfiniteCarousel = ({ children }) => (
-  <_Flickity
-    options={{
-      initialIndex: 4,
-      prevNextButtons: false,
-      pageDots: false,
-      autoPlay: 1500,
-      wrapAround: true,
-    }}
-    disableImagesLoaded={true}
-  >
+const InfiniteCarousel = ({ children, options }) => (
+  <_Flickity options={options} disableImagesLoaded={true}>
     {children}
   </_Flickity>
 )

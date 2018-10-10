@@ -14,7 +14,7 @@ import Carousel from "../components/Carousel"
 import { Cursor } from "../components/Cursor"
 import { Bez } from "../components/Card"
 import DoubleLine from "../components/DoubleLine"
-import InfiniteCarousel from "../components/InfiniteCarousel"
+import FlickityCarousel from "../components/FlickityCarousel"
 
 const Splash = styled.img.attrs({
   className: "w-100 mb7 pb2",
@@ -58,7 +58,15 @@ class IndexPage extends Component {
 
           <section>
             <SmallUnderline>We proudly cooperate with</SmallUnderline>
-            <InfiniteCarousel>
+            <FlickityCarousel
+              options={{
+                initialIndex: 4,
+                prevNextButtons: false,
+                pageDots: false,
+                autoPlay: 1500,
+                wrapAround: true,
+              }}
+            >
               <Partner src={night_zoo_keeper} />
               <Partner src={night_zoo_keeper} />
               <Partner src={night_zoo_keeper} />
@@ -68,7 +76,7 @@ class IndexPage extends Component {
               <Partner src={night_zoo_keeper} />
               <Partner src={night_zoo_keeper} />
               <Partner src={night_zoo_keeper} />
-            </InfiniteCarousel>
+            </FlickityCarousel>
           </section>
 
           <Carousel
