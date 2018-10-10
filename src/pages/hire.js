@@ -1,17 +1,16 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import QuoteCarousel from "../components/quoteCarousel"
-import { BigUnderline } from "../components/underlineText"
+import { BigUnderline } from "../components/Text"
 import { Panel, NextPanel } from "../components/Panel"
-import HeadingWithBody from "../components/headingWithBody"
-import { DoubleLine } from "../components/DoubleLine"
-import red from "../assets/icons/double_line_red.svg"
+import HeadingWithBody from "../components/HeadingWithBody"
+import DoubleLine from "../components/DoubleLine"
 import { DOWN_CURSOR } from "../constants"
 
-import Cursor from "../components/Cursor"
-import hireSplash from "../assets/splashes/homeSplash.png"
+import { Cursor } from "../components/Cursor"
+import hireSplash from "../assets/splashes/home_splash.png"
 
 const Splash = styled.img.attrs({
   className: "w-100 mb7 pb5",
@@ -39,7 +38,7 @@ class HirePage extends Component {
           where our diverse graduates will thrive. Think your company would be a
           good fit? Fill out this short form.
         </HeadingWithBody>
-        <DoubleLine colour={red} />
+        <DoubleLine colour="red" />
         <Splash src={hireSplash} />
         <QuoteCarousel />
         <NextPanel component={this} to={"/techforbetter"}>
