@@ -3,15 +3,6 @@ import styled from "styled-components"
 
 import quotemarks from "../assets/icons/quotemarks.svg"
 
-const flickityOptions = {
-  initialIndex: 0,
-  cellSelector: ".sliderBoxes",
-  accessibility: true,
-  pageDots: true,
-  wrapAround: true,
-  autoPlay: 3000, // default false
-}
-
 const QuoteCarouselContainer = styled.div.attrs({
   className: "bg-light-gray w-100 h-70 flex justify-center",
 })``
@@ -75,12 +66,7 @@ class QuoteCarousel extends React.Component {
   render() {
     return (
       <QuoteCarouselContainer>
-        <div
-          className={"carousel"} // default ''
-          elementType={"div"} // default 'div'
-          options={flickityOptions} // takes flickity options {}
-          disableImagesLoaded={false} // default false
-        >
+        <div>
           <QuoteSlide
             quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
             firstName="Vinny"
