@@ -1,6 +1,12 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 
+const _Flickity = styled.div.attrs({
+  className: "outline-0 w-100 mb7",
+})`
+  overflow: hidden;
+`
+
 class InfiniteCarousel extends Component {
   state = { Flickity: null }
   constructor(props) {
@@ -17,15 +23,11 @@ class InfiniteCarousel extends Component {
 
     const { children, options } = this.props
 
-    const _Flickity = styled(Flickity).attrs({
-      className: "outline-0 w-100 mb7",
-    })`
-      overflow: hidden;
-    `
-
     return (
-      <_Flickity options={options} disableImagesLoaded={true}>
-        {children}
+      <_Flickity>
+        <Flickity options={options} disableImagesLoaded={true}>
+          {children}
+        </Flickity>
       </_Flickity>
     )
   }
