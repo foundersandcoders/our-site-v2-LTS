@@ -109,7 +109,7 @@ class HirePage extends Component {
           good fit? Fill out this short form.
         </HeadingWithBody>
         <DoubleLine colour="red" />
-        <section className="w-100 mb7 pb5">
+        <section className="mb7 pb5">
           <FlickityCarousel
             options={{
               pageDots: true,
