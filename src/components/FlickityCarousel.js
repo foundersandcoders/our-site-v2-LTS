@@ -1,9 +1,7 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 
-const FlickityContainer = styled.div.attrs({
-  className: ({ className }) => className,
-})`
+const FlickityContainer = styled.div`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
 `
