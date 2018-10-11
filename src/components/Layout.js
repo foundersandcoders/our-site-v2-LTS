@@ -12,7 +12,7 @@ import Menu from "./Menu"
 const AppWrapper = styled.div.attrs({
   className: "center",
 })`
-  max-width: 1280px;
+  max-width: 1440px;
 `
 
 const Layout = ({ children }) => (
