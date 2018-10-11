@@ -1,4 +1,12 @@
 import React, { Component } from "react"
+import styled from "styled-components"
+
+const FlickityContainer = styled.div.attrs({
+  className: ({ className }) => className,
+})`
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+`
 
 class FlickityCarousel extends Component {
   state = { Flickity: null }
@@ -11,10 +19,10 @@ class FlickityCarousel extends Component {
 
   render() {
     const { Flickity } = this.state
-    const { children, options } = this.props
+    const { children, options, className, width, height } = this.props
 
     return (
-      <div>
+      <FlickityContainer className={className} width={width} height={height}>
         {Flickity && (
           <Flickity
             options={options}
@@ -24,7 +32,7 @@ class FlickityCarousel extends Component {
             {children}
           </Flickity>
         )}
-      </div>
+      </FlickityContainer>
     )
   }
 }
