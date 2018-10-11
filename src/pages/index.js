@@ -45,7 +45,7 @@ class IndexPage extends Component {
             government to deliver programmes in the Middle East and Africa.
           </HeadingBody>
 
-          <section>
+          <section className="mb7">
             <SmallUnderline>We proudly cooperate with</SmallUnderline>
             <FlickityCarousel
               options={{

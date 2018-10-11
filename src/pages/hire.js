@@ -16,9 +16,19 @@ import hireSplash from "../assets/splashes/home_splash.png"
 import quotemarks from "../assets/icons/quotemarks.svg"
 import night_zoo_keeper from "../assets/logos/night-zoo-keeper.png"
 
-const Splash = styled.img.attrs({
-  className: "w-100 mb7 pb5",
-})``
+const SplashImg = styled.div.attrs({
+  className: "",
+})`
+  width: 1280px;
+  height: 750px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  ${({ src }) =>
+    css`
+      background-image: url(${src});
+    `};
+`
 
 const Text = styled.p.attrs({
   className: ({ font }) => `${font} bg-yellow tr ph1`,
@@ -99,12 +109,27 @@ class HirePage extends Component {
           good fit? Fill out this short form.
         </HeadingWithBody>
         <DoubleLine colour="red" />
-        <Splash src={hireSplash} />
+        <section className="w-100 mb7 pb5">
+          <FlickityCarousel
+            options={{
+              pageDots: true,
+              prevNextButtons: false,
+              initialIndex: 2,
+            }}
+          >
+            <SplashImg src={hireSplash} />
+            <SplashImg src={hireSplash} />
+            <SplashImg src={hireSplash} />
+            <SplashImg src={hireSplash} />
+            <SplashImg src={hireSplash} />
+          </FlickityCarousel>
+        </section>
         <section className="bg-light-gray">
           <FlickityCarousel
             options={{
               prevNextButtons: true,
               wrapAround: true,
+              pageDots: false,
             }}
           >
             <QuoteSlide
@@ -127,7 +152,7 @@ class HirePage extends Component {
             />
           </FlickityCarousel>
         </section>
-        <section>
+        <section className="mb7">
           <FlickityCarousel
             options={{
               initialIndex: 4,

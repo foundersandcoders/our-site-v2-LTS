@@ -18,7 +18,8 @@ class FlickityCarousel extends Component {
         {Flickity && (
           <Flickity
             options={options}
-            className={"outline-0 w-100 mb7 overflow-hidden"}
+            className={"outline-0 w-100 overflow-hidden"}
+            disableImagesLoaded={true}
           >
             {children}
           </Flickity>
