@@ -100,7 +100,7 @@ class HirePage extends Component {
         </HeadingWithBody>
         <DoubleLine colour="red" />
         <Splash src={hireSplash} />
-        <section className="bg-light-gray w-100 h-70 flex justify-center">
+        <section className="bg-light-gray">
           <FlickityCarousel
             options={{
               prevNextButtons: true,
