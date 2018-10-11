@@ -18,7 +18,9 @@ const Wrapper = styled.div.attrs({
   max-height: ${({ collapsed }) => (collapsed ? "147px" : "462px")};
 `
 
-const Question = styled.div.attrs({ className: "mt3" })``
+const Question = styled.div.attrs({ className: "mt3" })`
+  height: 84px;
+`
 
 const Answer = styled.div.attrs({
   className: ({ collapsed }) => `font-4 fw3 ${collapsed ? "mb0" : "mb4"}`,
