@@ -15,11 +15,13 @@ import { Cursor } from "../components/Cursor"
 import { Bez } from "../components/Card"
 import DoubleLine from "../components/DoubleLine"
 import FlickityCarousel from "../components/FlickityCarousel"
-import PartnerLogo from "../components/PartnerLogo"
+import BackgroundImg from "../components/BackgroundImg"
 
 const Splash = styled.img.attrs({
   className: "w-100 mb7 pb2",
 })``
+
+const PartnerLogo = styled(BackgroundImg).attrs({ className: "h5 w5 mt4" })``
 
 class IndexPage extends Component {
   state = {

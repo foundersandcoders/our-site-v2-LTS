@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 import { APPLICATION_CAROUSEL, DOWN_CURSOR } from "../constants"
 
@@ -13,6 +13,7 @@ import HeadingWithBody from "../components/HeadingWithBody"
 import { BigUnderline, _SubHeading, SmallUnderline } from "../components/Text"
 import DoubleLine from "../components/DoubleLine"
 import FlickityCarousel from "../components/FlickityCarousel"
+import BackgroundImg from "../components/BackgroundImg"
 
 import hireSplash from "../assets/splashes/home_splash.png"
 
@@ -20,17 +21,9 @@ const _ListItem = styled.li`
   list-style-type: circle;
   list-style-position: inside;
 `
-const CohortImg = styled.div`
-  width: 953px;
-  height: 568px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  ${({ src }) =>
-    css`
-      background-image: url(${src});
-    `};
-`
+const CohortImg = ({ src }) => (
+  <BackgroundImg src={src} width="953px" height="568px" />
+)
 
 class ApplyPage extends Component {
   state = {
