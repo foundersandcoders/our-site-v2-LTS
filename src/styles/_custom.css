@@ -1,11 +1,11 @@
-.vw-100 {
-  width: 100vw;
-}
-
 body {
   font-family: "Eesti";
   cursor: url("../assets/ui/arrow_down_blue.svg"), auto;
   overflow-x: hidden;
+}
+
+.vw-100 {
+  width: 100vw;
 }
 
 .vh-100 {
@@ -14,10 +14,6 @@ body {
 
 .sticky {
   position: sticky !important;
-}
-
-.pt-180 {
-  padding-top: 180px;
 }
 
 .min-828 {

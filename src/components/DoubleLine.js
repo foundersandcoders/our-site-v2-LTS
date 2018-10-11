@@ -12,7 +12,7 @@ const _DoubleLine = styled.img.attrs({
 `
 
 const _DoubleLineContainer = styled.div.attrs({
-  className: "relative flex flex justify-end mt3 mb6",
+  className: "relative flex flex justify-end",
 })``
 
 const returnDoubleLineImage = ({ colour }) => {
