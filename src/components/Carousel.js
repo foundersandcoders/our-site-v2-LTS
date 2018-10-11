@@ -6,6 +6,7 @@ import stripey_small from "../assets/ui/stripey_small.svg"
 import { TESTIMONIAL_CAROUSEL, APPLICATION_CAROUSEL } from "../constants"
 import HeadingWithBody from "./HeadingWithBody"
 import { mouseOnCarousel, mouseOff } from "./Cursor"
+import InnerGridContainer from "./InnerGridContainer"
 
 const _ApplicationsStatus = styled.section.attrs({
   className: ({ areOpen }) =>
@@ -126,14 +127,16 @@ class Carousel extends Component {
             onMouseLeave={() => mouseOff(component)}
           >
             <_InnerApplicationContainer>
-              <HeadingWithBody
-                title="How do I apply?"
-                bgColour="light-gray pr4"
-              >
-                <_Carousel scrollY={scrollY} carouselWidth={carouselWidth}>
-                  {children}
-                </_Carousel>
-              </HeadingWithBody>
+              <InnerGridContainer>
+                <HeadingWithBody
+                  title="How do I apply?"
+                  bgColour="light-gray pr4"
+                >
+                  <_Carousel scrollY={scrollY} carouselWidth={carouselWidth}>
+                    {children}
+                  </_Carousel>
+                </HeadingWithBody>
+              </InnerGridContainer>
               {applicationsAreOpen !== undefined && (
                 <ApplicationsStatus areOpen={applicationsAreOpen} />
               )}
