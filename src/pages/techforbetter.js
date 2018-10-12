@@ -76,6 +76,7 @@ class TechForBetterPage extends Component {
           </InnerGridContainer>
           <ExtendedPanel className="bg-light-gray mb7">
             <Carousel
+              title="How does it work?"
               carouselWidth="200vw"
               type={APPLICATION_CAROUSEL}
               component={this}
