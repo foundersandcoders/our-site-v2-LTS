@@ -5,11 +5,13 @@ const _Table = styled.table.attrs({
   className: "fw3 font-4 mb6",
 })``
 
-const _HeaderCell = styled.th.attrs({
-  className: ({ topColour }) => `b bt bw3 tl b--${topColour} pt1`,
-})`
+const _HeaderCell = styled.th`
   width: 156px;
 `
+
+const TopBorder = styled.div.attrs({
+  className: ({ colour }) => `bt bw3 tl b--${colour} pt1 w-80 b`,
+})``
 
 const _Cell = styled.td.attrs({
   className: "pv5 mh2",
@@ -23,11 +25,21 @@ const Table = () => (
   <_Table>
     <thead>
       <tr>
-        <_HeaderCell topColour="gray">Cohort</_HeaderCell>
-        <_HeaderCell topColour="yellow">Expression of interest</_HeaderCell>
-        <_HeaderCell topColour="red">Application window *</_HeaderCell>
-        <_HeaderCell topColour="green">Interview dates</_HeaderCell>
-        <_HeaderCell topColour="blue">Course dates</_HeaderCell>
+        <_HeaderCell>
+          <TopBorder colour="gray">Cohort</TopBorder>
+        </_HeaderCell>
+        <_HeaderCell>
+          <TopBorder colour="yellow">Expression of interest</TopBorder>
+        </_HeaderCell>
+        <_HeaderCell>
+          <TopBorder colour="red">Application window</TopBorder>
+        </_HeaderCell>
+        <_HeaderCell>
+          <TopBorder colour="green">Interview dates</TopBorder>
+        </_HeaderCell>
+        <_HeaderCell>
+          <TopBorder colour="blue">Course dates</TopBorder>
+        </_HeaderCell>
       </tr>
     </thead>
     <tbody>
