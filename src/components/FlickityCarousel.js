@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
+import * as r from "ramda"
 
 const FlickityContainer = styled.div`
   width: ${({ width }) => width};
@@ -15,6 +16,16 @@ class FlickityCarousel extends Component {
     }
   }
 
+  componentDidMount = () => {
+    const { children, changeCaption, ApplyCarousel } = this.props
+    if (ApplyCarousel) {
+      const captions = r.map(r.view(r.lensPath(["props", "name"])), children)
+      this.flkty.on("dragEnd", () => {
+        changeCaption(captions[this.flkty.selectedIndex])
+      })
+    }
+  }
+
   render() {
     const { Flickity } = this.state
     const { children, options, className, width, height } = this.props
@@ -23,6 +34,7 @@ class FlickityCarousel extends Component {
       <FlickityContainer className={className} width={width} height={height}>
         {Flickity && (
           <Flickity
+            flickityRef={c => (this.flkty = c)}
             options={options}
             className={"outline-0 w-100 overflow-hidden"}
             disableImagesLoaded={true}
