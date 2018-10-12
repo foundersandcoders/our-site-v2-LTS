@@ -15,11 +15,14 @@ import { Cursor } from "../components/Cursor"
 import { Bez } from "../components/Card"
 import DoubleLine from "../components/DoubleLine"
 import FlickityCarousel from "../components/FlickityCarousel"
-import PartnerLogo from "../components/PartnerLogo"
+import BackgroundImg from "../components/BackgroundImg"
+import InnerGridContainer from "../components/InnerGridContainer"
 
 const Splash = styled.img.attrs({
   className: "w-100 mb7 pb2",
 })``
+
+const PartnerLogo = styled(BackgroundImg).attrs({ className: "h5 w5 mt4" })``
 
 class IndexPage extends Component {
   state = {
@@ -32,21 +35,27 @@ class IndexPage extends Component {
       <Layout>
         <Cursor cursor={cursor} colour="blue" />
         <main>
-          <Panel justify="end">
-            <_BigText className="pt5">we are Founders and Coders</_BigText>
-          </Panel>
-          <DoubleLine colour="yellow" />
-          <Splash src={home_splash} />
-          <HeadingBody title="Overview" className="mb7">
-            Founders and Coders CIC is a UK-based nonprofit that develops and
-            runs tuition-free, peer-led training programmes in web development,
-            guided by our core values of cooperation, inclusion and social
-            impact. We proudly collaborate with Mercy Corps and the UK
-            government to deliver programmes in the Middle East and Africa.
-          </HeadingBody>
+          <InnerGridContainer>
+            <Panel justify="end">
+              <_BigText className="pt5 w-75">
+                we are Founders and Coders
+              </_BigText>
+            </Panel>
+            <DoubleLine colour="yellow" />
+            <Splash src={home_splash} />
+            <HeadingBody title="Overview" className="mb7">
+              Founders and Coders CIC is a UK-based nonprofit that develops and
+              runs tuition-free, peer-led training programmes in web
+              development, guided by our core values of cooperation, inclusion
+              and social impact. We proudly collaborate with Mercy Corps and the
+              UK government to deliver programmes in the Middle East and Africa.
+            </HeadingBody>
+          </InnerGridContainer>
 
-          <section>
-            <SmallUnderline>We proudly cooperate with</SmallUnderline>
+          <section className="mb7">
+            <InnerGridContainer>
+              <SmallUnderline>We proudly cooperate with</SmallUnderline>
+            </InnerGridContainer>
             <FlickityCarousel
               options={{
                 initialIndex: 4,

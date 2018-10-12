@@ -5,8 +5,10 @@ import { Link } from "gatsby"
 import logo from "../assets/logos/fac_logo_black.svg"
 
 const _Header = styled.header.attrs({
-  className: "flex pt6 justify-between",
-})``
+  className: "flex pt6 justify-between center",
+})`
+  max-width: 1280px;
+`
 
 const _TopNav = styled.nav.attrs({
   className: "flex w-75 justify-between",
@@ -29,6 +31,10 @@ const _TopLink = styled(Link).attrs({
   &:hover {
     border-color: var(--blue);
     transition: 0.5s;
+  }
+  &:active,
+  &:focus {
+    outline: 0;
   }
 `
 

@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components"
 
-const PartnerLogo = styled.div.attrs({
-  className: "h5 w5 mt4",
-})`
+const BackgroundImg = styled.div`
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -12,4 +12,4 @@ const PartnerLogo = styled.div.attrs({
     `};
 `
 
-export default PartnerLogo
+export default BackgroundImg
