@@ -59,6 +59,7 @@ class ApplyPage extends Component {
               <Carousel
                 carouselWidth="200vw"
                 type={APPLICATION_CAROUSEL}
+                title="How do I apply?"
                 component={this}
                 applicationsAreOpen={false}
               >
