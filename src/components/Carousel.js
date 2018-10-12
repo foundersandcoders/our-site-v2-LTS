@@ -103,6 +103,7 @@ class Carousel extends Component {
       carouselWidth,
       component,
       applicationsAreOpen,
+      title,
     } = this.props
     switch (type) {
       case TESTIMONIAL_CAROUSEL:
@@ -128,10 +129,7 @@ class Carousel extends Component {
           >
             <_InnerApplicationContainer>
               <InnerGridContainer>
-                <HeadingWithBody
-                  title="How do I apply?"
-                  bgColour="light-gray pr4"
-                >
+                <HeadingWithBody title={title} bgColour="light-gray pr4">
                   <_Carousel scrollY={scrollY} carouselWidth={carouselWidth}>
                     {children}
                   </_Carousel>
