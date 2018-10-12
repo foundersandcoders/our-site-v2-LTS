@@ -53,7 +53,15 @@ const _Details = styled.div.attrs({
   className: "font-5 fw3 mb3",
 })``
 
-const Story = ({ colour, img, heading, subtitle, author, date }) => (
+const Story = ({
+  colour,
+  img,
+  heading,
+  subtitle,
+  author,
+  publication,
+  date,
+}) => (
   <_Story>
     <_Border colour={colour} />
     <div>
@@ -62,8 +70,10 @@ const Story = ({ colour, img, heading, subtitle, author, date }) => (
     </div>
     <_Subtitle>{subtitle}</_Subtitle>
     <_Details>
-      {author}
-      <span className="light-silver"> ⦁ </span>
+      {author && author}
+      {author && <span className="light-silver"> ⦁ </span>}
+      {publication && publication}
+      {publication && <span className="light-silver"> ⦁ </span>}
       {date}
     </_Details>
   </_Story>

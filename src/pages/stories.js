@@ -1,8 +1,13 @@
 import React, { Component, Fragment } from "react"
 import styled from "styled-components"
 
+import arrow_right_black from "../assets/ui/arrow_right_black.svg"
 import rebecca_and_matt from "../assets/photos/rebecca_and_matt.png"
 import becky_and_johanna from "../assets/photos/becky_and_johanna.png"
+import coding_stress from "../assets/photos/coding_stress.png"
+import boot_camp_rebels from "../assets/photos/boot_camp_rebels.png"
+import get_with_the_program from "../assets/photos/get_with_the_program.png"
+import little_window from "../assets/photos/little_window.png"
 
 import Layout from "../components/Layout"
 import { DOWN_CURSOR } from "../constants"
@@ -21,7 +26,12 @@ const _StoryContainer = styled.section.attrs({
 const StoryContainer = ({ children }) => (
   <Fragment>
     <_StoryContainer>{children}</_StoryContainer>
-    {children.length > 3 && <div className="mt5 lh-copy ttu">More</div>}
+    {children.length > 3 && (
+      <div className="mt2 lh-copy ttu flex items-center pointer">
+        More
+        <img className="ml2 w1" src={arrow_right_black} />
+      </div>
+    )}
   </Fragment>
 )
 class StoriesPage extends Component {
@@ -46,7 +56,7 @@ class StoriesPage extends Component {
             impact with technology all over the world.
           </HeadingWithBody>
           <DoubleLine colour="red" />
-          <HeadingWithBody title="Stories by us">
+          <HeadingWithBody title="Stories by us" className="mb7">
             <StoryContainer>
               <Story
                 colour="yellow"
@@ -80,7 +90,7 @@ class StoriesPage extends Component {
               />
             </StoryContainer>
           </HeadingWithBody>
-          <HeadingWithBody title="Stories about us">
+          <HeadingWithBody title="Stories about us" className="mb7">
             <StoryContainer>
               <Story
                 colour="yellow"
@@ -98,17 +108,81 @@ class StoriesPage extends Component {
               />
               <Story
                 colour="green"
-                heading="The Boot-camp that changed my coding life — Founders and Coders"
-                subtitle="Matt King talks about his experiences mentoring and facilitating at Founders and Coders in London…"
-                author="Founders and Coders"
-                date="Sep 10"
+                heading="How to Choose The Right Coding Bootcamp"
+                img={coding_stress}
+                subtitle="Last year I went through the Founders and Coders (FAC) software training program in London in order to turn my hobby into a living…"
+                author="Per Harald Borgen"
+                date="Jan 19 2016"
               />
               <Story
                 colour="red"
-                heading="From Coders to Founders: The Workerbird story"
-                subtitle="How Becky Botha and Johanna Herman learnt to code and launched Workerbird, a Tech for Good startup…"
-                author="Founders and Coders"
-                date="Sep 22"
+                img={little_window}
+                heading="Building Little Window: how we created a chatbot for Chayn"
+                subtitle="Little Window — one of the first chatbot and AI innovations at the intersection of gender-based violence and tech for good..."
+                author="Johanna Herman"
+                date="Apr 15"
+              />
+              <Story
+                colour="yellow"
+                heading="London tech developers to set up new worker co-op"
+                subtitle="One year ago I was a non-technical founder of a startup at the edge of bankruptcy. Today I work as a…"
+                author="Anca Voinea"
+                date="Jul 21 2018"
+              />
+              <Story
+                colour="blue"
+                heading="How studying law helped me with programming"
+                subtitle="When I decided to learn to code, I didn’t expect there to be anything other than work ethic that would be transferable from my law degree."
+                author="Katerina Pascoulis"
+                date="Aug 2 2018"
+              />
+            </StoryContainer>
+          </HeadingWithBody>
+          <HeadingWithBody title="From the press" className="mb7">
+            <StoryContainer>
+              <Story
+                colour="yellow"
+                img={boot_camp_rebels}
+                heading="Boot camp rebels: tech developers quit corporate careers"
+                subtitle="Disappointed with “big tech”, coders are starting social impact start-ups. To some, technology companies represent the future..."
+                author="Aliya Ram"
+                publication="Financial Times"
+                date="Oct 26, 2017"
+              />
+              <Story
+                colour="blue"
+                img={get_with_the_program}
+                heading="Get with the program: the codeers offering training for free"
+                subtitle="It’s the must-have skill-set of the 21st century, yet unless you’re rich enough to afford the training, or fortunate enough to be attending…"
+                author="Kit Buchan"
+                publication="The Guardian"
+                date="Jul 26, 2015"
+              />
+              <Story
+                colour="green"
+                heading="The Free Coding Academy Model: How to Teach Our Next Generation…"
+                subtitle="The world needs more trained software engineers; it’s a basic fact. The world also urgently needs more of those…"
+                author="Adrian Bridgewater"
+                publication="Forbes"
+                date="Aug 31, 2015"
+              />
+              <Story
+                colour="red"
+                heading="Web developers crack the tuition code to snap up Young Co-operators Prize"
+                subtitle="Full-time courses in software development do not usually come cheap. Even at the lower end of the market students are likely to be…"
+                publication="Co-op UK"
+                date="Mar 31, 2015"
+              />
+            </StoryContainer>
+          </HeadingWithBody>
+          <HeadingWithBody title="Podcasts" className="mb7">
+            <StoryContainer>
+              <Story
+                colour="yellow"
+                heading="GeekGirl Meets Katerina Pascoulis, CEO & Co-Founder at Personably"
+                subtitle="First up: meet Katerina Pascoulis, a coder and entrepreneur who’s passionate about getting other women into tech…"
+                publication="GeekGirl Meetup UK"
+                date="1 month ago"
               />
             </StoryContainer>
           </HeadingWithBody>
