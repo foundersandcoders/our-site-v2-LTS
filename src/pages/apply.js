@@ -10,10 +10,11 @@ import Table from "../components/Table"
 import Carousel from "../components/Carousel"
 import { Cursor } from "../components/Cursor"
 import HeadingWithBody from "../components/HeadingWithBody"
-import { BigUnderline, _SubHeading, SmallUnderline } from "../components/Text"
+import { BigUnderline, _SubHeading } from "../components/Text"
 import DoubleLine from "../components/DoubleLine"
 import FlickityCarousel from "../components/FlickityCarousel"
 import BackgroundImg from "../components/BackgroundImg"
+import InnerGridContainer from "../components/InnerGridContainer"
 
 import hireSplash from "../assets/splashes/home_splash.png"
 
@@ -36,21 +37,23 @@ class ApplyPage extends Component {
       <Layout>
         <Cursor cursor={cursor} colour="green" />
         <main>
-          <Panel justify="end" className="mt7 mb6">
-            <div className="w-75">
-              <BigUnderline>Apply to our course</BigUnderline>
-            </div>
-          </Panel>
-          <HeadingWithBody title="Overview">
-            Our programme is designed for people who are serious about a career
-            in web development, are comfortable with uncertainty, can take
-            initiative, and believe strongly in the value of community and
-            helping others.
-          </HeadingWithBody>
-          <DoubleLine colour="blue" />
-          <HeadingWithBody title="What you need to know">
-            <Table />
-          </HeadingWithBody>
+          <InnerGridContainer>
+            <Panel justify="end" className="mt7 mb6">
+              <div className="w-75">
+                <BigUnderline>Apply to our course</BigUnderline>
+              </div>
+            </Panel>
+            <HeadingWithBody title="Overview">
+              Our programme is designed for people who are serious about a
+              career in web development, are comfortable with uncertainty, can
+              take initiative, and believe strongly in the value of community
+              and helping others.
+            </HeadingWithBody>
+            <DoubleLine colour="blue" />
+            <HeadingWithBody title="What you need to know">
+              <Table />
+            </HeadingWithBody>
+          </InnerGridContainer>
           <section className="mb7 pb5">
             <ExtendedPanel className="bg-light-gray">
               <Carousel
@@ -83,12 +86,12 @@ class ApplyPage extends Component {
                   preparation process, both online and through our meetups.
                 </Step>
                 <Step>
-                  <p>
+                  <div>
                     <_SubHeading>Create a GitHub account</_SubHeading>
                     You will use this account to join Gitter and to create your
                     one-page site on GitHub Pages.
-                  </p>
-                  <p>
+                  </div>
+                  <div>
                     <_SubHeading>FreeCodeCamp</_SubHeading>
                     Earn a minimum of 200 points on freeCodeCamp. We recommend
                     beginning with the following sections:
@@ -110,7 +113,7 @@ class ApplyPage extends Component {
                       <_ListItem>Basic Data Structures</_ListItem>
                       <_ListItem>Basic Algorithm Scripting</_ListItem>
                     </ul>
-                  </p>
+                  </div>
                 </Step>
                 <Step step="03" colour="red" title="Submit an application">
                   <p>
@@ -142,9 +145,8 @@ class ApplyPage extends Component {
             </ExtendedPanel>
           </section>
 
-          <section className="mb7 pb5">
-            <SmallUnderline>London cohort #10 + mentors</SmallUnderline>
-            <div className="w-100 flex justify-end">
+          <InnerGridContainer className="mb7 pb5">
+            <HeadingWithBody title="London cohort #10 + mentors">
               <FlickityCarousel
                 options={{
                   pageDots: true,
@@ -160,8 +162,8 @@ class ApplyPage extends Component {
                 <CohortImg src={hireSplash} />
                 <CohortImg src={hireSplash} />
               </FlickityCarousel>
-            </div>
-          </section>
+            </HeadingWithBody>
+          </InnerGridContainer>
 
           <NextPanel component={this} to="/hire" topBorder>
             Hire our graduates

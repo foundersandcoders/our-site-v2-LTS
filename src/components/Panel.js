@@ -10,7 +10,8 @@ import linkedin_logo_white from "../assets/logos/linkedin_logo_white.svg"
 import twitter_logo_white from "../assets/logos/twitter_logo_white.svg"
 
 import { OffsetUnderlineText } from "./Text"
-import { mouseOnNext, mouseOff } from "../components/Cursor"
+import { mouseOnNext, mouseOff } from "./Cursor"
+import InnerGridContainer from "./InnerGridContainer"
 
 const _BigText = styled.h1.attrs({
   className: ({ colour = "black" }) => `headline fw5 w-70 ${colour}`,
@@ -105,20 +106,24 @@ const NextPanel = ({ component, to, children, topBorder }) => (
         className="bg-black flex items-center justify-center pv5 pointer link min-828"
         to={to}
       >
-        <Panel>
-          <OffsetUnderlineText
-            className="ml5"
-            underlineColour="blue"
-            colour="white"
-            underlineWidth="4px"
-            fontSize="font-5"
-            fontWeight="fw3"
-            title="Next"
-          >
-            Next
-          </OffsetUnderlineText>
-          <_BigText colour="white">{children}</_BigText>
-        </Panel>
+        <InnerGridContainer>
+          <Panel justify="start" className="center">
+            <div className="w-25">
+              <OffsetUnderlineText
+                className="ml7"
+                underlineColour="blue"
+                colour="white"
+                underlineWidth="4px"
+                fontSize="font-5"
+                fontWeight="fw3"
+                title="Next"
+              >
+                Next
+              </OffsetUnderlineText>
+            </div>
+            <_BigText colour="white">{children}</_BigText>
+          </Panel>
+        </InnerGridContainer>
       </Link>
       <Footer />
     </div>

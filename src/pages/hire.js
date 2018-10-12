@@ -11,6 +11,7 @@ import DoubleLine from "../components/DoubleLine"
 import { Cursor } from "../components/Cursor"
 import FlickityCarousel from "../components/FlickityCarousel"
 import BackgroundImg from "../components/BackgroundImg"
+import InnerGridContainer from "../components/InnerGridContainer"
 
 import hireSplash from "../assets/splashes/home_splash.png"
 import quotemarks from "../assets/icons/quotemarks.svg"
@@ -81,34 +82,36 @@ class HirePage extends Component {
     return (
       <Layout>
         <Cursor cursor={cursor} colour="green" />
-        <Panel justify="end" className="mt7 mb6">
-          <div className="w-75">
-            <BigUnderline>Hire our graduates</BigUnderline>
-          </div>
-        </Panel>
-        <HeadingWithBody title="Overview">
-          Our dedicated network of employer partners are an essential part of
-          the cooperative community at Founders and Coders. We are always
-          looking for new partners committed to building inclusive workplaces
-          where our diverse graduates will thrive. Think your company would be a
-          good fit? Fill out this short form.
-        </HeadingWithBody>
-        <DoubleLine colour="red" />
-        <section className="mb7 pb5">
-          <FlickityCarousel
-            options={{
-              pageDots: true,
-              prevNextButtons: false,
-              initialIndex: 2,
-            }}
-          >
-            <SplashImg src={hireSplash} />
-            <SplashImg src={hireSplash} />
-            <SplashImg src={hireSplash} />
-            <SplashImg src={hireSplash} />
-            <SplashImg src={hireSplash} />
-          </FlickityCarousel>
-        </section>
+        <InnerGridContainer>
+          <Panel justify="end" className="mt7 mb6">
+            <div className="w-75">
+              <BigUnderline>Hire our graduates</BigUnderline>
+            </div>
+          </Panel>
+          <HeadingWithBody title="Overview">
+            Our dedicated network of employer partners are an essential part of
+            the cooperative community at Founders and Coders. We are always
+            looking for new partners committed to building inclusive workplaces
+            where our diverse graduates will thrive. Think your company would be
+            a good fit? Fill out this short form.
+          </HeadingWithBody>
+          <DoubleLine colour="red" />
+          <section className="mb7 pb5">
+            <FlickityCarousel
+              options={{
+                pageDots: true,
+                prevNextButtons: false,
+                initialIndex: 2,
+              }}
+            >
+              <SplashImg src={hireSplash} />
+              <SplashImg src={hireSplash} />
+              <SplashImg src={hireSplash} />
+              <SplashImg src={hireSplash} />
+              <SplashImg src={hireSplash} />
+            </FlickityCarousel>
+          </section>
+        </InnerGridContainer>
         <section className="bg-light-gray">
           <FlickityCarousel
             options={{
@@ -137,7 +140,7 @@ class HirePage extends Component {
             />
           </FlickityCarousel>
         </section>
-        <section className="mb7">
+        <section className="mb7 pb5">
           <FlickityCarousel
             options={{
               initialIndex: 4,
@@ -158,7 +161,7 @@ class HirePage extends Component {
             <PartnerLogo src={night_zoo_keeper} />
           </FlickityCarousel>
         </section>
-        <NextPanel component={this} to={"/techforbetter"}>
+        <NextPanel component={this} to={"/techforbetter"} topBorder>
           Tech for Better programme
         </NextPanel>
       </Layout>
