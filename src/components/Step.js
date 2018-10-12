@@ -13,7 +13,7 @@ const Step = ({ step, title, colour, children }) => (
 
 const _Step = styled.div.attrs({
   className: ({ step }) =>
-    `flex flex-column justify-between ${step && "bt bb bw1 b--black-20"}`,
+    `flex flex-column justify-between pv4 ${step && "bt bb bw1 b--black-20"}`,
 })`
   width: 30vw;
   height: 60vh;

@@ -29,6 +29,7 @@ const CohortImg = ({ src }) => (
 class ApplyPage extends Component {
   state = {
     cursor: DOWN_CURSOR,
+    cohortCaption: "Gaza",
   }
 
   render() {
@@ -147,7 +148,7 @@ class ApplyPage extends Component {
           </section>
 
           <InnerGridContainer className="mb7 pb5">
-            <HeadingWithBody title="London cohort #10 + mentors">
+            <HeadingWithBody title={this.state.cohortCaption}>
               <FlickityCarousel
                 options={{
                   pageDots: true,
@@ -156,12 +157,14 @@ class ApplyPage extends Component {
                 }}
                 width="953px"
                 height="568px"
+                changeCaption={name => this.setState({ cohortCaption: name })}
+                ApplyCarousel
               >
-                <CohortImg src={hireSplash} />
-                <CohortImg src={hireSplash} />
-                <CohortImg src={hireSplash} />
-                <CohortImg src={hireSplash} />
-                <CohortImg src={hireSplash} />
+                <CohortImg src={hireSplash} name="London" />
+                <CohortImg src={hireSplash} name="Nazareth" />
+                <CohortImg src={hireSplash} name="Gaza" />
+                <CohortImg src={hireSplash} name="West Bank" />
+                <CohortImg src={hireSplash} name="Brazil" />
               </FlickityCarousel>
             </HeadingWithBody>
           </InnerGridContainer>

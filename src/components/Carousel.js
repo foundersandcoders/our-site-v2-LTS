@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react"
 import styled from "styled-components"
 
 import stripey_small from "../assets/ui/stripey_small.svg"
@@ -17,9 +17,17 @@ const _ApplicationsStatus = styled.section.attrs({
 
 const ApplicationsStatus = ({ areOpen }) => (
   <_ApplicationsStatus areOpen={areOpen}>
-    {areOpen
-      ? "Applications are now open! APPLY HERE"
-      : "Applications are currently closed. Please express interest HERE."}
+    {areOpen ? (
+      <Fragment>
+        Applications are now open!{" "}
+        <a className="underline pointer">APPLY HERE</a>
+      </Fragment>
+    ) : (
+      <Fragment>
+        Applications are currently closed. Please express interest{" "}
+        <a className="underline pointer">HERE</a>.
+      </Fragment>
+    )}
   </_ApplicationsStatus>
 )
 
