@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react"
 import styled from "styled-components"
+import { breakpoint } from "../styles/utils"
 
 import stripey_small from "../assets/ui/stripey_small.svg"
 
@@ -35,6 +36,10 @@ const _OuterContainer = styled.div.attrs({
   className: "relative db w-100 flex carousel",
 })`
   background: url(${stripey_small}) repeat;
+
+  clip-path: polygon(0 100%, 0 12%, 25% 0, 50% 12%, 75% 0, 100% 12%, 100% 100%);
+
+  ${breakpoint.ns`
   clip-path: polygon(
     0 100%,
     0 1.5%,
@@ -55,7 +60,8 @@ const _OuterContainer = styled.div.attrs({
     100% 3%,
     100% 100%
   );
-  background-attachment: fixed;
+  
+  `} background-attachment: fixed;
   height: ${({ carouselWidth }) => carouselWidth};
 `
 const _OuterApplicationContainer = styled.div.attrs({

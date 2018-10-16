@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import logo from "../assets/logos/fac_logo_black.svg"
 
 const _Header = styled.header.attrs({
-  className: "flex pt6 justify-between center",
+  className: "dn flex-ns pt6 justify-between center",
 })`
   max-width: 1280px;
 `

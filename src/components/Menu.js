@@ -115,7 +115,7 @@ class Menu extends Component {
     const { menuActive } = this.state
 
     return (
-      <div>
+      <div className="dn db-ns">
         <MenuContainer active={menuActive}>
           <MenuSidebar active={menuActive}>
             <Link to="/">

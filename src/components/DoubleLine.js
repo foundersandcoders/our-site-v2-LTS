@@ -6,7 +6,7 @@ import double_line_yellow from "../assets/icons/double_line_yellow.svg"
 import styled from "styled-components"
 
 const _DoubleLine = styled.img.attrs({
-  className: "relative mt3 mb6",
+  className: "relative mt3 mb6-ns mb5",
 })`
   left: 33%;
 `

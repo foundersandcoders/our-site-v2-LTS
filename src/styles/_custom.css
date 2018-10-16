@@ -19,3 +19,57 @@ body {
 .min-828 {
   min-height: 828px;
 }
+
+@media (--breakpoint-not-small) {
+  .vw-100-ns {
+    width: 100vw;
+  }
+
+  .vh-100-ns {
+    height: 100vh;
+  }
+
+  .sticky-ns {
+    position: sticky !important;
+  }
+
+  .min-828-ns {
+    min-height: 828px;
+  }
+}
+
+@media (--breakpoint-medium) {
+  .vw-100-m {
+    width: 100vw;
+  }
+
+  .vh-100-m {
+    height: 100vh;
+  }
+
+  .sticky-m {
+    position: sticky !important;
+  }
+
+  .min-828-m {
+    min-height: 828px;
+  }
+}
+
+@media (--breakpoint-large) {
+  .vw-100-l {
+    width: 100vw;
+  }
+
+  .vh-100-l {
+    height: 100vh;
+  }
+
+  .sticky-l {
+    position: sticky !important;
+  }
+
+  .min-828-l {
+    min-height: 828px;
+  }
+}
