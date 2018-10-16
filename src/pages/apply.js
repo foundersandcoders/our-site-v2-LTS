@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
+import * as r from "ramda"
 
 import { APPLICATION_CAROUSEL, DOWN_CURSOR } from "../constants"
 
@@ -22,18 +23,29 @@ const _ListItem = styled.li`
   list-style-type: circle;
   list-style-position: inside;
 `
-const CohortImg = ({ src }) => (
+const CarouselImg = ({ src }) => (
   <BackgroundImg src={src} width="953px" height="568px" />
 )
+
+const carouselImages = [
+  { caption: "London", src: hireSplash },
+  { caption: "Nazareth", src: hireSplash },
+  { caption: "Gaza", src: hireSplash },
+  { caption: "West Bank", src: hireSplash },
+  { caption: "Brazil", src: hireSplash },
+]
+
+const initialCarouselIdx = 2
 
 class ApplyPage extends Component {
   state = {
     cursor: DOWN_CURSOR,
-    cohortCaption: "Gaza",
+    carouselCaption: carouselImages[initialCarouselIdx].caption,
   }
 
   render() {
     const { cursor } = this.state
+
     return (
       <Layout>
         <Cursor cursor={cursor} colour="green" />
@@ -148,25 +160,25 @@ class ApplyPage extends Component {
           </section>
 
           <InnerGridContainer className="mb7 pb5">
-            <HeadingWithBody title={this.state.cohortCaption}>
+            <HeadingWithBody title={this.state.carouselCaption}>
               <FlickityCarousel
                 options={{
                   pageDots: true,
                   prevNextButtons: false,
-                  initialIndex: 2,
+                  initialIndex: initialCarouselIdx,
                 }}
                 width="953px"
                 height="568px"
-                changeCaption={name => this.setState({ cohortCaption: name })}
+                changeCaption={caption =>
+                  this.setState({ carouselCaption: caption })
+                }
                 ApplyCarousel
                 hideCursor
                 component={this}
               >
-                <CohortImg src={hireSplash} name="London" />
-                <CohortImg src={hireSplash} name="Nazareth" />
-                <CohortImg src={hireSplash} name="Gaza" />
-                <CohortImg src={hireSplash} name="West Bank" />
-                <CohortImg src={hireSplash} name="Brazil" />
+                {r.map(({ caption, src }) => (
+                  <CarouselImg caption={caption} src={src} key={caption} />
+                ))(carouselImages)}
               </FlickityCarousel>
             </HeadingWithBody>
           </InnerGridContainer>
