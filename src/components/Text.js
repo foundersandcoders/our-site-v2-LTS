@@ -22,8 +22,8 @@ const OffsetUnderline = styled.p.attrs({
   }
 `
 
-const SmallUnderline = ({ children, bgColour }) => (
-  <div className={`bg-${bgColour}`}>
+const SmallUnderline = ({ children, bgColour, className }) => (
+  <div className={`bg-${bgColour} ${className}`}>
     {r.is(String, children) ? (
       <OffsetUnderline
         underlineColour="yellow"
@@ -139,7 +139,8 @@ const _SubHeading = styled.h3.attrs({
 })``
 
 const _BigText = styled.h1.attrs({
-  className: ({ colour = "black" }) => `headline fw5 w-70 ${colour}`,
+  className: ({ colour = "black" }) =>
+    `subheadline headline-ns fw5 w-70 ${colour}`,
 })``
 
 export {

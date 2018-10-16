@@ -125,6 +125,12 @@
     font-size: var(--font-size-2);
   }
 
+  .font-2d5-ns {
+    line-height: 48px;
+    font-size: var(--font-size-2);
+    letter-spacing: 3.44px;
+  }
+
   .font-3-ns {
     line-height: var(--line-height-3);
     font-size: var(--font-size-3);
@@ -172,6 +178,12 @@
     font-size: var(--font-size-2);
   }
 
+  .font-2d5-m {
+    line-height: 48px;
+    font-size: var(--font-size-2);
+    letter-spacing: 3.44px;
+  }
+
   .font-3-m {
     line-height: var(--line-height-3);
     font-size: var(--font-size-3);
@@ -217,6 +229,12 @@
   .font-2-l {
     line-height: var(--line-height-2);
     font-size: var(--font-size-2);
+  }
+
+.font-2d5-l {
+    line-height: 48px;
+    font-size: var(--font-size-2);
+    letter-spacing: 3.44px;
   }
 
   .font-3-l {

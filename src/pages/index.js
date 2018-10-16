@@ -14,15 +14,25 @@ import Carousel from "../components/Carousel"
 import { Cursor } from "../components/Cursor"
 import { Bez } from "../components/Card"
 import DoubleLine from "../components/DoubleLine"
+import { breakpoint } from "../styles/utils"
+
 import FlickityCarousel from "../components/FlickityCarousel"
 import BackgroundImg from "../components/BackgroundImg"
 import InnerGridContainer from "../components/InnerGridContainer"
 
 const Splash = styled.img.attrs({
-  className: "w-100 mb7 pb2",
-})``
+  className: "relative center db mb4 mb7-ns",
+})`
+  width: 94%;
 
-const PartnerLogo = styled(BackgroundImg).attrs({ className: "h5 w5 mt4" })``
+  ${breakpoint.ns`
+  width: 100%;
+  `};
+`
+
+const PartnerLogo = styled(BackgroundImg).attrs({
+  className: "h5 w5 mt4-ns mt0",
+})``
 
 class IndexPage extends Component {
   state = {
@@ -36,14 +46,14 @@ class IndexPage extends Component {
         <Cursor cursor={cursor} colour="blue" />
         <main>
           <InnerGridContainer>
-            <Panel justify="end">
-              <_BigText className="pt5 w-75">
+            <Panel justify="center justify-end-ns">
+              <_BigText className="pt5 ph1 ph0-ns w-100 w-75-ns">
                 we are Founders and Coders
               </_BigText>
             </Panel>
             <DoubleLine colour="yellow" />
             <Splash src={home_splash} />
-            <HeadingBody title="Overview" className="mb7">
+            <HeadingBody title="Overview" className="mh2 mh0-ns mb7-ns mb5">
               Founders and Coders CIC is a UK-based nonprofit that develops and
               runs tuition-free, peer-led training programmes in web
               development, guided by our core values of cooperation, inclusion
@@ -52,9 +62,11 @@ class IndexPage extends Component {
             </HeadingBody>
           </InnerGridContainer>
 
-          <section className="mb7">
+          <section className="mb7-ns mb5">
             <InnerGridContainer>
-              <SmallUnderline>We proudly cooperate with</SmallUnderline>
+              <SmallUnderline className="ml2">
+                We proudly co-operate with
+              </SmallUnderline>
             </InnerGridContainer>
             <FlickityCarousel
               options={{

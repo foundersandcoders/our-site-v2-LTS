@@ -9,17 +9,13 @@ import github_logo_white from "../assets/logos/github_logo_white.svg"
 import linkedin_logo_white from "../assets/logos/linkedin_logo_white.svg"
 import twitter_logo_white from "../assets/logos/twitter_logo_white.svg"
 
-import { OffsetUnderlineText } from "./Text"
+import { OffsetUnderlineText, _BigText } from "./Text"
 import { mouseOnNext, mouseOff } from "./Cursor"
 import InnerGridContainer from "./InnerGridContainer"
 
-const _BigText = styled.h1.attrs({
-  className: ({ colour = "black" }) => `headline fw5 w-70 ${colour}`,
-})``
-
 const _Footer = styled.div.attrs({
   className:
-    "bg-black white font-5 fw3 flex flex-column items-center justify-center pb2",
+    "bg-black white font-5 fw3 flex flex-column items-center-ns justify-center-ns pb2 ph2 ph0-ns",
 })``
 
 const _Icon = styled.img`
@@ -32,7 +28,12 @@ const Icon = ({ to, img }) => (
     <_Icon src={img} />
   </a>
 )
-const DoubleLine = styled.img.attrs({ className: "center db mv3" })``
+const DoubleLine = styled.img.attrs({
+  className: "center-ns db mt3 mb2 mb3-ns",
+})`
+  height: 12px;
+  width: 168px;
+`
 
 const Footer = () => (
   <_Footer className="bt bw1 b--gray">
@@ -43,20 +44,28 @@ const Footer = () => (
         href="mailto:hello@foundersandcoders.com"
       >
         hello@foundersandcoders.com
-      </a>{" "}
-      | Space4, 1st floor 149 Fonthill Road, Finsbury Park, London N43HF
+      </a>
+      <span className="dn di-ns"> | </span>
+      <span className="fw3 db di-ns">
+        Space4, 1st floor 149 Fonthill Road, Finsbury Park, London N4 3HF
+      </span>
     </div>
-    <div className="flex w-20 justify-between mb7">
+    <div className="flex w-20-ns w-50 justify-between mb7-ns mb6">
       <Icon to="/" img={github_logo_white} />
       <Icon to="/" img={facebook_logo_white} />
       <Icon to="/" img={twitter_logo_white} />
       <Icon to="/" img={linkedin_logo_white} />
     </div>
-    <div className="font-6 w-100 ph2 fw3 flex justify-between">
-      <div>© 2018 Founders and Coders. All rights reserved</div>
+    <div className="font-6 w-100 ph2-ns ph0 fw3 flex justify-between">
       <div>
+        <span className="db di-ns">© 2018 Founders and Coders.</span>
+        <span className="db di-ns"> All rights reserved</span>
+      </div>
+      <div className="dn db-ns">
         Made with lots of 💖 by{" "}
-        <a className="link underline white">InFact Digital Co-op</a>
+        <a className="link underline white" href="https://www.infactcoop.com/">
+          InFact Digital Co-op
+        </a>
       </div>
     </div>
   </_Footer>
@@ -103,14 +112,18 @@ const NextPanel = ({ component, to, children, topBorder }) => (
       onMouseLeave={() => mouseOff(component)}
     >
       <Link
-        className="bg-black flex items-center justify-center pv5 pointer link min-828"
+        className="bg-black flex items-center-ns items-start justify-center pv5 pointer link min-828-l"
         to={to}
       >
         <InnerGridContainer>
-          <Panel justify="start" className="center">
-            <div className="w-25">
+          <Panel
+            justify="start"
+            width="92%"
+            className="flex-column flex-row-ns center mh2 mh0-ns"
+          >
+            <div className="w-25 mb3 mb0-ns">
               <OffsetUnderlineText
-                className="ml7"
+                className="ml7-ns"
                 underlineColour="blue"
                 colour="white"
                 underlineWidth="4px"
