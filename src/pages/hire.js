@@ -103,6 +103,8 @@ class HirePage extends Component {
                 prevNextButtons: false,
                 initialIndex: 2,
               }}
+              hideCursor
+              component={this}
             >
               <SplashImg src={hireSplash} />
               <SplashImg src={hireSplash} />

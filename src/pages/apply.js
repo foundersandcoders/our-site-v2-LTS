@@ -159,6 +159,8 @@ class ApplyPage extends Component {
                 height="568px"
                 changeCaption={name => this.setState({ cohortCaption: name })}
                 ApplyCarousel
+                hideCursor
+                component={this}
               >
                 <CohortImg src={hireSplash} name="London" />
                 <CohortImg src={hireSplash} name="Nazareth" />
