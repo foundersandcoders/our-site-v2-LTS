@@ -14,7 +14,7 @@ import DoubleLine from "../components/DoubleLine"
 import Carousel from "../components/Carousel"
 import Step from "../components/Step"
 import HeadingWithBody from "../components/HeadingWithBody"
-import CollapsableQuestion from "../components/Question"
+import { CollapsableQuestion } from "../components/Question"
 import { Panel, ExtendedPanel, NextPanel } from "../components/Panel"
 import InnerGridContainer from "../components/InnerGridContainer"
 

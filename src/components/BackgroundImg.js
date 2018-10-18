@@ -6,10 +6,7 @@ const BackgroundImg = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  ${({ src }) =>
-    css`
-      background-image: url(${src});
-    `};
+  background-image: ${({ src }) => `url(${src})`};
 `
 
 export default BackgroundImg

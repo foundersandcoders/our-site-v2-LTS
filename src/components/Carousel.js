@@ -1,39 +1,17 @@
-import React, { Component, Fragment } from "react"
+import React, { Component } from "react"
 import styled from "styled-components"
 import { breakpoint } from "../styles/utils"
 
 import stripey_small from "../assets/ui/stripey_small.svg"
 
 import { TESTIMONIAL_CAROUSEL, APPLICATION_CAROUSEL } from "../constants"
+import ApplicationsStatus from "./ApplicationsStatus"
 import HeadingWithBody from "./HeadingWithBody"
 import { mouseOnCarousel, mouseOff } from "./Cursor"
 import InnerGridContainer from "./InnerGridContainer"
 
-const _ApplicationsStatus = styled.section.attrs({
-  className: ({ areOpen }) =>
-    `pv3 left-0 bottom-0 absolute w-100 tc font-3 bg-${
-      areOpen ? "blue white" : "yellow black"
-    }`,
-})``
-
-const ApplicationsStatus = ({ areOpen }) => (
-  <_ApplicationsStatus areOpen={areOpen}>
-    {areOpen ? (
-      <Fragment>
-        Applications are now open!{" "}
-        <a className="underline pointer">APPLY HERE</a>
-      </Fragment>
-    ) : (
-      <Fragment>
-        Applications are currently closed. Please express interest{" "}
-        <a className="underline pointer">HERE</a>.
-      </Fragment>
-    )}
-  </_ApplicationsStatus>
-)
-
 const _OuterContainer = styled.div.attrs({
-  className: "relative db w-100 flex carousel",
+  className: "relative w-100 flex-ns carousel dn",
 })`
   background: url(${stripey_small}) repeat;
 
@@ -65,7 +43,7 @@ const _OuterContainer = styled.div.attrs({
   height: ${({ carouselWidth }) => carouselWidth};
 `
 const _OuterApplicationContainer = styled.div.attrs({
-  className: "relative db w-100 flex carousel",
+  className: "relative w-100 flex-ns carousel dn",
 })`
   height: ${({ carouselWidth }) => carouselWidth};
 `
@@ -117,12 +95,14 @@ class Carousel extends Component {
       carouselWidth,
       component,
       applicationsAreOpen,
+      className,
       title,
     } = this.props
     switch (type) {
       case TESTIMONIAL_CAROUSEL:
         return (
           <_OuterContainer
+            className={className}
             carouselWidth={carouselWidth}
             onMouseEnter={() => mouseOnCarousel(component)}
             onMouseLeave={() => mouseOff(component)}
@@ -137,6 +117,7 @@ class Carousel extends Component {
       case APPLICATION_CAROUSEL:
         return (
           <_OuterApplicationContainer
+            className={className}
             carouselWidth={carouselWidth}
             onMouseEnter={() => mouseOnCarousel(component)}
             onMouseLeave={() => mouseOff(component)}

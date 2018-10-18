@@ -2,7 +2,7 @@ import React from "react"
 import { SmallUnderline } from "./Text"
 
 const HeadingWithBody = ({ title, className = "", bgColour, children }) => (
-  <div className={className}>
+  <div className={`mh2 mh0-ns ${className}`}>
     <SmallUnderline bgColour={bgColour} className="mb2 mb0-ns">
       {title}
     </SmallUnderline>

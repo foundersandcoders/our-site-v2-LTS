@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { breakpoint } from "../styles/utils"
 
 import { MassiveUnderline, _Heading } from "./Text"
 
@@ -13,10 +14,17 @@ const Step = ({ step, title, colour, children }) => (
 
 const _Step = styled.div.attrs({
   className: ({ step }) =>
-    `flex flex-column justify-between pv4 ${step && "bt bb bw1 b--black-20"}`,
+    `flex flex-column ${
+      step ? "bt bb bw1 b--black-20 justify-between" : "justify-around"
+    } pv4`,
 })`
+  ${breakpoint.ns`
   width: 30vw;
   height: 60vh;
+`};
+
+  width: 90vw;
+  height: 90vh;
 `
 
 export default Step

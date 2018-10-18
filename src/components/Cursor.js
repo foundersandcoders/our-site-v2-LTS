@@ -50,10 +50,8 @@ const returnCursorImage = ({ cursor, colour }) => {
   return cursorImage[cursor][colour]
 }
 
-
-
 const _Cursor = styled.div.attrs({
-  className: "absolute z-999",
+  className: "absolute z-999 dn db-ns",
   style: ({ left, top }) => ({ left, top }),
 })`
   overflow: hidden;

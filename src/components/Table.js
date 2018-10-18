@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const _Table = styled.table.attrs({
-  className: "fw3 font-4 mb6",
+  className: "fw3 font-4 mb6 dn db-ns",
 })``
 
 const _HeaderCell = styled.th`
@@ -20,6 +20,7 @@ const _Cell = styled.td.attrs({
 `
 
 const Cell = ({ children }) => (
+  
   <_Cell>
     <p className="w-80">{children}</p>
   </_Cell>

@@ -2,24 +2,15 @@ import React from "react"
 import styled from "styled-components"
 import * as r from "ramda"
 
-const OffsetUnderline = styled.p.attrs({
+const OffsetUnderline = styled.span.attrs({
   className: ({ fontSize, fontWeight, colour }) =>
     `relative ${fontSize} ${fontWeight} ${colour} z-3`,
 })`
-  height: fit-content;
-  width: fit-content;
-
-  &:after {
-    position: absolute;
-    content: "";
-    height: ${({ underlineWidth }) => underlineWidth};
-    z-index: -1;
-    bottom: ${({ underlineWidth, bottom }) =>
-      bottom ? bottom : underlineWidth};
-    left: 0;
-    width: 100%;
-    background: ${({ underlineColour }) => `var(--${underlineColour})`};
-  }
+  background-image: ${({ underlineColour }) =>
+    `linear-gradient(to right, var(--${underlineColour}) 0%, var(--${underlineColour}) 100%)`};
+  background-repeat: repeat-x;
+  background-position: 0 90%;
+  background-size: ${({ underlineWidth }) => `100% ${underlineWidth}`};
 `
 
 const SmallUnderline = ({ children, bgColour, className }) => (
@@ -57,7 +48,7 @@ const BigUnderline = ({ children }) => (
       <OffsetUnderline
         underlineColour="yellow"
         underlineWidth="8px"
-        fontSize="subheadline"
+        fontSize="subheadline-ns font-2"
         fontWeight="fw5"
       >
         {children}
@@ -69,7 +60,7 @@ const BigUnderline = ({ children }) => (
             key={text}
             underlineColour="yellow"
             underlineWidth="8px"
-            fontSize="subheadline"
+            fontSize="subheadline-ns font-2"
             fontWeight="fw5"
           >
             {text}
