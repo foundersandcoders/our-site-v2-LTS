@@ -45,8 +45,8 @@ class StoriesPage extends Component {
       <Layout>
         <Cursor cursor={cursor} colour="green" />
         <main>
-          <Panel justify="end" className="mt7 mb6">
-            <div className="w-75">
+          <Panel justify="center justify-end-ns" className="mt7 mb6-ns mb5">
+            <div className="w-75-ns w-90">
               <BigUnderline>Stories by and about us</BigUnderline>
             </div>
           </Panel>

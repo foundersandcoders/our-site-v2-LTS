@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react"
 import styled from "styled-components"
 
 import link_arrow_button from "../assets/ui/link_arrow_button.svg"
@@ -14,12 +14,48 @@ import DoubleLine from "../components/DoubleLine"
 import Carousel from "../components/Carousel"
 import Step from "../components/Step"
 import HeadingWithBody from "../components/HeadingWithBody"
-import { CollapsableQuestion } from "../components/Question"
+import { CollapsableQuestion, QuestionWrapper } from "../components/Question"
 import { Panel, ExtendedPanel, NextPanel } from "../components/Panel"
 import InnerGridContainer from "../components/InnerGridContainer"
 
+const TechforBetterSteps = () => (
+  <Fragment>
+    <Step
+      step="01"
+      colour="yellow"
+      title="Step 1: Introductory workshop (2 hours)"
+    >
+      Start by defining your challenge, describing your users, and identifying
+      their needs. Finish up by preparing a user survey, which you will conduct
+      over the following week.
+    </Step>
+    <Step
+      step="02"
+      colour="green"
+      title="Step 2: Definition workshop (2 hours)"
+    >
+      Recap the results of the user survey and redefine the problem, identify a
+      specific user journey that addresses that problem, and begin the design
+      process with some paper prototyping.
+    </Step>
+    <Step
+      step="03"
+      colour="red"
+      title="Step 3: Product owner workshop (2 hours)"
+    >
+      Explore your role as a product owner and familiarise yourself with project
+      management tools and the application development process. End by creating
+      a series of user stories which can form the basis of your app.
+    </Step>
+    <Step step="04" colour="blue" title="Development (3-4 weeks)">
+      At this point, we are ready to schedule product development! A team of 2-4
+      developers will work with you to build a mobile web app that can be tested
+      with users and form the basis of applications for further funding.
+    </Step>
+  </Fragment>
+)
 const Splash = styled.img.attrs({
-  className: "w-100 mv7 pt5 pb6",
+  className: "w-90 w-100-ns mv7-ns pt5-ns pt4 pb6-ns pb5 mh2 mh0-ns",
 })``
 
 const _Link = styled.a.attrs({
@@ -31,7 +67,7 @@ const Button = styled.button.attrs({
 })``
 
 const CaseStudy = ({ title, url, children }) => (
-  <div className="flex flex-column justify-between font-4 mb5">
+  <div className="flex flex-column justify-between font-4 mb5-ns mb3">
     <_SubHeading className="mb1">{title}</_SubHeading>
     {children}
     <_Link href={url} className="mt1">
@@ -53,16 +89,20 @@ class TechForBetterPage extends Component {
         <Cursor cursor={cursor} colour="blue" />
         <main>
           <InnerGridContainer>
-            <Panel justify="end">
-              <_BigText className="pt5 w-75">
+            <Panel justify="center justify-end-ns">
+              <_BigText className="pt5 ph1 ph0-ns w-100 w-75-ns">
                 Tech for Better Programme
               </_BigText>
             </Panel>
             <DoubleLine colour="yellow" />
-            <Panel justify="end" className="mt7 mb6">
-              <div className="w-75">
-                <BigUnderline>Your ideas can make the</BigUnderline>
-                <BigUnderline>world a better place.</BigUnderline>
+            <Panel
+              justify="center justify-end-ns"
+              className="mb6-ns mb5 mh2 mh0-ns"
+            >
+              <div className="w-75-ns">
+                <BigUnderline>
+                  Your ideas can make the world a better place.
+                </BigUnderline>
               </div>
             </Panel>
             <HeadingWithBody title="Overview">
@@ -74,146 +114,114 @@ class TechForBetterPage extends Component {
             </HeadingWithBody>
             <Splash src={tech_for_better_splash} />
           </InnerGridContainer>
-          <ExtendedPanel className="bg-light-gray mb7">
+          <ExtendedPanel className="bg-light-gray mb7-ns dn db-ns">
             <Carousel
               title="How does it work?"
               carouselWidth="200vw"
               type={APPLICATION_CAROUSEL}
               component={this}
-            >
-              <Step
-                step="01"
-                colour="yellow"
-                title="Step 1: Introductory workshop (2 hours)"
-              >
-                Start by defining your challenge, describing your users, and
-                identifying their needs. Finish up by preparing a user survey,
-                which you will conduct over the following week.
-              </Step>
-              <Step
-                step="02"
-                colour="green"
-                title="Step 2: Definition workshop (2 hours)"
-              >
-                Recap the results of the user survey and redefine the problem,
-                identify a specific user journey that addresses that problem,
-                and begin the design process with some paper prototyping.
-              </Step>
-              <Step
-                step="03"
-                colour="red"
-                title="Step 3: Product owner workshop (2 hours)"
-              >
-                Explore your role as a product owner and familiarise yourself
-                with project management tools and the application development
-                process. End by creating a series of user stories which can form
-                the basis of your app.
-              </Step>
-              <Step step="04" colour="blue" title="Development (3-4 weeks)">
-                At this point, we are ready to schedule product development! A
-                team of 2-4 developers will work with you to build a mobile web
-                app that can be tested with users and form the basis of
-                applications for further funding.
-              </Step>
-            </Carousel>
+            />
+            <TechforBetterSteps />
           </ExtendedPanel>
-          <InnerGridContainer>
-            <HeadingWithBody title="More information" className="mb7 pb4">
-              <div>
-                <div className="flex">
-                  <CollapsableQuestion
-                    question="How will this programme benefit me?"
-                    colour="yellow"
-                  >
-                    <p>
-                      Each course runs for sixteen weeks at Space4 in Finsbury
-                      Park,
-                      <span className="fw5">
-                        {" "}
-                        five days a week from 10:00 to 18:00.{" "}
-                      </span>
-                      We do not offer part-time or remote courses.
-                    </p>
-                  </CollapsableQuestion>
-                  <CollapsableQuestion
-                    question="What is the total time commitment required of me?"
-                    colour="green"
-                  >
-                    <p>
-                      Each course runs for sixteen weeks at Space4 in Finsbury
-                      Park,
-                      <span className="fw5">
-                        {" "}
-                        five days a week from 10:00 to 18:00.{" "}
-                      </span>
-                      We do not offer part-time or remote courses.
-                    </p>
-                  </CollapsableQuestion>
-                </div>
-
-                <div className="flex">
-                  <CollapsableQuestion
-                    question="What if I want to continue development after the programme ends?"
-                    colour="blue"
-                  >
-                    <p>
-                      Each course runs for sixteen weeks at Space4 in Finsbury
-                      Park,
-                      <span className="fw5">
-                        {" "}
-                        five days a week from 10:00 to 18:00.{" "}
-                      </span>
-                      We do not offer part-time or remote courses.
-                    </p>
-                  </CollapsableQuestion>
-                  <CollapsableQuestion
-                    question="Why are you running this programme?"
-                    colour="red"
-                  >
-                    <p>
-                      Each course runs for sixteen weeks at Space4 in Finsbury
-                      Park,
-                      <span className="fw5">
-                        {" "}
-                        five days a week from 10:00 to 18:00.{" "}
-                      </span>
-                      We do not offer part-time or remote courses.
-                    </p>
-                  </CollapsableQuestion>
-                </div>
-                <div className="flex">
-                  <CollapsableQuestion
-                    question="What is a 'web app'?"
-                    colour="green"
-                  >
-                    <p>
-                      Each course runs for sixteen weeks at Space4 in Finsbury
-                      Park,
-                      <span className="fw5">
-                        {" "}
-                        five days a week from 10:00 to 18:00.{" "}
-                      </span>
-                      We do not offer part-time or remote courses.
-                    </p>
-                  </CollapsableQuestion>
-                  <CollapsableQuestion
-                    question="What sorts of apps do you build?"
-                    colour="yellow"
-                  >
-                    <p>
-                      Each course runs for sixteen weeks at Space4 in Finsbury
-                      Park,
-                      <span className="fw5">
-                        {" "}
-                        five days a week from 10:00 to 18:00.{" "}
-                      </span>
-                      We do not offer part-time or remote courses.
-                    </p>
-                  </CollapsableQuestion>
-                </div>
-              </div>
+          <div className="bg-light-gray mb5">
+            <HeadingWithBody
+              title="How do I apply?"
+              className="db dn-ns bg-light-gray pv6"
+            >
+              <TechforBetterSteps />
             </HeadingWithBody>
-            <HeadingWithBody title="Case studies">
+          </div>
+          <InnerGridContainer>
+            <HeadingWithBody title="More information" className="mb7-ns pb4-ns">
+              <QuestionWrapper>
+                <CollapsableQuestion
+                  question="How will this programme benefit me?"
+                  colour="yellow"
+                >
+                  <p>
+                    Each course runs for sixteen weeks at Space4 in Finsbury
+                    Park,
+                    <span className="fw5">
+                      {" "}
+                      five days a week from 10:00 to 18:00.{" "}
+                    </span>
+                    We do not offer part-time or remote courses.
+                  </p>
+                </CollapsableQuestion>
+                <CollapsableQuestion
+                  question="What is the total time commitment required of me?"
+                  colour="green"
+                >
+                  <p>
+                    Each course runs for sixteen weeks at Space4 in Finsbury
+                    Park,
+                    <span className="fw5">
+                      {" "}
+                      five days a week from 10:00 to 18:00.{" "}
+                    </span>
+                    We do not offer part-time or remote courses.
+                  </p>
+                </CollapsableQuestion>
+
+                <CollapsableQuestion
+                  question="What if I want to continue development after the programme ends?"
+                  colour="blue"
+                >
+                  <p>
+                    Each course runs for sixteen weeks at Space4 in Finsbury
+                    Park,
+                    <span className="fw5">
+                      {" "}
+                      five days a week from 10:00 to 18:00.{" "}
+                    </span>
+                    We do not offer part-time or remote courses.
+                  </p>
+                </CollapsableQuestion>
+                <CollapsableQuestion
+                  question="Why are you running this programme?"
+                  colour="red"
+                >
+                  <p>
+                    Each course runs for sixteen weeks at Space4 in Finsbury
+                    Park,
+                    <span className="fw5">
+                      {" "}
+                      five days a week from 10:00 to 18:00.{" "}
+                    </span>
+                    We do not offer part-time or remote courses.
+                  </p>
+                </CollapsableQuestion>
+                <CollapsableQuestion
+                  question="What is a 'web app'?"
+                  colour="green"
+                >
+                  <p>
+                    Each course runs for sixteen weeks at Space4 in Finsbury
+                    Park,
+                    <span className="fw5">
+                      {" "}
+                      five days a week from 10:00 to 18:00.{" "}
+                    </span>
+                    We do not offer part-time or remote courses.
+                  </p>
+                </CollapsableQuestion>
+                <CollapsableQuestion
+                  question="What sorts of apps do you build?"
+                  colour="yellow"
+                >
+                  <p>
+                    Each course runs for sixteen weeks at Space4 in Finsbury
+                    Park,
+                    <span className="fw5">
+                      {" "}
+                      five days a week from 10:00 to 18:00.{" "}
+                    </span>
+                    We do not offer part-time or remote courses.
+                  </p>
+                </CollapsableQuestion>
+              </QuestionWrapper>
+            </HeadingWithBody>
+            <HeadingWithBody title="Case studies" className="mb3 mb0-ns">
               <CaseStudy
                 title="Breathe With Me (Anna Freud Centre, 2016)"
                 url="/"

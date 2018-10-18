@@ -10,6 +10,7 @@ import HeadingWithBody from "../components/HeadingWithBody"
 import DoubleLine from "../components/DoubleLine"
 import { Cursor } from "../components/Cursor"
 import FlickityCarousel from "../components/FlickityCarousel"
+import { breakpoint } from "../styles/utils"
 import BackgroundImg from "../components/BackgroundImg"
 import InnerGridContainer from "../components/InnerGridContainer"
 
@@ -17,10 +18,12 @@ import hireSplash from "../assets/splashes/home_splash.png"
 import quotemarks from "../assets/icons/quotemarks.svg"
 import night_zoo_keeper from "../assets/logos/night-zoo-keeper.png"
 
-const PartnerLogo = styled(BackgroundImg).attrs({ className: "h5 w5 mt4" })``
+const PartnerLogo = styled(BackgroundImg).attrs({
+  className: "h5 w5 mt4-ns mt0",
+})``
 
 const SplashImg = ({ src }) => (
-  <BackgroundImg src={src} width="1280px" height="750px" />
+  <BackgroundImg src={src} height="calc(10rem + 25vw)" width="100%" />
 )
 
 const Text = styled.p.attrs({
@@ -31,21 +34,25 @@ const Text = styled.p.attrs({
 
 const NameAndCompany = ({ firstName, secondName, company, className }) => (
   <div className={className}>
-    <Text font="ttu fw5 font-1">{firstName}</Text>
-    <Text font="ttu fw5 font-1">{secondName}</Text>
-    <Text font="font-5">{company}</Text>
+    <Text font="ttu fw5 font-1-ns font-3">{firstName}</Text>
+    <Text font="ttu fw5 font-1-ns font-3">{secondName}</Text>
+    <Text font="font-5-ns font-6">{company}</Text>
   </div>
 )
 
 const _NameAndCompany = styled(NameAndCompany).attrs({
   className: "absolute flex items-end flex-column",
 })`
-  bottom: -72px;
+  ${breakpoint.ns`
+ bottom: -72px;
   right: -166px;
+`};
+  bottom: -80px;
+  right: 0;
 `
 
 const QuoteSlideContainer = styled.div.attrs({
-  className: "bg-white mt6 ph3 pv2 tc font-3 i",
+  className: "bg-white mt6 ph3 pv2 tc font-3-ns font-4 i",
 })`
   margin-bottom: 152px;
 `
@@ -59,8 +66,8 @@ const QuoteImg = styled(BackgroundImg).attrs({
 `
 
 const QuoteSlide = ({ quote, firstName, secondName, company }) => (
-  <div className="w-100">
-    <div className="w-33 relative center bg-white">
+  <div className="w-100-ns w-90 mh2 mh0-ns">
+    <div className="w-33-ns w-90 relative center bg-white">
       <QuoteImg src={quotemarks} />
       <QuoteSlideContainer>{quote}</QuoteSlideContainer>
       <_NameAndCompany
@@ -83,8 +90,8 @@ class HirePage extends Component {
       <Layout>
         <Cursor cursor={cursor} colour="green" />
         <InnerGridContainer>
-          <Panel justify="end" className="mt7 mb6">
-            <div className="w-75">
+          <Panel justify="center justify-end-ns" className="mt7 mb6-ns mb5">
+            <div className="w-75-ns">
               <BigUnderline>Hire our graduates</BigUnderline>
             </div>
           </Panel>
@@ -96,7 +103,7 @@ class HirePage extends Component {
             a good fit? Fill out this short form.
           </HeadingWithBody>
           <DoubleLine colour="red" />
-          <section className="mb7 pb5">
+          <section className="mb7 pb5 mh2 mh0-ns">
             <FlickityCarousel
               options={{
                 pageDots: true,
@@ -127,6 +134,42 @@ class HirePage extends Component {
               company="Unruly"
             />
             <QuoteSlide
+              quote="Blah vlasalkdjlkj"
+              firstName="Vinny"
+              secondName="Marino"
+              company="Unruly"
+            />
+            <QuoteSlide
+              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
+              firstName="Vinny"
+              secondName="Marino"
+              company="Unruly"
+            />
+            <QuoteSlide
+              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
+              firstName="Vinny"
+              secondName="Marino"
+              company="Unruly"
+            />
+            <QuoteSlide
+              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
+              firstName="Vinny"
+              secondName="Marino"
+              company="Unruly"
+            />
+            <QuoteSlide
+              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
+              firstName="Vinny"
+              secondName="Marino"
+              company="Unruly"
+            />
+            <QuoteSlide
+              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
+              firstName="Vinny"
+              secondName="Marino"
+              company="Unruly"
+            />
+            <QuoteSlide
               quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
               firstName="Vinny"
               secondName="Marino"
@@ -140,7 +183,7 @@ class HirePage extends Component {
             />
           </FlickityCarousel>
         </section>
-        <section className="mb7 pb5">
+        <section className="mb7 pb5-ns pb0">
           <FlickityCarousel
             options={{
               initialIndex: 4,
