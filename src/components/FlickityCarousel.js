@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 import * as r from "ramda"
+import { mouseOff, mouseOnHide } from "./Cursor"
 
 const FlickityContainer = styled.div`
   width: ${({ width }) => width};
@@ -19,7 +20,7 @@ class FlickityCarousel extends Component {
   componentDidMount = () => {
     const { children, changeCaption, ApplyCarousel } = this.props
     if (ApplyCarousel) {
-      const captions = r.map(r.view(r.lensPath(["props", "name"])), children)
+      const captions = r.map(r.view(r.lensPath(["props", "caption"])), children)
       this.flkty.on("dragEnd", () => {
         changeCaption(captions[this.flkty.selectedIndex])
       })
@@ -28,10 +29,24 @@ class FlickityCarousel extends Component {
 
   render() {
     const { Flickity } = this.state
-    const { children, options, className, width, height } = this.props
+    const {
+      children,
+      options,
+      className,
+      width,
+      height,
+      component,
+      hideCursor,
+    } = this.props
 
     return (
-      <FlickityContainer className={className} width={width} height={height}>
+      <FlickityContainer
+        onMouseEnter={() => hideCursor && mouseOnHide(component)}
+        onMouseLeave={() => hideCursor && mouseOff(component)}
+        className={className}
+        width={width}
+        height={height}
+      >
         {Flickity && (
           <Flickity
             flickityRef={c => (this.flkty = c)}
