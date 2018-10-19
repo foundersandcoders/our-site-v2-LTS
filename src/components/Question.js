@@ -92,7 +92,15 @@ class CollapsableQuestion extends Component {
   }
 }
 
-const QuestionWrapper = styled.section.attrs({ className: "flex flex-wrap" })``
+const QuestionWrapper = styled.section.attrs({
+  className: "flex flex-wrap",
+})`
+  ${({ hideNS }) =>
+    hideNS &&
+    breakpoint.ns`
+  display: none;
+  `};
+`
 const colourToCornerIcon = colour => {
   switch (colour) {
     case "yellow":

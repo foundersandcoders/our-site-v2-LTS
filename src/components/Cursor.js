@@ -1,5 +1,10 @@
 import React, { Component } from "react"
-import { NEXT_CURSOR, DOWN_CURSOR, RIGHT_CURSOR } from "../constants"
+import {
+  NEXT_CURSOR,
+  DOWN_CURSOR,
+  RIGHT_CURSOR,
+  HIDE_CURSOR,
+} from "../constants"
 
 import styled from "styled-components"
 
@@ -29,6 +34,12 @@ const mouseOnCarousel = component => {
   })
 }
 
+const mouseOnHide = component => {
+  component.setState({
+    cursor: HIDE_CURSOR,
+  })
+}
+
 const returnCursorImage = ({ cursor, colour }) => {
   const cursorImage = {
     [DOWN_CURSOR]: {
@@ -51,7 +62,7 @@ const returnCursorImage = ({ cursor, colour }) => {
 }
 
 const _Cursor = styled.div.attrs({
-  className: "absolute z-999 dn db-ns",
+  className: ({ hide }) => `absolute z-999 dn ${!hide && "db-ns"}`,
   style: ({ left, top }) => ({ left, top }),
 })`
   overflow: hidden;
@@ -61,7 +72,7 @@ const _Cursor = styled.div.attrs({
   opacity: ${({ scrolling }) => (scrolling ? "0" : "1")};
   transition: opacity 0.3s;
   background: url(${({ cursor, colour }) =>
-      returnCursorImage({ cursor, colour })})
+      cursor !== HIDE_CURSOR && returnCursorImage({ cursor, colour })})
     center bottom no-repeat;
   background-size: contain;
   pointer-events: none;
@@ -125,9 +136,10 @@ class Cursor extends Component {
         cursor={cursor}
         colour={colour}
         scrolling={scrolling ? "scrolling" : undefined}
+        hide={cursor === HIDE_CURSOR}
       />
     )
   }
 }
 
-export { Cursor, mouseOnCarousel, mouseOnNext, mouseOff }
+export { Cursor, mouseOnCarousel, mouseOnNext, mouseOff, mouseOnHide }
