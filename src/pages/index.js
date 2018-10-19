@@ -2,7 +2,11 @@ import React, { Component } from "react"
 import styled from "styled-components"
 
 import home_splash from "../assets/splashes/home_splash.png"
-import night_zoo_keeper from "../assets/logos/night-zoo-keeper.png"
+import dwyl from "../assets/logos/dwyl_grayscale.png"
+import gaza_sky_geeks from "../assets/logos/gaza_sky_geeks_grayscale.png"
+import outlandish from "../assets/logos/outlandish_grayscale.png"
+import cotech from "../assets/logos/cotech_grayscale.png"
+import infact from "../assets/logos/infact_grayscale.png"
 
 import { TESTIMONIAL_CAROUSEL, DOWN_CURSOR } from "../constants"
 
@@ -12,7 +16,7 @@ import HeadingBody from "../components/HeadingWithBody"
 import { Panel, NextPanel } from "../components/Panel"
 import Carousel from "../components/Carousel"
 import { Cursor } from "../components/Cursor"
-import { Bez } from "../components/Card"
+import { Amelie, Helen, Owen, Ruth, Fatimat } from "../components/Card"
 import DoubleLine from "../components/DoubleLine"
 import { breakpoint } from "../styles/utils"
 
@@ -31,7 +35,8 @@ const Splash = styled.img.attrs({
 `
 
 const PartnerLogo = styled(BackgroundImg).attrs({
-  className: "h5 w5 mt4-ns mt0",
+  className: "h5 w5 mt4-ns mh4-ns mt0",
+  bgSize: "contain",
 })``
 
 class IndexPage extends Component {
@@ -57,8 +62,9 @@ class IndexPage extends Component {
               Founders and Coders CIC is a UK-based nonprofit that develops and
               runs tuition-free, peer-led training programmes in web
               development, guided by our core values of cooperation, inclusion
-              and social impact. We proudly collaborate with Mercy Corps and the
-              UK government to deliver programmes in the Middle East and Africa.
+              and social impact. We operate in London and work with Mercy Corps
+              and the UK government to deliver programmes in the Middle East and
+              Africa.
             </HeadingBody>
           </InnerGridContainer>
 
@@ -77,27 +83,29 @@ class IndexPage extends Component {
                 wrapAround: true,
               }}
             >
-              <PartnerLogo src={night_zoo_keeper} />
-              <PartnerLogo src={night_zoo_keeper} />
-              <PartnerLogo src={night_zoo_keeper} />
-              <PartnerLogo src={night_zoo_keeper} />
-              <PartnerLogo src={night_zoo_keeper} />
-              <PartnerLogo src={night_zoo_keeper} />
-              <PartnerLogo src={night_zoo_keeper} />
-              <PartnerLogo src={night_zoo_keeper} />
-              <PartnerLogo src={night_zoo_keeper} />
+              <PartnerLogo src={dwyl} />
+              <PartnerLogo src={infact} />
+              <PartnerLogo src={outlandish} />
+              <PartnerLogo src={cotech} />
+              <PartnerLogo src={gaza_sky_geeks} />
+              <PartnerLogo src={dwyl} />
+              <PartnerLogo src={infact} />
+              <PartnerLogo src={outlandish} />
+              <PartnerLogo src={cotech} />
+              <PartnerLogo src={gaza_sky_geeks} />
             </FlickityCarousel>
           </section>
 
           <Carousel
             type={TESTIMONIAL_CAROUSEL}
-            carouselWidth="220vw"
+            carouselWidth="300vw"
             component={this}
           >
-            <Bez />
-            <Bez />
-            <Bez />
-            <Bez />
+            <Amelie />
+            <Helen />
+            <Owen />
+            <Ruth />
+            <Fatimat />
           </Carousel>
           <NextPanel component={this} to="/about">
             What is Founders and Coders?

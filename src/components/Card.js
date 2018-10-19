@@ -119,4 +119,59 @@ const Bez = () => (
   />
 )
 
-export { Card, Dan, Ines, Bez }
+const Amelie = () => (
+  <Card
+    firstName="Amelie"
+    secondName="Chan"
+    title="FAC cohort #11"
+    img={bez}
+    width="50vw"
+    height="80vh"
+    quote="“Because Founders and Coders is founded on the idea of peer-led learning, it stimulates an environment of support and mutual growth, which results in what feels like a very special community: a safe, creative space, where no question is too silly to ask and no idea is too bold to suggest.”"
+  />
+)
+const Helen = () => (
+  <Card
+    firstName="Helen"
+    secondName="Zhou"
+    title="FAC cohort #13"
+    img={bez}
+    width="50vw"
+    height="80vh"
+    quote="“Founders and Coders gave me the confidence to, given time and perseverance, grasp complex concepts which initially seemed daunting. I learned how to walk through code thoroughly and truly understand it in order to solve bugs and errors. And I discovered the joys of paired programming - that learning or tackling a problem together can be one of the most rewarding experiences. ”"
+  />
+)
+const Owen = () => (
+  <Card
+    firstName="Owen"
+    secondName="Turner-Major"
+    title="FAC cohort #7"
+    img={bez}
+    width="50vw"
+    height="80vh"
+    quote="“The constant focus on pairing and working together means that you're never stuck banging your head against a wall by yourself. You always have someone else to work through the problem with you. After leaving Founders and Coders, I had a lot of faith in my own ability to learn new technologies, which was crucial when I founded my startup, Fat Llama. ”"
+  />
+)
+const Ruth = () => (
+  <Card
+    firstName="Ruth"
+    secondName="Uwedenimo"
+    title="FAC cohort #6"
+    img={bez}
+    width="50vw"
+    height="80vh"
+    quote="“The best part of my experience with Founders and Coders are the people. It is a great community, with members of past cohorts teaching the current cohort. Everyone supports each other in their learning and wants to give back. ”"
+  />
+)
+const Fatimat = () => (
+  <Card
+    firstName="Fatimat"
+    secondName="Gbajabiamila"
+    title="FAC cohort #12"
+    img={bez}
+    width="50vw"
+    height="80vh"
+    quote="“Joe, our commercial manager, was supportive during and after Founders and Coders. Everybody's situation is different, which Joe recognizes and takes it into account when advising us. He listened to my concerns about working in the industry and paid attention to the kind of environment I wanted to work in, which helped him place me with my current employer, 27Partners.”"
+  />
+)
+export { Card, Dan, Ines, Bez, Amelie, Helen, Owen, Ruth, Fatimat }
