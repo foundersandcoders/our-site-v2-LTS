@@ -38,8 +38,8 @@ const _OuterContainer = styled.div.attrs({
     100% 3%,
     100% 100%
   );
-  
-  `} background-attachment: fixed;
+  padding-top: 15%;
+  background-attachment: fixed;
   height: ${({ carouselWidth }) => carouselWidth};
 `
 const _OuterApplicationContainer = styled.div.attrs({
@@ -50,21 +50,22 @@ const _OuterApplicationContainer = styled.div.attrs({
 const _InnerContainer = styled.div.attrs({
   className: "sticky w-100 overflow-hidden top-0",
 })`
-  padding-top: 11rem;
   height: 100vh;
 `
 const _InnerApplicationContainer = styled.div.attrs({
   className: "sticky w-100 overflow-hidden top-0 flex justify-between",
 })`
-  padding-top: 11rem;
   height: 100vh;
 `
 
 const _Carousel = styled.section.attrs({
-  className: "flex relative items-center justify-between w-75",
-  style: ({ scrollY }) => ({ transform: `translateX(${0.1 * scrollY}vw)` }),
+  className: "flex relative items-center justify-around w-75",
+  style: ({ scrollY }) => ({
+    transform: `translate(${0.1 * scrollY}vw, -50%)`,
+  }),
 })`
   z-index: -1;
+  top: 50%;
   will-change: transform;
   width: ${({ carouselWidth }) => carouselWidth};
 `
