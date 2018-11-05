@@ -12,6 +12,7 @@ import twitter_logo_white from "../assets/logos/twitter_logo_white.svg"
 import { OffsetUnderlineText, _BigText } from "./Text"
 import { mouseOnNext, mouseOff } from "./Cursor"
 import InnerGridContainer from "./InnerGridContainer"
+import { breakpoint } from "../styles/utils"
 
 const _Footer = styled.div.attrs({
   className:
@@ -81,6 +82,9 @@ const PanelTopBorder = styled.div.attrs({
   className: "h4 w-100",
 })`
   background: url(${stripey_small}) repeat;
+
+  clip-path: polygon(0 100%, 0 75%, 25% 0, 50% 75%, 75% 0, 100% 75%, 100% 100%);
+  ${breakpoint.ns`
   clip-path: polygon(
     0 100%,
     0 45%,
@@ -101,7 +105,8 @@ const PanelTopBorder = styled.div.attrs({
     100% 70%,
     100% 100%
   );
-  background-attachment: fixed;
+  
+  `} background-attachment: fixed;
 `
 const NextPanel = ({ component, to, children, topBorder }) => (
   <div>

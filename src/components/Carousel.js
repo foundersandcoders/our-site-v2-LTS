@@ -1,39 +1,17 @@
-import React, { Component, Fragment } from "react"
+import React, { Component } from "react"
 import styled from "styled-components"
 import { breakpoint } from "../styles/utils"
 
 import stripey_small from "../assets/ui/stripey_small.svg"
 
 import { TESTIMONIAL_CAROUSEL, APPLICATION_CAROUSEL } from "../constants"
+import ApplicationsStatus from "./ApplicationsStatus"
 import HeadingWithBody from "./HeadingWithBody"
 import { mouseOnCarousel, mouseOff } from "./Cursor"
 import InnerGridContainer from "./InnerGridContainer"
 
-const _ApplicationsStatus = styled.section.attrs({
-  className: ({ areOpen }) =>
-    `pv3 left-0 bottom-0 absolute w-100 tc font-3 bg-${
-      areOpen ? "blue white" : "yellow black"
-    }`,
-})``
-
-const ApplicationsStatus = ({ areOpen }) => (
-  <_ApplicationsStatus areOpen={areOpen}>
-    {areOpen ? (
-      <Fragment>
-        Applications are now open!{" "}
-        <a className="underline pointer">APPLY HERE</a>
-      </Fragment>
-    ) : (
-      <Fragment>
-        Applications are currently closed. Please express interest{" "}
-        <a className="underline pointer">HERE</a>.
-      </Fragment>
-    )}
-  </_ApplicationsStatus>
-)
-
 const _OuterContainer = styled.div.attrs({
-  className: "relative db w-100 flex carousel",
+  className: "relative w-100 flex-ns carousel dn",
 })`
   background: url(${stripey_small}) repeat;
 
@@ -60,33 +38,36 @@ const _OuterContainer = styled.div.attrs({
     100% 3%,
     100% 100%
   );
-  
-  `} background-attachment: fixed;
+  padding-top: 15%;
+  background-attachment: fixed;
   height: ${({ carouselWidth }) => carouselWidth};
+`};
 `
+
 const _OuterApplicationContainer = styled.div.attrs({
-  className: "relative db w-100 flex carousel",
+  className: "relative w-100 flex-ns carousel dn",
 })`
   height: ${({ carouselWidth }) => carouselWidth};
 `
 const _InnerContainer = styled.div.attrs({
   className: "sticky w-100 overflow-hidden top-0",
 })`
-  padding-top: 11rem;
   height: 100vh;
 `
 const _InnerApplicationContainer = styled.div.attrs({
   className: "sticky w-100 overflow-hidden top-0 flex justify-between",
 })`
-  padding-top: 11rem;
   height: 100vh;
 `
 
 const _Carousel = styled.section.attrs({
   className: "flex relative items-center justify-around w-75",
-  style: ({ scrollY }) => ({ transform: `translateX(${0.1 * scrollY}vw)` }),
+  style: ({ scrollY }) => ({
+    transform: `translate(${0.1 * scrollY}vw, -50%)`,
+  }),
 })`
   z-index: -1;
+  top: 50%;
   will-change: transform;
   width: ${({ carouselWidth }) => carouselWidth};
 `
@@ -117,12 +98,14 @@ class Carousel extends Component {
       carouselWidth,
       component,
       applicationsAreOpen,
+      className,
       title,
     } = this.props
     switch (type) {
       case TESTIMONIAL_CAROUSEL:
         return (
           <_OuterContainer
+            className={className}
             carouselWidth={carouselWidth}
             onMouseEnter={() => mouseOnCarousel(component)}
             onMouseLeave={() => mouseOff(component)}
@@ -137,6 +120,7 @@ class Carousel extends Component {
       case APPLICATION_CAROUSEL:
         return (
           <_OuterApplicationContainer
+            className={className}
             carouselWidth={carouselWidth}
             onMouseEnter={() => mouseOnCarousel(component)}
             onMouseLeave={() => mouseOff(component)}
