@@ -98,7 +98,7 @@ class IndexPage extends Component {
 
           <Carousel
             type={TESTIMONIAL_CAROUSEL}
-            carouselWidth="300vw"
+            carouselWidth="350vw"
             component={this}
           >
             <Amelie />

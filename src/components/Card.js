@@ -42,10 +42,11 @@ const Container = styled.div.attrs({
   width: ${({ cardWidth: { s: cardWidth } }) => cardWidth};
 `
 
-const Title = ({ firstName, secondName, title }) => (
+const Title = ({ firstName, secondName, thirdName, title }) => (
   <TextContainer>
-    <Text font="ttu fw5 subheadline-ns font-3">{firstName}</Text>
-    <Text font="ttu fw5 subheadline-ns font-3">{secondName}</Text>
+    <Text font="ttu fw5 font-1-ns font-3">{firstName}</Text>
+    <Text font="ttu fw5 font-1-ns font-3">{secondName}</Text>
+    {thirdName && <Text font="ttu fw5 font-1-ns font-3">{thirdName}</Text>}
     <Text font="font-5 gray">{title}</Text>
   </TextContainer>
 )
@@ -62,7 +63,7 @@ const TextContainer = styled.div.attrs({
 })``
 
 const Quote = styled.div.attrs({
-  className: "absolute right-0 top-2 i font-3 ph3 pt3 pb2 bg-white",
+  className: "absolute right-0 top-2 i font-4 ph3 pt3 pb2 bg-white",
 })`
   width: 50%;
   letter-spacing: 0;
@@ -71,6 +72,7 @@ const Quote = styled.div.attrs({
 const Card = ({
   firstName,
   secondName,
+  thirdName,
   title,
   img,
   imgHeight,
@@ -79,7 +81,12 @@ const Card = ({
   quote,
 }) => (
   <Container cardWidth={cardWidth} cardHeight={cardHeight}>
-    <Title firstName={firstName} secondName={secondName} title={title} />
+    <Title
+      firstName={firstName}
+      secondName={secondName}
+      thirdName={thirdName}
+      title={title}
+    />
     <_Photo src={img} imgHeight={imgHeight} />
     {quote ? <Quote>{quote}</Quote> : <div />}
   </Container>
@@ -113,8 +120,8 @@ const Bez = () => (
     secondName="Hoxhaj"
     title="FAC cohort #2"
     img={bez}
-    cardWidth="50vw"
-    cardHeight="80vh"
+    cardWidth={{ l: "50vw", m: "70vw", s: "90vw" }}
+    cardHeight={{ l: "80vh", m: "50vh", s: "30vh" }}
     quote="“The most valuable thing I’ve taken away from the course is the community. 100%. On a personal level it helped me find a real sense of purpose when I needed one, brought on by the amount of people that have worked so hard and how much energy has been invested in it to keep it going.”"
   />
 )
@@ -125,8 +132,8 @@ const Amelie = () => (
     secondName="Chan"
     title="FAC cohort #11"
     img={bez}
-    width="50vw"
-    height="80vh"
+    cardWidth={{ l: "50vw", m: "70vw", s: "90vw" }}
+    cardHeight={{ l: "80vh", m: "50vh", s: "30vh" }}
     quote="“Because Founders and Coders is founded on the idea of peer-led learning, it stimulates an environment of support and mutual growth, which results in what feels like a very special community: a safe, creative space, where no question is too silly to ask and no idea is too bold to suggest.”"
   />
 )
@@ -136,19 +143,20 @@ const Helen = () => (
     secondName="Zhou"
     title="FAC cohort #13"
     img={bez}
-    width="50vw"
-    height="80vh"
+    cardWidth={{ l: "50vw", m: "70vw", s: "90vw" }}
+    cardHeight={{ l: "80vh", m: "50vh", s: "30vh" }}
     quote="“Founders and Coders gave me the confidence to, given time and perseverance, grasp complex concepts which initially seemed daunting. I learned how to walk through code thoroughly and truly understand it in order to solve bugs and errors. And I discovered the joys of paired programming - that learning or tackling a problem together can be one of the most rewarding experiences. ”"
   />
 )
 const Owen = () => (
   <Card
     firstName="Owen"
-    secondName="Turner-Major"
+    secondName="Turner-"
+    thirdName="Major"
     title="FAC cohort #7"
     img={bez}
-    width="50vw"
-    height="80vh"
+    cardWidth={{ l: "50vw", m: "70vw", s: "90vw" }}
+    cardHeight={{ l: "80vh", m: "50vh", s: "30vh" }}
     quote="“The constant focus on pairing and working together means that you're never stuck banging your head against a wall by yourself. You always have someone else to work through the problem with you. After leaving Founders and Coders, I had a lot of faith in my own ability to learn new technologies, which was crucial when I founded my startup, Fat Llama. ”"
   />
 )
@@ -158,8 +166,8 @@ const Ruth = () => (
     secondName="Uwedenimo"
     title="FAC cohort #6"
     img={bez}
-    width="50vw"
-    height="80vh"
+    cardWidth={{ l: "50vw", m: "70vw", s: "90vw" }}
+    cardHeight={{ l: "80vh", m: "50vh", s: "30vh" }}
     quote="“The best part of my experience with Founders and Coders are the people. It is a great community, with members of past cohorts teaching the current cohort. Everyone supports each other in their learning and wants to give back. ”"
   />
 )
@@ -169,8 +177,8 @@ const Fatimat = () => (
     secondName="Gbajabiamila"
     title="FAC cohort #12"
     img={bez}
-    width="50vw"
-    height="80vh"
+    cardWidth={{ l: "50vw", m: "70vw", s: "90vw" }}
+    cardHeight={{ l: "80vh", m: "50vh", s: "30vh" }}
     quote="“Joe, our commercial manager, was supportive during and after Founders and Coders. Everybody's situation is different, which Joe recognizes and takes it into account when advising us. He listened to my concerns about working in the industry and paid attention to the kind of environment I wanted to work in, which helped him place me with my current employer, 27Partners.”"
   />
 )
