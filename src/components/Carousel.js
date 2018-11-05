@@ -41,7 +41,9 @@ const _OuterContainer = styled.div.attrs({
   padding-top: 15%;
   background-attachment: fixed;
   height: ${({ carouselWidth }) => carouselWidth};
+`};
 `
+
 const _OuterApplicationContainer = styled.div.attrs({
   className: "relative w-100 flex-ns carousel dn",
 })`
