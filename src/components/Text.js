@@ -135,7 +135,8 @@ const _BigText = styled.h1.attrs({
 })``
 
 const _LinkText = styled.a.attrs({
-  className: "blue"
+  className: "blue di",
+  target: "_blank"
 })``
 
 export {

@@ -9,7 +9,7 @@ import Layout from "../components/Layout"
 import { DOWN_CURSOR, APPLICATION_CAROUSEL } from "../constants"
 
 import { Cursor } from "../components/Cursor"
-import { BigUnderline, _SubHeading, _BigText } from "../components/Text"
+import { BigUnderline, _SubHeading, _BigText, _LinkText } from "../components/Text"
 import DoubleLine from "../components/DoubleLine"
 import Carousel from "../components/Carousel"
 import Step from "../components/Step"
@@ -59,18 +59,23 @@ const Splash = styled.img.attrs({
 })``
 
 const _Link = styled.a.attrs({
-  className: "mt1 v-mid flex items-center",
+  className: "mt1 v-mid flex items-center blue",
 })``
 
 const Button = styled.button.attrs({
   className: "db font-2 b fw5 pv2 ph6 bg-black white pointer tc center",
 })``
 
+const LinkWrapper = styled.a.attrs({
+  className: "no-underline",
+  target: "_blank"
+})``
+
 const CaseStudy = ({ title, url, children }) => (
   <div className="flex flex-column justify-between font-4 mb5-ns mb3">
     <_SubHeading className="mb1">{title}</_SubHeading>
     {children}
-    <_Link href={url} className="mt1">
+    <_Link href={url} className="mt1" target="_blank">
       <img src={link_arrow_button} className="mr1" />
       Check it out!
     </_Link>
@@ -224,7 +229,7 @@ class TechForBetterPage extends Component {
             <HeadingWithBody title="Case studies" className="mb3 mb0-ns">
               <CaseStudy
                 title="Breathe With Me (Anna Freud Centre, 2016)"
-                url="/"
+                url="https://breathewithme.co.uk/"
               >
                 is a web app that helps young people manage their anxiety, built
                 with input from young people and the clinical team at the Anna
@@ -232,22 +237,25 @@ class TechForBetterPage extends Component {
               </CaseStudy>
               <CaseStudy
                 title="Down to Earth (Quaker Social Action, CAST, 2016)"
-                url="/"
-              >
+                url="https://quaker-social-action.github.io/dte-website/www/"
+              ><div>
                 is a service that provides practical support for people
-                struggling with funeral costs. During the CAST Digital
-                Fellowship, our developers built a funeral costs calculator
-                which was shortlisted for the 2018 Comic Relief Tech for Good
-                awards.
+                struggling with funeral costs. During the <_LinkText href="https://wearecast.org.uk/for-nonprofits/fellowship/">CAST Digital
+                Fellowship</_LinkText>, our developers built a funeral costs calculator
+                which was shortlisted for the <_LinkText href="https://www.comicrelief.com/news/tech-for-good-2018">2018 Comic Relief Tech for Good
+                awards</_LinkText>.
+                </div>
               </CaseStudy>
-              <CaseStudy title="Little Window (CHAYN, 2018)" url="/">
+              <CaseStudy title="Little Window (CHAYN, 2018)" url="https://chayn.co/">
+                <div>
                 is a chatbot to help women who are victims of domestic abuse
                 find information on the Chayn website relevant to their needs,
-                funded by Filament Consultancy Group. Read about both the
-                client’s and the developers’ experience of the project.
+                funded by <_LinkText href="https://www.filament.ai/">Filament Consultancy Group</_LinkText>. Read about both <_LinkText href="https://medium.com/hack-for-chayn/were-trying-something-new-say-hello-to-little-window-our-chatbot-36a65ac44fda">the
+                client’s</_LinkText> and <_LinkText href="https://medium.com/hack-for-chayn/building-little-window-how-we-created-a-chatbot-for-chayn-682ecf7bd495">the developers’</_LinkText> experience of the project.
+                </div>
               </CaseStudy>
             </HeadingWithBody>
-            <Button>Apply</Button>
+            <LinkWrapper href="https://airtable.com/shrMtNWdsGQQs65mO"><Button>Apply</Button></LinkWrapper>
             <Splash src={home_splash} />
             <HeadingWithBody
               title="What is Founders and Coders?"
