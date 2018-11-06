@@ -199,8 +199,7 @@ class ApplyPage extends Component {
                 </CollapsableQuestion>
               </QuestionWrapper>
               <div className="font-5 fw3">
-                * Applications close at midnight GMT on the final day of the
-                window.
+                * Applications close at midnight GMT on the final day of the window.
               </div>
             </HeadingWithBody>
           </InnerGridContainer>

@@ -264,7 +264,7 @@ class TechForBetterPage extends Component {
               Founders and Coders CIC is a UK-based nonprofit that develops and
               runs tuition-free training programmes in web development, guided
               by our core values of cooperation, inclusion and social impact. In
-              2017, we partnered with MercyCorps to establish a campus in Gaza,
+              2017, <_LinkText href="/">we partnered with MercyCorps to establish a campus in Gaza</_LinkText>,
               where youth unemployment is among the highest in the world. The
               Tech for Better programme provides a rare opportunity for our
               developers there to gain experience working on real projects with
