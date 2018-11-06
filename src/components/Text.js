@@ -134,6 +134,10 @@ const _BigText = styled.h1.attrs({
     `subheadline headline-ns fw5 w-70 ${colour}`,
 })``
 
+const _LinkText = styled.a.attrs({
+  className: "blue"
+})``
+
 export {
   OffsetUnderlineText,
   SmallUnderline,
@@ -142,4 +146,5 @@ export {
   _Heading,
   _SubHeading,
   _BigText,
+  _LinkText
 }
