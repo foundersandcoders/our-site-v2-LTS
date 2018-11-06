@@ -134,9 +134,12 @@ const _BigText = styled.h1.attrs({
     `subheadline headline-ns fw5 w-70 ${colour}`,
 })``
 
-const _LinkText = styled.a.attrs({
+const _ExternalLink = styled.a.attrs({
   className: "blue di",
   target: "_blank"
+})``
+const _InternalLink = styled.a.attrs({
+  className: "blue di"
 })``
 
 export {
@@ -147,5 +150,6 @@ export {
   _Heading,
   _SubHeading,
   _BigText,
-  _LinkText
+  _InternalLink,
+  _ExternalLink
 }

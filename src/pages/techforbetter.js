@@ -9,7 +9,7 @@ import Layout from "../components/Layout"
 import { DOWN_CURSOR, APPLICATION_CAROUSEL } from "../constants"
 
 import { Cursor } from "../components/Cursor"
-import { BigUnderline, _SubHeading, _BigText, _LinkText } from "../components/Text"
+import { BigUnderline, _SubHeading, _BigText, _ExternalLink } from "../components/Text"
 import DoubleLine from "../components/DoubleLine"
 import Carousel from "../components/Carousel"
 import Step from "../components/Step"
@@ -240,18 +240,18 @@ class TechForBetterPage extends Component {
                 url="https://quaker-social-action.github.io/dte-website/www/"
               ><div>
                 is a service that provides practical support for people
-                struggling with funeral costs. During the <_LinkText href="https://wearecast.org.uk/for-nonprofits/fellowship/">CAST Digital
-                Fellowship</_LinkText>, our developers built a funeral costs calculator
-                which was shortlisted for the <_LinkText href="https://www.comicrelief.com/news/tech-for-good-2018">2018 Comic Relief Tech for Good
-                awards</_LinkText>.
+                struggling with funeral costs. During the <_ExternalLink href="https://wearecast.org.uk/for-nonprofits/fellowship/">CAST Digital
+                Fellowship</_ExternalLink>, our developers built a funeral costs calculator
+                which was shortlisted for the <_ExternalLink href="https://www.comicrelief.com/news/tech-for-good-2018">2018 Comic Relief Tech for Good
+                awards</_ExternalLink>.
                 </div>
               </CaseStudy>
               <CaseStudy title="Little Window (CHAYN, 2018)" url="https://chayn.co/">
                 <div>
                 is a chatbot to help women who are victims of domestic abuse
                 find information on the Chayn website relevant to their needs,
-                funded by <_LinkText href="https://www.filament.ai/">Filament Consultancy Group</_LinkText>. Read about both <_LinkText href="https://medium.com/hack-for-chayn/were-trying-something-new-say-hello-to-little-window-our-chatbot-36a65ac44fda">the
-                client’s</_LinkText> and <_LinkText href="https://medium.com/hack-for-chayn/building-little-window-how-we-created-a-chatbot-for-chayn-682ecf7bd495">the developers’</_LinkText> experience of the project.
+                funded by <_ExternalLink href="https://www.filament.ai/">Filament Consultancy Group</_ExternalLink>. Read about both <_ExternalLink href="https://medium.com/hack-for-chayn/were-trying-something-new-say-hello-to-little-window-our-chatbot-36a65ac44fda">the
+                client’s</_ExternalLink> and <_ExternalLink href="https://medium.com/hack-for-chayn/building-little-window-how-we-created-a-chatbot-for-chayn-682ecf7bd495">the developers’</_ExternalLink> experience of the project.
                 </div>
               </CaseStudy>
             </HeadingWithBody>
@@ -264,7 +264,7 @@ class TechForBetterPage extends Component {
               Founders and Coders CIC is a UK-based nonprofit that develops and
               runs tuition-free training programmes in web development, guided
               by our core values of cooperation, inclusion and social impact. In
-              2017, <_LinkText href="/">we partnered with MercyCorps to establish a campus in Gaza</_LinkText>,
+              2017, <_ExternalLink href="/">we partnered with MercyCorps to establish a campus in Gaza</_ExternalLink>,
               where youth unemployment is among the highest in the world. The
               Tech for Better programme provides a rare opportunity for our
               developers there to gain experience working on real projects with

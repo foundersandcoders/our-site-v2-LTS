@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { DOWN_CURSOR } from "../constants"
 
 import Layout from "../components/Layout"
-import { BigUnderline, _LinkText } from "../components/Text"
+import { BigUnderline, _ExternalLink } from "../components/Text"
 import { Panel, NextPanel } from "../components/Panel"
 import HeadingWithBody from "../components/HeadingWithBody"
 import DoubleLine from "../components/DoubleLine"
@@ -100,7 +100,7 @@ class HirePage extends Component {
             the cooperative community at Founders and Coders. We are always
             looking for new partners committed to building inclusive workplaces
             where our diverse graduates will thrive. Think your company would be
-            a good fit? <_LinkText href="https://docs.google.com/forms/d/e/1FAIpQLScqtbiYqT7CDDjjYFtcwzlWDuZlsotcDvP1SoSj2SmuVmO4AA/viewform">Fill out this short form</_LinkText>.
+            a good fit? <_ExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLScqtbiYqT7CDDjjYFtcwzlWDuZlsotcDvP1SoSj2SmuVmO4AA/viewform">Fill out this short form</_ExternalLink>.
           </HeadingWithBody>
           <DoubleLine colour="red" />
           <section className="mb7 pb5 mh2 mh0-ns">
