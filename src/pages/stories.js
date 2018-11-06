@@ -157,7 +157,7 @@ class StoriesPage extends Component {
                   url="https://medium.com/hack-for-chayn/building-little-window-how-we-created-a-chatbot-for-chayn-682ecf7bd495"
                 />
                 <Story 
-                  color="yellow"
+                  colour="yellow"
                   heading="Perspectives: technology, mental health and children and young people"
                   subtitle="We’ve known for a while that the learning collaborative needs ways of accelerating the use of digital technology in children and young people’s mental health..."
                   author="Healthy London Partnership"
@@ -165,7 +165,7 @@ class StoriesPage extends Component {
                   url="https://medium.com/mental-health-in-london/perspectives-technology-mental-health-and-children-and-young-people-2a8c5a65a8ad"
                 />
                 <Story 
-                  color="blue"
+                  colour="blue"
                   heading="Fusing nonprofits with tech talent"
                   subtitle="Throw together four of the UK’s most innovative charities (aka our debut Fusiliers), 16 mega-brains in the form of Founders & Coders’ latest cohort, delicious..."
                   author="CAST"
@@ -173,7 +173,7 @@ class StoriesPage extends Component {
                   url="https://medium.com/@wearecast/fusing-nonprofits-with-tech-talent-bddd5ddbe7bb"
                 />
                 <Story 
-                  color="green"
+                  colour="green"
                   heading="You might not need that $15K coding bootcamp"
                   subtitle="Coding bootcamps have exploded in popularity the past few years. I’m not against them. If they help you get started on a well-paid career in tech..."
                   author="Per Harold Borgen"
@@ -181,7 +181,7 @@ class StoriesPage extends Component {
                   url="https://medium.freecodecamp.org/you-might-not-need-that-15k-coding-bootcamp-be0ba9697885"
                 />
                 <Story 
-                  color="red"
+                  colour="red"
                   heading="Not a hacker or a hipster: How I got my first start-up job"
                   subtitle="I was first introduced to start-ups as a career choice during my post-uni “I’m not getting a city job” phase. Although that’s still..."
                   author="Katerina Pascoulis"
@@ -189,7 +189,7 @@ class StoriesPage extends Component {
                   url="https://medium.com/tech-london/not-a-hacker-or-a-hipster-how-i-got-my-first-start-up-job-922399a7dfbb"
                 />
                 <Story 
-                  color="blue"
+                  colour="blue"
                   heading="Find a job at a Start-up: resources"
                   subtitle="Last month I did a talk for WarwickTECH about how to find a job at a start-up after graduating. This was motivated by the fact that when..."
                   author="Katerina Pascoulis"
@@ -197,7 +197,7 @@ class StoriesPage extends Component {
                   url="https://medium.com/@KatAlexPas/find-a-job-at-a-start-up-resources-8c477db1cbbc"
                 />
                 <Story 
-                  color="yellow"
+                  colour="yellow"
                   heading="How I learnt to code in a scarily short space of time"
                   subtitle="Six months ago I left my “wow, what you do sounds really interesting” job so I could teach myself to code. Before that happened..."
                   author="Katerina Pascoulis"
@@ -205,7 +205,7 @@ class StoriesPage extends Component {
                   url="https://www.gadgette.com/2016/02/19/how-i-learnt-to-code-in-a-scarily-short-space-of-time/"
                 />
                 <Story 
-                  color="red"
+                  colour="red"
                   heading="Meet Michelle: Languages Graduate turned Coder at Fashion Startup 'Mode For Me'"
                   subtitle="Meet Michelle Garrett, one of the brilliant brains behind ModeForMe, a new fashion crowdfunding platform currently in development... "
                   author="TechStyler"
@@ -213,7 +213,7 @@ class StoriesPage extends Component {
                   url="http://techstyler.fashion/meet-michelle-languages-graduate-turned-coder-at-fashion-startup-mode-for-me/"
                 />
                 <Story 
-                  color="green"
+                  colour="green"
                   heading="Snoop Dogg and identity at Blockchain Week in NYC"
                   subtitle="Blockchain Week in NYC is a busy week for all things crypto; conferences, hackathons and even parties with Snoop Dogg performing."
                   author="Rachel Black"
@@ -221,7 +221,7 @@ class StoriesPage extends Component {
                   url="https://www.yoti.com/blog/rachels-week-at-blockchain-week-in-nyc/"
                 />
                 <Story 
-                  color="yellow"
+                  colour="yellow"
                   heading="Yoti Charity Hackathon - what happened next? The Centrepoint story"
                   subtitle="In February 2017, we held a hack week to learn from on-the-ground charity staff about how our identity checking system can help solve local and global problems..."
                   author="Yoti Blog"
@@ -229,7 +229,7 @@ class StoriesPage extends Component {
                   url=""
                 />
                 <Story 
-                  color="blue"
+                  colour="blue"
                   heading="Founders and Coders"
                   subtitle="I've had the pleasure of working these talented coders from Founders & Coders, a social enterprise that offers free coding training..."
                   author="Lambeth Larder"
@@ -237,7 +237,7 @@ class StoriesPage extends Component {
                   url="http://www.lambethlarder.org/blog/founders-coders"
                 />
                 <Story 
-                  color="green"
+                  colour="green"
                   heading="How I went from 33-year-old museum tour guide to professional Web Developer and UX Designer: My 18-month coding journey"
                   subtitle="My story is a bit different from the stories you have read so many times. I did not get my first web development job in 3 months. Not in 6 months. Not even in a year."
                   author="Vered Rekanati Mordechai"
