@@ -25,7 +25,7 @@ const _Icon = styled.img`
 `
 
 const Icon = ({ to, img }) => (
-  <a href={to}>
+  <a href={to} target="blank">
     <_Icon src={img} />
   </a>
 )
@@ -52,10 +52,10 @@ const Footer = () => (
       </span>
     </div>
     <div className="flex w-20-ns w-50 justify-between mb7-ns mb6">
-      <Icon to="/" img={github_logo_white} />
-      <Icon to="/" img={facebook_logo_white} />
-      <Icon to="/" img={twitter_logo_white} />
-      <Icon to="/" img={linkedin_logo_white} />
+      <Icon to="https://github.com/foundersandcoders/" img={github_logo_white} />
+      <Icon to="https://www.facebook.com/founderscoders/" img={facebook_logo_white} />
+      <Icon to="https://twitter.com/founderscoders" img={twitter_logo_white} />
+      <Icon to="https://www.linkedin.com/school/founders-&-coders/" img={linkedin_logo_white} />
     </div>
     <div className="font-6 w-100 ph2-ns ph0 fw3 flex justify-between">
       <div>
