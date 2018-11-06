@@ -114,6 +114,42 @@ const Ines = () => (
   />
 )
 
+const Yvonne = () => (
+  <Card
+    firstName="Yvonne"
+    secondName="Liu"
+    title="Operations and international development"
+    cardWidth={{ ns: "33%", s: "66%" }}
+    cardHeight={{ ns: "50%", s: "17%" }}
+    imgHeight="75%"
+    img={ines}
+  />
+)
+
+const Joe = () => (
+  <Card
+    firstName="Joe"
+    secondName="Tanner"
+    title="Commercial Partnerships"
+    cardWidth={{ ns: "33%", s: "66%" }}
+    cardHeight={{ ns: "50%", s: "17%" }}
+    imgHeight="75%"
+    img={ines}
+  />
+)
+
+const Rebecca = () => (
+  <Card
+    firstName="Rebecca"
+    secondName="Radding"
+    title="Strategy and communications"
+    cardWidth={{ ns: "33%", s: "66%" }}
+    cardHeight={{ ns: "50%", s: "17%" }}
+    imgHeight="75%"
+    img={ines}
+  />
+)
+
 const Bez = () => (
   <Card
     firstName="Besart"
@@ -182,4 +218,4 @@ const Fatimat = () => (
     quote="“Joe, our commercial manager, was supportive during and after Founders and Coders. Everybody's situation is different, which Joe recognizes and takes it into account when advising us. He listened to my concerns about working in the industry and paid attention to the kind of environment I wanted to work in, which helped him place me with my current employer, 27Partners.”"
   />
 )
-export { Card, Dan, Ines, Bez, Amelie, Helen, Owen, Ruth, Fatimat }
+export { Card, Dan, Ines, Yvonne, Joe, Rebecca, Bez, Amelie, Helen, Owen, Ruth, Fatimat }

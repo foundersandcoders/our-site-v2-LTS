@@ -136,52 +136,16 @@ class HirePage extends Component {
               company="Unruly"
             />
             <QuoteSlide
-              quote="Blah vlasalkdjlkj"
-              firstName="Vinny"
-              secondName="Marino"
-              company="Unruly"
+              quote="Recruiting with Founders and Coders has been effortless and has proved valuable to us. Founders and Coders graduates demonstrate a commitment to the technical and non-technical skills that we prize. Their experience from Founders and Coders has enabled them to teach new concepts and collaborate on projects easily which has been essential to becoming successful mentors and consultants on our teams. "
+              firstName="Jim"
+              secondName="Suchy"
+              company="8th Light"
             />
             <QuoteSlide
-              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
-              firstName="Vinny"
-              secondName="Marino"
-              company="Unruly"
-            />
-            <QuoteSlide
-              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
-              firstName="Vinny"
-              secondName="Marino"
-              company="Unruly"
-            />
-            <QuoteSlide
-              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
-              firstName="Vinny"
-              secondName="Marino"
-              company="Unruly"
-            />
-            <QuoteSlide
-              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
-              firstName="Vinny"
-              secondName="Marino"
-              company="Unruly"
-            />
-            <QuoteSlide
-              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
-              firstName="Vinny"
-              secondName="Marino"
-              company="Unruly"
-            />
-            <QuoteSlide
-              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
-              firstName="Vinny"
-              secondName="Marino"
-              company="Unruly"
-            />
-            <QuoteSlide
-              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
-              firstName="Vinny"
-              secondName="Marino"
-              company="Unruly"
+              quote="Founders and Coders graduates stand out by adding more value to a project than just their code. They understand the business case behind the technology, as well as the specific needs of the users, and work towards those on every occasion. In building our platform, we now rely solely on our team of developers from Founders and Coders and are very satisfied with that."
+              firstName="Sonja"
+              secondName="Wiencke"
+              company="Power to Change + Twine"
             />
           </FlickityCarousel>
         </section>

@@ -13,7 +13,7 @@ import { Panel, NextPanel } from "../components/Panel"
 import HeadingWithBody from "../components/HeadingWithBody"
 import DoubleLine from "../components/DoubleLine"
 import { Cursor } from "../components/Cursor"
-import { Dan, Ines } from "../components/Card"
+import { Dan, Ines, Yvonne, Joe, Rebecca } from "../components/Card"
 import InnerGridContainer from "../components/InnerGridContainer"
 
 const Footnote = styled.p.attrs({
@@ -256,9 +256,9 @@ class AboutPage extends Component {
         <StaffPanel panelHeight={{ ns: "120vh", s: "300vh" }}>
           <Dan />
           <Ines />
-          <Dan />
-          <Ines />
-          <Dan />
+          <Yvonne />
+          <Joe />
+          <Rebecca />
         </StaffPanel>
         <NextPanel component={this} to={"/apply"}>
           Apply to our course

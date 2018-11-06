@@ -144,13 +144,7 @@ class TechForBetterPage extends Component {
                   colour="yellow"
                 >
                   <p>
-                    Each course runs for sixteen weeks at Space4 in Finsbury
-                    Park,
-                    <span className="fw5">
-                      {" "}
-                      five days a week from 10:00 to 18:00.{" "}
-                    </span>
-                    We do not offer part-time or remote courses.
+                  You will gain experience working with a software development team and see your ideas take shape in digital form. By the end of the process you will have a working mobile web app that you can test with users.
                   </p>
                 </CollapsableQuestion>
                 <CollapsableQuestion
@@ -158,13 +152,7 @@ class TechForBetterPage extends Component {
                   colour="green"
                 >
                   <p>
-                    Each course runs for sixteen weeks at Space4 in Finsbury
-                    Park,
-                    <span className="fw5">
-                      {" "}
-                      five days a week from 10:00 to 18:00.{" "}
-                    </span>
-                    We do not offer part-time or remote courses.
+                  After the initial workshops, around 20 hours over the one-month product development period, testing the app, giving feedback and meeting with the developers.
                   </p>
                 </CollapsableQuestion>
 
@@ -173,13 +161,7 @@ class TechForBetterPage extends Component {
                   colour="blue"
                 >
                   <p>
-                    Each course runs for sixteen weeks at Space4 in Finsbury
-                    Park,
-                    <span className="fw5">
-                      {" "}
-                      five days a week from 10:00 to 18:00.{" "}
-                    </span>
-                    We do not offer part-time or remote courses.
+                  We are in the process of identifying potential sources of funding for continued development of projects.
                   </p>
                 </CollapsableQuestion>
                 <CollapsableQuestion
@@ -187,13 +169,7 @@ class TechForBetterPage extends Component {
                   colour="red"
                 >
                   <p>
-                    Each course runs for sixteen weeks at Space4 in Finsbury
-                    Park,
-                    <span className="fw5">
-                      {" "}
-                      five days a week from 10:00 to 18:00.{" "}
-                    </span>
-                    We do not offer part-time or remote courses.
+                  This programme provides an opportunity for our developers in both London and Gaza to gain experience, improve their employability, and work on projects that make a real difference to people’s lives.
                   </p>
                 </CollapsableQuestion>
                 <CollapsableQuestion
@@ -201,13 +177,7 @@ class TechForBetterPage extends Component {
                   colour="green"
                 >
                   <p>
-                    Each course runs for sixteen weeks at Space4 in Finsbury
-                    Park,
-                    <span className="fw5">
-                      {" "}
-                      five days a week from 10:00 to 18:00.{" "}
-                    </span>
-                    We do not offer part-time or remote courses.
+                  A web app is a website that looks and feels like a mobile app. This means that users won’t have to download anything from an app store. Web apps can be accessed by anyone using a web browser on a computer, tablet, or smartphone.
                   </p>
                 </CollapsableQuestion>
                 <CollapsableQuestion
@@ -215,13 +185,7 @@ class TechForBetterPage extends Component {
                   colour="yellow"
                 >
                   <p>
-                    Each course runs for sixteen weeks at Space4 in Finsbury
-                    Park,
-                    <span className="fw5">
-                      {" "}
-                      five days a week from 10:00 to 18:00.{" "}
-                    </span>
-                    We do not offer part-time or remote courses.
+                  Three examples of previous projects are linked to below. 
                   </p>
                 </CollapsableQuestion>
               </QuestionWrapper>
