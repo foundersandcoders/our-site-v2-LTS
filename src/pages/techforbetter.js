@@ -120,8 +120,9 @@ class TechForBetterPage extends Component {
               carouselWidth="200vw"
               type={APPLICATION_CAROUSEL}
               component={this}
-            />
-            <TechforBetterSteps />
+            >
+              <TechforBetterSteps />
+            </ Carousel>
           </ExtendedPanel>
           <div className="bg-light-gray mb5">
             <HeadingWithBody
