@@ -10,6 +10,12 @@ const _Header = styled.header.attrs({
   max-width: 1280px;
 `
 
+const FacLogo = styled.img.attrs({
+  className: "border-box pl2 pr2",
+  src: logo,
+  alt: "Founders and Coders Logo",
+})``
+
 const _TopNav = styled.nav.attrs({
   className: "flex w-75 justify-between",
 })``
@@ -37,17 +43,17 @@ const _TopLink = styled(Link).attrs({
     outline: 0;
   }
 `
-
 const TopLink = ({ to, text, number }) => (
   <_TopLink to={to} activeClassName="b--blue">
     <div>{text}</div>
     <div>{number}</div>
   </_TopLink>
 )
+
 const Header = () => (
   <_Header>
     <Link to="/">
-      <img src={logo} alt="Founders and Coders Logo" />
+      <FacLogo />
     </Link>
 
     <TopNav />

@@ -37,17 +37,17 @@ const RoundLogoMobile = styled.div.attrs({
   width: 46px;
 `
 
-const MenuLines = styled.div.attrs({
-  className: "",
-})`
+const MenuLines = styled.div.attrs({})`
   transition: 0.5s;
   transform: rotate(90deg) translateX(5px);
-  height: 40px;
-  width: 40px;
+  height: 32px;
+  width: 32px;
   background: ${({ active }) => active ? `url(${closeMenu})` : `url(${openMenu})`};
   background-repeat: no-repeat;
   ${breakpoint.ns`
     transform: rotate(0) translateX(0);
+    height: ${({ active }) => active ? "32px" : "40px" };
+    width: 40px;
   `} 
 `
 
