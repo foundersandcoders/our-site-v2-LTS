@@ -1,6 +1,11 @@
 import { css } from "styled-components"
 
 const breakpoint = {
+  s: (...args) => css`
+    @media screen and (max-width: 40em) {
+      ${css(...args)};
+    }
+  `,
   ns: (...args) => css`
     @media screen and (min-width: 40em) {
       ${css(...args)};
