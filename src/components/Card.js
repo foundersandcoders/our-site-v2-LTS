@@ -65,7 +65,7 @@ const TextContainer = styled.div.attrs({
     "absolute flex items-end flex-column bottom-2-ns z-2",
 })`
   left: calc(-15% / 2);
-  top: 460px;
+  top: 450px;
   ${breakpoint.ns`
     top: 2rem;
     left: 1rem;

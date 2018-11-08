@@ -24,14 +24,24 @@ import FlickityCarousel from "../components/FlickityCarousel"
 import BackgroundImg from "../components/BackgroundImg"
 import InnerGridContainer from "../components/InnerGridContainer"
 
+import stripey_small from "../assets/ui/stripey_small.svg"
+
+const StripeyContainer = styled.div.attrs({
+  className: `${({ className }) => className}`,
+})`
+  background: url(${stripey_small}) repeat;
+  padding-top: 50%;
+  clip-path: polygon(0 100%, 0 2%, 25% 0, 50% 2%, 75% 0, 100% 2%, 100% 100%);
+`
+
 const FacsterCards = ({className}) => (
-  <div className={className}>
+  <StripeyContainer className={className}>
     <Amelie />
     <Helen />
     <Owen />
     <Ruth />
     <Fatimat />
-  </div>
+  </StripeyContainer>
 )
 
 const Splash = styled.img.attrs({
