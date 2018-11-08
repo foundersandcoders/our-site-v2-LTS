@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react"
 import styled from "styled-components"
 
 import home_splash from "../assets/splashes/home_splash.png"
@@ -23,6 +23,16 @@ import { breakpoint } from "../styles/utils"
 import FlickityCarousel from "../components/FlickityCarousel"
 import BackgroundImg from "../components/BackgroundImg"
 import InnerGridContainer from "../components/InnerGridContainer"
+
+const FacsterCards = ({className}) => (
+  <div className={className}>
+    <Amelie />
+    <Helen />
+    <Owen />
+    <Ruth />
+    <Fatimat />
+  </div>
+)
 
 const Splash = styled.img.attrs({
   className: "relative center db mb4 mb7-ns",
@@ -95,7 +105,6 @@ class IndexPage extends Component {
               <PartnerLogo src={gaza_sky_geeks} />
             </FlickityCarousel>
           </section>
-
           <Carousel
             type={TESTIMONIAL_CAROUSEL}
             carouselWidth="350vw"
@@ -107,6 +116,7 @@ class IndexPage extends Component {
             <Ruth />
             <Fatimat />
           </Carousel>
+          <FacsterCards className="db dn-ns"/>
           <NextPanel component={this} to="/about">
             What is Founders and Coders?
           </NextPanel>
