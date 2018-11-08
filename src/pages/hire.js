@@ -16,10 +16,10 @@ import InnerGridContainer from "../components/InnerGridContainer"
 
 import hireSplash from "../assets/splashes/home_splash.png"
 import quotemarks from "../assets/icons/quotemarks.svg"
-import night_zoo_keeper from "../assets/logos/night-zoo-keeper.png"
+import partnerLogos from "../components/partner_logos"
 
 const PartnerLogo = styled(BackgroundImg).attrs({
-  className: "h5 w5 mt4-ns mt0",
+  className: "h5 w5 mt4-ns mt0 ma3",
 })``
 
 const SplashImg = ({ src }) => (
@@ -159,15 +159,11 @@ class HirePage extends Component {
               wrapAround: true,
             }}
           >
-            <PartnerLogo src={night_zoo_keeper} />
-            <PartnerLogo src={night_zoo_keeper} />
-            <PartnerLogo src={night_zoo_keeper} />
-            <PartnerLogo src={night_zoo_keeper} />
-            <PartnerLogo src={night_zoo_keeper} />
-            <PartnerLogo src={night_zoo_keeper} />
-            <PartnerLogo src={night_zoo_keeper} />
-            <PartnerLogo src={night_zoo_keeper} />
-            <PartnerLogo src={night_zoo_keeper} />
+            { 
+              partnerLogos.map((logo, key) => {
+                return <PartnerLogo src={logo} key={key} bgSize="contain"/>
+              })
+            }
           </FlickityCarousel>
         </section>
         <NextPanel component={this} to={"/techforbetter"} topBorder>
