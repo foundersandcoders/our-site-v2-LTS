@@ -19,7 +19,11 @@ import BackgroundImg from "../components/BackgroundImg"
 import InnerGridContainer from "../components/InnerGridContainer"
 import { CollapsableQuestion, QuestionWrapper } from "../components/Question"
 
-import hireSplash from "../assets/splashes/home_splash.png"
+import FAC10 from "../assets/photos/FAC10.jpg"
+import FAC13 from "../assets/photos/FAC13.jpg"
+import FAC14 from "../assets/photos/FAC14.jpg"
+import FACN3 from "../assets/photos/FACN3.png"
+import FACG3 from "../assets/photos/FACG3.png"
 
 const ApplicationSteps = () => (
   <Fragment>
@@ -94,15 +98,15 @@ const _ListItem = styled.li`
 `
 
 const CarouselImg = ({ src }) => (
-  <BackgroundImg src={src} height="calc(10rem + 25vw)" width="100%" />
+  <BackgroundImg src={src} height="calc(10rem + 25vw)" width="100%" gradient="radial-gradient( rgba(141,140,355,0.25), rgba(4,2,171,0.25) 120%)"/>
 )
 
 const carouselImages = [
-  { caption: "London", src: hireSplash },
-  { caption: "Nazareth", src: hireSplash },
-  { caption: "Gaza", src: hireSplash },
-  { caption: "West Bank", src: hireSplash },
-  { caption: "Brazil", src: hireSplash },
+  { caption: "London Cohort #10", src: FAC10 },
+  { caption: "Nazareth Cohort #3", src: FACN3 },
+  { caption: "Gaza Cohort #4", src: FACG3 },
+  { caption: "London Cohort #13", src: FAC13 },
+  { caption: "London Cohort #14", src: FAC14 },
 ]
 
 const initialCarouselIdx = 2
@@ -245,8 +249,8 @@ class ApplyPage extends Component {
                 hideCursor
                 component={this}
               >
-                {r.map(({ caption, src }) => (
-                  <CarouselImg caption={caption} src={src} key={caption} />
+                {r.map(({ caption, src, key }) => (
+                  <CarouselImg caption={caption} src={src} key={key} />
                 ))(carouselImages)}
               </FlickityCarousel>
             </HeadingWithBody>
