@@ -217,14 +217,14 @@ class ApplyPage extends Component {
                 <ApplicationSteps />
               </Carousel>
             </ExtendedPanel>
-            <div className="bg-light-gray ma0">
+            <div className="bg-light-gray ma0 db dn-ns">
               <HeadingWithBody
                 title="How do I apply?"
                 className="db dn-ns bg-light-gray pv6"
               >
                 <ApplicationSteps />
               </HeadingWithBody>
-              <ApplicationsStatus />
+              <ApplicationsStatus/>
             </div>
           </section>
 
