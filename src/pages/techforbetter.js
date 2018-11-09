@@ -47,7 +47,7 @@ const TechforBetterSteps = () => (
       management tools and the application development process. End by creating
       a series of user stories which can form the basis of your app.
     </Step>
-    <Step step="04" colour="blue" title="Development (3-4 weeks)">
+    <Step step="04" colour="blue" title="Development (3-4 weeks)" last={true}>
       At this point, we are ready to schedule product development! A team of 2-4
       developers will work with you to build a mobile web app that can be tested
       with users and form the basis of applications for further funding.
@@ -120,8 +120,9 @@ class TechForBetterPage extends Component {
               carouselWidth="200vw"
               type={APPLICATION_CAROUSEL}
               component={this}
-            />
+            >
             <TechforBetterSteps />
+            </Carousel>
           </ExtendedPanel>
           <div className="bg-light-gray mb5">
             <HeadingWithBody

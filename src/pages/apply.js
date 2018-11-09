@@ -81,7 +81,7 @@ const ApplicationSteps = () => (
         progress as of the date the window closes.
       </p>
     </Step>
-    <Step step="04" colour="green" title="The conversational interview">
+    <Step step="04" colour="green" title="The conversational interview" last={true}>
       We invite a minimum of 24 people to interview (in person or remotely), and{" "}
       <span className="b">offer places to sixteen people per cohort</span>.
       You’ll be interviewed by a panel of Founders and Coders staff and alumni.
@@ -218,14 +218,14 @@ class ApplyPage extends Component {
                 <ApplicationSteps />
               </Carousel>
             </ExtendedPanel>
-            <div className="bg-light-gray">
+            <div className="bg-light-gray ma0">
               <HeadingWithBody
                 title="How do I apply?"
                 className="db dn-ns bg-light-gray pv6"
               >
                 <ApplicationSteps />
-                <ApplicationsStatus />
               </HeadingWithBody>
+              <ApplicationsStatus />
             </div>
           </section>
 
