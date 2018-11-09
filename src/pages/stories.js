@@ -28,9 +28,9 @@ const StoryContainer = ({ children }) => (
   <Fragment>
     <_StoryContainer>{children}</_StoryContainer>
     {children.length > 3 && (
-      <div className="mt2 lh-copy ttu flex items-center pointer">
+      <div className="mt2 lh-copy ttu flex items-center pointer f4">
         More
-        <img className="ml2 w1" src={arrow_right_black} />
+        <img className="ml2 w1 h1" src={arrow_right_black} />
       </div>
     )}
   </Fragment>
