@@ -121,8 +121,8 @@ class ApplyPage extends Component {
         <Cursor cursor={cursor} colour="green" />
         <main>
           <InnerGridContainer>
-            <Panel justify="center justify-end-ns" className="mt7 mb6-ns mb5">
-              <div className="w-75-ns">
+            <Panel justify="center justify-end-ns" className="mt7 mb6-ns mb5 mh2 mh0-ns">
+              <div className="w-100 w-75-ns">
                 <BigUnderline>Apply to our course</BigUnderline>
               </div>
             </Panel>
