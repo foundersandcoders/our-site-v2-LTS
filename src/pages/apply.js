@@ -27,13 +27,15 @@ const ApplicationSteps = () => (
       Please submit an expression of interest to get invited to events,
       workshops and meetups for prospective students. We open expressions of
       interest six months before a cohort begins.
+      <br/><br/>
+      <a href="">Submit expression of Interest</a>
     </Step>
     <Step
       step="02"
       colour="blue"
       title="Start work on our course prerequisites"
     >
-      <span className="b">Before we can consider your application,</span>
+      <span className="b">Before we can consider your application</span>, 
       you will need to complete our course prerequisites. We encourage
       applicants to take as much time as they need to work through the material
       and to support each other during the preparation process, both online and
@@ -79,7 +81,7 @@ const ApplicationSteps = () => (
         progress as of the date the window closes.
       </p>
     </Step>
-    <Step step="04" colour="green" title="The conversational interview">
+    <Step step="04" colour="green" title="The conversational interview" last={true}>
       We invite a minimum of 24 people to interview (in person or remotely), and{" "}
       <span className="b">offer places to sixteen people per cohort</span>.
       You’ll be interviewed by a panel of Founders and Coders staff and alumni.
@@ -119,8 +121,8 @@ class ApplyPage extends Component {
         <Cursor cursor={cursor} colour="green" />
         <main>
           <InnerGridContainer>
-            <Panel justify="center justify-end-ns" className="mt7 mb6-ns mb5">
-              <div className="w-75-ns">
+            <Panel justify="center justify-end-ns" className="mt7 mb6-ns mb5 mh2 mh0-ns">
+              <div className="w-100 w-75-ns">
                 <BigUnderline>Apply to our course</BigUnderline>
               </div>
             </Panel>
@@ -215,14 +217,14 @@ class ApplyPage extends Component {
                 <ApplicationSteps />
               </Carousel>
             </ExtendedPanel>
-            <div className="bg-light-gray">
+            <div className="bg-light-gray ma0">
               <HeadingWithBody
                 title="How do I apply?"
                 className="db dn-ns bg-light-gray pv6"
               >
                 <ApplicationSteps />
-                <ApplicationsStatus />
               </HeadingWithBody>
+              <ApplicationsStatus />
             </div>
           </section>
 

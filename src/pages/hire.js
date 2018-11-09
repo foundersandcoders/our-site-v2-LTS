@@ -90,8 +90,8 @@ class HirePage extends Component {
       <Layout>
         <Cursor cursor={cursor} colour="green" />
         <InnerGridContainer>
-          <Panel justify="center justify-end-ns" className="mt7 mb6-ns mb5">
-            <div className="w-75-ns">
+          <Panel justify="center justify-end-ns" className="mt4 mb6-ns mb5 mh2 mh0-ns">
+            <div className="w-100 w-75-ns">
               <BigUnderline>Hire our graduates</BigUnderline>
             </div>
           </Panel>
