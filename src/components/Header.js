@@ -1,13 +1,20 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-
-import logo from "../assets/logos/fac_logo_black.svg"
+import logoPNG from "../assets/logos/fac_logo.png"
 
 const _Header = styled.header.attrs({
   className: "dn flex-ns pt6 justify-between center",
 })`
   max-width: 1280px;
+`
+
+const LogoStyled = styled.img.attrs({
+  src: logoPNG,
+  alt: "Founders and Coders Logo"
+})`
+  max-width: 260px;
+  max-height: 110px;
 `
 
 const _TopNav = styled.nav.attrs({
@@ -47,7 +54,7 @@ const TopLink = ({ to, text, number }) => (
 const Header = () => (
   <_Header>
     <Link to="/">
-      <img src={logo} alt="Founders and Coders Logo" />
+      <LogoStyled/>
     </Link>
 
     <TopNav />
