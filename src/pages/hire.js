@@ -19,7 +19,7 @@ import quotemarks from "../assets/icons/quotemarks.svg"
 import partnerLogos from "../components/partner_logos"
 
 const PartnerLogo = styled(BackgroundImg).attrs({
-  className: "h5 w5 mt4-ns mt0 ma3",
+  className: "h4 w5 mt5-ns mt4 ma3",
 })``
 
 const SplashImg = ({ src }) => (
