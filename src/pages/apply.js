@@ -27,13 +27,15 @@ const ApplicationSteps = () => (
       Please submit an expression of interest to get invited to events,
       workshops and meetups for prospective students. We open expressions of
       interest six months before a cohort begins.
+      <br/><br/>
+      <a href="">Submit expression of Interest</a>
     </Step>
     <Step
       step="02"
       colour="blue"
       title="Start work on our course prerequisites"
     >
-      <span className="b">Before we can consider your application,</span>
+      <span className="b">Before we can consider your application</span>, 
       you will need to complete our course prerequisites. We encourage
       applicants to take as much time as they need to work through the material
       and to support each other during the preparation process, both online and
