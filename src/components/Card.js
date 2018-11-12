@@ -7,7 +7,7 @@ import ines from "../assets/portraits/ines.png"
 import bez from "../assets/portraits/bez.png"
 
 const _Photo = styled.img.attrs({
-  className: "block absolute-ns top-0 ba bw3 b--yellow",
+  className: "db absolute-ns top-0 ba bw3 b--yellow",
 })`
   ${breakpoint.ns`
     height: ${({ imgHeight = "88%" }) => imgHeight};
@@ -47,7 +47,7 @@ const Container = styled.div.attrs({
 
 const Title = ({ firstName, secondName, thirdName, title }) => (
   <TextContainer>
-    <Text font="ttu fw5 font-1-ns font-2-m font-3">{firstName}</Text>
+    <Text font="ttu fw5 font-1-l font-2-m font-3">{firstName}</Text>
     <Text font="ttu fw5 font-1-ns font-2-m font-3">{secondName}</Text>
     {thirdName && <Text font="ttu fw5 font-1-ns font-2-m font-3">{thirdName}</Text>}
     <Text font="font-5 gray">{title}</Text>
@@ -64,7 +64,7 @@ const TextContainer = styled.div.attrs({
   className:
     "absolute flex items-end flex-column bottom-2-ns z-2",
 })`
-  left: calc(-15% / 2);
+  left: 7.5%;
   top: 450px;
   ${breakpoint.ns`
     top: 2rem;
@@ -75,7 +75,7 @@ const TextContainer = styled.div.attrs({
 `
 
 const Quote = styled.div.attrs({
-  className: "block absolute-ns right-0-ns top-2-ns i font-4-ns font-5 pa2 pa3-ns mt5 mb4 bg-white w-100 w-50-ns",
+  className: "db absolute-ns right-0-ns top-2-ns i font-4-ns font-5 pa2 pa3-ns mt5 mb4 bg-white w-100 w-50-ns",
 })`
   ${breakpoint.ns`
     letter-spacing: 0;
