@@ -75,7 +75,7 @@ const TextContainer = styled.div.attrs({
 `
 
 const Quote = styled.div.attrs({
-  className: "block absolute-ns right-0-ns top-2-ns i font-4-ns font-5 pa2 pa3-ns mt5 mb4 bg-white w-100 w-50-ns",
+  className: "db absolute-ns right-0-ns top-2-ns i font-4-ns font-5 pa2 pa3-ns mt5 mb4 bg-white w-100 w-50-ns",
 })`
   ${breakpoint.ns`
     letter-spacing: 0;
