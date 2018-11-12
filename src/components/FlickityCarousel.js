@@ -21,6 +21,9 @@ class FlickityCarousel extends Component {
     const { children, changeCaption, ApplyCarousel } = this.props
     if (ApplyCarousel) {
       const captions = r.map(r.view(r.lensPath(["props", "caption"])), children)
+      this.flkty.on("dragEnd", () => {
+        changeCaption(captions[this.flkty.selectedIndex])
+      })
       this.flkty.on("change", () => {
         changeCaption(captions[this.flkty.selectedIndex])
       })
