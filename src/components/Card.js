@@ -49,7 +49,7 @@ const Title = ({ firstName, secondName, thirdName, title }) => (
   <TextContainer>
     <Text font="ttu fw5 font-1-l font-2-m font-3">{firstName}</Text>
     <Text font="ttu fw5 font-1-l font-2-m font-3">{secondName}</Text>
-    {thirdName && <Text font="ttu fw5 font-1-ns font-2-m font-3">{thirdName}</Text>}
+    {thirdName && <Text font="ttu fw5 font-1-l font-2-m font-3">{thirdName}</Text>}
     <Text font="font-5 gray">{title}</Text>
   </TextContainer>
 )
