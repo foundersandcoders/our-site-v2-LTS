@@ -170,7 +170,7 @@ class Menu extends Component {
     // commented out dn on line below to work on mobile menu
     return (
       <div className="df db-ns">
-        <MenuContainer active={menuActive}>
+git         <MenuContainer active={menuActive}>
           <MenuSidebar active={menuActive}>
             <Link to="/">
               <Logo
