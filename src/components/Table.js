@@ -74,13 +74,6 @@ const Table = () => (
         <Cell>28th October 2019 - 21st February 2020</Cell>
       </_Row>
     </tbody>
-    <tfoot>
-      <tr>
-        <td colSpan="5" className="pt4">
-          * Applications close at midnight GMT on the final day of the window.
-        </td>
-      </tr>
-    </tfoot>
   </_Table>
 )
 

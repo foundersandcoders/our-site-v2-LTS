@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { DOWN_CURSOR } from "../constants"
 
 import Layout from "../components/Layout"
-import { BigUnderline } from "../components/Text"
+import { BigUnderline, _ExternalLink } from "../components/Text"
 import { Panel, NextPanel } from "../components/Panel"
 import HeadingWithBody from "../components/HeadingWithBody"
 import DoubleLine from "../components/DoubleLine"
@@ -16,10 +16,10 @@ import InnerGridContainer from "../components/InnerGridContainer"
 
 import hireSplash from "../assets/splashes/home_splash.png"
 import quotemarks from "../assets/icons/quotemarks.svg"
-import night_zoo_keeper from "../assets/logos/night-zoo-keeper.png"
+import partnerLogos from "../components/partner_logos"
 
 const PartnerLogo = styled(BackgroundImg).attrs({
-  className: "h5 w5 mt4-ns mt0",
+  className: "h4 w5 mt5-ns mt4 ma3",
 })``
 
 const SplashImg = ({ src }) => (
@@ -90,8 +90,8 @@ class HirePage extends Component {
       <Layout>
         <Cursor cursor={cursor} colour="green" />
         <InnerGridContainer>
-          <Panel justify="center justify-end-ns" className="mt7 mb6-ns mb5">
-            <div className="w-75-ns">
+          <Panel justify="center justify-end-ns" className="mt4 mb6-ns mb5 mh2 mh0-ns">
+            <div className="w-100 w-75-ns">
               <BigUnderline>Hire our graduates</BigUnderline>
             </div>
           </Panel>
@@ -100,7 +100,7 @@ class HirePage extends Component {
             the cooperative community at Founders and Coders. We are always
             looking for new partners committed to building inclusive workplaces
             where our diverse graduates will thrive. Think your company would be
-            a good fit? Fill out this short form.
+            a good fit? <_ExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLScqtbiYqT7CDDjjYFtcwzlWDuZlsotcDvP1SoSj2SmuVmO4AA/viewform">Fill out this short form</_ExternalLink>.
           </HeadingWithBody>
           <DoubleLine colour="red" />
           <section className="mb7 pb5 mh2 mh0-ns">
@@ -136,52 +136,16 @@ class HirePage extends Component {
               company="Unruly"
             />
             <QuoteSlide
-              quote="Blah vlasalkdjlkj"
-              firstName="Vinny"
-              secondName="Marino"
-              company="Unruly"
+              quote="Recruiting with Founders and Coders has been effortless and has proved valuable to us. Founders and Coders graduates demonstrate a commitment to the technical and non-technical skills that we prize. Their experience from Founders and Coders has enabled them to teach new concepts and collaborate on projects easily which has been essential to becoming successful mentors and consultants on our teams. "
+              firstName="Jim"
+              secondName="Suchy"
+              company="8th Light"
             />
             <QuoteSlide
-              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
-              firstName="Vinny"
-              secondName="Marino"
-              company="Unruly"
-            />
-            <QuoteSlide
-              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
-              firstName="Vinny"
-              secondName="Marino"
-              company="Unruly"
-            />
-            <QuoteSlide
-              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
-              firstName="Vinny"
-              secondName="Marino"
-              company="Unruly"
-            />
-            <QuoteSlide
-              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
-              firstName="Vinny"
-              secondName="Marino"
-              company="Unruly"
-            />
-            <QuoteSlide
-              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
-              firstName="Vinny"
-              secondName="Marino"
-              company="Unruly"
-            />
-            <QuoteSlide
-              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
-              firstName="Vinny"
-              secondName="Marino"
-              company="Unruly"
-            />
-            <QuoteSlide
-              quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
-              firstName="Vinny"
-              secondName="Marino"
-              company="Unruly"
+              quote="Founders and Coders graduates stand out by adding more value to a project than just their code. They understand the business case behind the technology, as well as the specific needs of the users, and work towards those on every occasion. In building our platform, we now rely solely on our team of developers from Founders and Coders and are very satisfied with that."
+              firstName="Sonja"
+              secondName="Wiencke"
+              company="Power to Change + Twine"
             />
           </FlickityCarousel>
         </section>
@@ -195,15 +159,11 @@ class HirePage extends Component {
               wrapAround: true,
             }}
           >
-            <PartnerLogo src={night_zoo_keeper} />
-            <PartnerLogo src={night_zoo_keeper} />
-            <PartnerLogo src={night_zoo_keeper} />
-            <PartnerLogo src={night_zoo_keeper} />
-            <PartnerLogo src={night_zoo_keeper} />
-            <PartnerLogo src={night_zoo_keeper} />
-            <PartnerLogo src={night_zoo_keeper} />
-            <PartnerLogo src={night_zoo_keeper} />
-            <PartnerLogo src={night_zoo_keeper} />
+            { 
+              partnerLogos.map((logo, key) => {
+                return <PartnerLogo src={logo} key={key} bgSize="contain"/>
+              })
+            }
           </FlickityCarousel>
         </section>
         <NextPanel component={this} to={"/techforbetter"} topBorder>

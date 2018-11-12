@@ -19,7 +19,11 @@ import BackgroundImg from "../components/BackgroundImg"
 import InnerGridContainer from "../components/InnerGridContainer"
 import { CollapsableQuestion, QuestionWrapper } from "../components/Question"
 
-import hireSplash from "../assets/splashes/home_splash.png"
+import FAC10 from "../assets/photos/FAC10.jpg"
+import FAC13 from "../assets/photos/FAC13.jpg"
+import FAC14 from "../assets/photos/FAC14.jpg"
+import FACN3 from "../assets/photos/FACN3.png"
+import FACG3 from "../assets/photos/FACG3.png"
 
 const ApplicationSteps = () => (
   <Fragment>
@@ -27,13 +31,15 @@ const ApplicationSteps = () => (
       Please submit an expression of interest to get invited to events,
       workshops and meetups for prospective students. We open expressions of
       interest six months before a cohort begins.
+      <br/><br/>
+      <a href="">Submit expression of Interest</a>
     </Step>
     <Step
       step="02"
       colour="blue"
       title="Start work on our course prerequisites"
     >
-      <span className="b">Before we can consider your application,</span>
+      <span className="b">Before we can consider your application</span>, 
       you will need to complete our course prerequisites. We encourage
       applicants to take as much time as they need to work through the material
       and to support each other during the preparation process, both online and
@@ -79,7 +85,7 @@ const ApplicationSteps = () => (
         progress as of the date the window closes.
       </p>
     </Step>
-    <Step step="04" colour="green" title="The conversational interview">
+    <Step step="04" colour="green" title="The conversational interview" last={true}>
       We invite a minimum of 24 people to interview (in person or remotely), and{" "}
       <span className="b">offer places to sixteen people per cohort</span>.
       You’ll be interviewed by a panel of Founders and Coders staff and alumni.
@@ -92,15 +98,15 @@ const _ListItem = styled.li`
 `
 
 const CarouselImg = ({ src }) => (
-  <BackgroundImg src={src} height="calc(10rem + 25vw)" width="100%" />
+  <BackgroundImg src={src} height="calc(10rem + 25vw)" width="100%" gradient="radial-gradient( rgba(141,140,355,0.25), rgba(4,2,171,0.25) 120%)"/>
 )
 
 const carouselImages = [
-  { caption: "London", src: hireSplash },
-  { caption: "Nazareth", src: hireSplash },
-  { caption: "Gaza", src: hireSplash },
-  { caption: "West Bank", src: hireSplash },
-  { caption: "Brazil", src: hireSplash },
+  { caption: "London Cohort #10", src: FAC10 },
+  { caption: "Nazareth Cohort #3", src: FACN3 },
+  { caption: "Gaza Cohort #4", src: FACG3 },
+  { caption: "London Cohort #13", src: FAC13 },
+  { caption: "London Cohort #14", src: FAC14 },
 ]
 
 const initialCarouselIdx = 2
@@ -119,8 +125,8 @@ class ApplyPage extends Component {
         <Cursor cursor={cursor} colour="green" />
         <main>
           <InnerGridContainer>
-            <Panel justify="center justify-end-ns" className="mt7 mb6-ns mb5">
-              <div className="w-75-ns">
+            <Panel justify="center justify-end-ns" className="mt7 mb6-ns mb5 mh2 mh0-ns">
+              <div className="w-100 w-75-ns">
                 <BigUnderline>Apply to our course</BigUnderline>
               </div>
             </Panel>
@@ -199,8 +205,7 @@ class ApplyPage extends Component {
                 </CollapsableQuestion>
               </QuestionWrapper>
               <div className="font-5 fw3">
-                * Applications close at midnight GMT on the final day of the
-                window.
+                * Applications close at midnight GMT on the final day of the window.
               </div>
             </HeadingWithBody>
           </InnerGridContainer>
@@ -216,14 +221,14 @@ class ApplyPage extends Component {
                 <ApplicationSteps />
               </Carousel>
             </ExtendedPanel>
-            <div className="bg-light-gray">
+            <div className="bg-light-gray ma0 db dn-ns">
               <HeadingWithBody
                 title="How do I apply?"
                 className="db dn-ns bg-light-gray pv6"
               >
                 <ApplicationSteps />
-                <ApplicationsStatus />
               </HeadingWithBody>
+              <ApplicationsStatus/>
             </div>
           </section>
 
@@ -244,8 +249,8 @@ class ApplyPage extends Component {
                 hideCursor
                 component={this}
               >
-                {r.map(({ caption, src }) => (
-                  <CarouselImg caption={caption} src={src} key={caption} />
+                {r.map(({ caption, src, key }) => (
+                  <CarouselImg caption={caption} src={src} key={key} />
                 ))(carouselImages)}
               </FlickityCarousel>
             </HeadingWithBody>

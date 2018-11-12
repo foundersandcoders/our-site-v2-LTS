@@ -14,9 +14,7 @@ const _OuterContainer = styled.div.attrs({
   className: "relative w-100 flex-ns carousel dn",
 })`
   background: url(${stripey_small}) repeat;
-
   clip-path: polygon(0 100%, 0 12%, 25% 0, 50% 12%, 75% 0, 100% 12%, 100% 100%);
-
   ${breakpoint.ns`
   clip-path: polygon(
     0 100%,
@@ -127,7 +125,7 @@ class Carousel extends Component {
           >
             <_InnerApplicationContainer>
               <InnerGridContainer>
-                <HeadingWithBody title={title} bgColour="light-gray pr4">
+                <HeadingWithBody title={title} bgColour="light-gray pr4 pv4 pl4">
                   <_Carousel scrollY={scrollY} carouselWidth={carouselWidth}>
                     {children}
                   </_Carousel>

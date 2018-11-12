@@ -24,6 +24,9 @@ class FlickityCarousel extends Component {
       this.flkty.on("dragEnd", () => {
         changeCaption(captions[this.flkty.selectedIndex])
       })
+      this.flkty.on("change", () => {
+        changeCaption(captions[this.flkty.selectedIndex])
+      })
     }
   }
 

@@ -4,21 +4,51 @@ import openMenu from "../assets/icons/open_menu_icon.svg"
 import closeMenu from "../assets/icons/close_menu_icon.svg"
 import { Link } from "gatsby"
 import logo from "../assets/logos/fac_logo_black.svg"
+import iconLogo from "../assets/logos/fac_round_logo.png"
+import { breakpoint } from "../styles/utils"
 
 const StickyMenuTriangle = styled.div.attrs({
-  className: "fixed pointer",
+  className: "fixed pointer ph2 flex items-center justify-between",
 })`
-  top: calc((100vh - 5rem) * 0.5);
-  height: 5rem;
-  width: 5rem;
   z-index: 12;
   left: 0;
+  top: 0;
+  width: 100vw;
+  height: 60px;
+  transition: 0.5s;
+  background: ${({ active }) => active ? `transparent` : `black`};
+  ${breakpoint.ns`
+    justify-content: center;
+    padding-right: 32px;
+    height: 5rem;
+    width: 5rem;
+    top: calc((100vh - 5rem) * 0.5);
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    background: ${({ active }) => active ? `white` : `black`};
+  `};
+`
 
-  background: ${({ active }) =>
-    active
-      ? `white url(${closeMenu}) no-repeat 8%`
-      : `black url(${openMenu}) no-repeat 8%`};
-  clip-path: polygon(100% 50%, 0 0, 0 100%);
+const RoundLogoMobile = styled.div.attrs({
+  className: "dn-ns db",
+})`
+  transition: 0.5s;
+  background: ${({ active }) => active ? "none" : `url(${iconLogo}) no-repeat` };
+  height: 46px;
+  width: 46px;
+`
+
+const MenuLines = styled.div.attrs({})`
+  transition: 0.5s;
+  transform: rotate(90deg) translateX(5px);
+  height: 32px;
+  width: 32px;
+  background: ${({ active }) => active ? `url(${closeMenu})` : `url(${openMenu})`};
+  background-repeat: no-repeat;
+  ${breakpoint.ns`
+    transform: rotate(0) translateX(0);
+    height: ${({ active }) => active ? "32px" : "40px" };
+    width: 40px;
+  `} 
 `
 
 const MenuContainer = styled.div.attrs({
@@ -29,7 +59,6 @@ const MenuContainer = styled.div.attrs({
   height: 100vh;
   width: ${props => (props.active ? "100vw" : "0")};
   transition: 0.5s;
-  // transition-delay: 0.2s;
   top: 0;
   left: 0;
   z-index: 11;
@@ -39,24 +68,40 @@ const MenuSidebar = styled.div.attrs({
   className: "bg-yellow",
 })`
   height: 100vh;
-  width: ${props => (props.active ? "30vw" : "0")};
   transition: 0.5s;
-  // transition-delay: 0.1s;
+  width: ${props => (props.active ? "30vw" : "0")};
+  ${breakpoint.s`
+    height: 149px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: ${props => (props.active ? "100vw" : "0")};
+  `};
 `
 const MenuMain = styled.div.attrs({
   className: "pv6 mv5",
 })`
-  height: 100vh;
-  width: ${props => (props.active ? "70vw" : "0")};
+  height: calc(100vh - 149px);
   transition: 0.5s;
-  // transition-delay: 0.1s;
+  width: ${props => (props.active ? "70vw" : "0")};
+  ${breakpoint.s`
+    position: fixed;
+    z-index: 15;
+    top: 149px;
+    left: 0;
+    width: 100vw;
+    padding-top: 0;
+    margin-top: 45px;
+  `};
 `
 
 const MenuNumber = styled.div.attrs({})`
   padding-top: 3px;
   font-size: ${({ active }) => (active ? "16px" : "0px")};
   transition: 0.5s;
-  // transition-delay: 0.1s;
+  ${breakpoint.s`
+    font-size: ${({ active }) => (active ? "12px" : "0px")};
+  `}
 `
 
 const Logo = styled.img.attrs({
@@ -64,30 +109,38 @@ const Logo = styled.img.attrs({
 })`
   width: ${({ active }) => (active ? "100%" : "0")};
   transition: 0.5s;
-  // transition-delay: 0.1s;
+  ${breakpoint.s`
+    height: 80px;
+  `}
 `
 
 const MenuImage = styled.div.attrs({
   className: "pl3 ttu",
 })`
-  font-size: ${({ active }) => (active ? "48px" : "0px")};
   transition: 0.5s;
-  // transition-delay: 0.1s;
-
-  -webkit-text-stroke: 1px black;
-  color: white;
-
-  &:hover {
+  ${breakpoint.ns`
+    font-size: ${({ active }) => (active ? "48px" : "0px")};
+    color: white;
+    -webkit-text-stroke: 1px black;
+    &:hover {
+      color: var(--black);
+    }
+  `}
+  ${breakpoint.s`
+    font-size: ${({ active }) => (active ? "38px" : "0px")};
     color: black;
-  }
+    padding-left: 3px;
+  `}
 `
 
 const MenuItemContainer = styled.div.attrs({
-  className: "border-box pl5 pv3 flex justify-start items-top",
+  className: "border-box pl2 pv3 flex justify-start items-top",
 })`
   width: ${({ active }) => (active ? "100%" : "0")};
   transition: 0.3s;
-  // transition-delay: 0.2s;
+  ${breakpoint.ns`
+    padding-left: 64px;
+  `}
 `
 
 const MenuItem = ({ number, item, active, link }) => (
@@ -114,8 +167,9 @@ class Menu extends Component {
   render() {
     const { menuActive } = this.state
 
+    // commented out dn on line below to work on mobile menu
     return (
-      <div className="dn db-ns">
+      <div className="flex db-ns">
         <MenuContainer active={menuActive}>
           <MenuSidebar active={menuActive}>
             <Link to="/">
@@ -159,7 +213,10 @@ class Menu extends Component {
             />
           </MenuMain>
         </MenuContainer>
-        <StickyMenuTriangle active={menuActive} onClick={this.toggleMenu} />
+        <StickyMenuTriangle active={menuActive} onClick={this.toggleMenu}>
+          <RoundLogoMobile active={menuActive} />
+          <MenuLines active={menuActive} />
+        </StickyMenuTriangle>
       </div>
     )
   }

@@ -7,15 +7,17 @@ import ines from "../assets/portraits/ines.png"
 import bez from "../assets/portraits/bez.png"
 
 const _Photo = styled.img.attrs({
-  className: "absolute top-0 ba bw3 b--yellow",
+  className: "db absolute-ns top-0 ba bw3 b--yellow",
 })`
-  height: ${({ imgHeight = "80%" }) => imgHeight};
-  padding-top: 3rem;
-  left: 20%;
+  ${breakpoint.ns`
+    height: ${({ imgHeight = "88%" }) => imgHeight};
+    padding-top: 3rem;
+    left: 20%;
+  `}
 `
 
 const Container = styled.div.attrs({
-  className: "relative flex items-center justify-center",
+  className: "relative flex items-center justify-center flex-column flex-row-ns",
 })`
   ${({ cardHeight: { ns: cardHeight_ns }, cardWidth: { ns: cardWidth_ns } }) =>
     (cardHeight_ns || cardWidth_ns) &&
@@ -37,16 +39,17 @@ const Container = styled.div.attrs({
   height: ${cardHeight_l};
   width: ${cardWidth_l};
   `};
-
-  height: ${({ cardHeight: { s: cardHeight } }) => cardHeight};
-  width: ${({ cardWidth: { s: cardWidth } }) => cardWidth};
+  width: 85%;
+  margin: auto;
+  // height: ${({ cardHeight: { s: cardHeight } }) => cardHeight};
+  // width: ${({ cardWidth: { s: cardWidth } }) => cardWidth};
 `
 
 const Title = ({ firstName, secondName, thirdName, title }) => (
   <TextContainer>
-    <Text font="ttu fw5 font-1-ns font-3">{firstName}</Text>
-    <Text font="ttu fw5 font-1-ns font-3">{secondName}</Text>
-    {thirdName && <Text font="ttu fw5 font-1-ns font-3">{thirdName}</Text>}
+    <Text font="ttu fw5 font-1-l font-2-m font-3">{firstName}</Text>
+    <Text font="ttu fw5 font-1-l font-2-m font-3">{secondName}</Text>
+    {thirdName && <Text font="ttu fw5 font-1-l font-2-m font-3">{thirdName}</Text>}
     <Text font="font-5 gray">{title}</Text>
   </TextContainer>
 )
@@ -59,14 +62,29 @@ const Text = styled.p.attrs({
 
 const TextContainer = styled.div.attrs({
   className:
-    "absolute flex items-end flex-column left-0-ns left-1 top-2-ns bottom-2 z-2",
-})``
+    "absolute flex items-end flex-column bottom-2-ns z-2",
+})`
+  left: 7.5%;
+  top: 450px;
+  ${breakpoint.ns`
+    top: 2rem;
+    left: 1rem;
+    min-width: 50%;
+    transform: translateX(-48%);
+  `}
+`
 
 const Quote = styled.div.attrs({
-  className: "absolute right-0 top-2 i font-4 ph3 pt3 pb2 bg-white",
+  className: "db absolute-ns right-0-ns top-2-ns i font-4-ns font-5 pa2 pa3-ns mt5 mb4 bg-white w-100 w-50-ns",
 })`
-  width: 50%;
-  letter-spacing: 0;
+  ${breakpoint.ns`
+    letter-spacing: 0;
+    transform: translateX(38%);
+  `}
+  ${breakpoint.m`
+    transform: translateX(5%);
+    padding: 16px;
+  `}
 `
 
 const Card = ({
@@ -81,16 +99,18 @@ const Card = ({
   quote,
 }) => (
   <Container cardWidth={cardWidth} cardHeight={cardHeight}>
+    <_Photo src={img} imgHeight={imgHeight} />
     <Title
+      imgHeight={imgHeight}
       firstName={firstName}
       secondName={secondName}
       thirdName={thirdName}
       title={title}
     />
-    <_Photo src={img} imgHeight={imgHeight} />
     {quote ? <Quote>{quote}</Quote> : <div />}
   </Container>
 )
+
 const Dan = () => (
   <Card
     firstName="Dan"
@@ -107,6 +127,42 @@ const Ines = () => (
     firstName="Ines"
     secondName="Teles"
     title="Director"
+    cardWidth={{ ns: "33%", s: "66%" }}
+    cardHeight={{ ns: "50%", s: "17%" }}
+    imgHeight="75%"
+    img={ines}
+  />
+)
+
+const Yvonne = () => (
+  <Card
+    firstName="Yvonne"
+    secondName="Liu"
+    title="Operations and international development"
+    cardWidth={{ ns: "33%", s: "66%" }}
+    cardHeight={{ ns: "50%", s: "17%" }}
+    imgHeight="75%"
+    img={ines}
+  />
+)
+
+const Joe = () => (
+  <Card
+    firstName="Joe"
+    secondName="Tanner"
+    title="Commercial Partnerships"
+    cardWidth={{ ns: "33%", s: "66%" }}
+    cardHeight={{ ns: "50%", s: "17%" }}
+    imgHeight="75%"
+    img={ines}
+  />
+)
+
+const Rebecca = () => (
+  <Card
+    firstName="Rebecca"
+    secondName="Radding"
+    title="Strategy and communications"
     cardWidth={{ ns: "33%", s: "66%" }}
     cardHeight={{ ns: "50%", s: "17%" }}
     imgHeight="75%"
@@ -182,4 +238,4 @@ const Fatimat = () => (
     quote="“Joe, our commercial manager, was supportive during and after Founders and Coders. Everybody's situation is different, which Joe recognizes and takes it into account when advising us. He listened to my concerns about working in the industry and paid attention to the kind of environment I wanted to work in, which helped him place me with my current employer, 27Partners.”"
   />
 )
-export { Card, Dan, Ines, Bez, Amelie, Helen, Owen, Ruth, Fatimat }
+export { Card, Dan, Ines, Yvonne, Joe, Rebecca, Bez, Amelie, Helen, Owen, Ruth, Fatimat }

@@ -8,12 +8,9 @@ import styled from "styled-components"
 const _DoubleLine = styled.img.attrs({
   className: "relative mt4 mb6-ns mb5",
 })`
-  left: 33%;
+  left: 50%;
+  transform: translateX(-50%);
 `
-
-const _DoubleLineContainer = styled.div.attrs({
-  className: "relative flex flex justify-end",
-})``
 
 const returnDoubleLineImage = ({ colour }) => {
   switch (colour) {
@@ -29,11 +26,9 @@ const returnDoubleLineImage = ({ colour }) => {
 }
 
 const DoubleLine = ({ colour }) => (
-  <_DoubleLineContainer>
-    <div className="w-75">
+    <div className="w-100">
       <_DoubleLine src={returnDoubleLineImage({ colour })} />
     </div>
-  </_DoubleLineContainer>
 )
 
 export default DoubleLine

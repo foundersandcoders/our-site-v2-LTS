@@ -33,7 +33,8 @@ const _Border = ({ colour }) => {
 
 const _Story = styled.a.attrs({
   className:
-    "mb4 link dib pointer flex flex-column grow items-start justify-between w-40-ns w-100 bb bw1 b--black-20",
+    "mb4 link dib pointer flex flex-column items-start justify-between w-40-ns w-100 bb bw1 b--black-20 black",
+  target: "_blank"
 })``
 
 const _Image = styled.div.attrs({
@@ -61,8 +62,9 @@ const Story = ({
   author,
   publication,
   date,
+  url
 }) => (
-  <_Story>
+  <_Story href={url}>
     <_Border colour={colour} />
     <div>
       {img && <_Image img={img} />}

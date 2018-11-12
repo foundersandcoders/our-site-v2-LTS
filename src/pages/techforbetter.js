@@ -9,7 +9,7 @@ import Layout from "../components/Layout"
 import { DOWN_CURSOR, APPLICATION_CAROUSEL } from "../constants"
 
 import { Cursor } from "../components/Cursor"
-import { BigUnderline, _SubHeading, _BigText } from "../components/Text"
+import { BigUnderline, _SubHeading, _BigText, _ExternalLink } from "../components/Text"
 import DoubleLine from "../components/DoubleLine"
 import Carousel from "../components/Carousel"
 import Step from "../components/Step"
@@ -47,7 +47,7 @@ const TechforBetterSteps = () => (
       management tools and the application development process. End by creating
       a series of user stories which can form the basis of your app.
     </Step>
-    <Step step="04" colour="blue" title="Development (3-4 weeks)">
+    <Step step="04" colour="blue" title="Development (3-4 weeks)" last={true}>
       At this point, we are ready to schedule product development! A team of 2-4
       developers will work with you to build a mobile web app that can be tested
       with users and form the basis of applications for further funding.
@@ -59,18 +59,23 @@ const Splash = styled.img.attrs({
 })``
 
 const _Link = styled.a.attrs({
-  className: "mt1 v-mid flex items-center",
+  className: "mt1 v-mid flex items-center blue",
 })``
 
 const Button = styled.button.attrs({
   className: "db font-2 b fw5 pv2 ph6 bg-black white pointer tc center",
 })``
 
+const LinkWrapper = styled.a.attrs({
+  className: "no-underline",
+  target: "_blank"
+})``
+
 const CaseStudy = ({ title, url, children }) => (
   <div className="flex flex-column justify-between font-4 mb5-ns mb3">
     <_SubHeading className="mb1">{title}</_SubHeading>
     {children}
-    <_Link href={url} className="mt1">
+    <_Link href={url} className="mt1" target="_blank">
       <img src={link_arrow_button} className="mr1" />
       Check it out!
     </_Link>
@@ -120,8 +125,9 @@ class TechForBetterPage extends Component {
               carouselWidth="200vw"
               type={APPLICATION_CAROUSEL}
               component={this}
-            />
+            >
             <TechforBetterSteps />
+            </Carousel>
           </ExtendedPanel>
           <div className="bg-light-gray mb5">
             <HeadingWithBody
@@ -139,13 +145,7 @@ class TechForBetterPage extends Component {
                   colour="yellow"
                 >
                   <p>
-                    Each course runs for sixteen weeks at Space4 in Finsbury
-                    Park,
-                    <span className="fw5">
-                      {" "}
-                      five days a week from 10:00 to 18:00.{" "}
-                    </span>
-                    We do not offer part-time or remote courses.
+                  You will gain experience working with a software development team and see your ideas take shape in digital form. By the end of the process you will have a working mobile web app that you can test with users.
                   </p>
                 </CollapsableQuestion>
                 <CollapsableQuestion
@@ -153,13 +153,7 @@ class TechForBetterPage extends Component {
                   colour="green"
                 >
                   <p>
-                    Each course runs for sixteen weeks at Space4 in Finsbury
-                    Park,
-                    <span className="fw5">
-                      {" "}
-                      five days a week from 10:00 to 18:00.{" "}
-                    </span>
-                    We do not offer part-time or remote courses.
+                  After the initial workshops, around 20 hours over the one-month product development period, testing the app, giving feedback and meeting with the developers.
                   </p>
                 </CollapsableQuestion>
 
@@ -168,13 +162,7 @@ class TechForBetterPage extends Component {
                   colour="blue"
                 >
                   <p>
-                    Each course runs for sixteen weeks at Space4 in Finsbury
-                    Park,
-                    <span className="fw5">
-                      {" "}
-                      five days a week from 10:00 to 18:00.{" "}
-                    </span>
-                    We do not offer part-time or remote courses.
+                  We are in the process of identifying potential sources of funding for continued development of projects.
                   </p>
                 </CollapsableQuestion>
                 <CollapsableQuestion
@@ -182,13 +170,7 @@ class TechForBetterPage extends Component {
                   colour="red"
                 >
                   <p>
-                    Each course runs for sixteen weeks at Space4 in Finsbury
-                    Park,
-                    <span className="fw5">
-                      {" "}
-                      five days a week from 10:00 to 18:00.{" "}
-                    </span>
-                    We do not offer part-time or remote courses.
+                  This programme provides an opportunity for our developers in both London and Gaza to gain experience, improve their employability, and work on projects that make a real difference to people’s lives.
                   </p>
                 </CollapsableQuestion>
                 <CollapsableQuestion
@@ -196,13 +178,7 @@ class TechForBetterPage extends Component {
                   colour="green"
                 >
                   <p>
-                    Each course runs for sixteen weeks at Space4 in Finsbury
-                    Park,
-                    <span className="fw5">
-                      {" "}
-                      five days a week from 10:00 to 18:00.{" "}
-                    </span>
-                    We do not offer part-time or remote courses.
+                  A web app is a website that looks and feels like a mobile app. This means that users won’t have to download anything from an app store. Web apps can be accessed by anyone using a web browser on a computer, tablet, or smartphone.
                   </p>
                 </CollapsableQuestion>
                 <CollapsableQuestion
@@ -210,13 +186,7 @@ class TechForBetterPage extends Component {
                   colour="yellow"
                 >
                   <p>
-                    Each course runs for sixteen weeks at Space4 in Finsbury
-                    Park,
-                    <span className="fw5">
-                      {" "}
-                      five days a week from 10:00 to 18:00.{" "}
-                    </span>
-                    We do not offer part-time or remote courses.
+                  Three examples of previous projects are linked to below. 
                   </p>
                 </CollapsableQuestion>
               </QuestionWrapper>
@@ -224,7 +194,7 @@ class TechForBetterPage extends Component {
             <HeadingWithBody title="Case studies" className="mb3 mb0-ns">
               <CaseStudy
                 title="Breathe With Me (Anna Freud Centre, 2016)"
-                url="/"
+                url="https://breathewithme.co.uk/"
               >
                 is a web app that helps young people manage their anxiety, built
                 with input from young people and the clinical team at the Anna
@@ -232,22 +202,25 @@ class TechForBetterPage extends Component {
               </CaseStudy>
               <CaseStudy
                 title="Down to Earth (Quaker Social Action, CAST, 2016)"
-                url="/"
-              >
+                url="https://quaker-social-action.github.io/dte-website/www/"
+              ><div>
                 is a service that provides practical support for people
-                struggling with funeral costs. During the CAST Digital
-                Fellowship, our developers built a funeral costs calculator
-                which was shortlisted for the 2018 Comic Relief Tech for Good
-                awards.
+                struggling with funeral costs. During the <_ExternalLink href="https://wearecast.org.uk/for-nonprofits/fellowship/">CAST Digital
+                Fellowship</_ExternalLink>, our developers built a funeral costs calculator
+                which was shortlisted for the <_ExternalLink href="https://www.comicrelief.com/news/tech-for-good-2018">2018 Comic Relief Tech for Good
+                awards</_ExternalLink>.
+                </div>
               </CaseStudy>
-              <CaseStudy title="Little Window (CHAYN, 2018)" url="/">
+              <CaseStudy title="Little Window (CHAYN, 2018)" url="https://chayn.co/">
+                <div>
                 is a chatbot to help women who are victims of domestic abuse
                 find information on the Chayn website relevant to their needs,
-                funded by Filament Consultancy Group. Read about both the
-                client’s and the developers’ experience of the project.
+                funded by <_ExternalLink href="https://www.filament.ai/">Filament Consultancy Group</_ExternalLink>. Read about both <_ExternalLink href="https://medium.com/hack-for-chayn/were-trying-something-new-say-hello-to-little-window-our-chatbot-36a65ac44fda">the
+                client’s</_ExternalLink> and <_ExternalLink href="https://medium.com/hack-for-chayn/building-little-window-how-we-created-a-chatbot-for-chayn-682ecf7bd495">the developers’</_ExternalLink> experience of the project.
+                </div>
               </CaseStudy>
             </HeadingWithBody>
-            <Button>Apply</Button>
+            <LinkWrapper href="https://airtable.com/shrMtNWdsGQQs65mO"><Button>Apply</Button></LinkWrapper>
             <Splash src={home_splash} />
             <HeadingWithBody
               title="What is Founders and Coders?"
@@ -256,7 +229,7 @@ class TechForBetterPage extends Component {
               Founders and Coders CIC is a UK-based nonprofit that develops and
               runs tuition-free training programmes in web development, guided
               by our core values of cooperation, inclusion and social impact. In
-              2017, we partnered with MercyCorps to establish a campus in Gaza,
+              2017, <_ExternalLink href="https://www.theguardian.com/world/2018/jul/05/wireless-in-gaza-the-code-school-bringing-hope-to-the-strip">we partnered with MercyCorps to establish a campus in Gaza</_ExternalLink>,
               where youth unemployment is among the highest in the world. The
               Tech for Better programme provides a rare opportunity for our
               developers there to gain experience working on real projects with
