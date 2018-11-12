@@ -123,7 +123,7 @@ const MenuImage = styled.div.attrs({
     color: white;
     -webkit-text-stroke: 1px black;
     &:hover {
-      color: black;
+      color: var(--black);
     }
   `}
   ${breakpoint.s`
