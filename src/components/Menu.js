@@ -8,7 +8,7 @@ import iconLogo from "../assets/logos/fac_round_logo.png"
 import { breakpoint } from "../styles/utils"
 
 const StickyMenuTriangle = styled.div.attrs({
-  className: "fixed pointer ph2 pr2-s flex items-center justify-between",
+  className: "fixed pointer ph2 flex items-center justify-between",
 })`
   z-index: 12;
   left: 0;
@@ -169,8 +169,8 @@ class Menu extends Component {
 
     // commented out dn on line below to work on mobile menu
     return (
-      <div className="df db-ns">
-git         <MenuContainer active={menuActive}>
+      <div className="flex db-ns">
+        <MenuContainer active={menuActive}>
           <MenuSidebar active={menuActive}>
             <Link to="/">
               <Logo
