@@ -27,7 +27,7 @@ const _Step = styled.div.attrs({
   height: 70vh;
   max-height: 75vh;
   `};
-  border-bottom: ${({last}) => `${last ? `0.125rem solid rgba(0, 0, 0, 0.2)` : null}` };
+  border-bottom: ${({last}) => `${last ? `0.125rem solid rgba(0, 0, 0, 0.2)` : "inherit"}` };
   width: 90vw;
 `
 

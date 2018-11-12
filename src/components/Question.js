@@ -14,7 +14,7 @@ const Wrapper = styled.div.attrs({
 })`
   overflow: hidden;
   transition: all 0.75s;
-  max-height: ${({ collapsed }) => (collapsed ? "147px" : null)};
+  max-height: ${({ collapsed }) => (collapsed ? "147px" : "inherit")};
 `
 
 const Question = styled.div.attrs({ className: "mt3" })`
@@ -29,7 +29,7 @@ const Answer = styled.div.attrs({
   div {
     overflow: hidden;
     transition: all 0.5s ease-out;
-    max-height: ${({ collapsed }) => (collapsed ? "0" : null)};
+    max-height: ${({ collapsed }) => (collapsed ? "0" : "inherit")};
   }
 `
 const Divider = styled.div.attrs({
