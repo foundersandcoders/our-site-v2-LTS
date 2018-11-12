@@ -25,7 +25,7 @@ const _Icon = styled.img`
 `
 
 const Icon = ({ to, img }) => (
-  <a href={to} target="blank">
+  <a href={to} target="_blank">
     <_Icon src={img} />
   </a>
 )
