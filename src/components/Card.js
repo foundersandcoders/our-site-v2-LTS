@@ -7,7 +7,7 @@ import ines from "../assets/portraits/ines.png"
 import bez from "../assets/portraits/bez.png"
 
 const _Photo = styled.img.attrs({
-  className: "block absolute-ns top-0 ba bw3 b--yellow",
+  className: "db absolute-ns top-0 ba bw3 b--yellow",
 })`
   ${breakpoint.ns`
     height: ${({ imgHeight = "88%" }) => imgHeight};
