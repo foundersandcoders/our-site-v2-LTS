@@ -5,7 +5,7 @@ const BackgroundImg = styled.div`
   height: ${({ height }) => height};
   background: ${
     ({src, gradient}) => 
-  `${ gradient + ' ,'  || '' } url(${src}) no-repeat center`};
+  `${ gradient && gradient + ' ,'  || '' } url(${src}) no-repeat center`};
   background-size: ${({ bgSize = "cover" }) => bgSize};
 `
 
