@@ -8,6 +8,7 @@ import "../styles/index.css"
 
 import Header from "./Header"
 import Menu from "./Menu"
+import favicon from "../assets/icons/favicon.ico"
 
 const AppWrapper = styled.div.attrs({
   className: "center",
@@ -36,6 +37,7 @@ const Layout = ({ children }) => (
           ]}
         >
           <html lang="en" />
+          <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
         </Helmet>
         <AppWrapper>
           <Header siteTitle={data.site.siteMetadata.title} />
