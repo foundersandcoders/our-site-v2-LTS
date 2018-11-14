@@ -24,8 +24,8 @@ const _StoryContainer = styled.section.attrs({
 })``
 const colourOptions = ["yellow","blue","green","red"]
 
-const mapStories = (array) => {
-  return array.map((story, key) => {
+const mapStories = (array, limit) => {
+  return array.slice(0, limit).map((story, key) => {
     return <Story
       key={key}
       colour={colourOptions[key%4]}
@@ -39,24 +39,18 @@ const mapStories = (array) => {
   })
 }
 
-const StoryContainer = ({ children }) => (
-  <Fragment>
-    <_StoryContainer>{children}</_StoryContainer>
-    {children.length > 3 && (
-      <div className="mt2 lh-copy ttu flex items-center pointer f4">
+const StorySection = ({title, array, seeMoreStories, limit}) => {
+  return (
+  <HeadingWithBody title={title} className="mb7">
+    <_StoryContainer>
+      {mapStories(array, limit)}
+    </_StoryContainer>
+    {array.length > limit && (
+      <div className="mt2 lh-copy ttu flex items-center pointer f4" onClick={() => {seeMoreStories(title)}}>
         More
         <img className="ml2 w1 h1" src={arrow_right_black} />
       </div>
     )}
-  </Fragment>
-)
-
-const StorySection = ({title, array}) => {
-  return (
-  <HeadingWithBody title={title} className="mb7">
-    <StoryContainer>
-      {mapStories(array)}
-    </StoryContainer>
   </HeadingWithBody>
   )
 }
@@ -69,7 +63,25 @@ class StoriesPage extends Component {
     pressLimit: 4,
     podcastLimit: 4
   }
-
+  incremementLimit (stateSection) {
+    this.setState((state, props) => {
+      return {[stateSection]: state[stateSection] + 4}
+    })
+  }
+  seeMoreStories = (section) => {
+    switch(section) {
+      case "Stories by us":
+        return this.incremementLimit("byUsLimit")
+      case "Stories about us":
+        return this.incremementLimit("aboutUsLimit")  
+      case "From the press":
+        return this.incremementLimit("pressLimit")      
+      case "Podcasts":
+        return this.incremementLimit("podcastLimit")      
+      default:
+      break;
+    }
+  }
   render() {
     const { cursor } = this.state
     return (
@@ -89,10 +101,10 @@ class StoriesPage extends Component {
             </HeadingWithBody>
             <DoubleLine colour="red" />
             
-            <StorySection title="Stories by us" array={storiesByUs}/>
-            <StorySection title="Stories about us" array={storiesAboutUs}/>
-            <StorySection title="From the press" array={storiesInPress}/>
-            <StorySection title="Podcasts" array={podcasts}/>
+            <StorySection title="Stories by us" array={storiesByUs} limit={this.state.byUsLimit} seeMoreStories={this.seeMoreStories}/>
+            <StorySection title="Stories about us" array={storiesAboutUs} limit={this.state.aboutUsLimit} seeMoreStories={this.seeMoreStories}/>
+            <StorySection title="From the press" array={storiesInPress} limit={this.state.pressLimit} seeMoreStories={this.seeMoreStories}/>
+            <StorySection title="Podcasts" array={podcasts} limit={this.state.podcastLimit} seeMoreStories={this.seeMoreStories}/>
 
             <NextPanel component={this} to="/" topBorder>
               Back to homepage
