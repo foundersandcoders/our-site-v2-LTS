@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react"
+import React, { Component } from "react"
 import styled from "styled-components"
 
 import arrow_right_black from "../assets/ui/arrow_right_black.svg"
