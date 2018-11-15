@@ -7,6 +7,7 @@ import home_splash from "../assets/splashes/home_splash.png"
 
 import Layout from "../components/Layout"
 import { DOWN_CURSOR, APPLICATION_CAROUSEL } from "../constants"
+import { TECH_FOR_BETTER_APPLICATION_FORM } from "../maintenance"
 
 import { Cursor } from "../components/Cursor"
 import { BigUnderline, _SubHeading, _BigText, _ExternalLink } from "../components/Text"
@@ -220,7 +221,7 @@ class TechForBetterPage extends Component {
                 </div>
               </CaseStudy>
             </HeadingWithBody>
-            <LinkWrapper href="https://airtable.com/shrMtNWdsGQQs65mO"><Button>Apply</Button></LinkWrapper>
+            <LinkWrapper href={TECH_FOR_BETTER_APPLICATION_FORM}><Button>Apply</Button></LinkWrapper>
             <Splash src={home_splash} />
             <HeadingWithBody
               title="What is Founders and Coders?"

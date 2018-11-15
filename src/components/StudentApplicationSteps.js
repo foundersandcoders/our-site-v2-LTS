@@ -3,6 +3,8 @@ import styled from "styled-components"
 import { _SubHeading, _ExternalLink } from "./Text"
 import React, { Fragment } from "react"
 
+import { EXPRESSION_OF_INTEREST_FORM } from "../maintenance"
+
 const _ListItem = styled.li`
   list-style-type: circle;
   list-style-position: inside;
@@ -15,7 +17,7 @@ const ApplicationSteps = () => (
       workshops and meetups for prospective students. We open expressions of
       interest six months before a cohort begins.
       <br/><br/>
-      <_ExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLSepdNxKsrMjhfnbdkzKUgNpeWFmp8WLyiqTe_UY10TsPpFOEQ/viewform">Submit expression of Interest</_ExternalLink>
+      <_ExternalLink href={EXPRESSION_OF_INTEREST_FORM}>Submit expression of Interest</_ExternalLink>
     </Step>
     <Step
       step="02"

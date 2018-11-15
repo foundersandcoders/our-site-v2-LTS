@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import styled from "styled-components"
 
 import { DOWN_CURSOR } from "../constants"
+import { HIRE_CONTACT_FORM } from "../maintenance"
 
 import Layout from "../components/Layout"
 import { BigUnderline, _ExternalLink } from "../components/Text"
@@ -32,6 +33,7 @@ const Text = styled.p.attrs({
   className: ({ font }) => `${font} bg-yellow tr ph1`,
 })`
   width: fit-content;
+  letter-spacing: 0.01rem;
 `
 
 const NameAndCompany = ({ firstName, secondName, company, className }) => (
@@ -46,11 +48,12 @@ const _NameAndCompany = styled(NameAndCompany).attrs({
   className: "absolute flex items-end flex-column",
 })`
   ${breakpoint.ns`
- bottom: -72px;
+  bottom: -72px;
   right: -166px;
 `};
   bottom: -80px;
   right: 0;
+  letter-spacing: var(--letter-spacing-tight);
 `
 
 const QuoteSlideContainer = styled.div.attrs({
@@ -69,7 +72,7 @@ const QuoteImg = styled(BackgroundImg).attrs({
 
 const QuoteSlide = ({ quote, firstName, secondName, company }) => (
   <div className="w-100-ns w-90 mh2 mh0-ns">
-    <div className="w-33-ns w-90 relative center bg-white">
+    <div className="w-40-l w-60-m w-90 relative center bg-white">
       <QuoteImg src={quotemarks} />
       <QuoteSlideContainer>{quote}</QuoteSlideContainer>
       <_NameAndCompany
@@ -102,7 +105,7 @@ class HirePage extends Component {
             the cooperative community at Founders and Coders. We are always
             looking for new partners committed to building inclusive workplaces
             where our diverse graduates will thrive. Think your company would be
-            a good fit? <_ExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLScqtbiYqT7CDDjjYFtcwzlWDuZlsotcDvP1SoSj2SmuVmO4AA/viewform">Fill out this short form</_ExternalLink>.
+            a good fit? <_ExternalLink href={HIRE_CONTACT_FORM}>Fill out this short form</_ExternalLink>.
           </HeadingWithBody>
           <DoubleLine colour="red" />
           <section className="mb7 pb5 mh2 mh0-ns">

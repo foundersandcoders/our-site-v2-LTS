@@ -22,7 +22,7 @@ const _Step = styled.div.attrs({
       step ? "bt bb-ns bw1 b--black-20" : "bt bb-ns bw1 b--black-20 justify-around"
     } pt4 pb3-ns pb4`,
 })`
-  ${breakpoint.ns`
+  ${breakpoint.l`
   width: 30vw;
   height: 70vh;
   max-height: 75vh;

@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import * as r from "ramda"
 
 import { APPLICATION_CAROUSEL, DOWN_CURSOR } from "../constants"
+import { APPLICATIONS_OPEN } from "../maintenance"
 
 import Layout from "../components/Layout"
 import { Panel, NextPanel, ExtendedPanel } from "../components/Panel"
@@ -70,7 +71,7 @@ class ApplyPage extends Component {
               <Table />
               <QuestionWrapper hideNS>
                 <CollapsableQuestion
-                  question="Cohort of Sprint 2019"
+                  question="Cohort of Spring 2019"
                   colour="red"
                 >
                   <div className="font-4 mb2">
@@ -139,25 +140,25 @@ class ApplyPage extends Component {
             </HeadingWithBody>
           </InnerGridContainer>
           <section className="mb7-ns mb6 pb5-ns pb0">
-            <ExtendedPanel className="bg-light-gray db-ns dn">
+            <ExtendedPanel className="bg-light-gray db-l dn">
               <Carousel
                 carouselWidth="200vw"
                 type={APPLICATION_CAROUSEL}
                 title="How do I apply?"
                 component={this}
-                applicationsAreOpen={false}
+                applicationsAreOpen={APPLICATIONS_OPEN}
               >
                 <ApplicationSteps />
               </Carousel>
             </ExtendedPanel>
-            <div className="bg-light-gray ma0 db dn-ns">
+            <div className="bg-light-gray ma0 db dn-l">
               <HeadingWithBody
                 title="How do I apply?"
-                className="db dn-ns bg-light-gray pv6"
+                className="db dn-l bg-light-gray pv6"
               >
                 <ApplicationSteps />
               </HeadingWithBody>
-              <ApplicationsStatus/>
+              <ApplicationsStatus areOpen={APPLICATIONS_OPEN}/>
             </div>
           </section>
 
