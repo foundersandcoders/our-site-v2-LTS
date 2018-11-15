@@ -126,7 +126,7 @@ class AboutPage extends Component {
                 colour="red"
               >
                 <p>
-                  During the first half of the course, you’ll spend eight weeks learning HTML, CSS, JavaScript, Node.JS and other basic building blocks of web development, as well as user-centred design and entrepreneurship, via workshops and team projects. You will participate in workshops as part of the <_InternalLink href="/techforbetter">Tech for Better</_InternalLink> programme.
+                  During the first half of the course, you’ll spend eight weeks learning HTML, CSS, JavaScript, Node.JS and other basic building blocks of web development, as well as user-centred design and entrepreneurship, via workshops and team projects.
                 <br /><br />
                   During the second half of the course, you’ll tackle two extended team projects, one based on ideas pitched within the cohort and a final project for an external client that you will select as part of the <_InternalLink href="/techforbetter">Tech for Better</_InternalLink> programme.
                 </p>
@@ -234,12 +234,12 @@ class AboutPage extends Component {
                 colour="yellow"
               >
                 <p>
-                  In 2013, Dan started regular <_ExternalLink href="http://selforganising.org/">"self-organising"</_ExternalLink> meetups at the British Library with other people interested in improving their programming skills. In January 2014, he ran a <_ExternalLink href="https://vimeo.com/88149344">6-week pilot</_ExternalLink> at <_ExternalLink href="https://camdencollective.co.uk/">Camden Collective</_ExternalLink>. In the final days of <_ExternalLink href="https://vimeo.com/115169756">FAC3</_ExternalLink> in Camden, we learned that our classroom would no longer be available and the students spent the last week of their course organising <_ExternalLink href="https://www.indiegogo.com/projects/founders-coders-a-free-coding-academy-in-london#/">a successful crowdfunding campaign</_ExternalLink>. In January 2015, Founders and Coders incorporated as a C.I.C., with <_ExternalLink href="https://www.linkedin.com/in/iteles/">Ines</_ExternalLink> and <_ExternalLink href="https://www.linkedin.com/in/nelsonic/">Nelson</_ExternalLink> joining the team as a director and lead technical mentor.
+                  In 2013, <_ExternalLink href="https://www.linkedin.com/in/dsofer">Dan</_ExternalLink> started regular <_ExternalLink href="http://selforganising.org/">"self-organising"</_ExternalLink> meetups at the British Library with other people interested in improving their programming skills. In January 2014, he ran a <_ExternalLink href="https://vimeo.com/88149344">6-week pilot</_ExternalLink> at <_ExternalLink href="https://camdencollective.co.uk/">Camden Collective</_ExternalLink>. In the final days of <_ExternalLink href="https://vimeo.com/115169756">FAC3</_ExternalLink> in Camden, we learned that our classroom would no longer be available and the students spent the last week of their course organising <_ExternalLink href="https://www.indiegogo.com/projects/founders-coders-a-free-coding-academy-in-london#/">a successful crowdfunding campaign</_ExternalLink>. In January 2015, Founders and Coders incorporated as a C.I.C., with <_ExternalLink href="https://www.linkedin.com/in/iteles/">Ines</_ExternalLink> and <_ExternalLink href="https://www.linkedin.com/in/nelsonic/">Nelson</_ExternalLink> joining the team as a director and lead technical mentor.
                 </p>
               </CollapsableQuestion>
             </QuestionWrapper>
             <Footnote>
-              * Have a question we didn’t answer? Contact us and we’ll get right
+              Have a question we didn’t answer? <_InternalLink href="#footer">Contact us</_InternalLink> and we’ll get right
               back to you!
             </Footnote>
           </HeadingWithBody>

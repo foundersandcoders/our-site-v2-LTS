@@ -37,15 +37,12 @@ const DoubleLine = styled.img.attrs({
 `
 
 const Footer = () => (
-  <_Footer className="bt bw1 b--gray">
+  <_Footer id="footer" className="bt bw1 b--gray">
     <DoubleLine src={double_line_yellow_horizontal} />
     <div className="center mb2">
-      <a
-        className="link underline white"
-        href="mailto:hello@foundersandcoders.com"
-      >
+      <span className="underline white">
         hello@foundersandcoders.com
-      </a>
+      </span>
       <span className="dn di-ns"> | </span>
       <span className="fw3 db di-ns">
         Space4, 1st floor 149 Fonthill Road, Finsbury Park, London N4 3HF
