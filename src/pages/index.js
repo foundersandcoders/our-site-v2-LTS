@@ -2,11 +2,12 @@ import React, { Component, Fragment } from "react"
 import styled from "styled-components"
 
 import home_splash from "../assets/splashes/home_splash.png"
-import dwyl from "../assets/logos/dwyl_grayscale.png"
-import gaza_sky_geeks from "../assets/logos/gaza_sky_geeks_grayscale.png"
-import outlandish from "../assets/logos/outlandish_grayscale.png"
-import cotech from "../assets/logos/cotech_grayscale.png"
-import infact from "../assets/logos/infact_grayscale.png"
+import dwyl from "../assets/logos/cooperate_logos/dwyl_grayscale.png"
+import gaza_sky_geeks from "../assets/logos/cooperate_logos/gaza_sky_geeks_grayscale.png"
+import outlandish from "../assets/logos/cooperate_logos/outlandish_grayscale.png"
+import space4 from "../assets/logos/cooperate_logos/Space4.svg"
+import cotech from "../assets/logos/cooperate_logos/cotech_grayscale.png"
+import infact from "../assets/logos/cooperate_logos/infact_grayscale.png"
 
 import { TESTIMONIAL_CAROUSEL, DOWN_CURSOR } from "../constants"
 
@@ -106,11 +107,13 @@ class IndexPage extends Component {
               <PartnerLogo src={dwyl} />
               <PartnerLogo src={infact} />
               <PartnerLogo src={outlandish} />
+              <PartnerLogo src={space4} />
               <PartnerLogo src={cotech} />
               <PartnerLogo src={gaza_sky_geeks} />
               <PartnerLogo src={dwyl} />
               <PartnerLogo src={infact} />
               <PartnerLogo src={outlandish} />
+              <PartnerLogo src={space4} />
               <PartnerLogo src={cotech} />
               <PartnerLogo src={gaza_sky_geeks} />
             </FlickityCarousel>
