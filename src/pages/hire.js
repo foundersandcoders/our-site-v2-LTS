@@ -20,7 +20,9 @@ import partnerLogos from "../components/partner_logos"
 
 const PartnerLogo = styled(BackgroundImg).attrs({
   className: "h4 w5 mt5-ns mt4 ma3",
-})``
+})`
+  filter: grayscale(100%);
+`
 
 const SplashImg = ({ src }) => (
   <BackgroundImg src={src} height="calc(10rem + 25vw)" width="100%" />
