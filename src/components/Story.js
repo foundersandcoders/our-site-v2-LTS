@@ -8,6 +8,12 @@ import horizontal_line_blue from "../assets/icons/horizontal_line_blue.svg"
 import horizontal_line_yellow from "../assets/icons/horizontal_line_yellow.svg"
 import horizontal_line_green from "../assets/icons/horizontal_line_green.svg"
 
+const _Line = styled.img.attrs({
+  className: "mb4 w-50 line-animate"
+})`
+  transition: all 0.30s ease-in-out;
+`
+
 const _Border = ({ colour }) => {
   let border
   switch (colour) {
@@ -28,14 +34,20 @@ const _Border = ({ colour }) => {
       break
   }
 
-  return <img className="mb4 w-50" src={border} alt={`${colour}-border`} />
+  return <_Line src={border} alt={`${colour}-border`} />
 }
 
 const _Story = styled.a.attrs({
   className:
     "mb4 link dib pointer flex flex-column items-start justify-between w-40-ns w-100 bb bw1 b--black-20 black",
   target: "_blank"
-})``
+})`
+  &:hover {
+    .line-animate {
+      transform: translateY(5px);
+    }
+  }
+`
 
 const _Image = styled.div.attrs({
   className: "w-100 h5 mb3",
