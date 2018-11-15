@@ -4,6 +4,7 @@ import {
   DOWN_CURSOR,
   RIGHT_CURSOR,
   HIDE_CURSOR,
+  CROSS_CURSOR
 } from "../constants"
 
 import styled from "styled-components"
@@ -15,6 +16,7 @@ import right_cursor_blue from "../assets/ui/arrow_right_blue.svg"
 import right_cursor_red from "../assets/ui/arrow_right_red.svg"
 import right_cursor_green from "../assets/ui/arrow_right_green.svg"
 import right_cursor_yellow from "../assets/ui/arrow_right_yellow.svg"
+import cross_cursor_black from "../assets/ui/cross_cursor_black.svg"
 
 const mouseOnNext = component => {
   component.setState({
@@ -33,6 +35,13 @@ const mouseOnCarousel = component => {
     cursor: RIGHT_CURSOR,
   })
 }
+
+const mouseOnMenu = component => {
+  component.setState({
+    cursor: CROSS_CURSOR,
+  })
+}
+
 
 const mouseOnHide = component => {
   component.setState({
@@ -56,6 +65,11 @@ const returnCursorImage = ({ cursor, colour }) => {
       red: right_cursor_yellow,
       blue: right_cursor_yellow,
       green: right_cursor_yellow,
+    },
+    [CROSS_CURSOR]: {
+      red: cross_cursor_black,
+      blue: cross_cursor_black,
+      green: cross_cursor_black,
     },
   }
   return cursorImage[cursor][colour]
@@ -142,4 +156,4 @@ class Cursor extends Component {
   }
 }
 
-export { Cursor, mouseOnCarousel, mouseOnNext, mouseOff, mouseOnHide }
+export { Cursor, mouseOnCarousel, mouseOnMenu, mouseOnNext, mouseOff, mouseOnHide }

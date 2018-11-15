@@ -25,7 +25,7 @@ const StickyMenuTriangle = styled.div.attrs({
     left: 0;
     top: calc((100vh - 5rem) * 0.5);
     clip-path: polygon(100% 50%, 0 0, 0 100%);
-    background: ${({ active }) => active ? `white` : `black`};
+    background: ${({ active }) => active ? `white` : `var(--black)`};
   `};
 `
 
