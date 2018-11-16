@@ -56,7 +56,7 @@ const Splash = styled.img.attrs({
 `
 
 const PartnerLogo = styled(BackgroundImg).attrs({
-  className: "h5 w5 mt4-ns mh4-ns mt0",
+  className: "h4 w5 mt5-ns mt4 mh4 mb3",
   bgSize: "contain",
 })``
 
@@ -96,6 +96,7 @@ class IndexPage extends Component {
                 prevNextButtons: false,
                 pageDots: false,
                 autoPlay: 1500,
+                pauseAutoPlayOnHover: false,
                 wrapAround: true,
               }}
             >

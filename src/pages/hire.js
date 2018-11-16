@@ -160,7 +160,8 @@ class HirePage extends Component {
               initialIndex: 4,
               prevNextButtons: false,
               pageDots: false,
-              autoPlay: 1500,
+              autoPlay: 1300,
+              pauseAutoPlayOnHover: false,
               wrapAround: true,
             }}
           >
