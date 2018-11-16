@@ -14,6 +14,7 @@ import FlickityCarousel from "../components/FlickityCarousel"
 import { breakpoint } from "../styles/utils"
 import BackgroundImg from "../components/BackgroundImg"
 import InnerGridContainer from "../components/InnerGridContainer"
+import { SplashPhoto } from "../components/SplashPhoto"
 
 import hireSplash from "../assets/splashes/hire_splash.jpg"
 import quotemarks from "../assets/icons/quotemarks.svg"
@@ -24,16 +25,6 @@ const PartnerLogo = styled(BackgroundImg).attrs({
 })`
   filter: grayscale(100%);
 `
-
-const SplashImg = ({ src }) => (
-  <BackgroundImg 
-    src={src} 
-    height="calc((100vw - 28px) / 1.8)"
-    width="100%" 
-    bgSize="contain"
-    gradient="radial-gradient( rgba(141,140,355,0.25), rgba(4,2,171,0.25) 120%)"
-  />
-)
 
 const Text = styled.p.attrs({
   className: ({ font }) => `${font} bg-yellow tr ph1`,
@@ -101,7 +92,7 @@ class HirePage extends Component {
       <Layout>
         <Cursor cursor={cursor} colour="green" />
         <InnerGridContainer>
-          <Panel justify="center justify-end-ns" className="mt4-ns mt7 pt0-ns pt3 mb6-ns mb5 mh2 mh0-ns">
+          <Panel justify="center justify-end-ns" className="mt7 pt0-ns pt3 mb6-ns mb5 mh2 mh0-ns">
             <div className="w-100 w-75-ns">
               <BigUnderline>Hire our graduates</BigUnderline>
             </div>
@@ -114,8 +105,7 @@ class HirePage extends Component {
             a good fit? <_ExternalLink href={HIRE_CONTACT_FORM}>Fill out this short form</_ExternalLink>.
           </HeadingWithBody>
           <DoubleLine colour="red" />
-          <section className="mb7-ns pb5 mh2 mh3-ns">
-            <SplashImg src={hireSplash} />
+            <SplashPhoto src={hireSplash} />
             {/* <FlickityCarousel
               options={{
                 pageDots: true,
@@ -131,7 +121,6 @@ class HirePage extends Component {
               <SplashImg src={hireSplash} />
               <SplashImg src={hireSplash} />
             </FlickityCarousel> */}
-          </section>
         </InnerGridContainer>
         <section className="bg-light-gray">
           <FlickityCarousel

@@ -7,7 +7,7 @@ const HeadingWithBody = ({ title, className = "", bgColour, children }) => (
       {title}
     </SmallUnderline>
     <div className="w-100 flex justify-end-l justify-start">
-      <div className="font-2d5-ns font-4 fw3 w-75-l w-100 overflow-x-hidden">
+      <div className="font-2d5-ns font-4 fw3 w-75-l w-100 overflow-x-hidden pr6-ns">
         {children}
       </div>
     </div>

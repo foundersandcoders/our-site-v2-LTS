@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import link_arrow_button from "../assets/ui/link_arrow_button.svg"
 import tech_for_better_splash from "../assets/splashes/tech_for_better_splash.png"
-import home_splash from "../assets/splashes/home_splash.png"
+import photo_splash from "../assets/splashes/tech_better_splash.jpg"
 
 import Layout from "../components/Layout"
 import { DOWN_CURSOR, APPLICATION_CAROUSEL } from "../constants"
@@ -18,6 +18,7 @@ import HeadingWithBody from "../components/HeadingWithBody"
 import { CollapsableQuestion, QuestionWrapper } from "../components/Question"
 import { Panel, ExtendedPanel, NextPanel } from "../components/Panel"
 import InnerGridContainer from "../components/InnerGridContainer"
+import { SplashPhoto } from "../components/SplashPhoto"
 
 const TechforBetterSteps = () => (
   <Fragment>
@@ -68,7 +69,7 @@ const Button = styled.button.attrs({
 })``
 
 const LinkWrapper = styled.a.attrs({
-  className: "no-underline",
+  className: "no-underline block w-100 flex justify-center items-center",
   target: "_blank"
 })``
 
@@ -221,11 +222,11 @@ class TechForBetterPage extends Component {
                 </div>
               </CaseStudy>
             </HeadingWithBody>
-            <LinkWrapper href={TECH_FOR_BETTER_APPLICATION_FORM}><Button>Apply</Button></LinkWrapper>
-            <Splash src={home_splash} />
+            <LinkWrapper href={TECH_FOR_BETTER_APPLICATION_FORM} className="mb7"><Button>Apply</Button></LinkWrapper>
+            <SplashPhoto src={photo_splash} margin="160px"/>
             <HeadingWithBody
               title="What is Founders and Coders?"
-              className="mb7 pb2"
+              className="mb7 pb2 mr6-ns"
             >
               Founders and Coders CIC is a UK-based nonprofit that develops and
               runs tuition-free training programmes in web development, guided
