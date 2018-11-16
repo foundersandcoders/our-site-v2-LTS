@@ -131,7 +131,7 @@ const _SubHeading = styled.h3.attrs({
 
 const _BigText = styled.h1.attrs({
   className: ({ colour = "black" }) =>
-    `subheadline headline-ns fw5 w-70 ${colour}`,
+    `subheadline headline-ns fw5 w-70-ns w-100 ${colour}`,
 })``
 
 const _ExternalLink = styled.a.attrs({
