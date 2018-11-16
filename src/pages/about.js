@@ -22,10 +22,10 @@ const Footnote = styled.p.attrs({
 
 const StaffPanel = styled(Panel).attrs({
   className:
-    "pa7-ns pv7 flex flex-wrap-ns flex-nowrap flex-column flex-row-ns items-between-ns justify-around-ns justify-center",
+    "ph7-ns pv7 flex flex-wrap-ns flex-nowrap flex-column flex-row-ns items-between-ns justify-around-ns justify-center",
 })`
   height: ${({ panelHeight: { s } }) => s};
-  padding-top: 15rem;
+  padding-top: 14rem;
   background: url("${stripey_small}") center;
   clip-path: polygon(0 100%, 0 5%, 25% 0, 50% 5%, 75% 0, 100% 5%, 100% 100%);
 
@@ -51,7 +51,6 @@ const StaffPanel = styled(Panel).attrs({
     100% 7%,
     100% 100%
   );
-  padding-top: 10rem;
   `};
 `
 
@@ -253,7 +252,7 @@ class AboutPage extends Component {
             thriving cooperative community.
           </HeadingWithBody>
         </InnerGridContainer>
-        <StaffPanel panelHeight={{ ns: "120vh", s: "300vh" }}>
+        <StaffPanel panelHeight={{ ns: "175vh", s: "450vh" }}>
           <Dan />
           <Ines />
           <Yvonne />

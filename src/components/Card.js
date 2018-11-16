@@ -6,14 +6,32 @@ import dan from "../assets/portraits/dan.png"
 import ines from "../assets/portraits/ines.png"
 import bez from "../assets/portraits/bez.png"
 
-const _Photo = styled.img.attrs({
+const _Photo = styled.div.attrs({
   className: "db absolute-ns top-0 ba bw3 b--yellow",
 })`
+  background: ${({blueImg}) => `url(${blueImg})`};
+  &:hover {
+    background: ${({normalImg}) => `url(${normalImg})`};
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+  }
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  width: 100%;
+  height: 70vh;
   ${breakpoint.ns`
+    width: 55%;
     height: ${({ imgHeight = "88%" }) => imgHeight};
     padding-top: 3rem;
     left: 20%;
   `}
+`
+
+const _StaffPhoto = styled(_Photo)`
+  width: 293px;
+  height: 439px;
 `
 
 const Container = styled.div.attrs({
@@ -45,7 +63,7 @@ const Container = styled.div.attrs({
   // width: ${({ cardWidth: { s: cardWidth } }) => cardWidth};
 `
 
-const Title = ({ firstName, secondName, thirdName, title }) => (
+const Title = ({ firstName, secondName, thirdName, title, title2 }) => (
   <TextContainer>
     <Text font="ttu fw5 font-1-l font-2-m font-3">{firstName}</Text>
     <Text font="ttu fw5 font-1-l font-2-m font-3">{secondName}</Text>
@@ -54,15 +72,26 @@ const Title = ({ firstName, secondName, thirdName, title }) => (
   </TextContainer>
 )
 
+const StaffTitle = ({ firstName, secondName, thirdName, title, title2 }) => (
+  <StaffTextContainer>
+    <Text font="ttu fw5 font-1-l font-2-m font-3">{firstName}</Text>
+    <Text font="ttu fw5 font-1-l font-2-m font-3">{secondName}</Text>
+    {thirdName && <Text font="ttu fw5 font-1-l font-2-m font-3">{thirdName}</Text>}
+    <Text font="font-5 gray">{title}</Text>
+    {title2 && <Text font="font-5 gray">{title2}</Text>}
+  </StaffTextContainer>
+)
+
 const Text = styled.p.attrs({
   className: ({ font }) => `${font} bg-white tr ph1-ns ph0`,
 })`
   width: fit-content;
+  letter-spacing: 0.01rem;
 `
 
 const TextContainer = styled.div.attrs({
   className:
-    "absolute flex items-end flex-column bottom-2-ns z-2",
+    "absolute flex items-end flex-column z-2",
 })`
   left: 7.5%;
   top: 450px;
@@ -73,6 +102,15 @@ const TextContainer = styled.div.attrs({
     transform: translateX(-48%);
   `}
 `
+const StaffTextContainer = styled(TextContainer)`
+  top: 400px;
+  right: -5px;
+  ${breakpoint.ns`
+    top: 20px;
+    right: 160px;
+  `}
+`
+
 
 const Quote = styled.div.attrs({
   className: "db absolute-ns right-0-ns top-2-ns i font-4-ns font-5 pa2 pa3-ns mt5 mb4 bg-white w-100 w-50-ns",
@@ -99,7 +137,7 @@ const Card = ({
   quote,
 }) => (
   <Container cardWidth={cardWidth} cardHeight={cardHeight}>
-    <_Photo src={img} imgHeight={imgHeight} />
+    <_Photo normalImg={img} blueImg={img} imgHeight={imgHeight} />
     <Title
       imgHeight={imgHeight}
       firstName={firstName}
@@ -111,8 +149,35 @@ const Card = ({
   </Container>
 )
 
+const StaffCard = ({
+  firstName,
+  secondName,
+  thirdName,
+  title,
+  title2,
+  img,
+  imgHeight,
+  cardWidth,
+  cardHeight,
+  quote,
+}) => (
+  <Container cardWidth={cardWidth} cardHeight={cardHeight}>
+    <_StaffPhoto normalImg={img} blueImg={img} imgHeight={imgHeight} />
+    <StaffTitle
+      imgHeight={imgHeight}
+      firstName={firstName}
+      secondName={secondName}
+      thirdName={thirdName}
+      title={title}
+      title2={title2}
+    />
+    {quote ? <Quote>{quote}</Quote> : <div />}
+  </Container>
+)
+
+
 const Dan = () => (
-  <Card
+  <StaffCard
     firstName="Dan"
     secondName="Sofer"
     title="Executive Director"
@@ -123,7 +188,7 @@ const Dan = () => (
   />
 )
 const Ines = () => (
-  <Card
+  <StaffCard
     firstName="Ines"
     secondName="Teles"
     title="Director"
@@ -135,10 +200,11 @@ const Ines = () => (
 )
 
 const Yvonne = () => (
-  <Card
+  <StaffCard
     firstName="Yvonne"
     secondName="Liu"
-    title="Operations and international development"
+    title="Operations and"
+    title2=" international development"
     cardWidth={{ ns: "33%", s: "66%" }}
     cardHeight={{ ns: "50%", s: "17%" }}
     imgHeight="75%"
@@ -147,7 +213,7 @@ const Yvonne = () => (
 )
 
 const Joe = () => (
-  <Card
+  <StaffCard
     firstName="Joe"
     secondName="Tanner"
     title="Commercial Partnerships"
@@ -159,7 +225,7 @@ const Joe = () => (
 )
 
 const Rebecca = () => (
-  <Card
+  <StaffCard
     firstName="Rebecca"
     secondName="Radding"
     title="Strategy and communications"
