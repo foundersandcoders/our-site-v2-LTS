@@ -57,12 +57,12 @@ const Footer = () => (
       <Icon to="https://twitter.com/founderscoders" img={twitter_logo_white} />
       <Icon to="https://www.linkedin.com/school/founders-&-coders/" img={linkedin_logo_white} />
     </div>
-    <div className="font-6 w-100 ph2-ns ph0 fw3 flex justify-between">
+    <div className="font-6 w-100 ph2-ns pb1 ph0 fw3 flex justify-between flex-row-ns flex-column">
       <div>
         <span className="db di-ns">© 2018 Founders and Coders.</span>
         <span className="db di-ns"> All rights reserved</span>
       </div>
-      <div className="dn db-ns">
+      <div className="db ma0-ns mt2">
         Made with lots of 💖 by{" "}
         <a className="link underline white" href="https://www.infactcoop.com/">
           InFact Digital Co-op
