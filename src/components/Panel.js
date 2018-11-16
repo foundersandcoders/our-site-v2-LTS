@@ -109,7 +109,7 @@ const PanelTopBorder = styled.div.attrs({
   `} background-attachment: fixed;
 `
 const NextPanel = ({ component, to, children, topBorder }) => (
-  <div>
+  <div className="panel-container">
     {topBorder && <PanelTopBorder />}
     <div
       className="bg-black"

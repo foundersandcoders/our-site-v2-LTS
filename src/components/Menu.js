@@ -8,7 +8,7 @@ import iconLogo from "../assets/logos/fac_round_logo.png"
 import { breakpoint } from "../styles/utils"
 
 const StickyMenuTriangle = styled.div.attrs({
-  className: "fixed pointer ph2 flex items-center justify-between",
+  className: "fixed pointer ph2 flex items-center justify-between menu-tri",
 })`
   z-index: 12;
   left: 0;
@@ -16,7 +16,7 @@ const StickyMenuTriangle = styled.div.attrs({
   width: 100vw;
   height: 60px;
   transition: 0.5s;
-  background: ${({ active }) => active ? `transparent` : `black`};
+  background: ${({ active }) => active ? `transparent` : `var(--black)`};
   ${breakpoint.ns`
     justify-content: center;
     padding-right: 32px;
@@ -24,7 +24,7 @@ const StickyMenuTriangle = styled.div.attrs({
     width: 5rem;
     top: calc((100vh - 5rem) * 0.5);
     clip-path: polygon(100% 50%, 0 0, 0 100%);
-    background: ${({ active }) => active ? `white` : `black`};
+    background: ${({ active, color }) => active || color === "white" ? `var(--white)` : `var(--black)`};
   `};
 `
 
@@ -155,7 +155,15 @@ const MenuItem = ({ number, item, active, link }) => (
 class Menu extends Component {
   constructor(props) {
     super(props)
-    this.state = { menuActive: false }
+    this.state = { menuActive: false, panelTop: 0, menuTop: 0 }
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll)
   }
 
   toggleMenu = () => {
@@ -164,10 +172,17 @@ class Menu extends Component {
     }))
   }
 
-  render() {
-    const { menuActive } = this.state
+  handleScroll = () => {
+    const panel = document.querySelector(".panel-container").getBoundingClientRect()
+    const menuTri = document.querySelector(".menu-tri").getBoundingClientRect()
+    this.setState({
+      panelTop: panel.top,
+      menuTop: menuTri.top
+    })
+  }
 
-    // commented out dn on line below to work on mobile menu
+  render() {
+    const { menuActive, panelTop, menuTop } = this.state
     return (
       <div className="flex db-ns">
         <MenuContainer active={menuActive}>
@@ -213,7 +228,11 @@ class Menu extends Component {
             />
           </MenuMain>
         </MenuContainer>
-        <StickyMenuTriangle active={menuActive} onClick={this.toggleMenu}>
+        <StickyMenuTriangle 
+          active={menuActive} 
+          onClick={this.toggleMenu}
+          color={panelTop < menuTop ? "white" : "black"}
+          >
           <RoundLogoMobile active={menuActive} />
           <MenuLines active={menuActive} />
         </StickyMenuTriangle>
