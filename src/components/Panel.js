@@ -16,7 +16,7 @@ import { breakpoint } from "../styles/utils"
 
 const _Footer = styled.div.attrs({
   className:
-    "bg-black white font-5 fw3 flex flex-column items-center-ns justify-center-ns pb2 ph2 ph0-ns",
+    "bg-black white-80 font-5 fw3 flex flex-column items-center-ns justify-center-ns pb2 mh2 ph0-ns",
 })``
 
 const _Icon = styled.img`
