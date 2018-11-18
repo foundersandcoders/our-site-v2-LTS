@@ -24,10 +24,10 @@ const _TopNav = styled.nav.attrs({
 
 const TopNav = () => (
   <_TopNav>
-    <TopLink to="/about" text="What is Founders & Coders?" number="01" />
+    <TopLink to="/about" text="What is Founders and Coders?" number="01" />
     <TopLink to="/apply" text="Apply" number="02" />
     <TopLink to="/hire" text="Hire" number="03" />
-    <TopLink to="/techforbetter" text="Tech for better" number="04" />
+    <TopLink to="/techforbetter" text="Tech for Better" number="04" />
     <TopLink to="/stories" text="Stories" number="05" />
   </_TopNav>
 )
@@ -36,9 +36,18 @@ const _TopLink = styled(Link).attrs({
   className:
     "flex flex-column justify-between b--gray bw1 bt link black fw3 font-6 w4 h3 pt1",
 })`
-  &:hover {
-    border-color: var(--blue);
-    transition: 0.5s;
+  &:after {
+    content: '';
+    display: block;
+    border-top: 2px solid var(--blue);
+    width: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.4s ease-in-out;
+  }
+  &:hover:after {
+    width: 100%;
   }
   &:active,
   &:focus {
@@ -46,10 +55,12 @@ const _TopLink = styled(Link).attrs({
   }
 `
 const TopLink = ({ to, text, number }) => (
+  <div className="relative">
   <_TopLink to={to} activeClassName="b--blue">
     <div>{text}</div>
     <div>{number}</div>
   </_TopLink>
+  </div>
 )
 
 const Header = () => (
