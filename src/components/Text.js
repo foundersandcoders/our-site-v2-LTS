@@ -9,7 +9,7 @@ const OffsetUnderline = styled.span.attrs({
   background-image: ${({ underlineColour }) =>
     `linear-gradient(to right, var(--${underlineColour}) 0%, var(--${underlineColour}) 100%)`};
   background-repeat: repeat-x;
-  background-position: 0 90%;
+  background-position: 0 80%;
   background-size: ${({ underlineWidth }) => `100% ${underlineWidth}`};
 `
 
