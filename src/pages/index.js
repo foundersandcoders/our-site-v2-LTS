@@ -38,6 +38,7 @@ const Video = styled.video.attrs({
 const VideoContainer = styled.section.attrs({
   className: "flex justify-center mh6-ns mh2 mb7 video-container pt3"
 })`
+  transition: 0.25s ease;
   clip-path: ${({ percentFull }) => `polygon(${percentFull/2}% ${percentFull/2}%,${100 - (percentFull/2)}% ${percentFull/2}%, ${100 - (percentFull/2)}% ${100 - (percentFull/2)}%, ${percentFull/2}% ${100 - (percentFull/2)}%)`};
 `
 
