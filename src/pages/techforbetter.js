@@ -125,6 +125,7 @@ class TechForBetterPage extends Component {
             <Carousel
               title="How does it work?"
               carouselWidth="200vw"
+              carouselLength="155vw"
               type={APPLICATION_CAROUSEL}
               component={this}
             >

@@ -142,7 +142,8 @@ class ApplyPage extends Component {
           <section className="mb7-ns mb6 pb5-ns pb0">
             <ExtendedPanel className="bg-light-gray db-l dn">
               <Carousel
-                carouselWidth="200vw"
+                carouselWidth="300vw"
+                carouselLength="210vw"
                 type={APPLICATION_CAROUSEL}
                 title="How do I apply?"
                 component={this}
@@ -163,7 +164,7 @@ class ApplyPage extends Component {
           </section>
 
           <InnerGridContainer className="mb7 pb5">
-            <_Heading className="ml6 mb4">Join our developer community</_Heading>
+            <_Heading className="ml6-ns ml2 mb4">Join our developer community</_Heading>
             <HeadingWithBody title={this.state.carouselCaption}>
               <FlickityCarousel
                 options={{
