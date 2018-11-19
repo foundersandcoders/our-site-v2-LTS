@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import styled from "styled-components"
 
 import { DOWN_CURSOR } from "../constants"
+import { HIRE_CONTACT_FORM } from "../maintenance"
 
 import Layout from "../components/Layout"
 import { BigUnderline, _ExternalLink } from "../components/Text"
@@ -13,23 +14,23 @@ import FlickityCarousel from "../components/FlickityCarousel"
 import { breakpoint } from "../styles/utils"
 import BackgroundImg from "../components/BackgroundImg"
 import InnerGridContainer from "../components/InnerGridContainer"
+import { SplashPhoto } from "../components/SplashPhoto"
 
-import hireSplash from "../assets/splashes/home_splash.png"
+import hireSplash from "../assets/splashes/hire_splash.jpg"
 import quotemarks from "../assets/icons/quotemarks.svg"
 import partnerLogos from "../components/partner_logos"
 
 const PartnerLogo = styled(BackgroundImg).attrs({
   className: "h4 w5 mt5-ns mt4 ma3",
-})``
-
-const SplashImg = ({ src }) => (
-  <BackgroundImg src={src} height="calc(10rem + 25vw)" width="100%" />
-)
+})`
+  filter: grayscale(100%);
+`
 
 const Text = styled.p.attrs({
   className: ({ font }) => `${font} bg-yellow tr ph1`,
 })`
   width: fit-content;
+  letter-spacing: 0.01rem;
 `
 
 const NameAndCompany = ({ firstName, secondName, company, className }) => (
@@ -44,11 +45,12 @@ const _NameAndCompany = styled(NameAndCompany).attrs({
   className: "absolute flex items-end flex-column",
 })`
   ${breakpoint.ns`
- bottom: -72px;
+  bottom: -72px;
   right: -166px;
 `};
   bottom: -80px;
   right: 0;
+  letter-spacing: var(--letter-spacing-tight);
 `
 
 const QuoteSlideContainer = styled.div.attrs({
@@ -67,7 +69,7 @@ const QuoteImg = styled(BackgroundImg).attrs({
 
 const QuoteSlide = ({ quote, firstName, secondName, company }) => (
   <div className="w-100-ns w-90 mh2 mh0-ns">
-    <div className="w-33-ns w-90 relative center bg-white">
+    <div className="w-40-l w-60-m w-90 relative center bg-white">
       <QuoteImg src={quotemarks} />
       <QuoteSlideContainer>{quote}</QuoteSlideContainer>
       <_NameAndCompany
@@ -90,7 +92,7 @@ class HirePage extends Component {
       <Layout>
         <Cursor cursor={cursor} colour="green" />
         <InnerGridContainer>
-          <Panel justify="center justify-end-ns" className="mt4 mb6-ns mb5 mh2 mh0-ns">
+          <Panel justify="center justify-end-ns" className="mt7 pt0-ns pt3 mb6-ns mb5 mh2 mh0-ns">
             <div className="w-100 w-75-ns">
               <BigUnderline>Hire our graduates</BigUnderline>
             </div>
@@ -100,26 +102,10 @@ class HirePage extends Component {
             the cooperative community at Founders and Coders. We are always
             looking for new partners committed to building inclusive workplaces
             where our diverse graduates will thrive. Think your company would be
-            a good fit? <_ExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLScqtbiYqT7CDDjjYFtcwzlWDuZlsotcDvP1SoSj2SmuVmO4AA/viewform">Fill out this short form</_ExternalLink>.
+            a good fit? <_ExternalLink href={HIRE_CONTACT_FORM}>Fill out this short form</_ExternalLink>.
           </HeadingWithBody>
           <DoubleLine colour="red" />
-          <section className="mb7 pb5 mh2 mh0-ns">
-            <FlickityCarousel
-              options={{
-                pageDots: true,
-                prevNextButtons: false,
-                initialIndex: 2,
-              }}
-              hideCursor
-              component={this}
-            >
-              <SplashImg src={hireSplash} />
-              <SplashImg src={hireSplash} />
-              <SplashImg src={hireSplash} />
-              <SplashImg src={hireSplash} />
-              <SplashImg src={hireSplash} />
-            </FlickityCarousel>
-          </section>
+          <SplashPhoto src={hireSplash} />
         </InnerGridContainer>
         <section className="bg-light-gray">
           <FlickityCarousel
@@ -155,7 +141,8 @@ class HirePage extends Component {
               initialIndex: 4,
               prevNextButtons: false,
               pageDots: false,
-              autoPlay: 1500,
+              autoPlay: 1300,
+              pauseAutoPlayOnHover: false,
               wrapAround: true,
             }}
           >

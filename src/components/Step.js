@@ -22,12 +22,12 @@ const _Step = styled.div.attrs({
       step ? "bt bb-ns bw1 b--black-20" : "bt bb-ns bw1 b--black-20 justify-around"
     } pt4 pb3-ns pb4`,
 })`
-  ${breakpoint.ns`
+  ${breakpoint.l`
   width: 30vw;
   height: 70vh;
   max-height: 75vh;
   `};
-  border-bottom: ${({last}) => `${last ? `0.125rem solid rgba(0, 0, 0, 0.2)` : "inherit"}` };
+  border-bottom: ${({last}) => `${last ? `0.125rem solid rgba(0, 0, 0, 0.2)` : null}` };
   width: 90vw;
 `
 

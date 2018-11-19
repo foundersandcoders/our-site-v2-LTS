@@ -68,7 +68,7 @@ class CollapsableQuestion extends Component {
     const { children, question, colour } = this.props
 
     return (
-      <Wrapper>
+      <Wrapper onClick={this.toggleCollapse}>
         <img
           src={colourToCornerIcon(colour)}
           className="absolute mt2 left-0"
@@ -76,12 +76,11 @@ class CollapsableQuestion extends Component {
         />
 
         <Question>
-          <p className="pt3 font-4">{question}</p>
+          <p className="pt3 font-4 fw5">{question}</p>
         </Question>
         <Answer collapsed={collapsed}>{children}</Answer>
         <Divider>
           <img
-            onClick={this.toggleCollapse}
             src={collapsed ? question_arrow : question_cross}
             className="mh1 pointer"
             alt="down arrow"
