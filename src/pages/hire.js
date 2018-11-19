@@ -105,22 +105,7 @@ class HirePage extends Component {
             a good fit? <_ExternalLink href={HIRE_CONTACT_FORM}>Fill out this short form</_ExternalLink>.
           </HeadingWithBody>
           <DoubleLine colour="red" />
-            <SplashPhoto src={hireSplash} />
-            {/* <FlickityCarousel
-              options={{
-                pageDots: true,
-                prevNextButtons: false,
-                initialIndex: 2,
-              }}
-              hideCursor
-              component={this}
-            >
-              <SplashImg src={hireSplash} />
-              <SplashImg src={hireSplash} />
-              <SplashImg src={hireSplash} />
-              <SplashImg src={hireSplash} />
-              <SplashImg src={hireSplash} />
-            </FlickityCarousel> */}
+          <SplashPhoto src={hireSplash} />
         </InnerGridContainer>
         <section className="bg-light-gray">
           <FlickityCarousel
