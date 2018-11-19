@@ -8,15 +8,16 @@ import { breakpoint } from "../styles/utils"
 const universalTransition = "transition: 1s ease-in-out;"
 
 const StickyMenuTriangle = styled.div.attrs({
-  className: "fixed pointer ph2 flex items-center justify-end",
+  className: "fixed pointer ph2 flex items-center justify-between menu-tri",
 })`
   ${universalTransition}
+  z-index: 12;
   right: 0;
   top: 0;
-  width: 80px;
+  width: 70px;
   height: 60px;
+  transition: 0.5s;
   background: transparent;
-  z-index: 12;
   ${breakpoint.ns`
     justify-content: center;
     padding-right: 32px;
@@ -25,7 +26,7 @@ const StickyMenuTriangle = styled.div.attrs({
     left: 0;
     top: calc((100vh - 5rem) * 0.5);
     clip-path: polygon(100% 50%, 0 0, 0 100%);
-    background: ${({ active }) => active ? `white` : `var(--black)`};
+    background: ${({ active, color }) => active || color === "white" ? `var(--white)` : `var(--black)`};
   `};
 `
 
@@ -63,11 +64,11 @@ const StyledSVG = styled.svg`
   `}
 `
 
-const MenuAnimatedSVG = ({ active }) => {
+const MenuAnimatedSVG = ({ active, color }) => {
   return <StyledSVG width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect className={`menu-line ${ active ? "arrow-formation" : "" }`} y="16" width="40" height="2" fill={ active ? "black" : "white" } />
-    <rect className={`menu-line ${ active ? "arrow-formation" : "" }`} y="8" width="40" height="2" fill={ active ? "black" : "white"} />
-    <rect className={`menu-line ${ active ? "arrow-formation" : "" }`} width="40" height="2" fill={ active ? "black" : "white"} />
+    <rect className={`menu-line ${ active ? "arrow-formation" : "" }`} y="16" width="40" height="2" fill={ active || color === "black" ? "black" : "white" } />
+    <rect className={`menu-line ${ active ? "arrow-formation" : "" }`} y="8" width="40" height="2" fill={ active || color === "black" ? "black" : "white"} />
+    <rect className={`menu-line ${ active ? "arrow-formation" : "" }`} width="40" height="2" fill={ active || color === "black" ? "black" : "white"} />
   </StyledSVG>
 } 
 
@@ -173,7 +174,15 @@ const MenuItem = ({ number, item, active, link }) => (
 class Menu extends Component {
   constructor(props) {
     super(props)
-    this.state = { menuActive: false }
+    this.state = { menuActive: false, panelTop: 0, menuTop: 0 }
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll)
   }
 
   toggleMenu = () => {
@@ -182,10 +191,17 @@ class Menu extends Component {
     }))
   }
 
-  render() {
-    const { menuActive } = this.state
+  handleScroll = () => {
+    const panel = document.querySelector(".panel-container").getBoundingClientRect()
+    const menuTri = document.querySelector(".menu-tri").getBoundingClientRect()
+    this.setState({
+      panelTop: panel.top,
+      menuTop: menuTri.top
+    })
+  }
 
-    // commented out dn on line below to work on mobile menu
+  render() {
+    const { menuActive, panelTop, menuTop } = this.state
     return (
       <div className="flex db-ns">
         <MenuContainer active={menuActive}>
@@ -231,12 +247,16 @@ class Menu extends Component {
             />
           </MenuMain>
         </MenuContainer>
-        <MobileNavBar>
-          <a href="/"><RoundLogoMobile /></a>
-        </MobileNavBar>
-        <StickyMenuTriangle active={menuActive} onClick={this.toggleMenu}>
-          <MenuAnimatedSVG active={menuActive} />
-        </StickyMenuTriangle>
+        <StickyMenuTriangle 
+          active={menuActive} 
+          onClick={this.toggleMenu}
+          color={panelTop < menuTop ? "white" : "black"}
+          >
+            <MenuAnimatedSVG active={menuActive} color={panelTop < menuTop ? "black" : "white"}/>
+          </StickyMenuTriangle>
+          <MobileNavBar>
+            <RoundLogoMobile />
+          </MobileNavBar>
       </div>
     )
   }
