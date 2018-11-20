@@ -63,7 +63,10 @@ const _Photo = styled.div.attrs({
   background-position: bottom center;
   width: 100%;
   height: 70vh;
+  margin-bottom: 6em;
   ${breakpoint.ns`
+    margin-bottom: 0;
+    height: 70vh;
     width: 28vw;
     max-width: 500px;
     height: ${({ imgHeight = "88%" }) => imgHeight};
@@ -80,6 +83,24 @@ const _StaffPhoto = styled(_Photo)`
   height: 439px;
 `
 
+const TextContainer = styled.div.attrs({
+  className: "absolute flex items-end flex-column z-2",
+})`
+  left: -4%;
+  top: 65vh;
+  ${breakpoint.ns`
+    top: 2rem;
+    left: 1rem;
+    min-width: 50%;
+    transform: translateX(-48%);
+  `};
+  ${breakpoint.m`
+    top: 5rem;
+    left: -8rem;
+    min-width: 80%;
+  `};
+`
+
 const Title = ({ firstName, secondName, thirdName, title }) => (
   <TextContainer>
     <Text font="ttu fw5 font-1-l font-2-m font-3">{firstName}</Text>
@@ -90,6 +111,15 @@ const Title = ({ firstName, secondName, thirdName, title }) => (
     <Text font="font-5 gray">{title}</Text>
   </TextContainer>
 )
+
+const StaffTextContainer = styled(TextContainer)`
+  top: 400px;
+  right: -5px;
+  ${breakpoint.ns`
+    top: 20px;
+    right: 160px;
+  `};
+`
 
 const StaffTitle = ({ firstName, secondName, thirdName, title, title2 }) => (
   <StaffTextContainer>
@@ -108,32 +138,6 @@ const Text = styled.p.attrs({
 })`
   width: fit-content;
   letter-spacing: 0.01rem;
-`
-
-const TextContainer = styled.div.attrs({
-  className: "absolute flex items-end flex-column z-2",
-})`
-  left: 7.5%;
-  top: 450px;
-  ${breakpoint.ns`
-    top: 2rem;
-    left: 1rem;
-    min-width: 50%;
-    transform: translateX(-48%);
-  `};
-  ${breakpoint.m`
-    top: 5rem;
-    left: -8rem;
-    min-width: 80%;
-  `};
-`
-const StaffTextContainer = styled(TextContainer)`
-  top: 400px;
-  right: -5px;
-  ${breakpoint.ns`
-    top: 20px;
-    right: 160px;
-  `};
 `
 
 const Quote = styled.div.attrs({
@@ -271,7 +275,7 @@ const Bez = () => (
     title="FAC cohort #2"
     img={bez}
     cardWidth={{ l: "50vw", m: "70vw", ns: "70vw", s: "90vw" }}
-    cardHeight={{ l: "80vh", m: "80vh", ns: "80vh", s: "30vh" }}
+    cardHeight={{ l: "80vh", m: "80vh", ns: "80vh", s: "inherit" }}
     quote="“The most valuable thing I’ve taken away from the course is the community. 100%. On a personal level it helped me find a real sense of purpose when I needed one, brought on by the amount of people that have worked so hard and how much energy has been invested in it to keep it going.”"
   />
 )
@@ -283,7 +287,7 @@ const Amelie = () => (
     title="FAC cohort #11"
     img={bez}
     cardWidth={{ l: "50vw", m: "70vw", ns: "70vw", s: "90vw" }}
-    cardHeight={{ l: "80vh", m: "80vh", ns: "80vh", s: "30vh" }}
+    cardHeight={{ l: "80vh", m: "80vh", ns: "80vh", s: "inherit" }}
     quote="“Because Founders and Coders is founded on the idea of peer-led learning, it stimulates an environment of support and mutual growth, which results in what feels like a very special community: a safe, creative space, where no question is too silly to ask and no idea is too bold to suggest.”"
   />
 )
@@ -294,7 +298,7 @@ const Helen = () => (
     title="FAC cohort #13"
     img={bez}
     cardWidth={{ l: "50vw", m: "70vw", ns: "70vw", s: "90vw" }}
-    cardHeight={{ l: "80vh", m: "80vh", ns: "80vh", s: "30vh" }}
+    cardHeight={{ l: "80vh", m: "80vh", ns: "80vh", s: "inherit" }}
     quote="“Founders and Coders gave me the confidence to, given time and perseverance, grasp complex concepts which initially seemed daunting. I learned how to walk through code thoroughly and truly understand it in order to solve bugs and errors. And I discovered the joys of paired programming - that learning or tackling a problem together can be one of the most rewarding experiences. ”"
   />
 )
@@ -306,7 +310,7 @@ const Owen = () => (
     title="FAC cohort #7"
     img={bez}
     cardWidth={{ l: "50vw", m: "70vw", ns: "70vw", s: "90vw" }}
-    cardHeight={{ l: "80vh", m: "80vh", ns: "80vh", s: "30vh" }}
+    cardHeight={{ l: "80vh", m: "80vh", ns: "80vh", s: "inherit" }}
     quote="“The constant focus on pairing and working together means that you're never stuck banging your head against a wall by yourself. You always have someone else to work through the problem with you. After leaving Founders and Coders, I had a lot of faith in my own ability to learn new technologies, which was crucial when I founded my startup, Fat Llama. ”"
   />
 )
@@ -317,7 +321,7 @@ const Ruth = () => (
     title="FAC cohort #6"
     img={bez}
     cardWidth={{ l: "50vw", m: "70vw", ns: "70vw", s: "90vw" }}
-    cardHeight={{ l: "80vh", m: "80vh", ns: "80vh", s: "30vh" }}
+    cardHeight={{ l: "80vh", m: "80vh", ns: "80vh", s: "inherit" }}
     quote="“The best part of my experience with Founders and Coders are the people. It is a great community, with members of past cohorts teaching the current cohort. Everyone supports each other in their learning and wants to give back. ”"
   />
 )
@@ -328,7 +332,7 @@ const Fatimat = () => (
     title="FAC cohort #12"
     img={bez}
     cardWidth={{ l: "50vw", m: "70vw", ns: "70vw", s: "90vw" }}
-    cardHeight={{ l: "80vh", m: "80vh", ns: "80vh", s: "30vh" }}
+    cardHeight={{ l: "80vh", m: "80vh", ns: "80vh", s: "inherit" }}
     quote="“Joe, our commercial manager, was supportive during and after Founders and Coders. Everybody's situation is different, which Joe recognizes and takes it into account when advising us. He listened to my concerns about working in the industry and paid attention to the kind of environment I wanted to work in, which helped him place me with my current employer, 27Partners.”"
   />
 )
