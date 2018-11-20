@@ -17,6 +17,11 @@ const Container = styled.div.attrs({
     margin-left: 12em;
     `};
 
+  ${breakpoint.m`
+    margin-right: 13em;
+    margin-left: 13em;
+    `};
+
   height: ${({ cardHeight: { s: cardHeight_s } }) =>
     cardHeight_s && cardHeight_s};
   width: ${({ cardWidth: { s: cardWidth_s } }) => cardWidth_s && cardWidth_s};
@@ -118,7 +123,7 @@ const TextContainer = styled.div.attrs({
   `};
   ${breakpoint.m`
     top: 5rem;
-    left: -2rem;
+    left: -8rem;
     min-width: 80%;
   `};
 `
