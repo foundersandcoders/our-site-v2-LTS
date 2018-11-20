@@ -21,7 +21,7 @@ const _Photo = styled.div.attrs({
   background-position: bottom center;
   width: 100%;
   height: 70vh;
-  ${breakpoint.ns`
+  ${breakpoint.l`
     width: 55%;
     height: ${({ imgHeight = "88%" }) => imgHeight};
     padding-top: 3rem;
@@ -32,6 +32,9 @@ const _Photo = styled.div.attrs({
 const _StaffPhoto = styled(_Photo)`
   width: 293px;
   height: 439px;
+  ${breakpoint.m`
+    width
+  `}
 `
 
 const Container = styled.div.attrs({
@@ -105,7 +108,7 @@ const TextContainer = styled.div.attrs({
 const StaffTextContainer = styled(TextContainer)`
   top: 400px;
   right: -5px;
-  ${breakpoint.ns`
+  ${breakpoint.l`
     top: 20px;
     right: 160px;
   `}
@@ -181,8 +184,8 @@ const Dan = () => (
     firstName="Dan"
     secondName="Sofer"
     title="Executive Director"
-    cardWidth={{ ns: "33%", s: "66%" }}
-    cardHeight={{ ns: "50%", s: "17%" }}
+    cardWidth={{ l: "33%", m: "45%", s: "66%" }}
+    cardHeight={{ ns: "50%", m: "30%", s: "17%" }}
     imgHeight="75%"
     img={dan}
   />
@@ -192,8 +195,8 @@ const Ines = () => (
     firstName="Ines"
     secondName="Teles"
     title="Director"
-    cardWidth={{ ns: "33%", s: "66%" }}
-    cardHeight={{ ns: "50%", s: "17%" }}
+    cardWidth={{ ns: "33%", m: "45%", s: "66%" }}
+    cardHeight={{ ns: "50%",m: "30%", s: "17%" }}
     imgHeight="75%"
     img={ines}
   />
@@ -205,8 +208,8 @@ const Yvonne = () => (
     secondName="Liu"
     title="Operations and"
     title2=" international development"
-    cardWidth={{ ns: "33%", s: "66%" }}
-    cardHeight={{ ns: "50%", s: "17%" }}
+    cardWidth={{ ns: "33%", m: "45%", s: "66%" }}
+    cardHeight={{ ns: "50%",m: "30%", s: "17%" }}
     imgHeight="75%"
     img={ines}
   />
@@ -217,8 +220,8 @@ const Joe = () => (
     firstName="Joe"
     secondName="Tanner"
     title="Commercial Partnerships"
-    cardWidth={{ ns: "33%", s: "66%" }}
-    cardHeight={{ ns: "50%", s: "17%" }}
+    cardWidth={{ ns: "33%", m: "45%", s: "66%" }}
+    cardHeight={{ ns: "50%",m: "30%", s: "17%" }}
     imgHeight="75%"
     img={ines}
   />
@@ -229,8 +232,8 @@ const Rebecca = () => (
     firstName="Rebecca"
     secondName="Radding"
     title="Strategy and communications"
-    cardWidth={{ ns: "33%", s: "66%" }}
-    cardHeight={{ ns: "50%", s: "17%" }}
+    cardWidth={{ ns: "33%", m: "45%", s: "66%" }}
+    cardHeight={{ ns: "50%", m: "30%", s: "17%" }}
     imgHeight="75%"
     img={ines}
   />
