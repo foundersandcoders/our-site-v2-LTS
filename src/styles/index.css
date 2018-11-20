@@ -4,12 +4,14 @@
 
 /* CSS reset */
 @import "./_reset";
+@import "tachyons-custom/src/_normalize";
 
 /* imports all tachyons modules
    (postcss looks for them from node_modules)
 */
-@import "tachyons-aspect-ratios/src/tachyons-aspect-ratios";
+
 @import "tachyons-custom/src/_box-sizing";
+@import "tachyons-custom/src/_aspect-ratios";
 @import "tachyons-custom/src/_images";
 @import "tachyons-custom/src/_background-size";
 @import "tachyons-custom/src/_background-position";
@@ -40,9 +42,11 @@
 @import "tachyons-custom/src/_overflow";
 @import "tachyons-custom/src/_position";
 @import "tachyons-custom/src/_opacity";
+@import "tachyons-custom/src/_rotations";
 @import "tachyons-custom/src/_skins";
 @import "tachyons-custom/src/_skins-pseudo";
 @import "tachyons-custom/src/_spacing";
+@import "tachyons-custom/src/_negative-margins";
 @import "tachyons-custom/src/_tables";
 @import "tachyons-custom/src/_text-decoration";
 @import "tachyons-custom/src/_text-align";
@@ -55,6 +59,8 @@
 @import "tachyons-custom/src/_vertical-align";
 @import "tachyons-custom/src/_hovers";
 @import "tachyons-custom/src/_z-index";
+@import "tachyons-custom/src/_nested";
+@import "tachyons-custom/src/_styles";
 
 /* customisable tachyons variables (and any others that you declare) */
 @import "./_variables";
@@ -67,3 +73,10 @@
 
 /* your own custom styles */
 @import "./_custom";
+
+/* Debugging */
+@import "tachyons-custom/src/_debug-children";
+@import "tachyons-custom/src/_debug-grid";
+
+/* Uncomment out the line below to help debug layout issues */
+@import "tachyons-custom/src/_debug";
