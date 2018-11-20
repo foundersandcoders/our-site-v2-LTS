@@ -19,11 +19,11 @@ const _HeadingWrapper = styled.div.attrs({
 const _Step = styled.div.attrs({
   className: ({ step }) =>
     `flex flex-column ${
-      step ? "bt bb-ns bw1 b--black-20" : "bt bb-ns bw1 b--black-20 justify-around"
-    } pt4 pb3-ns pb4`,
+      step ? "bt bb-ns bw1 b--black-20 pt4 pb3-ns pb4" : "justify-start overflow-y-visible"
+    }`,
 })`
   ${breakpoint.l`
-  width: 30vw;
+  width: 36vw;
   height: 70vh;
   max-height: 75vh;
   `};

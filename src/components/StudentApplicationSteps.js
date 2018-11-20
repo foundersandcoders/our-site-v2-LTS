@@ -79,12 +79,9 @@ const ApplicationSteps = () => (
     </Step>
     <Step step="03" colour="red" title="Submit an application">
       <p>
-        Use [prereq-check] to ensure you are prepared to submit your
+        Use <_ExternalLink href="https://prereq-check.herokuapp.com/">prereq-check</_ExternalLink> to ensure you are prepared to submit your
         application. Plan to spend about an hour completing the application
-        form.
-      </p>
-      <p>
-        If you submit your application before the deadline, we encourage you to
+        form. If you submit your application before the deadline, we encourage you to
         keep learning and tidying up your website. We will evaluate your
         progress as of the date the window closes.
       </p>

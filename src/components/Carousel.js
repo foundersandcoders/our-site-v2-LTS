@@ -38,14 +38,14 @@ const _OuterContainer = styled.div.attrs({
   );
   padding-top: 15%;
   background-attachment: fixed;
-  height: ${({ carouselWidth }) => carouselWidth};
+  height: ${({ carouselLength }) => carouselLength};
 `};
 `
 
 const _OuterApplicationContainer = styled.div.attrs({
   className: "relative w-100 flex-ns carousel dn",
 })`
-  height: ${({ carouselWidth }) => carouselWidth};
+  height: ${({ carouselLength }) => carouselLength};
 `
 const _InnerContainer = styled.div.attrs({
   className: "sticky w-100 overflow-hidden top-0",
@@ -59,11 +59,12 @@ const _InnerApplicationContainer = styled.div.attrs({
 `
 
 const _Carousel = styled.section.attrs({
-  className: "flex relative items-center justify-around w-75",
+  className: "flex relative items-center justify-between w-75",
   style: ({ scrollY }) => ({
-    transform: `translate(${0.1 * scrollY}vw, -50%)`,
+    transform: `translate(${0.12 * scrollY}vw, -50%)`,
   }),
 })`
+  ${({ carouselClass }) => carouselClass }
   z-index: -1;
   top: 50%;
   will-change: transform;
@@ -94,22 +95,24 @@ class Carousel extends Component {
       type,
       children,
       carouselWidth,
+      carouselLength,
       component,
       applicationsAreOpen,
       className,
       title,
+      carouselClass
     } = this.props
     switch (type) {
       case TESTIMONIAL_CAROUSEL:
         return (
           <_OuterContainer
             className={className}
-            carouselWidth={carouselWidth}
+            carouselLength={carouselLength}
             onMouseEnter={() => mouseOnCarousel(component)}
             onMouseLeave={() => mouseOff(component)}
           >
             <_InnerContainer>
-              <_Carousel scrollY={scrollY} carouselWidth={carouselWidth}>
+              <_Carousel scrollY={scrollY} carouselWidth={carouselWidth} carouselClass={carouselClass}>
                 {children}
               </_Carousel>
             </_InnerContainer>
@@ -119,7 +122,7 @@ class Carousel extends Component {
         return (
           <_OuterApplicationContainer
             className={className}
-            carouselWidth={carouselWidth}
+            carouselLength={carouselLength}
             onMouseEnter={() => mouseOnCarousel(component)}
             onMouseLeave={() => mouseOff(component)}
           >
@@ -131,10 +134,10 @@ class Carousel extends Component {
                   </_Carousel>
                 </HeadingWithBody>
               </InnerGridContainer>
+            </_InnerApplicationContainer>
               {applicationsAreOpen !== undefined && (
                 <ApplicationsStatus areOpen={applicationsAreOpen} />
               )}
-            </_InnerApplicationContainer>
           </_OuterApplicationContainer>
         )
     }
