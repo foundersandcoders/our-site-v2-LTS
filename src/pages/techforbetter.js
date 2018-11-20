@@ -117,7 +117,7 @@ class TechForBetterPage extends Component {
             </HeadingWithBody>
             <Splash src={tech_for_better_splash} />
           </InnerGridContainer>
-          <ExtendedPanel className="bg-light-gray mb7-ns dn db-ns">
+          <ExtendedPanel className="bg-light-gray mb7-ns dn db-l">
             <Carousel
               title="How does it work?"
               carouselWidth="200vw"
@@ -131,7 +131,7 @@ class TechForBetterPage extends Component {
           <div className="bg-light-gray mb5">
             <HeadingWithBody
               title="How do I apply?"
-              className="db dn-ns bg-light-gray pv6"
+              className="db dn-l bg-light-gray pv6"
             >
               <TechforBetterSteps />
             </HeadingWithBody>
