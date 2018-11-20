@@ -32,9 +32,6 @@ const _Photo = styled.div.attrs({
 const _StaffPhoto = styled(_Photo)`
   width: 293px;
   height: 439px;
-  ${breakpoint.m`
-    width
-  `}
 `
 
 const Container = styled.div.attrs({

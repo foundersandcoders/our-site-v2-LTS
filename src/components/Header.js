@@ -39,7 +39,7 @@ const TopNav = () => (
 
 const _TopLink = styled(Link).attrs({
   className:
-    "flex flex-column justify-between b--gray bw1 bt link black fw3 font-6 w4 h3 pt1",
+    "flex flex-column justify-between b--gray bw1 bt link black fw3 font-6 w4 h3 pt1 relative",
 })`
   &.active {
     border-color: var(--blue);
@@ -60,7 +60,7 @@ const _TopLink = styled(Link).attrs({
     border-top: 2px solid var(--blue);
     width: 0;
     position: absolute;
-    top: 0;
+    top: -2px;
     left: 0;
     transition: 0.4s ease-in-out;
   }
