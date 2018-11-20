@@ -73,7 +73,7 @@ const MenuAnimatedSVG = ({ active, color }) => {
 } 
 
 const MenuContainer = styled.div.attrs({
-  className: " bg-white flex",
+  className: " bg-white flex flex-column flex-row-ns",
 })`
 ${universalTransition}
   position: fixed;
@@ -103,19 +103,14 @@ const MenuSidebar = styled.div.attrs({
   `};
 `
 const MenuMain = styled.div.attrs({
-  className: "pv6 mv5",
+  className: "pv0 pv6-ns mv0 mv5-ns flex flex-column justify-center",
 })`
   height: calc(100vh - 149px);
-  ${universalTransition}
-  width: 70vw;
-  ${breakpoint.s`
-    position: fixed;
-    z-index: 15;
-    top: ${({ active }) => active ? "149px" : "calc(-100% - 149px)" };
-    left: 0;
-    width: 100vw;
-    padding-top: 0;
-    margin-top: 45px;
+  width: 100vw;
+  padding-top: 0;
+  ${breakpoint.ns`
+    height: 100vh;
+    width: 70vw;
   `};
 `
 
