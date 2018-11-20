@@ -14,6 +14,7 @@
   --code: consolas, monaco, monospace;
 
   --font-size-headline: 140px;
+  --font-size-lilheadline: 100px;
   --font-size-subheadline: 58px;
   --font-size-1: 48px;
   --font-size-2: 32px;
@@ -24,6 +25,7 @@
   --font-size-7: 12px;
 
   --line-height-headline: 130px;
+  --line-height-lilheadline: 100px;
   --line-height-subheadline: 62px;
   --line-height-1: 52px;
   --line-height-2: 36px;

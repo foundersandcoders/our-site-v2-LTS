@@ -12,9 +12,9 @@ import stripey_small from "../assets/ui/stripey_small.svg"
 import splashVideo from "../assets/splashes/home_page_video.mp4"
 
 import Layout from "../components/Layout"
-import { _BigText, SmallUnderline } from "../components/Text"
+import { SmallUnderline } from "../components/Text"
 import HeadingBody from "../components/HeadingWithBody"
-import { Panel, NextPanel } from "../components/Panel"
+import { NextPanel, PageHeadingPanel } from "../components/Panel"
 import Carousel from "../components/Carousel"
 import { Cursor } from "../components/Cursor"
 import { Amelie, Helen, Owen, Ruth, Fatimat } from "../components/Card"
@@ -104,11 +104,7 @@ class IndexPage extends Component {
         <Cursor cursor={cursor} colour="blue" />
         <main>
           <InnerGridContainer>
-            <Panel justify="center justify-end-ns">
-              <_BigText className="pt5 ph1 ph0-ns w-100 w-75-ns">
-                we are Founders and Coders
-              </_BigText>
-            </Panel>
+            <PageHeadingPanel title="we are Founders and Coders" textSize="XL"/>
             <DoubleLine colour="yellow" />
             <HeadingBody
               title="Overview"

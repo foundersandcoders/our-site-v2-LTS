@@ -9,7 +9,7 @@ import { DOWN_CURSOR } from "../constants"
 
 import { BigUnderline, _ExternalLink, _InternalLink } from "../components/Text"
 import { CollapsableQuestion, QuestionWrapper } from "../components/Question"
-import { Panel, NextPanel } from "../components/Panel"
+import { PageHeadingPanel, Panel, NextPanel } from "../components/Panel"
 import HeadingWithBody from "../components/HeadingWithBody"
 import DoubleLine from "../components/DoubleLine"
 import { Cursor } from "../components/Cursor"
@@ -22,35 +22,20 @@ const Footnote = styled.p.attrs({
 
 const StaffPanel = styled(Panel).attrs({
   className:
-    "ph7-ns pv7 flex flex-wrap-ns flex-nowrap flex-column flex-row-ns items-between-ns justify-around-ns justify-center",
+    "ph7-l ph3-m pv7 flex flex-wrap-ns flex-nowrap flex-column flex-row-ns items-between-ns justify-around-ns justify-center",
 })`
   height: ${({ panelHeight: { s } }) => s};
   padding-top: 14rem;
   background: url("${stripey_small}") center;
   clip-path: polygon(0 100%, 0 5%, 25% 0, 50% 5%, 75% 0, 100% 5%, 100% 100%);
-
-  ${breakpoint.ns`
-  height: ${({ panelHeight: { ns } }) => ns};
-  clip-path: polygon(
-    0 100%,
-    0 5%,
-    3% 10%,
-    10% 0,
-    17% 10%,
-    24% 0,
-    31% 10%,
-    38% 0,
-    45% 10%,
-    52% 0,
-    59% 10%,
-    66% 0,
-    73% 10%,
-    80% 0,
-    87% 10%,
-    94% 0,
-    100% 7%,
-    100% 100%
-  );
+  ${breakpoint.m`
+    height: ${({ panelHeight: { m } }) => m};
+    clip-path: polygon(0 100%,-4% 5%,3% 5%,10% 0,17% 5%,24% 0,31% 5%,38% 0,45% 5%,52% 0,59% 5%, 66% 0,73% 5%,80% 0,87% 5%,94% 0,100% 5%,100% 100%);
+    padding-top: 10rem;
+    ` }
+  ${breakpoint.l`
+    height: ${({ panelHeight: { ns } }) => ns};
+    clip-path: polygon( 0 100%, 0 5%,3% 10%,10% 0,17% 10%,24% 0,31% 10%,38% 0,45% 10%,52% 0,59% 10%, 66% 0,73% 10%,80% 0,87% 10%,94% 0,100% 7%,100% 100%);
   `};
 `
 
@@ -65,11 +50,7 @@ class AboutPage extends Component {
       <Layout>
         <Cursor cursor={cursor} colour="red" />
         <InnerGridContainer>
-          <Panel justify="center justify-end-ns" className="mt7 mb6-ns mb5">
-            <div className="ph2 ph0-ns w-100 w-75-ns">
-              <BigUnderline>What is Founders and Coders?</BigUnderline>
-            </div>
-          </Panel>
+          <PageHeadingPanel title="What is Founders and Coders?" />
           <HeadingWithBody title="Overview" className="mh2 mh0-ns mb7-ns mb5">
             Founders and Coders is not your ordinary coding bootcamp. We’re on a
             mission to prove that for many people peer-led learning is the most
@@ -80,7 +61,7 @@ class AboutPage extends Component {
           <DoubleLine colour="green" />
           <HeadingWithBody
             title="More information"
-            className="mh2 mh0-ns mb7-ns mb5"
+            className="mh2 mh0-l mh1-m ph1-m mb7-ns mb5"
           >
             <QuestionWrapper>
               <CollapsableQuestion
@@ -252,7 +233,7 @@ class AboutPage extends Component {
             thriving cooperative community.
           </HeadingWithBody>
         </InnerGridContainer>
-        <StaffPanel panelHeight={{ ns: "175vh", s: "450vh" }}>
+        <StaffPanel panelHeight={{ ns: "175vh", m: "190vh", s: "450vh" }}>
           <Dan />
           <Ines />
           <Yvonne />

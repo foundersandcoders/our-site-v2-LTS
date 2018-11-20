@@ -163,6 +163,12 @@
     font-size: var(--font-size-headline);
   }
 
+  .lilheadline-m {
+    line-height: var(--line-height-lilheadline);
+    font-size: var(--font-size-lilheadline);
+    letter-spacing: 9px;
+  }
+
   .subheadline-m {
     line-height: var(--line-height-subheadline);
     font-size: var(--font-size-subheadline);

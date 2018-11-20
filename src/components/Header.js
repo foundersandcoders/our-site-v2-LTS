@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import logoPNG from "../assets/logos/fac_logo.png"
+import { breakpoint } from "../styles/utils"
 
 const _Header = styled.header.attrs({
   className: "dn flex-ns pt6 justify-between center",
@@ -16,10 +17,14 @@ const LogoStyled = styled.img.attrs({
 })`
   max-width: 260px;
   max-height: 110px;
+  ${breakpoint.m`
+    margin-left: 80px;
+    width: 30vw;
+  `}
 `
 
 const _TopNav = styled.nav.attrs({
-  className: "flex w-75 justify-between",
+  className: "flex w-75 w-50-m justify-between",
 })``
 
 const TopNav = () => (
@@ -36,6 +41,19 @@ const _TopLink = styled(Link).attrs({
   className:
     "flex flex-column justify-between b--gray bw1 bt link black fw3 font-6 w4 h3 pt1",
 })`
+  &.active {
+    border-color: var(--blue);
+  }
+  ${breakpoint.m`
+    display: none;
+    &.active {
+      width: 100%;
+      display: flex;
+      margin-right: 16px;
+      border-color: var(--blue);
+    }
+  `
+  }
   &:after {
     content: '';
     display: block;
@@ -55,12 +73,10 @@ const _TopLink = styled(Link).attrs({
   }
 `
 const TopLink = ({ to, text, number }) => (
-  <div className="relative">
-  <_TopLink to={to} activeClassName="b--blue">
+  <_TopLink to={to} activeClassName="active">
     <div>{text}</div>
     <div>{number}</div>
   </_TopLink>
-  </div>
 )
 
 const Header = () => (

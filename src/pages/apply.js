@@ -5,14 +5,14 @@ import { APPLICATION_CAROUSEL, DOWN_CURSOR } from "../constants"
 import { APPLICATIONS_OPEN } from "../maintenance"
 
 import Layout from "../components/Layout"
-import { Panel, NextPanel, ExtendedPanel } from "../components/Panel"
+import { PageHeadingPanel, NextPanel, ExtendedPanel } from "../components/Panel"
 import ApplicationsStatus from "../components/ApplicationsStatus"
 
 import Table from "../components/Table"
 import Carousel from "../components/Carousel"
 import { Cursor } from "../components/Cursor"
 import HeadingWithBody from "../components/HeadingWithBody"
-import { BigUnderline, _Heading } from "../components/Text"
+import { _Heading } from "../components/Text"
 import DoubleLine from "../components/DoubleLine"
 import FlickityCarousel from "../components/FlickityCarousel"
 import BackgroundImg from "../components/BackgroundImg"
@@ -55,11 +55,7 @@ class ApplyPage extends Component {
         <Cursor cursor={cursor} colour="green" />
         <main>
           <InnerGridContainer>
-            <Panel justify="center justify-end-ns" className="mt7 mb6-ns mb5 mh2 mh0-ns">
-              <div className="w-100 w-75-ns">
-                <BigUnderline>Apply to our course</BigUnderline>
-              </div>
-            </Panel>
+            <PageHeadingPanel title="Apply to our course"/>
             <HeadingWithBody title="Overview">
               Our programme is designed for people who are serious about a
               career in web development, are comfortable with uncertainty, can

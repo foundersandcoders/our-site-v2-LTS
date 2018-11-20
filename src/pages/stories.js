@@ -9,8 +9,7 @@ import DoubleLine from "../components/DoubleLine"
 import Story from "../components/Story"
 import HeadingWithBody from "../components/HeadingWithBody"
 import { Cursor } from "../components/Cursor"
-import { BigUnderline } from "../components/Text"
-import { NextPanel, Panel } from "../components/Panel"
+import { NextPanel, PageHeadingPanel } from "../components/Panel"
 
 import storyData from "../storyData"
 
@@ -89,11 +88,7 @@ class StoriesPage extends Component {
         <Cursor cursor={cursor} colour="green" />
         <main>
           <InnerGridContainer>
-            <Panel justify="center justify-end-ns" className="mt7 mb6-ns mb5">
-              <div className="w-75-ns w-90">
-                <BigUnderline>Stories by and about us</BigUnderline>
-              </div>
-            </Panel>
+            <PageHeadingPanel title="Stories by and about us"/>
             <HeadingWithBody title="Overview">
               Curious to learn more about us? Here you’ll find stories by and
               about our diverse community of founders and coders making a social
