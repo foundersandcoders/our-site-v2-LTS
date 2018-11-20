@@ -99,7 +99,7 @@ class IndexPage extends Component {
         <Cursor cursor={cursor} colour="blue" />
         <main>
           <InnerGridContainer>
-            <PageHeadingPanel title="Apply to our course" textSize="XL"/>
+            <PageHeadingPanel title="we are Founders and Coders" textSize="XL"/>
             <DoubleLine colour="yellow" />
             <HeadingBody title="Overview" className="ma2 mh0-ns mb7-ns mb5 overview-text">
               Founders and Coders CIC is a UK-based nonprofit that develops and runs tuition-free, peer-led training programmes in web development, guided by our core values of cooperation, inclusion and social impact. Our Tech for Better programme pairs nonprofits and social entrepreneurs with developers in London and Palestine to design, test and build new digital services. We operate in London and work with Mercy Corps and the UK government to deliver programmes in the Middle East and Africa. 

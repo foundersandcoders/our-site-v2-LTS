@@ -81,7 +81,7 @@ const PageHeadingPanel = ({textSize, title}) => {
     <div className={ textSize == "XL" ? "w-100 w-75-l" : "mh7-m w-100 w-75-l pl2-m" }>
       {
         textSize == "XL" ? 
-        <_BigText className="pt5 w-100 w-75-ns" >{title}</_BigText> :
+        <_BigText className="pt5" >{title}</_BigText> :
         <BigUnderline>{title}</BigUnderline>
       }
     </div>
@@ -134,11 +134,11 @@ const NextPanel = ({ component, to, children, topBorder }) => (
           <Panel
             justify="start"
             width="92%"
-            className="flex-column flex-row-ns center mh2 mh0-ns"
+            className="flex-column flex-row-l center mh2 mh0-l"
           >
             <div className="w-25 mb3 mb0-ns">
               <OffsetUnderlineText
-                className="ml7-ns"
+                className="ml7-l ml5-m"
                 underlineColour="blue"
                 colour="white"
                 underlineWidth="4px"
@@ -149,7 +149,7 @@ const NextPanel = ({ component, to, children, topBorder }) => (
                 Next
               </OffsetUnderlineText>
             </div>
-            <_BigText colour="white">{children}</_BigText>
+            <_BigText colour="white" className="ml5-m mv3-m">{children}</_BigText>
           </Panel>
         </InnerGridContainer>
       </Link>
