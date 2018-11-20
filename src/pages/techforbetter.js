@@ -10,13 +10,13 @@ import { DOWN_CURSOR, APPLICATION_CAROUSEL } from "../constants"
 import { TECH_FOR_BETTER_APPLICATION_FORM } from "../maintenance"
 
 import { Cursor } from "../components/Cursor"
-import { BigUnderline, _SubHeading, _BigText, _ExternalLink } from "../components/Text"
+import { BigUnderline, _SubHeading, _ExternalLink } from "../components/Text"
 import DoubleLine from "../components/DoubleLine"
 import Carousel from "../components/Carousel"
 import Step from "../components/Step"
 import HeadingWithBody from "../components/HeadingWithBody"
 import { CollapsableQuestion, QuestionWrapper } from "../components/Question"
-import { Panel, ExtendedPanel, NextPanel } from "../components/Panel"
+import { Panel, PageHeadingPanel, ExtendedPanel, NextPanel } from "../components/Panel"
 import InnerGridContainer from "../components/InnerGridContainer"
 import { SplashPhoto } from "../components/SplashPhoto"
 
@@ -96,11 +96,7 @@ class TechForBetterPage extends Component {
         <Cursor cursor={cursor} colour="blue" />
         <main>
           <InnerGridContainer>
-            <Panel justify="center justify-end-ns">
-              <_BigText className="pt5 ph1 ph0-ns w-100 w-75-ns">
-                Tech for Better Programme
-              </_BigText>
-            </Panel>
+            <PageHeadingPanel title="Tech for Better Programme" textSize="XL"/>
             <DoubleLine colour="yellow" />
             <Panel
               justify="center justify-end-ns"

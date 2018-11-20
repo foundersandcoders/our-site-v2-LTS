@@ -9,7 +9,7 @@ import { DOWN_CURSOR } from "../constants"
 
 import { BigUnderline, _ExternalLink, _InternalLink } from "../components/Text"
 import { CollapsableQuestion, QuestionWrapper } from "../components/Question"
-import { Panel, NextPanel } from "../components/Panel"
+import { PageHeadingPanel, Panel, NextPanel } from "../components/Panel"
 import HeadingWithBody from "../components/HeadingWithBody"
 import DoubleLine from "../components/DoubleLine"
 import { Cursor } from "../components/Cursor"
@@ -65,11 +65,7 @@ class AboutPage extends Component {
       <Layout>
         <Cursor cursor={cursor} colour="red" />
         <InnerGridContainer>
-          <Panel justify="center justify-end-ns" className="mt7 mb6-ns mb5">
-            <div className="ph2 ph0-ns w-100 w-75-ns">
-              <BigUnderline>What is Founders and Coders?</BigUnderline>
-            </div>
-          </Panel>
+          <PageHeadingPanel title="What is Founders and Coders?" />
           <HeadingWithBody title="Overview" className="mh2 mh0-ns mb7-ns mb5">
             Founders and Coders is not your ordinary coding bootcamp. We’re on a
             mission to prove that for many people peer-led learning is the most
@@ -80,7 +76,7 @@ class AboutPage extends Component {
           <DoubleLine colour="green" />
           <HeadingWithBody
             title="More information"
-            className="mh2 mh0-ns mb7-ns mb5"
+            className="mh2 mh0-l mh1-m ph1-m mb7-ns mb5"
           >
             <QuestionWrapper>
               <CollapsableQuestion

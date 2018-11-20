@@ -5,8 +5,8 @@ import { DOWN_CURSOR } from "../constants"
 import { HIRE_CONTACT_FORM } from "../maintenance"
 
 import Layout from "../components/Layout"
-import { BigUnderline, _ExternalLink } from "../components/Text"
-import { Panel, NextPanel } from "../components/Panel"
+import { _ExternalLink } from "../components/Text"
+import { NextPanel, PageHeadingPanel } from "../components/Panel"
 import HeadingWithBody from "../components/HeadingWithBody"
 import DoubleLine from "../components/DoubleLine"
 import { Cursor } from "../components/Cursor"
@@ -92,11 +92,7 @@ class HirePage extends Component {
       <Layout>
         <Cursor cursor={cursor} colour="green" />
         <InnerGridContainer>
-          <Panel justify="center justify-end-ns" className="mt7 pt0-ns pt3 mb6-ns mb5 mh2 mh0-ns">
-            <div className="w-100 w-75-ns">
-              <BigUnderline>Hire our graduates</BigUnderline>
-            </div>
-          </Panel>
+          <PageHeadingPanel title="Hire our graduates"/>
           <HeadingWithBody title="Overview">
             Our dedicated network of employer partners are an essential part of
             the cooperative community at Founders and Coders. We are always

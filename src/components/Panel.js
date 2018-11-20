@@ -9,7 +9,7 @@ import github_logo_white from "../assets/logos/github_logo_white.svg"
 import linkedin_logo_white from "../assets/logos/linkedin_logo_white.svg"
 import twitter_logo_white from "../assets/logos/twitter_logo_white.svg"
 
-import { OffsetUnderlineText, _BigText } from "./Text"
+import { OffsetUnderlineText, _BigText, BigUnderline } from "./Text"
 import { mouseOnNext, mouseOff } from "./Cursor"
 import InnerGridContainer from "./InnerGridContainer"
 import { breakpoint } from "../styles/utils"
@@ -75,6 +75,19 @@ const Panel = styled.section.attrs({
   height: ${({ height }) => height};
   width: ${({ width = "inherit" }) => width};
 `
+
+const PageHeadingPanel = ({textSize, title}) => {
+  return <Panel justify="center justify-end-ns" className={ textSize === "XL" ? "mh6-m mh0-l mh2" : "mt7 mb6-ns mb5 pt0-ns pt3 mh2 mh0-ns" }>
+    <div className={ textSize == "XL" ? "w-100 w-75-l" : "mh7-m w-100 w-75-l pl2-m" }>
+      {
+        textSize == "XL" ? 
+        <_BigText className="pt5 w-100 w-75-ns" >{title}</_BigText> :
+        <BigUnderline>{title}</BigUnderline>
+      }
+    </div>
+  </Panel>
+}
+
 const PanelTopBorder = styled.div.attrs({
   className: "h4 w-100",
 })`
@@ -158,4 +171,4 @@ const ExtendedPanel = styled.section.attrs({
   }
 `
 
-export { Panel, NextPanel, ExtendedPanel }
+export { PageHeadingPanel, Panel, NextPanel, ExtendedPanel }
