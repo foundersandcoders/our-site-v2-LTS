@@ -22,29 +22,25 @@ const Container = styled.div.attrs({
     margin-left: 13em;
     `};
 
-  height: ${({ cardHeight: { s: cardHeight_s } }) =>
-    cardHeight_s && cardHeight_s};
-  width: ${({ cardWidth: { s: cardWidth_s } }) => cardWidth_s && cardWidth_s};
+  height: ${({ cardHeight: { s: cardHeight_s } }) => cardHeight_s};
+  width: ${({ cardWidth: { s: cardWidth_s } }) => cardWidth_s};
 
   ${({ cardHeight: { ns: cardHeight_ns }, cardWidth: { ns: cardWidth_ns } }) =>
-    (cardHeight_ns || cardWidth_ns) &&
     breakpoint.ns`
-  height: ${cardHeight_ns};
-  width: ${cardWidth_ns};
+      height: ${cardHeight_ns};
+      width: ${cardWidth_ns};
   `};
 
   ${({ cardHeight: { m: cardHeight_m }, cardWidth: { m: cardWidth_m } }) =>
-    (cardHeight_m || cardWidth_m) &&
     breakpoint.m`
-  height: ${cardHeight_m};
-  width: ${cardWidth_m};
+      height: ${cardHeight_m};
+      width: ${cardWidth_m};
   `};
 
   ${({ cardHeight: { l: cardHeight_l }, cardWidth: { l: cardWidth_l } }) =>
-    (cardHeight_l || cardWidth_l) &&
     breakpoint.l`
-  height: ${cardHeight_l};
-  width: ${cardWidth_l};
+      height: ${cardHeight_l};
+      width: ${cardWidth_l};
   `};
 `
 
