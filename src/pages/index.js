@@ -45,9 +45,7 @@ const VideoContainer = styled.section.attrs({
       percentFull / 2}%, ${percentFull / 2}% ${100 - percentFull / 2}%)`};
 `
 
-const StripeyContainer = styled.div.attrs({
-  className: `${({ className }) => className}`,
-})`
+const StripeyContainer = styled.div.attrs({})`
   background: url(${stripey_small}) repeat;
   padding-top: 50%;
   clip-path: polygon(0 100%, 0 2%, 25% 0, 50% 2%, 75% 0, 100% 2%, 100% 100%);
