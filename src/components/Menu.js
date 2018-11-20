@@ -255,7 +255,7 @@ class Menu extends Component {
             <MenuAnimatedSVG active={menuActive} color={panelTop < menuTop ? "black" : "white"}/>
           </StickyMenuTriangle>
           <MobileNavBar>
-            <RoundLogoMobile />
+            <a href="/"><RoundLogoMobile /></a>
           </MobileNavBar>
       </div>
     )
