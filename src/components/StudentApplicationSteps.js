@@ -31,7 +31,7 @@ const ApplicationSteps = () => (
       through our meetups.
     </Step>
     <Step>
-      <div>
+      <div className="pb3 pb0-l">
         <_SubHeading className="mb1">Create a Github account</_SubHeading>
         You will use your <_ExternalLink href="https://github.com/">GitHub</_ExternalLink> account to join <_ExternalLink href="https://gitter.im/codingforeveryone/london">Gitter</_ExternalLink> and to create your one-page
         site on GitHub Pages.
@@ -60,7 +60,7 @@ const ApplicationSteps = () => (
       </div>
     </Step>
     <Step>
-      <div>
+      <div className="pb3 pb0-l">
         <_SubHeading className="mb1">Create a one-page website</_SubHeading>
           Create a one-page website in HTML and CSS (using some vanilla JavaScript if you’d like) and host it on GitHub Pages. <_ExternalLink href="https://www.mokacoding.com/blog/your-git-log-should-tell-a-story/">Your commit history should tell a story</_ExternalLink>, and your website must:
           <ul>
