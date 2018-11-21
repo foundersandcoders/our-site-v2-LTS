@@ -98,16 +98,7 @@ class TechForBetterPage extends Component {
           <InnerGridContainer>
             <PageHeadingPanel title="Tech for Better Programme" textSize="XL"/>
             <DoubleLine colour="yellow" />
-            <Panel
-              justify="center justify-end-ns"
-              className="mb6-ns mb5 mh2 mh0-ns"
-            >
-              <div className="w-75-ns">
-                <BigUnderline>
-                  Your ideas can make the world a better place.
-                </BigUnderline>
-              </div>
-            </Panel>
+            <PageHeadingPanel title="Your ideas can make the world a better place." />
             <HeadingWithBody title="Overview">
               Tech for Better is a pro-bono programme for nonprofits to build
               mobile web apps using developers in London and Gaza. Our
