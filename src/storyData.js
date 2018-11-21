@@ -10,7 +10,7 @@ import little_window from "./assets/photos/little_window.png"
 // Please add an object to the array below. Feel free to uncomment and use this template:
 // {
 //   storyType: "",         // SELECT ONE OF: "by_us", "about_us", "in_the_press", "podcast"
-//   img: {},               // optional
+//   img: importedVariable,               // optional
 //   heading: "",
 //   subtitle: "",
 //   author: "",            // optional
@@ -24,7 +24,7 @@ import little_window from "./assets/photos/little_window.png"
 const stories = [
   {
     storyType: "by_us",
-    img: {rebecca_and_matt},
+    img: rebecca_and_matt,
     heading: "“The biggest challenge is checking yourself at the door”",
     subtitle: "Matt King talks about his experiences mentoring and facilitating at Founders and Coders in London…",
     author: "Founders and Coders",
@@ -33,7 +33,7 @@ const stories = [
   },
   {
     storyType: "by_us",
-    img: {becky_and_johanna},
+    img: becky_and_johanna,
     heading: "From Coders to Founders: The Workbird story",
     subtitle: "How Becky Botha and Johanna Herman learnt to code and launched Workerbird, a Tech for Good startup, in less than a year",
     author: "Founders and Coders",
@@ -67,7 +67,7 @@ const stories = [
   {
     storyType: "about_us",                  
     heading: "How to Choose The Right Coding Bootcamp",
-    img: {coding_stress},
+    img: coding_stress,
     subtitle: "Last year I went through the Founders and Coders (FAC) software training program in London in order to turn my hobby into a living…",
     author: "Per Harald Borgen",
     date: "Jan 19 2016",
@@ -75,7 +75,7 @@ const stories = [
   },
   {
     storyType: "about_us",                  
-    img: {little_window},
+    img: little_window,
     heading: "Building Little Window: how we created a chatbot for Chayn",
     subtitle: "Little Window — one of the first chatbot and AI innovations at the intersection of gender-based violence and tech for good...",
     author: "Johanna Herman",
@@ -204,7 +204,7 @@ const stories = [
   },
   {
     storyType: "in_the_press",
-    img: {boot_camp_rebels},
+    img: boot_camp_rebels,
     heading: "Boot camp rebels: tech developers quit corporate careers",
     subtitle: "Disappointed with “big tech”, coders are starting social impact start-ups. To some, technology companies represent the future...",
     author: "Aliya Ram",
@@ -214,7 +214,7 @@ const stories = [
   },
   {
     storyType: "in_the_press",
-    img: {get_with_the_program},
+    img: get_with_the_program,
     heading: "Get with the program: the codeers offering training for free",
     subtitle: "It’s the must-have skill-set of the 21st century, yet unless you’re rich enough to afford the training, or fortunate enough to be attending…",
     author: "Kit Buchan",

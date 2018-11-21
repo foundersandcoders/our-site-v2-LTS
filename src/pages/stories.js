@@ -34,6 +34,7 @@ const mapStories = (array, limit) => {
       publication={story.publication && story.publication}
       date={story.date && story.date}
       url={story.url}
+      img={story.img && story.img}
     />
   })
 }
@@ -89,7 +90,7 @@ class StoriesPage extends Component {
         <main>
           <InnerGridContainer>
             <PageHeadingPanel title="Stories by and about us"/>
-            <HeadingWithBody title="Overview">
+            <HeadingWithBody title="Overview" className="mr7-m">
               Curious to learn more about us? Here you’ll find stories by and
               about our diverse community of founders and coders making a social
               impact with technology all over the world.

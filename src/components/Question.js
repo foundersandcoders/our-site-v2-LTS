@@ -10,7 +10,7 @@ import question_arrow from "../assets/icons/question_arrow.svg"
 import question_cross from "../assets/icons/question_cross.svg"
 
 const Wrapper = styled.div.attrs({
-  className: "relative mr2 mb4 w-40-l w-100",
+  className: "relative mr2-ns mr0 mb4 w-40-l w-100",
 })`
   ${breakpoint.m`
     width: calc(50% - 16px);
@@ -97,10 +97,10 @@ class CollapsableQuestion extends Component {
 const QuestionWrapper = styled.section.attrs({
   className: "flex flex-wrap",
 })`
-  ${({ hideNS }) =>
-    hideNS &&
-    breakpoint.ns`
-  display: none;
+  ${({ hideL }) =>
+    hideL &&
+    breakpoint.l`
+      display: none;
   `};
 `
 const colourToCornerIcon = colour => {

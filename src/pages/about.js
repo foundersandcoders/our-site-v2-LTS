@@ -51,7 +51,7 @@ class AboutPage extends Component {
         <Cursor cursor={cursor} colour="red" />
         <InnerGridContainer>
           <PageHeadingPanel title="What is Founders and Coders?" />
-          <HeadingWithBody title="Overview" className="mh2 mh0-ns mb7-ns mb5">
+          <HeadingWithBody title="Overview" className="mb7-ns mb5 mr7-m">
             Founders and Coders is not your ordinary coding bootcamp. We’re on a
             mission to prove that for many people peer-led learning is the most
             effective and least expensive route into the tech industry. Curious
@@ -61,7 +61,7 @@ class AboutPage extends Component {
           <DoubleLine colour="green" />
           <HeadingWithBody
             title="More information"
-            className="mh2 mh0-l mh1-m ph1-m mb7-ns mb5"
+            className="mb7-ns mb5 mr0-m"
           >
             <QuestionWrapper>
               <CollapsableQuestion
@@ -225,7 +225,7 @@ class AboutPage extends Component {
           </HeadingWithBody>
           <HeadingWithBody
             title="Staff"
-            className="pt4-ns pt0 mt7-ns mt6-ns pb7-ns pb0 mb5"
+            className="pt4-ns pt0 mt7-ns mt6-ns pb7-ns pb0 mb5 mr7-m"
           >
             Founders and Coders is a labour of love run by a small team of
             permanent staff. We are also tremendously grateful to the friends
