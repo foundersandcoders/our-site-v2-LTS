@@ -9,6 +9,8 @@ import amelieBlue from "../assets/portraits/amelie_blue.png"
 import ameliePlain from "../assets/portraits/amelie_plain.png"
 import fatimatBlue from "../assets/portraits/fatimat_blue.png"
 import fatimatPlain from "../assets/portraits/fatimat_plain.png"
+import helenBlue from "../assets/portraits/helen_blue.png"
+import helenPlain from "../assets/portraits/helen_plain.png"
 
 
 const _Photo = styled.div.attrs({
@@ -280,8 +282,8 @@ const Helen = () => (
     firstName="Helen"
     secondName="Zhou"
     title="FAC cohort #13"
-    blueImg={fatimatBlue}
-    normalImg={fatimatPlain}
+    blueImg={helenBlue}
+    normalImg={helenPlain}
     cardWidth={{ l: "50vw", m: "70vw", s: "90vw" }}
     cardHeight={{ l: "80vh", m: "50vh", s: "30vh" }}
     quote="“Founders and Coders gave me the confidence to, given time and perseverance, grasp complex concepts which initially seemed daunting. I learned how to walk through code thoroughly and truly understand it in order to solve bugs and errors. And I discovered the joys of paired programming - that learning or tackling a problem together can be one of the most rewarding experiences. ”"
