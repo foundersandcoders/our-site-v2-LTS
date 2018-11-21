@@ -26,9 +26,13 @@ import FAC14 from "../assets/photos/FAC14.jpg"
 import FACN3 from "../assets/photos/FACN3.png"
 import FACG3 from "../assets/photos/FACG3.png"
 
-
 const CarouselImg = ({ src }) => (
-  <BackgroundImg src={src} height="calc(10rem + 25vw)" width="100%" gradient="radial-gradient( rgba(141,140,355,0.25), rgba(4,2,171,0.25) 120%)"/>
+  <BackgroundImg
+    src={src}
+    height="calc(10rem + 25vw)"
+    width="100%"
+    gradient="radial-gradient( rgba(141,140,355,0.25), rgba(4,2,171,0.25) 120%)"
+  />
 )
 
 const carouselImages = [
@@ -55,7 +59,7 @@ class ApplyPage extends Component {
         <Cursor cursor={cursor} colour="green" />
         <main>
           <InnerGridContainer>
-            <PageHeadingPanel title="Apply to our course"/>
+            <PageHeadingPanel title="Apply to our course" />
             <HeadingWithBody title="Overview">
               Our programme is designed for people who are serious about a
               career in web development, are comfortable with uncertainty, can
@@ -131,7 +135,8 @@ class ApplyPage extends Component {
                 </CollapsableQuestion>
               </QuestionWrapper>
               <div className="font-5 fw3">
-                Applications close at midnight GMT on the final day of the window.
+                Applications close at midnight GMT on the final day of the
+                window.
               </div>
             </HeadingWithBody>
           </InnerGridContainer>
@@ -155,12 +160,14 @@ class ApplyPage extends Component {
               >
                 <ApplicationSteps />
               </HeadingWithBody>
-              <ApplicationsStatus areOpen={APPLICATIONS_OPEN}/>
+              <ApplicationsStatus areOpen={APPLICATIONS_OPEN} />
             </div>
           </section>
 
           <InnerGridContainer className="mb7 pb5">
-            <_Heading className="ml6-ns ml2 mb4">Join our developer community</_Heading>
+            <_Heading className="ml6-ns ml2 mb4">
+              Join our developer community
+            </_Heading>
             <HeadingWithBody title={this.state.carouselCaption}>
               <FlickityCarousel
                 options={{
@@ -175,8 +182,8 @@ class ApplyPage extends Component {
                 hideCursor
                 component={this}
               >
-                {r.map(({ caption, src, key }) => (
-                  <CarouselImg caption={caption} src={src} key={key} />
+                {r.map(({ caption, src }) => (
+                  <CarouselImg caption={caption} src={src} key={caption} />
                 ))(carouselImages)}
               </FlickityCarousel>
             </HeadingWithBody>
