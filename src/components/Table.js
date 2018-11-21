@@ -20,7 +20,6 @@ const _Cell = styled.td.attrs({
 `
 
 const Cell = ({ children }) => (
-  
   <_Cell>
     <p className="w-80">{children}</p>
   </_Cell>

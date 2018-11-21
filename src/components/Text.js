@@ -136,10 +136,10 @@ const _BigText = styled.h1.attrs({
 
 const _ExternalLink = styled.a.attrs({
   className: "blue di pointer",
-  target: "_blank"
+  target: "_blank",
 })``
 const _InternalLink = styled.a.attrs({
-  className: "blue di pointer"
+  className: "blue di pointer",
 })``
 
 export {
@@ -151,5 +151,5 @@ export {
   _SubHeading,
   _BigText,
   _InternalLink,
-  _ExternalLink
+  _ExternalLink,
 }

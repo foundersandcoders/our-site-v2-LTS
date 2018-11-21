@@ -26,9 +26,9 @@ const returnDoubleLineImage = ({ colour }) => {
 }
 
 const DoubleLine = ({ colour }) => (
-    <div className="w-100">
-      <_DoubleLine src={returnDoubleLineImage({ colour })} />
-    </div>
+  <div className="w-100">
+    <_DoubleLine src={returnDoubleLineImage({ colour })} />
+  </div>
 )
 
 export default DoubleLine

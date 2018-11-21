@@ -9,9 +9,9 @@ import horizontal_line_yellow from "../assets/icons/horizontal_line_yellow.svg"
 import horizontal_line_green from "../assets/icons/horizontal_line_green.svg"
 
 const _Line = styled.img.attrs({
-  className: "mb4 w-50 line-animate"
+  className: "mb4 w-50 line-animate",
 })`
-  transition: all 0.30s ease-in-out;
+  transition: all 0.3s ease-in-out;
 `
 
 const _Border = ({ colour }) => {
@@ -40,7 +40,7 @@ const _Border = ({ colour }) => {
 const _Story = styled.a.attrs({
   className:
     "mb4 link dib pointer flex flex-column items-start justify-between w-40-ns w-100 bb bw1 b--black-20 black",
-  target: "_blank"
+  target: "_blank",
 })`
   &:hover {
     .line-animate {
@@ -74,7 +74,7 @@ const Story = ({
   author,
   publication,
   date,
-  url
+  url,
 }) => (
   <_Story href={url}>
     <_Border colour={colour} />

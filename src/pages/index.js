@@ -104,7 +104,10 @@ class IndexPage extends Component {
         <Cursor cursor={cursor} colour="blue" />
         <main>
           <InnerGridContainer>
-            <PageHeadingPanel title="we are Founders and Coders" textSize="XL"/>
+            <PageHeadingPanel
+              title="we are Founders and Coders"
+              textSize="XL"
+            />
             <DoubleLine colour="yellow" />
             <HeadingBody
               title="Overview"

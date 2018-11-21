@@ -7,19 +7,25 @@ import { MassiveUnderline, _Heading } from "./Text"
 const Step = ({ step, title, colour, children, last }) => (
   <_Step step={step && title} last={last}>
     {step && <MassiveUnderline colour={colour}>{step}</MassiveUnderline>}
-    {title && <_HeadingWrapper><_Heading>{title}</_Heading></_HeadingWrapper>}
+    {title && (
+      <_HeadingWrapper>
+        <_Heading>{title}</_Heading>
+      </_HeadingWrapper>
+    )}
     <div className="font-4 fw3">{children}</div>
   </_Step>
 )
 
 const _HeadingWrapper = styled.div.attrs({
-  className: "pv4"
+  className: "pv4",
 })``
 
 const _Step = styled.div.attrs({
   className: ({ step }) =>
     `flex flex-column ${
-      step ? "bt bb-l bw1 b--black-20 pt4 pb3-l pb4" : "justify-start overflow-y-visible pb4 pb0-l"
+      step
+        ? "bt bb-l bw1 b--black-20 pt4 pb3-l pb4"
+        : "justify-start overflow-y-visible pb4 pb0-l"
     }`,
 })`
   ${breakpoint.l`
@@ -27,7 +33,8 @@ const _Step = styled.div.attrs({
   height: 70vh;
   max-height: 75vh;
   `};
-  border-bottom: ${({last}) => `${last ? `0.125rem solid rgba(0, 0, 0, 0.2)` : null}` };
+  border-bottom: ${({ last }) =>
+    `${last ? `0.125rem solid rgba(0, 0, 0, 0.2)` : null}`};
 `
 
 export default Step
