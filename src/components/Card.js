@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import styled from "styled-components"
 import { breakpoint } from "../styles/utils"
 
@@ -17,16 +17,6 @@ const Container = styled.div.attrs({
 })`
   margin: auto;
   width: 85%;
-  ${breakpoint.ns`
-    margin-right: 12em;
-    margin-left: 12em;
-    `};
-
-  ${breakpoint.m`
-    margin-right: 13em;
-    margin-left: 13em;
-    `};
-
   height: ${({ cardHeight: { s: cardHeight_s } }) => cardHeight_s};
   width: ${({ cardWidth: { s: cardWidth_s } }) => cardWidth_s};
 
@@ -49,6 +39,18 @@ const Container = styled.div.attrs({
   `};
 `
 
+const FacsterContainer = styled(Container)`
+  ${breakpoint.ns`
+    margin-right: 12em;
+    margin-left: 12em;
+    `};
+
+  ${breakpoint.m`
+    margin-right: 13em;
+    margin-left: 13em;
+    `};
+`
+
 const _Photo = styled.div.attrs({
   className: "db top-0 ba bw3 b--yellow",
 })`
@@ -65,7 +67,6 @@ const _Photo = styled.div.attrs({
   background-position: bottom center;
   width: 100%;
   height: 70vh;
-  margin-bottom: 6em;
   ${breakpoint.l`
     margin-bottom: 0;
     height: 70vh;
@@ -83,13 +84,14 @@ const _Photo = styled.div.attrs({
 const _StaffPhoto = styled(_Photo)`
   width: 293px;
   height: 439px;
+  margin-bottom: 0;
 `
 
 const TextContainer = styled.div.attrs({
   className: "absolute flex items-end flex-column z-2",
 })`
-  left: -4%;
-  top: 65vh;
+  left: -12px;
+  bottom: -21px;
   ${breakpoint.ns`
     top: 2rem;
     left: 1rem;
@@ -115,11 +117,19 @@ const Title = ({ firstName, secondName, thirdName, title }) => (
 )
 
 const StaffTextContainer = styled(TextContainer)`
-  top: 400px;
-  right: -5px;
+  top: auto;
+  right: auto;
+  bottom: -5px;
+  left: -45px;
   ${breakpoint.ns`
-    top: 20px;
-    right: 160px;
+    top: 70px;
+    left: 42px;
+  `};
+  ${breakpoint.m`
+    top: auto;
+    right: auto;
+    left: 28px;
+    bottom: 21px;
   `};
 `
 
@@ -135,7 +145,7 @@ const StaffTitle = ({ firstName, secondName, thirdName, title, title2 }) => (
   </StaffTextContainer>
 )
 
-const Text = styled.p.attrs({
+const Text = styled.span.attrs({
   className: ({ font }) => `${font} bg-white tr ph1-ns ph0`,
 })`
   width: fit-content;
@@ -172,17 +182,41 @@ const Card = ({
   cardHeight = { l: "80vh", m: "80vh", ns: "80vh", s: "inherit" },
   quote,
 }) => (
-  <Container cardWidth={cardWidth} cardHeight={cardHeight}>
-    <_Photo normalImg={normalImg} blueImg={blueImg} imgHeight={imgHeight} />
-    <Title
-      imgHeight={imgHeight}
-      firstName={firstName}
-      secondName={secondName}
-      thirdName={thirdName}
-      title={title}
-    />
-    {quote ? <Quote>{quote}</Quote> : <div />}
-  </Container>
+  <Fragment>
+    <div className="dn-ns">
+      <FacsterContainer cardWidth={cardWidth} cardHeight={cardHeight}>
+        <div className="relative w-100 mb4">
+          <_Photo
+            normalImg={normalImg}
+            blueImg={blueImg}
+            imgHeight={imgHeight}
+          />
+          <Title
+            imgHeight={imgHeight}
+            firstName={firstName}
+            secondName={secondName}
+            thirdName={thirdName}
+            title={title}
+          />
+        </div>
+        {quote ? <Quote>{quote}</Quote> : <div />}
+      </FacsterContainer>
+    </div>
+
+    <div className="dn db-ns">
+      <FacsterContainer cardWidth={cardWidth} cardHeight={cardHeight}>
+        <_Photo normalImg={normalImg} blueImg={blueImg} imgHeight={imgHeight} />
+        <Title
+          imgHeight={imgHeight}
+          firstName={firstName}
+          secondName={secondName}
+          thirdName={thirdName}
+          title={title}
+        />
+        {quote ? <Quote>{quote}</Quote> : <div />}
+      </FacsterContainer>
+    </div>
+  </Fragment>
 )
 
 const StaffCard = ({
@@ -194,8 +228,8 @@ const StaffCard = ({
   blueImg,
   normalImg,
   imgHeight,
-  cardWidth,
-  cardHeight,
+  cardWidth = { ns: "33%", m: "45%", s: "66%" },
+  cardHeight = { ns: "50%", m: "30%", s: "17%" },
   quote,
 }) => (
   <Container cardWidth={cardWidth} cardHeight={cardHeight}>
@@ -221,8 +255,6 @@ const Dan = () => (
     firstName="Dan"
     secondName="Sofer"
     title="Executive Director"
-    cardWidth={{ l: "33%", m: "45%", s: "66%" }}
-    cardHeight={{ ns: "50%", m: "30%", s: "17%" }}
     imgHeight="75%"
     blueImg={fatimatBlue}
     normalImg={fatimatPlain}
@@ -233,8 +265,6 @@ const Ines = () => (
     firstName="Ines"
     secondName="Teles"
     title="Director"
-    cardWidth={{ ns: "33%", m: "45%", s: "66%" }}
-    cardHeight={{ ns: "50%", m: "30%", s: "17%" }}
     imgHeight="75%"
     blueImg={fatimatBlue}
     normalImg={fatimatPlain}
@@ -247,8 +277,6 @@ const Yvonne = () => (
     secondName="Liu"
     title="Operations and"
     title2=" international development"
-    cardWidth={{ ns: "33%", m: "45%", s: "66%" }}
-    cardHeight={{ ns: "50%", m: "30%", s: "17%" }}
     imgHeight="75%"
     blueImg={fatimatBlue}
     normalImg={fatimatPlain}
@@ -260,8 +288,6 @@ const Joe = () => (
     firstName="Joe"
     secondName="Tanner"
     title="Commercial Partnerships"
-    cardWidth={{ ns: "33%", m: "45%", s: "66%" }}
-    cardHeight={{ ns: "50%", m: "30%", s: "17%" }}
     imgHeight="75%"
     blueImg={fatimatBlue}
     normalImg={fatimatPlain}
@@ -273,8 +299,6 @@ const Rebecca = () => (
     firstName="Rebecca"
     secondName="Radding"
     title="Strategy and communications"
-    cardWidth={{ ns: "33%", m: "45%", s: "66%" }}
-    cardHeight={{ ns: "50%", m: "30%", s: "17%" }}
     imgHeight="75%"
     blueImg={fatimatBlue}
     normalImg={fatimatPlain}
@@ -345,7 +369,6 @@ const Fatimat = () => (
 )
 
 export {
-  Card,
   Dan,
   Ines,
   Yvonne,
