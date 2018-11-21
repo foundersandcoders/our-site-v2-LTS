@@ -3,7 +3,7 @@ import { SmallUnderline } from "./Text"
 
 const HeadingWithBody = ({ title, className = "", bgColour, children }) => (
   <div className={`mh2 mh7-m mh0-l ${className}`}>
-    <SmallUnderline bgColour={bgColour} className="mb2 mb0-ns ml6-l ph2-m">
+    <SmallUnderline bgColour={bgColour} className="mb2 mb0-l ml6-l ph2-m">
       {title}
     </SmallUnderline>
     <div className="w-100 flex justify-end-l justify-start">

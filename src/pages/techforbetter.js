@@ -190,7 +190,7 @@ class TechForBetterPage extends Component {
                 </CollapsableQuestion>
               </QuestionWrapper>
             </HeadingWithBody>
-            <HeadingWithBody title="Case studies" className="mb3 mb0-ns">
+            <HeadingWithBody title="Case studies" className="mb3 mb0-l">
               <CaseStudy
                 title="Breathe With Me (Anna Freud Centre, 2016)"
                 url="https://breathewithme.co.uk/"
