@@ -134,10 +134,10 @@ class Carousel extends Component {
                   </_Carousel>
                 </HeadingWithBody>
               </InnerGridContainer>
-            </_InnerApplicationContainer>
               {applicationsAreOpen !== undefined && (
                 <ApplicationsStatus areOpen={applicationsAreOpen} />
               )}
+            </_InnerApplicationContainer>
           </_OuterApplicationContainer>
         )
     }
