@@ -41,7 +41,7 @@ const Divider = styled.div.attrs({
   ${breakpoint.ns`
   margin-top: var(--spacing-large);
   `};
-
+  transition: all 0.35s ease-out;
   margin-top: 38px;
   background-image: linear-gradient(
     to right,
