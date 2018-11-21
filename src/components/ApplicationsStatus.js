@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 import styled from "styled-components"
-import { APPLICATION_FORM, EXPRESSION_OF_INTEREST_FORM} from "../maintenance"
+import { APPLICATION_FORM, EXPRESSION_OF_INTEREST_FORM } from "../maintenance"
 
 const _ApplicationsStatus = styled.section.attrs({
   className: ({ areOpen }) =>
@@ -11,7 +11,9 @@ const _ApplicationsStatus = styled.section.attrs({
 
 const _Button = styled.button.attrs({
   className: ({ areOpen }) =>
-   `pointer bg-white fw5 pv1 ph4 mv1-m mt3 mt0-l font-3 eesti bn ${areOpen ? "blue" : "black"}`
+    `pointer bg-white fw5 pv1 ph4 mv1-m mt3 mt0-l font-3 eesti bn ${
+      areOpen ? "blue" : "black"
+    }`,
 })``
 
 const ApplicationsStatus = ({ areOpen }) => (
@@ -20,18 +22,14 @@ const ApplicationsStatus = ({ areOpen }) => (
       <Fragment>
         Applications are now open!{" "}
         <a href={APPLICATION_FORM} target="_blank">
-          <_Button areOpen={areOpen}>
-            Apply now
-          </_Button>
+          <_Button areOpen={areOpen}>Apply now</_Button>
         </a>
       </Fragment>
     ) : (
       <Fragment>
         Applications are currently closed.{" "}
         <a href={EXPRESSION_OF_INTEREST_FORM} target="_blank">
-          <_Button areOpen={areOpen}>
-            Express Interest
-          </_Button>
+          <_Button areOpen={areOpen}>Express Interest</_Button>
         </a>
       </Fragment>
     )}

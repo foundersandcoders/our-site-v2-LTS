@@ -14,8 +14,7 @@ const Wrapper = styled.div.attrs({
 })`
   ${breakpoint.m`
     width: calc(50% - 16px);
-  `}
-  overflow: hidden;
+  `} overflow: hidden;
   transition: all 0.75s;
   max-height: ${({ collapsed }) => (collapsed ? "147px" : "inherit")};
 `

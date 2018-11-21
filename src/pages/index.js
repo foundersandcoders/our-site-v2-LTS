@@ -25,21 +25,24 @@ import InnerGridContainer from "../components/InnerGridContainer"
 import { breakpoint } from "../styles/utils"
 
 const Video = styled.video.attrs({
-  className: "w-100"
+  className: "w-100",
 })`
   height: calc((100vw - 32px) / 1.78);
   max-height: 719.1px;
   max-width: 1279px;
   ${breakpoint.ns`
     height: calc((100vw - 160px) / 1.78);
-  `}
+  `};
 `
 
 const VideoContainer = styled.section.attrs({
-  className: "flex justify-center mh6-ns mh2 mb7 video-container pt3"
+  className: "flex justify-center mh6-ns mh2 mb7 video-container pt3",
 })`
   transition: 0.25s ease;
-  clip-path: ${({ percentFull }) => `polygon(${percentFull/2}% ${percentFull/2}%,${100 - (percentFull/2)}% ${percentFull/2}%, ${100 - (percentFull/2)}% ${100 - (percentFull/2)}%, ${percentFull/2}% ${100 - (percentFull/2)}%)`};
+  clip-path: ${({ percentFull }) =>
+    `polygon(${percentFull / 2}% ${percentFull / 2}%,${100 -
+      percentFull / 2}% ${percentFull / 2}%, ${100 - percentFull / 2}% ${100 -
+      percentFull / 2}%, ${percentFull / 2}% ${100 - percentFull / 2}%)`};
 `
 
 const StripeyContainer = styled.div.attrs({
@@ -50,7 +53,7 @@ const StripeyContainer = styled.div.attrs({
   clip-path: polygon(0 100%, 0 2%, 25% 0, 50% 2%, 75% 0, 100% 2%, 100% 100%);
 `
 
-const FacsterCards = ({className}) => (
+const FacsterCards = ({ className }) => (
   <StripeyContainer className={className}>
     <Amelie />
     <Helen />
@@ -68,7 +71,7 @@ const PartnerLogo = styled(BackgroundImg).attrs({
 class IndexPage extends Component {
   state = {
     cursor: DOWN_CURSOR,
-    progress: 0
+    progress: 0,
   }
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll)
@@ -77,17 +80,21 @@ class IndexPage extends Component {
     window.removeEventListener("scroll", this.handleScroll)
   }
   handleScroll = () => {
-    const overview = document.querySelector(".overview-text").getBoundingClientRect().top
-    const video = document.querySelector(".video-container").getBoundingClientRect().top - 150
+    const overview = document
+      .querySelector(".overview-text")
+      .getBoundingClientRect().top
+    const video =
+      document.querySelector(".video-container").getBoundingClientRect().top -
+      150
     if (overview < 0 && video > 0) {
       const total = video - overview
-      const progress = (video/total) * 100
+      const progress = (video / total) * 100
       this.setState({
-        progress: progress
+        progress: progress,
       })
     } else if (video < 0) {
       this.setState({
-        progress: 0
+        progress: 0,
       })
     }
   }
@@ -99,14 +106,27 @@ class IndexPage extends Component {
         <Cursor cursor={cursor} colour="blue" />
         <main>
           <InnerGridContainer>
-            <PageHeadingPanel title="we are Founders and Coders" textSize="XL"/>
+            <PageHeadingPanel
+              title="we are Founders and Coders"
+              textSize="XL"
+            />
             <DoubleLine colour="yellow" />
-            <HeadingBody title="Overview" className="ma2 mh0-ns mb7-ns mb5 mr7-m overview-text">
-              Founders and Coders CIC is a UK-based nonprofit that develops and runs tuition-free, peer-led training programmes in web development, guided by our core values of cooperation, inclusion and social impact. Our Tech for Better programme pairs nonprofits and social entrepreneurs with developers in London and Palestine to design, test and build new digital services. We operate in London and work with Mercy Corps and the UK government to deliver programmes in the Middle East and Africa. 
+            <HeadingBody
+              title="Overview"
+              className="ma2 mh0-ns mb7-ns mb5 mr7-m overview-text"
+            >
+              Founders and Coders CIC is a UK-based nonprofit that develops and
+              runs tuition-free, peer-led training programmes in web
+              development, guided by our core values of cooperation, inclusion
+              and social impact. Our Tech for Better programme pairs nonprofits
+              and social entrepreneurs with developers in London and Palestine
+              to design, test and build new digital services. We operate in
+              London and work with Mercy Corps and the UK government to deliver
+              programmes in the Middle East and Africa.
             </HeadingBody>
           </InnerGridContainer>
           <VideoContainer percentFull={progress}>
-            <Video muted autoPlay loop >
+            <Video muted autoPlay loop>
               <source src={splashVideo} type="video/mp4" />
               Your browser does not support videos
             </Video>
@@ -154,7 +174,7 @@ class IndexPage extends Component {
             <Ruth />
             <Fatimat />
           </Carousel>
-          <FacsterCards className="db dn-ns"/>
+          <FacsterCards className="db dn-ns" />
           <NextPanel component={this} to="/about">
             What is Founders and Coders?
           </NextPanel>
