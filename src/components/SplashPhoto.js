@@ -4,12 +4,12 @@ import { breakpoint } from "../styles/utils"
 import BackgroundImg from "../components/BackgroundImg"
 
 const _PhotoWrapper = styled.div.attrs({
-  className: `mb7 mh2 mh6-ns flex justify-center`
+  className: `mb7 mh2 mh6-l flex justify-center`
 })`
   max-height: 719.1px;
   max-width: 1279px;
   height: calc((100vw - 28px) / 1.78);
-  ${breakpoint.ns`
+  ${breakpoint.l`
     height: calc((100vw - 160px) / 1.78);
   `}
 `

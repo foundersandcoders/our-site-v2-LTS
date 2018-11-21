@@ -11,14 +11,13 @@ const _Header = styled.header.attrs({
 `
 
 const LogoStyled = styled.img.attrs({
-  className: "border-box pl2 pr2",
+  className: "border-box pl2 pr2 ml7-m",
   src: logoPNG,
   alt: "Founders and Coders Logo"
 })`
   max-width: 260px;
   max-height: 110px;
   ${breakpoint.m`
-    margin-left: 80px;
     width: 30vw;
   `}
 `
@@ -49,7 +48,7 @@ const _TopLink = styled(Link).attrs({
     &.active {
       width: 100%;
       display: flex;
-      margin-right: 16px;
+      margin-right: 48px;
       border-color: var(--blue);
     }
   `

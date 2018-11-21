@@ -77,7 +77,7 @@ const Panel = styled.section.attrs({
 `
 
 const PageHeadingPanel = ({textSize, title}) => {
-  return <Panel justify="center justify-end-ns" className={ textSize === "XL" ? "mh6-m mh0-l mh2" : "mt7 mb6-ns mb5 pt0-ns pt3 mh2 mh0-ns" }>
+  return <Panel justify="center justify-end-ns" className={ textSize === "XL" ? "mh7-m pl2-m mh0-l mh2" : "mt7 mb6-ns mb5 pt0-ns pt3 mh2 mh0-ns" }>
     <div className={ textSize == "XL" ? "w-100 w-75-l" : "mh7-m w-100 w-75-l pl2-m" }>
       {
         textSize == "XL" ? 

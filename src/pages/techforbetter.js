@@ -104,7 +104,7 @@ class TechForBetterPage extends Component {
               mobile web apps using developers in London and Gaza. Our
               developers will work closely with you to identify your needs, then
               build an app that meet those needs and helps you do what you do,
-              but better. The only thing it will cost is your time.
+              but better. <span className="b">The only thing it will cost is your time.</span>
             </HeadingWithBody>
             <Splash src={tech_for_better_splash} />
           </InnerGridContainer>
@@ -213,7 +213,7 @@ class TechForBetterPage extends Component {
             <LinkWrapper href={TECH_FOR_BETTER_APPLICATION_FORM} className="mb7"><Button>Apply</Button></LinkWrapper>
             <SplashPhoto src={photo_splash} margin="160px"/>
             <HeadingWithBody
-              title="What is Founders and Coders?"
+              title="What is Founders and Coders and what do you do?"
               className="mb7 pb2 mr6-ns"
             >
               Founders and Coders CIC is a UK-based nonprofit that develops and
