@@ -10,7 +10,7 @@ import little_window from "./assets/photos/little_window.png"
 // Please add an object to the array below. Feel free to uncomment and use this template:
 // {
 //   storyType: "",         // SELECT ONE OF: "by_us", "about_us", "in_the_press", "podcast"
-//   img: importedVariable,               // optional
+//   img: importedVariable, // optional
 //   heading: "",
 //   subtitle: "",
 //   author: "",            // optional

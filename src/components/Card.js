@@ -2,8 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { breakpoint } from "../styles/utils"
 
-import dan from "../assets/portraits/dan.png"
-import ines from "../assets/portraits/ines.png"
 import bez from "../assets/portraits/bez.png"
 import amelieBlue from "../assets/portraits/amelie_blue.png"
 import ameliePlain from "../assets/portraits/amelie_plain.png"
