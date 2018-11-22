@@ -114,10 +114,7 @@ class Carousel extends Component {
           >
             <_InnerApplicationContainer>
               <InnerGridContainer>
-                <HeadingWithBody
-                  title={title}
-                  bgColour="light-gray pr4 pv4 pl4"
-                >
+                <HeadingWithBody title={title} bgColour="light-gray pv4">
                   <_Carousel scrollY={scrollY} carouselWidth={carouselWidth}>
                     {children}
                   </_Carousel>
