@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react"
+import React, { Component } from "react"
 import styled from "styled-components"
 import { TESTIMONIAL_CAROUSEL, DOWN_CURSOR } from "../constants"
 
@@ -45,9 +45,7 @@ const VideoContainer = styled.section.attrs({
       percentFull / 2}%, ${percentFull / 2}% ${100 - percentFull / 2}%)`};
 `
 
-const StripeyContainer = styled.div.attrs({
-  className: `${({ className }) => className}`,
-})`
+const StripeyContainer = styled.div.attrs({})`
   background: url(${stripey_small}) repeat;
   padding-top: 50%;
   clip-path: polygon(0 100%, 0 2%, 25% 0, 50% 2%, 75% 0, 100% 2%, 100% 100%);
@@ -88,7 +86,6 @@ class IndexPage extends Component {
     if (doubleLine < 0 && video > 0) {
       const total = video - doubleLine
       const progress = (video / total) * 100
-      console.log(progress)
       this.setState({
         progress: progress,
       })
@@ -164,7 +161,7 @@ class IndexPage extends Component {
           <Carousel
             type={TESTIMONIAL_CAROUSEL}
             carouselWidth="350vw"
-            carouselLength="230vw"
+            carouselLength={{ m: "640vw", ns: "230vw" }}
             component={this}
             carouselClass="padding-left: 300px;"
           >

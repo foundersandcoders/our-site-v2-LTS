@@ -85,7 +85,7 @@ const CaseStudy = ({ title, url, children }) => (
   <div className="flex flex-column justify-between font-4 mb5-ns mb3">
     <_SubHeading className="mb1">{title}</_SubHeading>
     {children}
-    <_Link href={url} className="mt1" target="_blank">
+    <_Link href={url} className="mt1" target="_blank" rel="noopener noreferrer">
       <img src={link_arrow_button} className="mr1" />
       Check it out!
     </_Link>

@@ -69,7 +69,7 @@ class StoriesPage extends Component {
     podcastLimit: 4,
   }
   incremementLimit(stateSection) {
-    this.setState((state, props) => {
+    this.setState(state => {
       return { [stateSection]: state[stateSection] + 4 }
     })
   }

@@ -12,7 +12,6 @@ import Table from "../components/Table"
 import Carousel from "../components/Carousel"
 import { Cursor } from "../components/Cursor"
 import HeadingWithBody from "../components/HeadingWithBody"
-import { _Heading } from "../components/Text"
 import DoubleLine from "../components/DoubleLine"
 import FlickityCarousel from "../components/FlickityCarousel"
 import BackgroundImg from "../components/BackgroundImg"
@@ -156,8 +155,8 @@ class ApplyPage extends Component {
                 hideCursor
                 component={this}
               >
-                {r.map(({ caption, src, key }) => (
-                  <CarouselImg caption={caption} src={src} key={key} />
+                {r.map(({ caption, src }) => (
+                  <CarouselImg caption={caption} src={src} key={caption} />
                 ))(carouselImages)}
               </FlickityCarousel>
             </HeadingWithBody>

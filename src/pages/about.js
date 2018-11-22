@@ -7,7 +7,7 @@ import stripey_small from "../assets/ui/stripey_small.svg"
 import Layout from "../components/Layout"
 import { DOWN_CURSOR } from "../constants"
 
-import { BigUnderline, _ExternalLink, _InternalLink } from "../components/Text"
+import { _ExternalLink, _InternalLink } from "../components/Text"
 import { CollapsableQuestion, QuestionWrapper } from "../components/Question"
 import { PageHeadingPanel, Panel, NextPanel } from "../components/Panel"
 import HeadingWithBody from "../components/HeadingWithBody"
