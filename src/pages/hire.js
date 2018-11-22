@@ -46,17 +46,17 @@ const _NameAndCompany = styled(NameAndCompany).attrs({
 })`
   ${breakpoint.ns`
   bottom: -72px;
-  right: -166px;
+  right: -100px;
 `};
   bottom: -80px;
-  right: 0;
+  right: 20px;
   letter-spacing: var(--letter-spacing-tight);
 `
 
 const QuoteSlideContainer = styled.div.attrs({
   className: "bg-white mt6 ph3 pv2 tc font-3-ns font-4 i",
 })`
-  margin-bottom: 152px;
+  margin-bottom: 122px;
 `
 
 const QuoteImg = styled(BackgroundImg).attrs({
@@ -67,8 +67,8 @@ const QuoteImg = styled(BackgroundImg).attrs({
   left: 5px;
 `
 
-const QuoteSlide = ({ quote, firstName, secondName, company }) => (
-  <div className="w-100-ns w-90 mh2 mh0-ns">
+const QuoteSlide = ({ quote, firstName, secondName, company, topPadding }) => (
+  <div className={"w-100-ns w-90 mh2 mh0-ns " + topPadding}>
     <div className="w-40-l w-60-m w-90 relative center bg-white">
       <QuoteImg src={quotemarks} />
       <QuoteSlideContainer>{quote}</QuoteSlideContainer>
@@ -116,6 +116,7 @@ class HirePage extends Component {
             }}
           >
             <QuoteSlide
+              topPadding="pt5"
               quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
               firstName="Vinny"
               secondName="Marino"
