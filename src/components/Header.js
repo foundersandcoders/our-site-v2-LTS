@@ -66,7 +66,7 @@ const TopLink = ({ to, text, number }) => (
 
 const Header = () => (
   <_Header>
-    <HomeLogo />
+    <HomeLogo className="ml7-m" />
     <TopNav />
   </_Header>
 )

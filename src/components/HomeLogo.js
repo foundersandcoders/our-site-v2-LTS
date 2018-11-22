@@ -5,7 +5,7 @@ import logoPNG from "../assets/logos/fac_logo.png"
 import { breakpoint } from "../styles/utils"
 
 const LogoStyled = styled(Link).attrs({
-  className: "db ml7-m",
+  className: "db",
 })`
   background: url(${logoPNG});
   background-size: cover;
@@ -14,8 +14,8 @@ const LogoStyled = styled(Link).attrs({
   width: 245px;
   height: 107px;
   ${breakpoint.m`
-    width: 220px;
-    height: 96px;
+    width: 180px;
+    height: 78px;
   `};
 `
 
