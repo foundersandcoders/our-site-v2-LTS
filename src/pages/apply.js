@@ -184,8 +184,8 @@ class ApplyPage extends Component {
                 hideCursor
                 component={this}
               >
-                {r.map(({ caption, src, key }) => (
-                  <CarouselImg caption={caption} src={src} key={key} />
+                {r.map(({ caption, src }) => (
+                  <CarouselImg caption={caption} src={src} key={caption} />
                 ))(carouselImages)}
               </FlickityCarousel>
             </HeadingWithBody>
