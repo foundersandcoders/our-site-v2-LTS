@@ -66,7 +66,15 @@ const _Link = styled.a.attrs({
 
 const Button = styled.button.attrs({
   className: "db font-2 b fw5 pv2 ph6 bg-black white pointer tc center",
-})``
+})`
+  transition: 0.5s;
+  border: 2px solid transparent;
+  :hover {
+    border: 2px solid var(--black);
+    background: var(--white);
+    color: var(--black);
+  }
+`
 
 const LinkWrapper = styled.a.attrs({
   className: "no-underline block w-100 flex justify-center items-center",

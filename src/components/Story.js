@@ -2,39 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import { breakpoint } from "../styles/utils"
 
-import horizontal_line_red from "../assets/icons/horizontal_line_red.svg"
-import horizontal_line_blue from "../assets/icons/horizontal_line_blue.svg"
-import horizontal_line_yellow from "../assets/icons/horizontal_line_yellow.svg"
-import horizontal_line_green from "../assets/icons/horizontal_line_green.svg"
-
-const _Line = styled.img.attrs({
+const _Line = styled.div.attrs({
   className: "mb4 w-50 line-animate",
 })`
+  background-color: ${({ color }) => `var(--${color})`};
+  height: 5px;
   transition: all 0.3s ease-in-out;
 `
-
-const _Border = ({ colour }) => {
-  let border
-  switch (colour) {
-    case "red":
-      border = horizontal_line_red
-      break
-    case "blue":
-      border = horizontal_line_blue
-      break
-    case "green":
-      border = horizontal_line_green
-      break
-    case "yellow":
-      border = horizontal_line_yellow
-      break
-    default:
-      border = horizontal_line_blue
-      break
-  }
-
-  return <_Line src={border} alt={`${colour}-border`} />
-}
 
 const _Story = styled.a.attrs({
   className:
@@ -82,7 +56,7 @@ const Story = ({
   url,
 }) => (
   <_Story href={url}>
-    <_Border colour={colour} />
+    <_Line color={colour} />
     <div>
       {img && <_Image img={img} />}
       <_Heading>{heading}</_Heading>
