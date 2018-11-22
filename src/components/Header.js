@@ -5,13 +5,13 @@ import logoPNG from "../assets/logos/fac_logo.png"
 import { breakpoint } from "../styles/utils"
 
 const _Header = styled.header.attrs({
-  className: "dn flex-ns pt6 justify-between center",
+  className: "dn flex-ns mh2 ml7-m pl6-l mh0-l pt6",
 })`
   max-width: 1280px;
 `
 
 const LogoStyled = styled.img.attrs({
-  className: "border-box pl2 pr2 ml7-m",
+  className: "border-box pr2",
   src: logoPNG,
   alt: "Founders and Coders Logo",
 })`
@@ -23,7 +23,7 @@ const LogoStyled = styled.img.attrs({
 `
 
 const _TopNav = styled.nav.attrs({
-  className: "flex w-75 w-50-m justify-between",
+  className: "flex w-100 w-50-m justify-between pl2",
 })``
 
 const TopNav = () => (

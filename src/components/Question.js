@@ -10,11 +10,9 @@ import question_arrow from "../assets/icons/question_arrow.svg"
 import question_cross from "../assets/icons/question_cross.svg"
 
 const Wrapper = styled.div.attrs({
-  className: "relative mr2-ns mr0 mb4 w-40-l w-100",
+  className: "relative mb4",
 })`
-  ${breakpoint.m`
-    width: calc(50% - 16px);
-  `} overflow: hidden;
+  overflow: hidden;
   transition: all 0.75s;
   max-height: ${({ collapsed }) => (collapsed ? "147px" : "inherit")};
 `
@@ -51,6 +49,7 @@ const Divider = styled.div.attrs({
   background-position: 0 50%;
   background-size: 100% 2px;
 `
+
 class CollapsableQuestion extends Component {
   constructor(props) {
     super(props)
@@ -94,14 +93,21 @@ class CollapsableQuestion extends Component {
 }
 
 const QuestionWrapper = styled.section.attrs({
-  className: "flex flex-wrap",
+  className: "",
 })`
+  ${breakpoint.ns`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  `};
+
   ${({ hideL }) =>
     hideL &&
     breakpoint.l`
       display: none;
   `};
 `
+
 const colourToCornerIcon = colour => {
   switch (colour) {
     case "yellow":
