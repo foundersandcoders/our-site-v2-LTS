@@ -20,9 +20,9 @@ const _Cell = styled.td.attrs({
   width: 20%;
 `
 
-const Cell = ({ children }) => (
+const Cell = ({ children, underline }) => (
   <_Cell>
-    <p className="w-80">{children}</p>
+    <p className={`"w-80" ${underline && "underline"}`}>{children}</p>
   </_Cell>
 )
 
@@ -33,7 +33,7 @@ const _Row = styled.tr.attrs({
 const Row = ({ obj }) => {
   return (
     <_Row>
-      <Cell>{obj.cohort}</Cell>
+      <Cell underline>{obj.cohort}</Cell>
       <Cell>{obj.expression_of_interest}</Cell>
       <Cell>{obj.application_window}</Cell>
       <Cell>{obj.interview_dates}</Cell>
