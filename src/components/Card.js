@@ -15,6 +15,8 @@ import fatimatPlain from "../assets/portraits/fatimat_plain.png"
 
 import danBlue from "../assets/portraits/dan_blue.png"
 import danPlain from "../assets/portraits/dan_plain.png"
+import inesBlue from "../assets/portraits/ines_blue.png"
+import inesPlain from "../assets/portraits/ines_plain.png"
 import joeBlue from "../assets/portraits/joe_blue.png"
 import joePlain from "../assets/portraits/joe_plain.png"
 
@@ -273,8 +275,8 @@ const Ines = () => (
     secondName="Teles"
     title="Director"
     imgHeight="75%"
-    blueImg={fatimatBlue}
-    normalImg={fatimatPlain}
+    blueImg={inesBlue}
+    normalImg={inesPlain}
   />
 )
 
