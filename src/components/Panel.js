@@ -95,7 +95,7 @@ const PageHeadingPanel = ({ textSize, title }) => {
     >
       <div
         className={
-          textSize == "XL" ? "w-100 w-75-l" : "mh7-m w-100 w-75-l pl2-m"
+          textSize == "XL" ? "w-100 w-80-l" : "mh7-m w-100 w-75-l pl2-m"
         }
       >
         {textSize == "XL" ? (
