@@ -69,7 +69,7 @@ const Container = styled.div.attrs({
   // width: ${({ cardWidth: { s: cardWidth } }) => cardWidth};
 `
 
-const Title = ({ firstName, secondName, thirdName, title, title2 }) => (
+const Title = ({ firstName, secondName, thirdName, title }) => (
   <TextContainer>
     <Text font="ttu fw5 font-1-l font-2-m font-3">{firstName}</Text>
     <Text font="ttu fw5 font-1-l font-2-m font-3">{secondName}</Text>

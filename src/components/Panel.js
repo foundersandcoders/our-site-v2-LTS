@@ -25,7 +25,7 @@ const _Icon = styled.img`
 `
 
 const Icon = ({ to, img }) => (
-  <a href={to} target="_blank">
+  <a href={to} target="_blank" rel="noopener noreferrer">
     <_Icon src={img} />
   </a>
 )
@@ -135,7 +135,7 @@ const PanelTopBorder = styled.div.attrs({
     100% 70%,
     100% 100%
   );
-  
+
   `} background-attachment: fixed;
 `
 const NextPanel = ({ component, to, children, topBorder }) => (

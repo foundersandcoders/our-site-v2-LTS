@@ -21,14 +21,18 @@ const ApplicationsStatus = ({ areOpen }) => (
     {areOpen ? (
       <Fragment>
         Applications are now open!{" "}
-        <a href={APPLICATION_FORM} target="_blank">
+        <a href={APPLICATION_FORM} target="_blank" rel="noopener noreferrer">
           <_Button areOpen={areOpen}>Apply now</_Button>
         </a>
       </Fragment>
     ) : (
       <Fragment>
         Applications are currently closed.{" "}
-        <a href={EXPRESSION_OF_INTEREST_FORM} target="_blank">
+        <a
+          href={EXPRESSION_OF_INTEREST_FORM}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <_Button areOpen={areOpen}>Express Interest</_Button>
         </a>
       </Fragment>

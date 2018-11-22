@@ -23,22 +23,4 @@ const breakpoint = {
   `,
 }
 
-const responsiveSizing = ({
-  Height: {
-    ns: Height_ns,
-    l: Height_l,
-    m: Height_m,
-    s: Height_s,
-  },
-  Width: {
-    ns: Width_ns,
-    l: Width_l,
-    m: Width_m,
-    s: Width_s,
-  },
-}) => { 
-  
-  css``
-}
-
 export { breakpoint }

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react"
+import React, { Component } from "react"
 import styled from "styled-components"
 import { TESTIMONIAL_CAROUSEL, DOWN_CURSOR } from "../constants"
 
@@ -88,7 +88,6 @@ class IndexPage extends Component {
     if (doubleLine < 0 && video > 0) {
       const total = video - doubleLine
       const progress = (video / total) * 100
-      console.log(progress)
       this.setState({
         progress: progress,
       })
