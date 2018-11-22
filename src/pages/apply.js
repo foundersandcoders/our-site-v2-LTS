@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import * as r from "ramda"
 
 import { APPLICATION_CAROUSEL, DOWN_CURSOR } from "../constants"
-import { APPLICATIONS_OPEN } from "../maintenance"
+import { APPLICATIONS_OPEN, COHORT_DATES } from "../maintenance"
 
 import Layout from "../components/Layout"
 import { PageHeadingPanel, NextPanel, ExtendedPanel } from "../components/Panel"
@@ -34,6 +34,31 @@ const CarouselImg = ({ src }) => (
     gradient="radial-gradient( rgba(141,140,355,0.25), rgba(4,2,171,0.25) 120%)"
   />
 )
+
+const colorArray = ["red", "green", "blue", "yellow"]
+
+const CohortExpandable = ({ obj, color }) => {
+  return (
+    <CollapsableQuestion question={`Cohort of ${obj.cohort}`} colour={color}>
+      <div className="font-4 mb2">
+        <h3 className="b">Expression of interest</h3>
+        <p>{obj.expression_of_interest}</p>
+      </div>
+      <div className="font-4 mb2">
+        <h3 className="b">Application window</h3>
+        <p>{obj.application_window}</p>
+      </div>
+      <div className="font-4 mb2">
+        <h3 className="b">Interview dates</h3>
+        <p>{obj.interview_dates}</p>
+      </div>
+      <div className="font-4 mb2">
+        <h3 className="b">Course dates</h3>
+        <p>{obj.course_dates}</p>
+      </div>
+    </CollapsableQuestion>
+  )
+}
 
 const carouselImages = [
   { caption: "London Cohort #14", src: FAC14 },
@@ -73,69 +98,15 @@ class ApplyPage extends Component {
             >
               <Table />
               <QuestionWrapper hideL>
-                <CollapsableQuestion
-                  question="Cohort of Spring 2019"
-                  colour="red"
-                >
-                  <div className="font-4 mb2">
-                    <h3 className="b">Expression of interest</h3>
-                    <p>Until November 30</p>
-                  </div>
-                  <div className="font-4 mb2">
-                    <h3 className="b">Application window *</h3>
-                    <p>December 1-31</p>
-                  </div>
-                  <div className="font-4 mb2">
-                    <h3 className="b">Interview dates</h3>
-                    <p>January 7-12</p>
-                  </div>
-                  <div className="font-4 mb2">
-                    <h3 className="b">Course dates</h3>
-                    <p>March 4, 2019 - June 21, 2019</p>
-                  </div>
-                </CollapsableQuestion>
-                <CollapsableQuestion
-                  question="Cohort of Summer 2019"
-                  colour="green"
-                >
-                  <div className="font-4 mb2">
-                    <h3 className="b">Expression of interest</h3>
-                    <p>January - March</p>
-                  </div>
-                  <div className="font-4 mb2">
-                    <h3 className="b">Application window *</h3>
-                    <p>April 1-30</p>
-                  </div>
-                  <div className="font-4 mb2">
-                    <h3 className="b">Interview dates</h3>
-                    <p>May 7-11</p>
-                  </div>
-                  <div className="font-4 mb2">
-                    <h3 className="b">Course dates</h3>
-                    <p>July 1, 2019 - October 18, 2019</p>
-                  </div>
-                </CollapsableQuestion>
-                <CollapsableQuestion
-                  question="Cohort of Winter 2019"
-                  colour="blue"
-                >
-                  <div className="font-4 mb2">
-                    <h3 className="b">Expression of interest</h3>
-                    <p>May - July</p>
-                  </div>
-                  <div className="font-4 mb2">
-                    <h3 className="b">Application window *</h3>
-                    <p>August 1-31</p>
-                  </div>
-                  <div className="font-4 mb2">
-                    <h3 className="b">Interview dates</h3>
-                    <p>September 2-7</p>
-                  </div>
-                  <div className="font-4 mb2">
-                    <h3 className="b">Course dates</h3>
-                    <p>October 28, 2019 - February 21, 2020</p>
-                  </div>
-                </CollapsableQuestion>
+                {COHORT_DATES.map((obj, key) => {
+                  return (
+                    <CohortExpandable
+                      obj={obj}
+                      color={colorArray[key % 4]}
+                      key={key}
+                    />
+                  )
+                })}
               </QuestionWrapper>
               <div className="font-5 fw3">
                 Applications close at midnight GMT on the final day of the
