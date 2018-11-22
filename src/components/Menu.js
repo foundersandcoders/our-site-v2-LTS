@@ -29,6 +29,9 @@ const StickyMenuTriangle = styled.div.attrs({
     background: ${({ active, color }) =>
       active || color === "white" ? `var(--white)` : `var(--black)`};
   `};
+  ${breakpoint.m`
+    left: 0;
+  `};
 `
 
 const MobileNavBar = styled.div.attrs({
@@ -113,6 +116,11 @@ const MenuInnerContainer = styled.div.attrs({
   right: ${({ active }) => (active ? "-1440px" : "0")};
   top: 0;
   max-width: 1440px;
+  ${breakpoint.m`
+    position: fixed;
+    left: ${({ active }) => (active ? "0" : "-100%")};
+    right: auto;
+`};
   ${breakpoint.s`
     position: fixed;
     top: ${({ active }) => (active ? "0" : "-100%")};
