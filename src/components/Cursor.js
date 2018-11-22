@@ -4,7 +4,7 @@ import {
   DOWN_CURSOR,
   RIGHT_CURSOR,
   HIDE_CURSOR,
-  CROSS_CURSOR
+  CROSS_CURSOR,
 } from "../constants"
 
 import styled from "styled-components"
@@ -41,7 +41,6 @@ const mouseOnMenu = component => {
     cursor: CROSS_CURSOR,
   })
 }
-
 
 const mouseOnHide = component => {
   component.setState({
@@ -156,4 +155,11 @@ class Cursor extends Component {
   }
 }
 
-export { Cursor, mouseOnCarousel, mouseOnMenu, mouseOnNext, mouseOff, mouseOnHide }
+export {
+  Cursor,
+  mouseOnCarousel,
+  mouseOnMenu,
+  mouseOnNext,
+  mouseOff,
+  mouseOnHide,
+}

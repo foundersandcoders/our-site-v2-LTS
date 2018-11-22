@@ -64,8 +64,7 @@ const _Carousel = styled.section.attrs({
     transform: `translate(${0.12 * scrollY}vw, -50%)`,
   }),
 })`
-  ${({ carouselClass }) => carouselClass }
-  z-index: -1;
+  ${({ carouselClass }) => carouselClass} z-index: -1;
   top: 50%;
   will-change: transform;
   width: ${({ carouselWidth }) => carouselWidth};
@@ -100,7 +99,7 @@ class Carousel extends Component {
       applicationsAreOpen,
       className,
       title,
-      carouselClass
+      carouselClass,
     } = this.props
     switch (type) {
       case TESTIMONIAL_CAROUSEL:
@@ -112,7 +111,11 @@ class Carousel extends Component {
             onMouseLeave={() => mouseOff(component)}
           >
             <_InnerContainer>
-              <_Carousel scrollY={scrollY} carouselWidth={carouselWidth} carouselClass={carouselClass}>
+              <_Carousel
+                scrollY={scrollY}
+                carouselWidth={carouselWidth}
+                carouselClass={carouselClass}
+              >
                 {children}
               </_Carousel>
             </_InnerContainer>
@@ -128,16 +131,19 @@ class Carousel extends Component {
           >
             <_InnerApplicationContainer>
               <InnerGridContainer>
-                <HeadingWithBody title={title} bgColour="light-gray pr4 pv4 pl4">
+                <HeadingWithBody
+                  title={title}
+                  bgColour="light-gray pr4 pv4 pl4"
+                >
                   <_Carousel scrollY={scrollY} carouselWidth={carouselWidth}>
                     {children}
                   </_Carousel>
                 </HeadingWithBody>
               </InnerGridContainer>
-            </_InnerApplicationContainer>
               {applicationsAreOpen !== undefined && (
                 <ApplicationsStatus areOpen={applicationsAreOpen} />
               )}
+            </_InnerApplicationContainer>
           </_OuterApplicationContainer>
         )
     }

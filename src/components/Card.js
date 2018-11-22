@@ -2,8 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { breakpoint } from "../styles/utils"
 
-import dan from "../assets/portraits/dan.png"
-import ines from "../assets/portraits/ines.png"
 import bez from "../assets/portraits/bez.png"
 import amelieBlue from "../assets/portraits/amelie_blue.png"
 import ameliePlain from "../assets/portraits/amelie_plain.png"
@@ -12,14 +10,13 @@ import fatimatPlain from "../assets/portraits/fatimat_plain.png"
 import helenBlue from "../assets/portraits/helen_blue.png"
 import helenPlain from "../assets/portraits/helen_plain.png"
 
-
 const _Photo = styled.div.attrs({
   className: "db absolute-ns top-0 ba bw3 b--yellow",
 })`
   transition: 0.75s ease;
-  background: ${({blueImg}) => `url(${blueImg})`};
+  background: ${({ blueImg }) => `url(${blueImg})`};
   &:hover {
-    background: ${({normalImg}) => `url(${normalImg})`};
+    background: ${({ normalImg }) => `url(${normalImg})`};
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom center;
@@ -34,7 +31,7 @@ const _Photo = styled.div.attrs({
     height: ${({ imgHeight = "88%" }) => imgHeight};
     padding-top: 3rem;
     left: 20%;
-  `}
+  `};
 `
 
 const _StaffPhoto = styled(_Photo)`
@@ -43,7 +40,8 @@ const _StaffPhoto = styled(_Photo)`
 `
 
 const Container = styled.div.attrs({
-  className: "relative flex items-center justify-center flex-column flex-row-ns",
+  className:
+    "relative flex items-center justify-center flex-column flex-row-ns",
 })`
   ${({ cardHeight: { ns: cardHeight_ns }, cardWidth: { ns: cardWidth_ns } }) =>
     (cardHeight_ns || cardWidth_ns) &&
@@ -75,7 +73,9 @@ const Title = ({ firstName, secondName, thirdName, title, title2 }) => (
   <TextContainer>
     <Text font="ttu fw5 font-1-l font-2-m font-3">{firstName}</Text>
     <Text font="ttu fw5 font-1-l font-2-m font-3">{secondName}</Text>
-    {thirdName && <Text font="ttu fw5 font-1-l font-2-m font-3">{thirdName}</Text>}
+    {thirdName && (
+      <Text font="ttu fw5 font-1-l font-2-m font-3">{thirdName}</Text>
+    )}
     <Text font="font-5 gray">{title}</Text>
   </TextContainer>
 )
@@ -84,7 +84,9 @@ const StaffTitle = ({ firstName, secondName, thirdName, title, title2 }) => (
   <StaffTextContainer>
     <Text font="ttu fw5 font-1-l font-2-m font-3">{firstName}</Text>
     <Text font="ttu fw5 font-1-l font-2-m font-3">{secondName}</Text>
-    {thirdName && <Text font="ttu fw5 font-1-l font-2-m font-3">{thirdName}</Text>}
+    {thirdName && (
+      <Text font="ttu fw5 font-1-l font-2-m font-3">{thirdName}</Text>
+    )}
     <Text font="font-5 gray">{title}</Text>
     {title2 && <Text font="font-5 gray">{title2}</Text>}
   </StaffTextContainer>
@@ -98,8 +100,7 @@ const Text = styled.p.attrs({
 `
 
 const TextContainer = styled.div.attrs({
-  className:
-    "absolute flex items-end flex-column z-2",
+  className: "absolute flex items-end flex-column z-2",
 })`
   left: 7.5%;
   top: 450px;
@@ -108,7 +109,7 @@ const TextContainer = styled.div.attrs({
     left: 1rem;
     min-width: 50%;
     transform: translateX(-48%);
-  `}
+  `};
 `
 const StaffTextContainer = styled(TextContainer)`
   top: 400px;
@@ -116,21 +117,20 @@ const StaffTextContainer = styled(TextContainer)`
   ${breakpoint.l`
     top: 20px;
     right: 160px;
-  `}
+  `};
 `
 
-
 const Quote = styled.div.attrs({
-  className: "db absolute-ns right-0-ns top-2-ns i font-4-ns font-5 pa2 pa3-ns mt5 mb4 bg-white w-100 w-50-ns",
+  className:
+    "db absolute-ns right-0-ns top-2-ns i font-4-ns font-5 pa2 pa3-ns mt5 mb4 bg-white w-100 w-50-ns",
 })`
   ${breakpoint.ns`
     letter-spacing: 0;
     transform: translateX(38%);
-  `}
-  ${breakpoint.m`
+  `} ${breakpoint.m`
     transform: translateX(5%);
     padding: 16px;
-  `}
+  `};
 `
 
 const Card = ({
@@ -172,7 +172,11 @@ const StaffCard = ({
   quote,
 }) => (
   <Container cardWidth={cardWidth} cardHeight={cardHeight}>
-    <_StaffPhoto normalImg={normalImg} blueImg={blueImg} imgHeight={imgHeight} />
+    <_StaffPhoto
+      normalImg={normalImg}
+      blueImg={blueImg}
+      imgHeight={imgHeight}
+    />
     <StaffTitle
       imgHeight={imgHeight}
       firstName={firstName}
@@ -184,7 +188,6 @@ const StaffCard = ({
     {quote ? <Quote>{quote}</Quote> : <div />}
   </Container>
 )
-
 
 const Dan = () => (
   <StaffCard
@@ -204,7 +207,7 @@ const Ines = () => (
     secondName="Teles"
     title="Director"
     cardWidth={{ ns: "33%", m: "45%", s: "66%" }}
-    cardHeight={{ ns: "50%",m: "30%", s: "17%" }}
+    cardHeight={{ ns: "50%", m: "30%", s: "17%" }}
     imgHeight="75%"
     blueImg={fatimatBlue}
     normalImg={fatimatPlain}
@@ -218,7 +221,7 @@ const Yvonne = () => (
     title="Operations and"
     title2=" international development"
     cardWidth={{ ns: "33%", m: "45%", s: "66%" }}
-    cardHeight={{ ns: "50%",m: "30%", s: "17%" }}
+    cardHeight={{ ns: "50%", m: "30%", s: "17%" }}
     imgHeight="75%"
     blueImg={fatimatBlue}
     normalImg={fatimatPlain}
@@ -231,7 +234,7 @@ const Joe = () => (
     secondName="Tanner"
     title="Commercial Partnerships"
     cardWidth={{ ns: "33%", m: "45%", s: "66%" }}
-    cardHeight={{ ns: "50%",m: "30%", s: "17%" }}
+    cardHeight={{ ns: "50%", m: "30%", s: "17%" }}
     imgHeight="75%"
     blueImg={fatimatBlue}
     normalImg={fatimatPlain}
@@ -326,4 +329,17 @@ const Fatimat = () => (
     quote="“Joe, our commercial manager, was supportive during and after Founders and Coders. Everybody's situation is different, which Joe recognizes and takes it into account when advising us. He listened to my concerns about working in the industry and paid attention to the kind of environment I wanted to work in, which helped him place me with my current employer, 27Partners.”"
   />
 )
-export { Card, Dan, Ines, Yvonne, Joe, Rebecca, Bez, Amelie, Helen, Owen, Ruth, Fatimat }
+export {
+  Card,
+  Dan,
+  Ines,
+  Yvonne,
+  Joe,
+  Rebecca,
+  Bez,
+  Amelie,
+  Helen,
+  Owen,
+  Ruth,
+  Fatimat,
+}

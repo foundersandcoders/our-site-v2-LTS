@@ -32,7 +32,7 @@ const StaffPanel = styled(Panel).attrs({
     height: ${({ panelHeight: { m } }) => m};
     clip-path: polygon(0 100%,-4% 5%,3% 5%,10% 0,17% 5%,24% 0,31% 5%,38% 0,45% 5%,52% 0,59% 5%, 66% 0,73% 5%,80% 0,87% 5%,94% 0,100% 5%,100% 100%);
     padding-top: 10rem;
-    ` }
+    `}
   ${breakpoint.l`
     height: ${({ panelHeight: { ns } }) => ns};
     clip-path: polygon( 0 100%, 0 5%,3% 10%,10% 0,17% 10%,24% 0,31% 10%,38% 0,45% 10%,52% 0,59% 10%, 66% 0,73% 10%,80% 0,87% 10%,94% 0,100% 7%,100% 100%);
@@ -51,7 +51,7 @@ class AboutPage extends Component {
         <Cursor cursor={cursor} colour="red" />
         <InnerGridContainer>
           <PageHeadingPanel title="What is Founders and Coders?" />
-          <HeadingWithBody title="Overview" className="mh2 mh0-ns mb7-ns mb5">
+          <HeadingWithBody title="Overview" className="mb7-ns mb5 mr7-m">
             Founders and Coders is not your ordinary coding bootcamp. We’re on a
             mission to prove that for many people peer-led learning is the most
             effective and least expensive route into the tech industry. Curious
@@ -61,7 +61,7 @@ class AboutPage extends Component {
           <DoubleLine colour="green" />
           <HeadingWithBody
             title="More information"
-            className="mh2 mh0-l mh1-m ph1-m mb7-ns mb5"
+            className="mb7-ns mb5 mr0-m"
           >
             <QuestionWrapper>
               <CollapsableQuestion
@@ -106,9 +106,20 @@ class AboutPage extends Component {
                 colour="red"
               >
                 <p>
-                  During the first half of the course, you’ll spend eight weeks learning HTML, CSS, JavaScript, Node.JS and other basic building blocks of web development, as well as user-centred design and entrepreneurship, via workshops and team projects.
-                <br /><br />
-                  During the second half of the course, you’ll tackle two extended team projects, one based on ideas pitched within the cohort and a final project for an external client that you will select as part of the <_InternalLink href="/techforbetter">Tech for Better</_InternalLink> programme.
+                  During the first half of the course, you’ll spend eight weeks
+                  learning HTML, CSS, JavaScript, Node.JS and other basic
+                  building blocks of web development, as well as user-centred
+                  design and entrepreneurship, via workshops and team projects.
+                  <br />
+                  <br />
+                  During the second half of the course, you’ll tackle two
+                  extended team projects, one based on ideas pitched within the
+                  cohort and a final project for an external client that you
+                  will select as part of the{" "}
+                  <_InternalLink href="/techforbetter">
+                    Tech for Better
+                  </_InternalLink>{" "}
+                  programme.
                 </p>
               </CollapsableQuestion>
               <CollapsableQuestion
@@ -116,7 +127,11 @@ class AboutPage extends Component {
                 colour="green"
               >
                 <p>
-                  We have no paid teaching staff. While we do employ a part-time facilitator who coordinates course logistics, the course is primarily “peer-led.” You will learn to code by pair programming with a partner, working on team projects, and from “near-peer” mentorship by recent graduates.
+                  We have no paid teaching staff. While we do employ a part-time
+                  facilitator who coordinates course logistics, the course is
+                  primarily “peer-led.” You will learn to code by pair
+                  programming with a partner, working on team projects, and from
+                  “near-peer” mentorship by recent graduates.
                 </p>
               </CollapsableQuestion>
               <CollapsableQuestion
@@ -124,9 +139,16 @@ class AboutPage extends Component {
                 colour="yellow"
               >
                 <p>
-                  Founders and Coders is a community founded on the principle of reciprocity. We expect all graduates to contribute back to the viability and development of the programme, starting by mentoring for at least one full week after they graduate. 
-                  <br /><br />
-                  We support ourselves financially by acting as an employment agency. You can help us keep this programme free for future students by working with us to find employment, both after you graduate and throughout your career.
+                  Founders and Coders is a community founded on the principle of
+                  reciprocity. We expect all graduates to contribute back to the
+                  viability and development of the programme, starting by
+                  mentoring for at least one full week after they graduate.
+                  <br />
+                  <br />
+                  We support ourselves financially by acting as an employment
+                  agency. You can help us keep this programme free for future
+                  students by working with us to find employment, both after you
+                  graduate and throughout your career.
                 </p>
               </CollapsableQuestion>
               <CollapsableQuestion
@@ -134,7 +156,14 @@ class AboutPage extends Component {
                 colour="red"
               >
                 <p>
-                  We offer a number of bursaries to work with nonprofits through our <_InternalLink href="/techforbetter">Tech for Better</_InternalLink> programme and to mentor at our overseas campuses. We also have a growing network of partners through which you can find employment as a web developer. 
+                  We offer a number of bursaries to work with nonprofits through
+                  our{" "}
+                  <_InternalLink href="/techforbetter">
+                    Tech for Better
+                  </_InternalLink>{" "}
+                  programme and to mentor at our overseas campuses. We also have
+                  a growing network of partners through which you can find
+                  employment as a web developer.
                 </p>
               </CollapsableQuestion>
               <CollapsableQuestion
@@ -142,7 +171,29 @@ class AboutPage extends Component {
                 colour="blue"
               >
                 <p>
-                  We’re called Founders and Coders for a reason! Several of our alumni have gone on to start successful companies, for example: <_ExternalLink href="https://www.amaliah.com/">Amaliah</_ExternalLink>, <_ExternalLink href="https://www.personably.co/">Personably</_ExternalLink>, <_ExternalLink href="https://fatllama.com/">Fat Lama</_ExternalLink>, <_ExternalLink href="https://scrimba.com/">Scrimba</_ExternalLink>, and <_ExternalLink href="http://www.workerbird.co.uk/">Workerbird</_ExternalLink>. 
+                  We’re called Founders and Coders for a reason! Several of our
+                  alumni have gone on to start successful companies, for
+                  example:{" "}
+                  <_ExternalLink href="https://www.amaliah.com/">
+                    Amaliah
+                  </_ExternalLink>
+                  ,{" "}
+                  <_ExternalLink href="https://www.personably.co/">
+                    Personably
+                  </_ExternalLink>
+                  ,{" "}
+                  <_ExternalLink href="https://fatllama.com/">
+                    Fat Lama
+                  </_ExternalLink>
+                  ,{" "}
+                  <_ExternalLink href="https://scrimba.com/">
+                    Scrimba
+                  </_ExternalLink>
+                  , and{" "}
+                  <_ExternalLink href="http://www.workerbird.co.uk/">
+                    Workerbird
+                  </_ExternalLink>
+                  .
                 </p>
               </CollapsableQuestion>
               <CollapsableQuestion
@@ -150,23 +201,27 @@ class AboutPage extends Component {
                 colour="yellow"
               >
                 <p>
-                  At this time, we are only accepting people who have the right to work in the UK and who intend to seek employment in London after the end of the programme. We do not offer support for visa applications.
+                  At this time, we are only accepting people who have the right
+                  to work in the UK and who intend to seek employment in London
+                  after the end of the programme. We do not offer support for
+                  visa applications.
                 </p>
               </CollapsableQuestion>
               <CollapsableQuestion
                 question="Is there a minimum age for attending Founders and Coders?"
                 colour="green"
               >
-                <p>
-                  Yes, for insurance reasons you need to be 18.
-                </p>
+                <p>Yes, for insurance reasons you need to be 18.</p>
               </CollapsableQuestion>
               <CollapsableQuestion
                 question="Why do you require applicants to use freeCodeCamp and Codewars?"
                 colour="blue"
               >
                 <p>
-                  We think freeCodeCamp and Codewars are two of the better free online resources available for programmers. Regardless of whether you join the course, using them will help you grow as a developer. 
+                  We think freeCodeCamp and Codewars are two of the better free
+                  online resources available for programmers. Regardless of
+                  whether you join the course, using them will help you grow as
+                  a developer.
                 </p>
               </CollapsableQuestion>
               <CollapsableQuestion
@@ -174,7 +229,10 @@ class AboutPage extends Component {
                 colour="red"
               >
                 <p>
-                  How quickly you complete the prerequisites will depend on a variety of factors, such as technical background and time available. Our courses start three times a year so the next intake is never more than four months away.
+                  How quickly you complete the prerequisites will depend on a
+                  variety of factors, such as technical background and time
+                  available. Our courses start three times a year so the next
+                  intake is never more than four months away.
                 </p>
               </CollapsableQuestion>
               <CollapsableQuestion
@@ -182,7 +240,12 @@ class AboutPage extends Component {
                 colour="green"
               >
                 <p>
-                  The conversational interview is an opportunity for us to learn more about your interests as a developer, understand why you want to join our community, and determine whether you’re likely to be a good fit for our learning environment. Interviews typically last for 20 minutes and include a short coding challenge. 
+                  The conversational interview is an opportunity for us to learn
+                  more about your interests as a developer, understand why you
+                  want to join our community, and determine whether you’re
+                  likely to be a good fit for our learning environment.
+                  Interviews typically last for 20 minutes and include a short
+                  coding challenge.
                 </p>
               </CollapsableQuestion>
               <CollapsableQuestion
@@ -190,7 +253,11 @@ class AboutPage extends Component {
                 colour="yellow"
               >
                 <p>
-                  Unfortunately we don’t provide individualised admissions feedback. We do our best to admit a diverse cohort of individuals who will thrive in our cooperative community. Joining Founders and Coders is just one of many pathways to becoming a developer. 
+                  Unfortunately we don’t provide individualised admissions
+                  feedback. We do our best to admit a diverse cohort of
+                  individuals who will thrive in our cooperative community.
+                  Joining Founders and Coders is just one of many pathways to
+                  becoming a developer.
                 </p>
               </CollapsableQuestion>
               <CollapsableQuestion
@@ -198,15 +265,33 @@ class AboutPage extends Component {
                 colour="red"
               >
                 <p>
-                  We can’t accommodate drop-ins during the course from potential applicants, so please don’t stop by during course hours unannounced. If you’d like to see the space and meet current course participants please complete an <_ExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLSepdNxKsrMjhfnbdkzKUgNpeWFmp8WLyiqTe_UY10TsPpFOEQ/viewform">expression of interest</_ExternalLink> to receive invitations to events, workshops, and meetups for prospective students.
-                  <br /><br />If you’re interested in a partnership, please <_InternalLink href="/contact">contact us</_InternalLink> or visit our <_InternalLink href="/hire">Hire</_InternalLink> page.</p>
+                  We can’t accommodate drop-ins during the course from potential
+                  applicants, so please don’t stop by during course hours
+                  unannounced. If you’d like to see the space and meet current
+                  course participants please complete an{" "}
+                  <_ExternalLink href="https://docs.google.com/forms/d/e/1FAIpQLSepdNxKsrMjhfnbdkzKUgNpeWFmp8WLyiqTe_UY10TsPpFOEQ/viewform">
+                    expression of interest
+                  </_ExternalLink>{" "}
+                  to receive invitations to events, workshops, and meetups for
+                  prospective students.
+                  <br />
+                  <br />
+                  If you’re interested in a partnership, please{" "}
+                  <_InternalLink href="/contact">contact us</_InternalLink> or
+                  visit our <_InternalLink href="/hire">Hire</_InternalLink>{" "}
+                  page.
+                </p>
               </CollapsableQuestion>
               <CollapsableQuestion
                 question="Can I take time off the course?"
                 colour="blue"
               >
                 <p>
-                  It’s okay to miss one or two days of your cohort because of prior engagements, however, it’s not okay to miss more than that (e.g., a full week). If you would need to miss more than a couple of days of a cohort, you should apply for another cohort. Note that we generally don’t take bank holidays off. 
+                  It’s okay to miss one or two days of your cohort because of
+                  prior engagements, however, it’s not okay to miss more than
+                  that (e.g., a full week). If you would need to miss more than
+                  a couple of days of a cohort, you should apply for another
+                  cohort. Note that we generally don’t take bank holidays off.
                 </p>
               </CollapsableQuestion>
               <CollapsableQuestion
@@ -214,18 +299,55 @@ class AboutPage extends Component {
                 colour="yellow"
               >
                 <p>
-                  In 2013, <_ExternalLink href="https://www.linkedin.com/in/dsofer">Dan</_ExternalLink> started regular <_ExternalLink href="http://selforganising.org/">"self-organising"</_ExternalLink> meetups at the British Library with other people interested in improving their programming skills. In January 2014, he ran a <_ExternalLink href="https://vimeo.com/88149344">6-week pilot</_ExternalLink> at <_ExternalLink href="https://camdencollective.co.uk/">Camden Collective</_ExternalLink>. In the final days of <_ExternalLink href="https://vimeo.com/115169756">FAC3</_ExternalLink> in Camden, we learned that our classroom would no longer be available and the students spent the last week of their course organising <_ExternalLink href="https://www.indiegogo.com/projects/founders-coders-a-free-coding-academy-in-london#/">a successful crowdfunding campaign</_ExternalLink>. In January 2015, Founders and Coders incorporated as a C.I.C., with <_ExternalLink href="https://www.linkedin.com/in/iteles/">Ines</_ExternalLink> and <_ExternalLink href="https://www.linkedin.com/in/nelsonic/">Nelson</_ExternalLink> joining the team as a director and lead technical mentor.
+                  In 2013,{" "}
+                  <_ExternalLink href="https://www.linkedin.com/in/dsofer">
+                    Dan
+                  </_ExternalLink>{" "}
+                  started regular{" "}
+                  <_ExternalLink href="http://selforganising.org/">
+                    "self-organising"
+                  </_ExternalLink>{" "}
+                  meetups at the British Library with other people interested in
+                  improving their programming skills. In January 2014, he ran a{" "}
+                  <_ExternalLink href="https://vimeo.com/88149344">
+                    6-week pilot
+                  </_ExternalLink>{" "}
+                  at{" "}
+                  <_ExternalLink href="https://camdencollective.co.uk/">
+                    Camden Collective
+                  </_ExternalLink>
+                  . In the final days of{" "}
+                  <_ExternalLink href="https://vimeo.com/115169756">
+                    FAC3
+                  </_ExternalLink>{" "}
+                  in Camden, we learned that our classroom would no longer be
+                  available and the students spent the last week of their course
+                  organising{" "}
+                  <_ExternalLink href="https://www.indiegogo.com/projects/founders-coders-a-free-coding-academy-in-london#/">
+                    a successful crowdfunding campaign
+                  </_ExternalLink>
+                  . In January 2015, Founders and Coders incorporated as a
+                  C.I.C., with{" "}
+                  <_ExternalLink href="https://www.linkedin.com/in/iteles/">
+                    Ines
+                  </_ExternalLink>{" "}
+                  and{" "}
+                  <_ExternalLink href="https://www.linkedin.com/in/nelsonic/">
+                    Nelson
+                  </_ExternalLink>{" "}
+                  joining the team as a director and lead technical mentor.
                 </p>
               </CollapsableQuestion>
             </QuestionWrapper>
             <Footnote>
-              Have a question we didn’t answer? <_InternalLink href="#footer">Contact us</_InternalLink> and we’ll get right
-              back to you!
+              Have a question we didn’t answer?{" "}
+              <_InternalLink href="#footer">Contact us</_InternalLink> and we’ll
+              get right back to you!
             </Footnote>
           </HeadingWithBody>
           <HeadingWithBody
             title="Staff"
-            className="pt4-ns pt0 mt7-ns mt6-ns pb7-ns pb0 mb5"
+            className="pt4-ns pt0 mt7-ns mt6-ns pb7-ns pb0 mb5 mr7-m"
           >
             Founders and Coders is a labour of love run by a small team of
             permanent staff. We are also tremendously grateful to the friends
