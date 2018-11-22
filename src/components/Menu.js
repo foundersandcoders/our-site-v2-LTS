@@ -1,7 +1,9 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import logo from "../assets/logos/fac_logo.png"
+
+import HomeLogo from "./HomeLogo"
+
 import iconLogo from "../assets/logos/fac_round_logo.png"
 import { breakpoint } from "../styles/utils"
 
@@ -162,14 +164,6 @@ const MenuNumber = styled.div.attrs({})`
   `};
 `
 
-const Logo = styled.img.attrs({
-  className: "border-box pa5-ns",
-})`
-  ${breakpoint.s`
-    height: 80px;
-  `};
-`
-
 const MenuImage = styled.div.attrs({
   className: "pl3 ttu",
 })`
@@ -243,13 +237,7 @@ class Menu extends Component {
         <MenuContainer>
           <MenuInnerContainer active={menuActive}>
             <MenuSidebar active={menuActive}>
-              <Link to="/">
-                <Logo
-                  active={menuActive}
-                  src={logo}
-                  alt="Founders and Coders Logo"
-                />
-              </Link>
+              <HomeLogo className="ml2 ml7-m pl6-l mh0-l" />
             </MenuSidebar>
             <MenuMain active={menuActive}>
               <MenuItem

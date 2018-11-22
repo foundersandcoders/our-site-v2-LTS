@@ -1,29 +1,17 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import logoPNG from "../assets/logos/fac_logo.png"
+import HomeLogo from "./HomeLogo"
 import { breakpoint } from "../styles/utils"
 
 const _Header = styled.header.attrs({
-  className: "dn flex-ns mh2 ml7-m pl6-l mh0-l pt6",
+  className: "dn flex-ns center pt6 justify-between",
 })`
   max-width: 1280px;
 `
 
-const LogoStyled = styled.img.attrs({
-  className: "border-box pr2",
-  src: logoPNG,
-  alt: "Founders and Coders Logo",
-})`
-  max-width: 260px;
-  max-height: 110px;
-  ${breakpoint.m`
-    width: 30vw;
-  `};
-`
-
 const _TopNav = styled.nav.attrs({
-  className: "flex w-100 w-50-m justify-between pl2",
+  className: "flex w-100 w-50-m w-75-l justify-between mr4",
 })``
 
 const TopNav = () => (
@@ -78,10 +66,7 @@ const TopLink = ({ to, text, number }) => (
 
 const Header = () => (
   <_Header>
-    <Link to="/">
-      <LogoStyled />
-    </Link>
-
+    <HomeLogo />
     <TopNav />
   </_Header>
 )
