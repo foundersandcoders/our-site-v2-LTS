@@ -60,16 +60,19 @@ class ApplyPage extends Component {
         <main>
           <InnerGridContainer>
             <PageHeadingPanel title="Apply to our course" />
-            <HeadingWithBody title="Overview">
+            <HeadingWithBody title="Overview" className="mr7-m">
               Our programme is designed for people who are serious about a
               career in web development, are comfortable with uncertainty, can
               take initiative, and believe strongly in the value of community
               and helping others.
             </HeadingWithBody>
             <DoubleLine colour="blue" />
-            <HeadingWithBody title="What you need to know" className="mb5">
+            <HeadingWithBody
+              title="What you need to know"
+              className="mb5 mr2-m"
+            >
               <Table />
-              <QuestionWrapper hideNS>
+              <QuestionWrapper hideL>
                 <CollapsableQuestion
                   question="Cohort of Spring 2019"
                   colour="red"
@@ -156,7 +159,7 @@ class ApplyPage extends Component {
             <div className="bg-light-gray ma0 db dn-l">
               <HeadingWithBody
                 title="How do I apply?"
-                className="db dn-l bg-light-gray pv6"
+                className="db dn-l bg-light-gray pv6 mr7-m"
               >
                 <ApplicationSteps />
               </HeadingWithBody>
@@ -164,11 +167,11 @@ class ApplyPage extends Component {
             </div>
           </section>
 
-          <InnerGridContainer className="mb7 pb5">
-            <_Heading className="ml6-ns ml2 mb4">
-              Join our developer community
-            </_Heading>
-            <HeadingWithBody title={this.state.carouselCaption}>
+          <InnerGridContainer className="mb7 mb5-m pb5">
+            <HeadingWithBody title="Join our developer community">
+              <span className="font-5 dark-gray pb3 db">
+                {this.state.carouselCaption}
+              </span>
               <FlickityCarousel
                 options={{
                   pageDots: true,

@@ -69,7 +69,7 @@ const PartnerLogo = styled(BackgroundImg).attrs({
 class IndexPage extends Component {
   state = {
     cursor: DOWN_CURSOR,
-    progress: 0,
+    progress: 99,
   }
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll)
@@ -78,14 +78,13 @@ class IndexPage extends Component {
     window.removeEventListener("scroll", this.handleScroll)
   }
   handleScroll = () => {
-    const overview = document
-      .querySelector(".overview-text")
-      .getBoundingClientRect().top
+    const doubleLine =
+      document.querySelector(".double-line").getBoundingClientRect().top - 300
     const video =
       document.querySelector(".video-container").getBoundingClientRect().top -
       150
-    if (overview < 0 && video > 0) {
-      const total = video - overview
+    if (doubleLine < 0 && video > 0) {
+      const total = video - doubleLine
       const progress = (video / total) * 100
       this.setState({
         progress: progress,
@@ -104,11 +103,20 @@ class IndexPage extends Component {
         <Cursor cursor={cursor} colour="blue" />
         <main>
           <InnerGridContainer>
-            <PageHeadingPanel title="we are Founders and Coders" textSize="XL"/>
+            <PageHeadingPanel
+              title="we are Founders and Coders"
+              textSize="XL"
+            />
             <DoubleLine colour="yellow" />
+            <VideoContainer percentFull={progress}>
+              <Video muted autoPlay loop>
+                <source src={splashVideo} type="video/mp4" />
+                Your browser does not support videos
+              </Video>
+            </VideoContainer>
             <HeadingBody
               title="Overview"
-              className="ma2 mh0-ns mb7-ns mb5 overview-text"
+              className="ma2 mh0-ns mb7-ns mb5 mr7-m overview-text"
             >
               Founders and Coders CIC is a UK-based nonprofit that develops and
               runs tuition-free, peer-led training programmes in web
@@ -120,12 +128,6 @@ class IndexPage extends Component {
               programmes in the Middle East and Africa.
             </HeadingBody>
           </InnerGridContainer>
-          <VideoContainer percentFull={progress}>
-            <Video muted autoPlay loop>
-              <source src={splashVideo} type="video/mp4" />
-              Your browser does not support videos
-            </Video>
-          </VideoContainer>
           <section className="mb7-ns mb5">
             <InnerGridContainer>
               <SmallUnderline className="ml2 ml6-ns">

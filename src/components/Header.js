@@ -11,16 +11,15 @@ const _Header = styled.header.attrs({
 `
 
 const LogoStyled = styled.img.attrs({
-  className: "border-box pl2 pr2",
+  className: "border-box pl2 pr2 ml7-m",
   src: logoPNG,
-  alt: "Founders and Coders Logo"
+  alt: "Founders and Coders Logo",
 })`
   max-width: 260px;
   max-height: 110px;
   ${breakpoint.m`
-    margin-left: 80px;
     width: 30vw;
-  `}
+  `};
 `
 
 const _TopNav = styled.nav.attrs({
@@ -49,13 +48,11 @@ const _TopLink = styled(Link).attrs({
     &.active {
       width: 100%;
       display: flex;
-      margin-right: 16px;
+      margin-right: 48px;
       border-color: var(--blue);
     }
-  `
-  }
-  &:after {
-    content: '';
+  `} &:after {
+    content: "";
     display: block;
     border-top: 2px solid var(--blue);
     width: 0;
@@ -82,7 +79,7 @@ const TopLink = ({ to, text, number }) => (
 const Header = () => (
   <_Header>
     <Link to="/">
-      <LogoStyled/>
+      <LogoStyled />
     </Link>
 
     <TopNav />

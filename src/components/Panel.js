@@ -40,19 +40,26 @@ const Footer = () => (
   <_Footer id="footer" className="bt bw1 b--gray">
     <DoubleLine src={double_line_yellow_horizontal} />
     <div className="center mb2">
-      <span className="underline white">
-        hello@foundersandcoders.com
-      </span>
+      <span className="underline white">hello@foundersandcoders.com</span>
       <span className="dn di-ns"> | </span>
       <span className="fw3 db di-ns">
         Space4, 1st floor 149 Fonthill Road, Finsbury Park, London N4 3HF
       </span>
     </div>
     <div className="flex w-20-ns w-50 justify-between mb7-ns mb6">
-      <Icon to="https://github.com/foundersandcoders/" img={github_logo_white} />
-      <Icon to="https://www.facebook.com/founderscoders/" img={facebook_logo_white} />
+      <Icon
+        to="https://github.com/foundersandcoders/"
+        img={github_logo_white}
+      />
+      <Icon
+        to="https://www.facebook.com/founderscoders/"
+        img={facebook_logo_white}
+      />
       <Icon to="https://twitter.com/founderscoders" img={twitter_logo_white} />
-      <Icon to="https://www.linkedin.com/school/founders-&-coders/" img={linkedin_logo_white} />
+      <Icon
+        to="https://www.linkedin.com/school/founders-&-coders/"
+        img={linkedin_logo_white}
+      />
     </div>
     <div className="font-6 w-100 ph2-ns pb1 ph0 fw3 flex justify-between flex-row-ns flex-column">
       <div>
@@ -76,16 +83,29 @@ const Panel = styled.section.attrs({
   width: ${({ width = "inherit" }) => width};
 `
 
-const PageHeadingPanel = ({textSize, title}) => {
-  return <Panel justify="center justify-end-ns" className={ textSize === "XL" ? "mh6-m mh0-l mh2" : "mt7 mb6-ns mb5 pt0-ns pt3 mh2 mh0-ns" }>
-    <div className={ textSize == "XL" ? "w-100 w-75-l" : "mh7-m w-100 w-75-l pl2-m" }>
-      {
-        textSize == "XL" ? 
-        <_BigText className="pt5" >{title}</_BigText> :
-        <BigUnderline>{title}</BigUnderline>
+const PageHeadingPanel = ({ textSize, title }) => {
+  return (
+    <Panel
+      justify="center justify-end-ns"
+      className={
+        textSize === "XL"
+          ? "mh7-m pl2-m mh0-l mh2"
+          : "mt7 mb6-ns mb5 pt0-ns pt3 mh2 mh0-ns"
       }
-    </div>
-  </Panel>
+    >
+      <div
+        className={
+          textSize == "XL" ? "w-100 w-80-l" : "mh7-m w-100 w-75-l pl2-m"
+        }
+      >
+        {textSize == "XL" ? (
+          <_BigText className="pt5">{title}</_BigText>
+        ) : (
+          <BigUnderline>{title}</BigUnderline>
+        )}
+      </div>
+    </Panel>
+  )
 }
 
 const PanelTopBorder = styled.div.attrs({
@@ -149,7 +169,9 @@ const NextPanel = ({ component, to, children, topBorder }) => (
                 Next
               </OffsetUnderlineText>
             </div>
-            <_BigText colour="white" className="ml5-m mv3-m">{children}</_BigText>
+            <_BigText colour="white" className="ml5-m mv3-m">
+              {children}
+            </_BigText>
           </Panel>
         </InnerGridContainer>
       </Link>

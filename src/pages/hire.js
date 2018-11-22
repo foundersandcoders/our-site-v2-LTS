@@ -92,13 +92,17 @@ class HirePage extends Component {
       <Layout>
         <Cursor cursor={cursor} colour="green" />
         <InnerGridContainer>
-          <PageHeadingPanel title="Hire our graduates"/>
+          <PageHeadingPanel title="Hire our graduates" />
           <HeadingWithBody title="Overview">
             Our dedicated network of employer partners are an essential part of
             the cooperative community at Founders and Coders. We are always
             looking for new partners committed to building inclusive workplaces
             where our diverse graduates will thrive. Think your company would be
-            a good fit? <_ExternalLink href={HIRE_CONTACT_FORM}>Fill out this short form</_ExternalLink>.
+            a good fit?{" "}
+            <_ExternalLink href={HIRE_CONTACT_FORM}>
+              Fill out this short form
+            </_ExternalLink>
+            .
           </HeadingWithBody>
           <DoubleLine colour="red" />
           <SplashPhoto src={hireSplash} />
@@ -142,11 +146,9 @@ class HirePage extends Component {
               wrapAround: true,
             }}
           >
-            { 
-              partnerLogos.map((logo, key) => {
-                return <PartnerLogo src={logo} key={key} bgSize="contain"/>
-              })
-            }
+            {partnerLogos.map((logo, key) => {
+              return <PartnerLogo src={logo} key={key} bgSize="contain" />
+            })}
           </FlickityCarousel>
         </section>
         <NextPanel component={this} to={"/techforbetter"} topBorder>

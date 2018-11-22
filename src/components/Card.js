@@ -2,8 +2,6 @@ import React, { Fragment } from "react"
 import styled from "styled-components"
 import { breakpoint } from "../styles/utils"
 
-// import dan from "../assets/portraits/dan.png"
-// import ines from "../assets/portraits/ines.png"
 import amelieBlue from "../assets/portraits/amelie_blue.png"
 import ameliePlain from "../assets/portraits/amelie_plain.png"
 import fatimatBlue from "../assets/portraits/fatimat_blue.png"
