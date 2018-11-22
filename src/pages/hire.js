@@ -46,10 +46,10 @@ const _NameAndCompany = styled(NameAndCompany).attrs({
 })`
   ${breakpoint.ns`
   bottom: -72px;
-  right: -166px;
+  right: -100px;
 `};
   bottom: -80px;
-  right: 0;
+  right: 20px;
   letter-spacing: var(--letter-spacing-tight);
 `
 
