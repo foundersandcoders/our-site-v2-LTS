@@ -16,30 +16,14 @@ const _OuterContainer = styled.div.attrs({
   background: url(${stripey_small}) repeat;
   clip-path: polygon(0 100%, 0 12%, 25% 0, 50% 12%, 75% 0, 100% 12%, 100% 100%);
   ${breakpoint.ns`
-  clip-path: polygon(
-    0 100%,
-    0 1.5%,
-    3% 3%,
-    10% 0,
-    17% 3%,
-    24% 0,
-    31% 3%,
-    38% 0,
-    45% 3%,
-    52% 0,
-    59% 3%,
-    66% 0,
-    73% 3%,
-    80% 0,
-    87% 3%,
-    94% 0,
-    100% 3%,
-    100% 100%
-  );
-  padding-top: 15%;
-  background-attachment: fixed;
-  height: ${({ carouselLength }) => carouselLength};
-`};
+    clip-path: polygon(0 100%, 0 1.5%, 3% 3%, 10% 0, 17% 3%, 24% 0, 31% 3%, 38% 0, 45% 3%, 52% 0, 59% 3%, 66% 0, 73% 3%, 80% 0, 87% 3%, 94% 0, 100% 3%, 100% 100%);
+    padding-top: 15%;
+    background-attachment: fixed;
+    height: ${({ carouselLength: { ns } }) => ns};
+  `};
+  ${breakpoint.m`
+    height: ${({ carouselLength: { m } }) => m};
+  `};
 `
 
 const _OuterApplicationContainer = styled.div.attrs({
@@ -60,11 +44,10 @@ const _InnerApplicationContainer = styled.div.attrs({
 
 const _Carousel = styled.section.attrs({
   className: "flex relative items-center justify-between w-75",
-  style: ({ scrollY }) => ({
-    transform: `translate(${0.12 * scrollY}vw, -50%)`,
-  }),
 })`
-  ${({ carouselClass }) => carouselClass} z-index: -1;
+  transform: ${({ scrollY }) => `translate(${0.12 * scrollY}vw, -50%)`};
+  ${({ carouselClass }) => carouselClass};
+  z-index: -1;
   top: 50%;
   will-change: transform;
   width: ${({ carouselWidth }) => carouselWidth};
