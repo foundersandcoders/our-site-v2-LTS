@@ -4,14 +4,19 @@ import { breakpoint } from "../styles/utils"
 
 import amelieBlue from "../assets/portraits/amelie_blue.png"
 import ameliePlain from "../assets/portraits/amelie_plain.png"
-import fatimatBlue from "../assets/portraits/fatimat_blue.png"
-import fatimatPlain from "../assets/portraits/fatimat_plain.png"
 import helenBlue from "../assets/portraits/helen_blue.png"
 import helenPlain from "../assets/portraits/helen_plain.png"
 import owenBlue from "../assets/portraits/owen_blue.png"
 import owenPlain from "../assets/portraits/owen_plain.png"
 import ruthBlue from "../assets/portraits/ruth_blue.png"
 import ruthPlain from "../assets/portraits/ruth_plain.png"
+import fatimatBlue from "../assets/portraits/fatimat_blue.png"
+import fatimatPlain from "../assets/portraits/fatimat_plain.png"
+
+import danBlue from "../assets/portraits/dan_blue.png"
+import danPlain from "../assets/portraits/dan_plain.png"
+import joeBlue from "../assets/portraits/joe_blue.png"
+import joePlain from "../assets/portraits/joe_plain.png"
 
 const Container = styled.div.attrs({
   className:
@@ -258,8 +263,8 @@ const Dan = () => (
     secondName="Sofer"
     title="Executive Director"
     imgHeight="75%"
-    blueImg={fatimatBlue}
-    normalImg={fatimatPlain}
+    blueImg={danBlue}
+    normalImg={danPlain}
   />
 )
 const Ines = () => (
@@ -291,8 +296,8 @@ const Joe = () => (
     secondName="Tanner"
     title="Commercial Partnerships"
     imgHeight="75%"
-    blueImg={fatimatBlue}
-    normalImg={fatimatPlain}
+    blueImg={joeBlue}
+    normalImg={joePlain}
   />
 )
 

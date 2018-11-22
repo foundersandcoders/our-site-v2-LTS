@@ -358,8 +358,8 @@ class AboutPage extends Component {
         <StaffPanel panelHeight={{ ns: "175vh", m: "190vh", s: "450vh" }}>
           <Dan />
           <Ines />
-          <Yvonne />
           <Joe />
+          <Yvonne />
           <Rebecca />
         </StaffPanel>
         <NextPanel component={this} to={"/apply"}>
