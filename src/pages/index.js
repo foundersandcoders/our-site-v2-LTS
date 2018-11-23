@@ -109,7 +109,7 @@ class IndexPage extends Component {
               title="we are Founders and Coders"
               textSize="XL"
             />
-            <DoubleLine colour="yellow" />
+            <DoubleLine colour="yellow" showing={true} />
             <VideoContainer percentFull={progress}>
               <Video muted autoPlay loop>
                 <source src={splashVideo} type="video/mp4" />
@@ -123,11 +123,9 @@ class IndexPage extends Component {
               Founders and Coders CIC is a UK-based nonprofit that develops and
               runs tuition-free, peer-led training programmes in web
               development, guided by our core values of cooperation, inclusion
-              and social impact. Our Tech for Better programme pairs nonprofits
-              and social entrepreneurs with developers in London and Palestine
-              to design, test and build new digital services. We operate in
-              London and work with Mercy Corps and the UK government to deliver
-              programmes in the Middle East and Africa.
+              and social impact. We operate in London and work with Mercy Corps
+              and the UK government to deliver programmes in the Middle East and
+              Africa.
             </HeadingBody>
           </InnerGridContainer>
           <section className="mb7-ns mb5">

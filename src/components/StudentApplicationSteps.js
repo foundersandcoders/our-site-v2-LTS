@@ -13,7 +13,11 @@ const _ListItem = styled.li`
 
 const ApplicationSteps = () => (
   <Fragment>
-    <Step step="01" colour="yellow" title="Submit your expression of interest">
+    <Step
+      step="01"
+      colour="yellow"
+      title="Submit your expression of interest and join our online community"
+    >
       Please submit an expression of interest to get invited to events,
       workshops and meetups for prospective students.
       <br />
@@ -35,11 +39,10 @@ const ApplicationSteps = () => (
       colour="blue"
       title="Start work on our course prerequisites"
     >
-      <span className="fw5">Before we can consider your application</span>, you
-      will need to complete our course prerequisites. We encourage applicants to
-      take as much time as they need to work through the material and to support
-      each other during the preparation process, both online and through our
-      meetups.
+      Before we can consider your application, you will need to complete our
+      course prerequisites. We encourage applicants to take as much time as they
+      need to work through the material and to support each other during the
+      preparation process, both online and through our meetups.
       <br />
       <br />
       Please read our course prerequisites carefully before planning when to
@@ -115,7 +118,8 @@ const ApplicationSteps = () => (
     <Step>
       <div className="pb3 pb0-l">
         <_SubHeading className="mb1">Codewars</_SubHeading>
-        Reach 5 kyu and 300 honor points in JavaScript on{" "}
+        Reach 5 kyu <span className="fw5">and</span> 300 honor points in
+        JavaScript on{" "}
         <_ExternalLink href="https://www.codewars.com">Codewars</_ExternalLink>.
       </div>
       <br />
@@ -125,38 +129,10 @@ const ApplicationSteps = () => (
         challenges below:
         <br />
         <span className="fw5">Challenge 1: </span>
-        <_ExternalLink href="https://www.codewars.com/kata/new/javascript">
+        <_ExternalLink href="https://github.com/foundersandcoders/master-reference/blob/master/coursebook/prerequisites/create-kata.md">
           Create at least one JavaScript kata
         </_ExternalLink>
-        <ul>
-          <_ListItem>
-            Before creating your kata, you must carefully read through tips from
-            Codewars on{" "}
-            <_ExternalLink href="https://github.com/Codewars/codewars.com/wiki/Tutorial%3A-Create-Your-First-Kata">
-              creating your first kata
-            </_ExternalLink>{" "}
-            and{" "}
-            <_ExternalLink href="https://github.com/Codewars/codewars.com/wiki/Kata-Best-Practices">
-              kata best practices
-            </_ExternalLink>
-            ;
-          </_ListItem>
-          <_ListItem>
-            Don’t forget to{" "}
-            <_ExternalLink href="https://github.com/codingforeveryone/READMEs/blob/master/codewars/random-test-cases-for-complete-beginners.md">
-              write random tests
-            </_ExternalLink>
-            !
-          </_ListItem>
-          <_ListItem>
-            Before publishing your kata, publish it as a draft first and ask for
-            feedback in the{" "}
-            <_ExternalLink href="https://gitter.im/Codewars/codewars.com/kata-authoring-help">
-              Codewars community
-            </_ExternalLink>{" "}
-            (bear in mind this is not moderated by Founders and Coders);
-          </_ListItem>
-        </ul>
+        <br />
         <span className="fw5">Challenge 2: </span>
         <_ExternalLink href="https://github.com/foundersandcoders/master-reference/blob/master/coursebook/prerequisites/image-carousel.md">
           Create an image carousel
@@ -180,8 +156,8 @@ const ApplicationSteps = () => (
       last={true}
     >
       We invite a minimum of 24 people to interview (in person or remotely), and{" "}
-      <span className="fw5">offer places to sixteen people per cohort</span>.
-      You’ll be interviewed by a panel of Founders and Coders staff and alumni.
+      offer places to sixteen people per cohort. You’ll be interviewed by a
+      panel of Founders and Coders staff and alumni.
     </Step>
   </Fragment>
 )
