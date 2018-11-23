@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react"
+import React, { Component } from "react"
 import styled from "styled-components"
 import { TESTIMONIAL_CAROUSEL, DOWN_CURSOR } from "../constants"
 
@@ -12,9 +12,9 @@ import stripey_small from "../assets/ui/stripey_small.svg"
 import splashVideo from "../assets/splashes/home_page_video.mp4"
 
 import Layout from "../components/Layout"
-import { _BigText, SmallUnderline } from "../components/Text"
+import { SmallUnderline } from "../components/Text"
 import HeadingBody from "../components/HeadingWithBody"
-import { Panel, NextPanel } from "../components/Panel"
+import { NextPanel, PageHeadingPanel } from "../components/Panel"
 import Carousel from "../components/Carousel"
 import { Cursor } from "../components/Cursor"
 import { Amelie, Helen, Owen, Ruth, Fatimat } from "../components/Card"
@@ -25,32 +25,33 @@ import InnerGridContainer from "../components/InnerGridContainer"
 import { breakpoint } from "../styles/utils"
 
 const Video = styled.video.attrs({
-  className: "w-100"
+  className: "w-100",
 })`
   height: calc((100vw - 32px) / 1.78);
   max-height: 719.1px;
   max-width: 1279px;
   ${breakpoint.ns`
     height: calc((100vw - 160px) / 1.78);
-  `}
+  `};
 `
 
 const VideoContainer = styled.section.attrs({
-  className: "flex justify-center mh6-ns mh2 mb7 video-container pt3"
+  className: "flex justify-center mh6-ns mh2 mb7 video-container pt3",
 })`
   transition: 0.25s ease;
-  clip-path: ${({ percentFull }) => `polygon(${percentFull/2}% ${percentFull/2}%,${100 - (percentFull/2)}% ${percentFull/2}%, ${100 - (percentFull/2)}% ${100 - (percentFull/2)}%, ${percentFull/2}% ${100 - (percentFull/2)}%)`};
+  clip-path: ${({ percentFull }) =>
+    `polygon(${percentFull / 2}% ${percentFull / 2}%,${100 -
+      percentFull / 2}% ${percentFull / 2}%, ${100 - percentFull / 2}% ${100 -
+      percentFull / 2}%, ${percentFull / 2}% ${100 - percentFull / 2}%)`};
 `
 
-const StripeyContainer = styled.div.attrs({
-  className: `${({ className }) => className}`,
-})`
+const StripeyContainer = styled.div.attrs({})`
   background: url(${stripey_small}) repeat;
   padding-top: 50%;
   clip-path: polygon(0 100%, 0 2%, 25% 0, 50% 2%, 75% 0, 100% 2%, 100% 100%);
 `
 
-const FacsterCards = ({className}) => (
+const FacsterCards = ({ className }) => (
   <StripeyContainer className={className}>
     <Amelie />
     <Helen />
@@ -68,7 +69,7 @@ const PartnerLogo = styled(BackgroundImg).attrs({
 class IndexPage extends Component {
   state = {
     cursor: DOWN_CURSOR,
-    progress: 0
+    progress: 99,
   }
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll)
@@ -77,17 +78,20 @@ class IndexPage extends Component {
     window.removeEventListener("scroll", this.handleScroll)
   }
   handleScroll = () => {
-    const overview = document.querySelector(".overview-text").getBoundingClientRect().top
-    const video = document.querySelector(".video-container").getBoundingClientRect().top - 150
-    if (overview < 0 && video > 0) {
-      const total = video - overview
-      const progress = (video/total) * 100
+    const doubleLine =
+      document.querySelector(".double-line").getBoundingClientRect().top - 300
+    const video =
+      document.querySelector(".video-container").getBoundingClientRect().top -
+      150
+    if (doubleLine < 0 && video > 0) {
+      const total = video - doubleLine
+      const progress = (video / total) * 100
       this.setState({
-        progress: progress
+        progress: progress,
       })
     } else if (video < 0) {
       this.setState({
-        progress: 0
+        progress: 0,
       })
     }
   }
@@ -99,22 +103,31 @@ class IndexPage extends Component {
         <Cursor cursor={cursor} colour="blue" />
         <main>
           <InnerGridContainer>
-            <Panel justify="center justify-end-ns">
-              <_BigText className="pt5 ph1 ph0-ns w-100 w-75-ns">
-                we are Founders and Coders
-              </_BigText>
-            </Panel>
+            <PageHeadingPanel
+              title="we are Founders and Coders"
+              textSize="XL"
+            />
             <DoubleLine colour="yellow" />
-            <HeadingBody title="Overview" className="ma2 mh0-ns mb7-ns mb5 overview-text">
-              Founders and Coders CIC is a UK-based nonprofit that develops and runs tuition-free, peer-led training programmes in web development, guided by our core values of cooperation, inclusion and social impact. Our Tech for Better programme pairs nonprofits and social entrepreneurs with developers in London and Palestine to design, test and build new digital services. We operate in London and work with Mercy Corps and the UK government to deliver programmes in the Middle East and Africa. 
+            <VideoContainer percentFull={progress}>
+              <Video muted autoPlay loop>
+                <source src={splashVideo} type="video/mp4" />
+                Your browser does not support videos
+              </Video>
+            </VideoContainer>
+            <HeadingBody
+              title="Overview"
+              className="ma2 mh0-ns mb7-ns mb5 mr7-m overview-text"
+            >
+              Founders and Coders CIC is a UK-based nonprofit that develops and
+              runs tuition-free, peer-led training programmes in web
+              development, guided by our core values of cooperation, inclusion
+              and social impact. Our Tech for Better programme pairs nonprofits
+              and social entrepreneurs with developers in London and Palestine
+              to design, test and build new digital services. We operate in
+              London and work with Mercy Corps and the UK government to deliver
+              programmes in the Middle East and Africa.
             </HeadingBody>
           </InnerGridContainer>
-          <VideoContainer percentFull={progress}>
-            <Video muted autoPlay loop >
-              <source src={splashVideo} type="video/mp4" />
-              Your browser does not support videos
-            </Video>
-          </VideoContainer>
           <section className="mb7-ns mb5">
             <InnerGridContainer>
               <SmallUnderline className="ml2 ml6-ns">
@@ -148,7 +161,7 @@ class IndexPage extends Component {
           <Carousel
             type={TESTIMONIAL_CAROUSEL}
             carouselWidth="350vw"
-            carouselLength="230vw"
+            carouselLength={{ m: "640vw", ns: "230vw" }}
             component={this}
             carouselClass="padding-left: 300px;"
           >
@@ -158,7 +171,7 @@ class IndexPage extends Component {
             <Ruth />
             <Fatimat />
           </Carousel>
-          <FacsterCards className="db dn-ns"/>
+          <FacsterCards className="db dn-ns" />
           <NextPanel component={this} to="/about">
             What is Founders and Coders?
           </NextPanel>

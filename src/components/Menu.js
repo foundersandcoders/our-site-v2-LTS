@@ -1,16 +1,18 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import logo from "../assets/logos/fac_logo.png"
+
+import HomeLogo from "./HomeLogo"
+
 import iconLogo from "../assets/logos/fac_round_logo.png"
 import { breakpoint } from "../styles/utils"
 
-const universalTransition = "transition: 1s ease-in-out;"
+const universalTransition = "transition: 1s ease-in-out"
 
 const StickyMenuTriangle = styled.div.attrs({
   className: "fixed pointer ph2 flex items-center justify-between menu-tri",
 })`
-  ${universalTransition}
+  ${universalTransition};
   z-index: 12;
   right: 0;
   top: 0;
@@ -23,10 +25,14 @@ const StickyMenuTriangle = styled.div.attrs({
     padding-right: 32px;
     height: 5rem;
     width: 5rem;
-    left: 0;
+    left: calc((100vw - 1440px) * 0.5);
     top: calc((100vh - 5rem) * 0.5);
     clip-path: polygon(100% 50%, 0 0, 0 100%);
-    background: ${({ active, color }) => active || color === "white" ? `var(--white)` : `var(--black)`};
+    background: ${({ active, color }) =>
+      active || color === "white" ? `var(--white)` : `var(--black)`};
+  `};
+  ${breakpoint.m`
+    left: 0;
   `};
 `
 
@@ -45,7 +51,7 @@ const StyledSVG = styled.svg`
   .menu-line {
     z-index: 24;
     transform: rotate(180deg) translateY(10px);
-    ${universalTransition}
+    ${universalTransition};
     transform-origin: center;
   }
   .arrow-formation:nth-of-type(1) {
@@ -61,36 +67,72 @@ const StyledSVG = styled.svg`
     .menu-line {
       transform: rotate(90deg) translateY(10px);
     }
-  `}
+  `};
 `
 
 const MenuAnimatedSVG = ({ active, color }) => {
-  return <StyledSVG width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect className={`menu-line ${ active ? "arrow-formation" : "" }`} y="16" width="40" height="2" fill={ active || color === "black" ? "black" : "white" } />
-    <rect className={`menu-line ${ active ? "arrow-formation" : "" }`} y="8" width="40" height="2" fill={ active || color === "black" ? "black" : "white"} />
-    <rect className={`menu-line ${ active ? "arrow-formation" : "" }`} width="40" height="2" fill={ active || color === "black" ? "black" : "white"} />
-  </StyledSVG>
-} 
+  return (
+    <StyledSVG
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        className={`menu-line ${active ? "arrow-formation" : ""}`}
+        y="16"
+        width="40"
+        height="2"
+        fill={active || color === "black" ? "black" : "white"}
+      />
+      <rect
+        className={`menu-line ${active ? "arrow-formation" : ""}`}
+        y="8"
+        width="40"
+        height="2"
+        fill={active || color === "black" ? "black" : "white"}
+      />
+      <rect
+        className={`menu-line ${active ? "arrow-formation" : ""}`}
+        width="40"
+        height="2"
+        fill={active || color === "black" ? "black" : "white"}
+      />
+    </StyledSVG>
+  )
+}
 
-const MenuContainer = styled.div.attrs({
-  className: " bg-white flex",
-})`
-${universalTransition}
+const MenuContainer = styled.div.attrs({})`
   position: fixed;
+  z-index: 11;
+`
+
+const MenuInnerContainer = styled.div.attrs({
+  className: "bg-white flex flex-column flex-row-ns",
+})`
+  ${universalTransition};
+  position: absolute;
   height: 100vh;
   width: 100vw;
-  left: ${({ active }) => active ? "0" : "-100%" };
+  right: ${({ active }) => (active ? "-1440px" : "0")};
   top: 0;
   max-width: 1440px;
-  z-index: 11;
+  ${breakpoint.m`
+    position: fixed;
+    left: ${({ active }) => (active ? "0" : "-100%")};
+    right: auto;
+`};
   ${breakpoint.s`
-    top: ${({ active }) => active ? "0" : "-100%" };
+    position: fixed;
+    top: ${({ active }) => (active ? "0" : "-100%")};
+    right: auto;
     left: 0;
 `};
 `
 
 const MenuSidebar = styled.div`
-  background: ${({color = "red"}) => `var(--${color})`};
+  background: ${({ color = "red" }) => `var(--${color})`};
   height: 100vh;
   width: 30vw;
   ${breakpoint.s`
@@ -102,36 +144,23 @@ const MenuSidebar = styled.div`
   `};
 `
 const MenuMain = styled.div.attrs({
-  className: "pv6 mv5",
+  className: "pv0 pv6-ns mv0 mv5-ns flex flex-column justify-center",
 })`
   height: calc(100vh - 149px);
-  ${universalTransition}
-  width: 70vw;
-  ${breakpoint.s`
-    position: fixed;
-    z-index: 15;
-    top: ${({ active }) => active ? "149px" : "calc(-100% - 149px)" };
-    left: 0;
-    width: 100vw;
-    padding-top: 0;
-    margin-top: 45px;
+  width: 100vw;
+  padding-top: 0;
+  ${breakpoint.ns`
+    height: 100vh;
+    width: 70vw;
   `};
 `
 
 const MenuNumber = styled.div.attrs({})`
   padding-top: 3px;
-  font-size: 16px;  
+  font-size: 16px;
   ${breakpoint.s`
     font-sixe: 12px;
-  `}
-`
-
-const Logo = styled.img.attrs({
-  className: "border-box pa5-ns",
-})`
-  ${breakpoint.s`
-    height: 80px;
-  `}
+  `};
 `
 
 const MenuImage = styled.div.attrs({
@@ -144,12 +173,11 @@ const MenuImage = styled.div.attrs({
     &:hover {
       color: var(--black);
     }
-  `}
-  ${breakpoint.s`
+  `} ${breakpoint.s`
     font-size: 38px;
     color: black;
     padding-left: 3px;
-  `}
+  `};
 `
 
 const MenuItemContainer = styled.div.attrs({
@@ -158,7 +186,7 @@ const MenuItemContainer = styled.div.attrs({
   width: 100%;
   ${breakpoint.ns`
     padding-left: 64px;
-  `}
+  `};
 `
 
 const MenuItem = ({ number, item, active, link }) => (
@@ -186,9 +214,9 @@ class Menu extends Component {
 
   setNewMenuColor() {
     const colors = ["yellow", "blue", "green", "red"]
-    const n = Math.floor(Math.random()*4);
+    const n = Math.floor(Math.random() * 4)
     this.setState(() => ({
-      color: colors[n]
+      color: colors[n],
     }))
   }
 
@@ -202,71 +230,74 @@ class Menu extends Component {
   }
 
   handleScroll = () => {
-    const panel = document.querySelector(".panel-container").getBoundingClientRect()
+    const panel = document
+      .querySelector(".panel-container")
+      .getBoundingClientRect()
     const menuTri = document.querySelector(".menu-tri").getBoundingClientRect()
     this.setState({
       panelTop: panel.top,
-      menuTop: menuTri.top
+      menuTop: menuTri.top,
     })
   }
 
   render() {
     const { menuActive, panelTop, menuTop, color } = this.state
     return (
-      <div className="flex db-ns">
-        <MenuContainer active={menuActive}>
-          <MenuSidebar active={menuActive} color={color}>
-            <Link to="/">
-              <Logo
+      <div className="flex db-ns absolute left-0">
+        <MenuContainer>
+          <MenuInnerContainer active={menuActive}>
+            <MenuSidebar active={menuActive}>
+              <HomeLogo className="center mt6-ns" />
+            </MenuSidebar>
+            <MenuMain active={menuActive}>
+              <MenuItem
                 active={menuActive}
-                src={logo}
-                alt="Founders and Coders Logo"
+                number="01"
+                item="what and who"
+                link={"about"}
               />
-            </Link>
-          </MenuSidebar>
-          <MenuMain active={menuActive}>
-            <MenuItem
-              active={menuActive}
-              number="01"
-              item="what and who"
-              link={"about"}
-            />
-            <MenuItem
-              active={menuActive}
-              number="02"
-              item="apply"
-              link={"apply"}
-            />
-            <MenuItem
-              active={menuActive}
-              number="03"
-              item="hire"
-              link={"hire"}
-            />
-            <MenuItem
-              active={menuActive}
-              number="04"
-              item="tech for better"
-              link={"techforbetter"}
-            />
-            <MenuItem
-              active={menuActive}
-              number="05"
-              item="stories"
-              link={"stories"}
-            />
-          </MenuMain>
+              <MenuItem
+                active={menuActive}
+                number="02"
+                item="apply"
+                link={"apply"}
+              />
+              <MenuItem
+                active={menuActive}
+                number="03"
+                item="hire"
+                link={"hire"}
+              />
+              <MenuItem
+                active={menuActive}
+                number="04"
+                item="tech for better"
+                link={"techforbetter"}
+              />
+              <MenuItem
+                active={menuActive}
+                number="05"
+                item="stories"
+                link={"stories"}
+              />
+            </MenuMain>
+          </MenuInnerContainer>
         </MenuContainer>
-        <StickyMenuTriangle 
-          active={menuActive} 
+        <StickyMenuTriangle
+          active={menuActive}
           onClick={this.toggleMenu}
           color={panelTop < menuTop ? "white" : "black"}
-          >
-            <MenuAnimatedSVG active={menuActive} color={panelTop < menuTop ? "black" : "white"}/>
-          </StickyMenuTriangle>
-          <MobileNavBar>
+        >
+          <MenuAnimatedSVG
+            active={menuActive}
+            color={panelTop < menuTop ? "black" : "white"}
+          />
+        </StickyMenuTriangle>
+        <MobileNavBar>
+          <a href="/">
             <RoundLogoMobile />
-          </MobileNavBar>
+          </a>
+        </MobileNavBar>
       </div>
     )
   }

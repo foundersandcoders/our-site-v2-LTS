@@ -131,15 +131,15 @@ const _SubHeading = styled.h3.attrs({
 
 const _BigText = styled.h1.attrs({
   className: ({ colour = "black" }) =>
-    `subheadline headline-ns fw5 w-70-ns w-100 ${colour}`,
+    `subheadline headline-l lilheadline-m fw5 w-75-l ${colour}`,
 })``
 
 const _ExternalLink = styled.a.attrs({
   className: "blue di pointer",
-  target: "_blank"
+  target: "_blank",
 })``
 const _InternalLink = styled.a.attrs({
-  className: "blue di pointer"
+  className: "blue di pointer",
 })``
 
 export {
@@ -151,5 +151,5 @@ export {
   _SubHeading,
   _BigText,
   _InternalLink,
-  _ExternalLink
+  _ExternalLink,
 }

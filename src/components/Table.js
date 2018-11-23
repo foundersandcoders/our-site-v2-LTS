@@ -1,8 +1,9 @@
 import React from "react"
 import styled from "styled-components"
+import { COHORT_DATES } from "../maintenance"
 
 const _Table = styled.table.attrs({
-  className: "fw3 font-4 mb6 dn db-ns",
+  className: "fw3 font-4 mb6 dn db-l",
 })``
 
 const _HeaderCell = styled.th`
@@ -19,16 +20,27 @@ const _Cell = styled.td.attrs({
   width: 20%;
 `
 
-const Cell = ({ children }) => (
-  
+const Cell = ({ children, underline }) => (
   <_Cell>
-    <p className="w-80">{children}</p>
+    <p className={`"w-80" ${underline && "underline"}`}>{children}</p>
   </_Cell>
 )
 
 const _Row = styled.tr.attrs({
   className: "bb b--black-20 bw1",
 })``
+
+const Row = ({ obj }) => {
+  return (
+    <_Row>
+      <Cell underline>{obj.cohort}</Cell>
+      <Cell>{obj.expression_of_interest}</Cell>
+      <Cell>{obj.application_window}</Cell>
+      <Cell>{obj.interview_dates}</Cell>
+      <Cell>{obj.course_dates}</Cell>
+    </_Row>
+  )
+}
 
 const Table = () => (
   <_Table>
@@ -52,27 +64,9 @@ const Table = () => (
       </tr>
     </thead>
     <tbody>
-      <_Row>
-        <Cell>Spring 2019</Cell>
-        <Cell>Until 30th November</Cell>
-        <Cell>1st December - 31st December</Cell>
-        <Cell>7th January - 12th January</Cell>
-        <Cell>4th March, 2019 - June 21st, 2019</Cell>
-      </_Row>
-      <_Row>
-        <Cell>Summer 2019</Cell>
-        <Cell>January - March</Cell>
-        <Cell>1st April - 30th April</Cell>
-        <Cell>7th May - 11th May</Cell>
-        <Cell>1st July 2019 - 18th October, 2019</Cell>
-      </_Row>
-      <_Row>
-        <Cell>Winter 2019</Cell>
-        <Cell>May - July</Cell>
-        <Cell>1st August - 31st August</Cell>
-        <Cell>2nd September - 7th September</Cell>
-        <Cell>28th October 2019 - 21st February 2020</Cell>
-      </_Row>
+      {COHORT_DATES.map((obj, index) => {
+        return <Row obj={obj} key={index} />
+      })}
     </tbody>
   </_Table>
 )

@@ -1,25 +1,17 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import logoPNG from "../assets/logos/fac_logo.png"
+import HomeLogo from "./HomeLogo"
+import { breakpoint } from "../styles/utils"
 
 const _Header = styled.header.attrs({
-  className: "dn flex-ns pt6 justify-between center",
+  className: "dn flex-ns center pt6 justify-between",
 })`
   max-width: 1280px;
 `
 
-const LogoStyled = styled.img.attrs({
-  className: "border-box pl2 pr2",
-  src: logoPNG,
-  alt: "Founders and Coders Logo"
-})`
-  max-width: 260px;
-  max-height: 110px;
-`
-
 const _TopNav = styled.nav.attrs({
-  className: "flex w-75 justify-between",
+  className: "flex w-100 w-50-m w-75-l justify-between mr4",
 })``
 
 const TopNav = () => (
@@ -34,15 +26,26 @@ const TopNav = () => (
 
 const _TopLink = styled(Link).attrs({
   className:
-    "flex flex-column justify-between b--gray bw1 bt link black fw3 font-6 w4 h3 pt1",
+    "flex flex-column justify-between b--gray bw1 bt link black fw3 font-6 w4 h3 pt1 relative",
 })`
-  &:after {
-    content: '';
+  &.active {
+    border-color: var(--blue);
+  }
+  ${breakpoint.m`
+    display: none;
+    &.active {
+      width: 100%;
+      display: flex;
+      margin-right: 48px;
+      border-color: var(--blue);
+    }
+  `} &:after {
+    content: "";
     display: block;
     border-top: 2px solid var(--blue);
     width: 0;
     position: absolute;
-    top: 0;
+    top: -2px;
     left: 0;
     transition: 0.4s ease-in-out;
   }
@@ -55,20 +58,15 @@ const _TopLink = styled(Link).attrs({
   }
 `
 const TopLink = ({ to, text, number }) => (
-  <div className="relative">
-  <_TopLink to={to} activeClassName="b--blue">
+  <_TopLink to={to} activeClassName="active">
     <div>{text}</div>
     <div>{number}</div>
   </_TopLink>
-  </div>
 )
 
 const Header = () => (
   <_Header>
-    <Link to="/">
-      <LogoStyled/>
-    </Link>
-
+    <HomeLogo className="ml7-m" />
     <TopNav />
   </_Header>
 )

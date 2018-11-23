@@ -9,7 +9,7 @@ import github_logo_white from "../assets/logos/github_logo_white.svg"
 import linkedin_logo_white from "../assets/logos/linkedin_logo_white.svg"
 import twitter_logo_white from "../assets/logos/twitter_logo_white.svg"
 
-import { OffsetUnderlineText, _BigText } from "./Text"
+import { OffsetUnderlineText, _BigText, BigUnderline } from "./Text"
 import { mouseOnNext, mouseOff } from "./Cursor"
 import InnerGridContainer from "./InnerGridContainer"
 import { breakpoint } from "../styles/utils"
@@ -25,7 +25,7 @@ const _Icon = styled.img`
 `
 
 const Icon = ({ to, img }) => (
-  <a href={to} target="_blank">
+  <a href={to} target="_blank" rel="noopener noreferrer">
     <_Icon src={img} />
   </a>
 )
@@ -40,19 +40,26 @@ const Footer = () => (
   <_Footer id="footer" className="bt bw1 b--gray">
     <DoubleLine src={double_line_yellow_horizontal} />
     <div className="center mb2">
-      <span className="underline white">
-        hello@foundersandcoders.com
-      </span>
+      <span className="underline white">hello@foundersandcoders.com</span>
       <span className="dn di-ns"> | </span>
       <span className="fw3 db di-ns">
         Space4, 1st floor 149 Fonthill Road, Finsbury Park, London N4 3HF
       </span>
     </div>
     <div className="flex w-20-ns w-50 justify-between mb7-ns mb6">
-      <Icon to="https://github.com/foundersandcoders/" img={github_logo_white} />
-      <Icon to="https://www.facebook.com/founderscoders/" img={facebook_logo_white} />
+      <Icon
+        to="https://github.com/foundersandcoders/"
+        img={github_logo_white}
+      />
+      <Icon
+        to="https://www.facebook.com/founderscoders/"
+        img={facebook_logo_white}
+      />
       <Icon to="https://twitter.com/founderscoders" img={twitter_logo_white} />
-      <Icon to="https://www.linkedin.com/school/founders-&-coders/" img={linkedin_logo_white} />
+      <Icon
+        to="https://www.linkedin.com/school/founders-&-coders/"
+        img={linkedin_logo_white}
+      />
     </div>
     <div className="font-6 w-100 ph2-ns pb1 ph0 fw3 flex justify-between flex-row-ns flex-column">
       <div>
@@ -75,6 +82,28 @@ const Panel = styled.section.attrs({
   height: ${({ height }) => height};
   width: ${({ width = "inherit" }) => width};
 `
+
+const PageHeadingPanel = ({ textSize, title }) => {
+  return (
+    <Panel
+      justify="center justify-end-ns"
+      className={
+        textSize === "XL"
+          ? "mh7-m pl2-m mh0-l mh2"
+          : "mt7 mb6-ns mb5 pt0-ns pt3 mh2 mh0-ns"
+      }
+    >
+      <div className={textSize == "XL" ? "w-100 w-75-l" : "mh7-m w-100 w-75-l"}>
+        {textSize == "XL" ? (
+          <_BigText className="pt5">{title}</_BigText>
+        ) : (
+          <BigUnderline>{title}</BigUnderline>
+        )}
+      </div>
+    </Panel>
+  )
+}
+
 const PanelTopBorder = styled.div.attrs({
   className: "h4 w-100",
 })`
@@ -102,7 +131,7 @@ const PanelTopBorder = styled.div.attrs({
     100% 70%,
     100% 100%
   );
-  
+
   `} background-attachment: fixed;
 `
 const NextPanel = ({ component, to, children, topBorder }) => (
@@ -121,11 +150,11 @@ const NextPanel = ({ component, to, children, topBorder }) => (
           <Panel
             justify="start"
             width="92%"
-            className="flex-column flex-row-ns center mh2 mh0-ns"
+            className="flex-column flex-row-l center mh2 mh0-l"
           >
             <div className="w-25 mb3 mb0-ns">
               <OffsetUnderlineText
-                className="ml7-ns"
+                className="ml7-l ml5-m"
                 underlineColour="blue"
                 colour="white"
                 underlineWidth="4px"
@@ -136,7 +165,9 @@ const NextPanel = ({ component, to, children, topBorder }) => (
                 Next
               </OffsetUnderlineText>
             </div>
-            <_BigText colour="white">{children}</_BigText>
+            <_BigText colour="white" className="ml5-m mv3-m">
+              {children}
+            </_BigText>
           </Panel>
         </InnerGridContainer>
       </Link>
@@ -158,4 +189,4 @@ const ExtendedPanel = styled.section.attrs({
   }
 `
 
-export { Panel, NextPanel, ExtendedPanel }
+export { PageHeadingPanel, Panel, NextPanel, ExtendedPanel }

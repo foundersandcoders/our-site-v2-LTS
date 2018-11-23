@@ -7,40 +7,59 @@ import { EXPRESSION_OF_INTEREST_FORM } from "../maintenance"
 
 const _ListItem = styled.li`
   list-style-type: circle;
-  list-style-position: inside;
+  list-style-position: outside;
+  margin-left: 20px;
 `
 
 const ApplicationSteps = () => (
   <Fragment>
     <Step step="01" colour="yellow" title="Submit your expression of interest">
       Please submit an expression of interest to get invited to events,
-      workshops and meetups for prospective students. We open expressions of
-      interest six months before a cohort begins.
-      <br/><br/>
-      <_ExternalLink href={EXPRESSION_OF_INTEREST_FORM}>Submit expression of Interest</_ExternalLink>
+      workshops and meetups for prospective students.
+      <br />
+      <br />
+      <_ExternalLink href={EXPRESSION_OF_INTEREST_FORM}>
+        Submit expression of Interest
+      </_ExternalLink>
+      <br />
+      <br />
+      Introduce yourself in our{" "}
+      <_ExternalLink href="https://gitter.im/codingforeveryone/london">
+        Gitter room
+      </_ExternalLink>{" "}
+      where you can find the most up-to-date information on our programme,
+      meetups, and ask us any questions you may have.
     </Step>
     <Step
       step="02"
       colour="blue"
       title="Start work on our course prerequisites"
     >
-      <span className="b">Before we can consider your application</span>, 
-      you will need to complete our course prerequisites. We encourage
-      applicants to take as much time as they need to work through the material
-      and to support each other during the preparation process, both online and
-      through our meetups.
+      <span className="fw5">Before we can consider your application</span>, you
+      will need to complete our course prerequisites. We encourage applicants to
+      take as much time as they need to work through the material and to support
+      each other during the preparation process, both online and through our
+      meetups.
+      <br />
+      <br />
+      Please read our course prerequisites carefully before planning when to
+      apply.
     </Step>
     <Step>
-      <div>
+      <div className="pb3 pb0-l">
         <_SubHeading className="mb1">Create a Github account</_SubHeading>
-        You will use your <_ExternalLink href="https://github.com/">GitHub</_ExternalLink> account to join <_ExternalLink href="https://gitter.im/codingforeveryone/london">Gitter</_ExternalLink> and to create your one-page
-        site on GitHub Pages.
+        You will use your{" "}
+        <_ExternalLink href="https://github.com/">GitHub</_ExternalLink> account
+        to join Gitter and to create your one-page site on GitHub Pages.
       </div>
       <br />
       <div>
         <_SubHeading className="mb1">FreeCodeCamp</_SubHeading>
-        Earn a minimum of 200 points on <_ExternalLink href="https://www.freecodecamp.org/">freeCodeCamp</_ExternalLink>. We recommend beginning
-        with the following sections:
+        Earn a minimum of 250 points on{" "}
+        <_ExternalLink href="https://www.freecodecamp.org/">
+          freeCodeCamp
+        </_ExternalLink>
+        . We recommend beginning with the following sections:
         <h3 className="underline mt1">Responsive Web Design Certification</h3>
         <ul>
           <_ListItem>Basic HTML and HTML5</_ListItem>
@@ -60,35 +79,108 @@ const ApplicationSteps = () => (
       </div>
     </Step>
     <Step>
-      <div>
+      <div className="pb3 pb0-l">
         <_SubHeading className="mb1">Create a one-page website</_SubHeading>
-          Create a one-page website in HTML and CSS (using some vanilla JavaScript if you’d like) and host it on GitHub Pages. <_ExternalLink href="https://www.mokacoding.com/blog/your-git-log-should-tell-a-story/">Your commit history should tell a story</_ExternalLink>, and your website must:
-          <ul>
-          <_ListItem>Tell us about who you are and why you are applying for the programme</_ListItem>
-          <_ListItem>Contain a link back to the GitHub repo that contains the code for your site</_ListItem>
-          <_ListItem>Contain links to your freeCodeCamp (please make sure that your profile is public) and Codewars pages </_ListItem>
+        Create a one-page website in HTML and CSS (using some vanilla JavaScript
+        if you’d like) and host it on GitHub Pages.{" "}
+        <_ExternalLink href="https://www.mokacoding.com/blog/your-git-log-should-tell-a-story/">
+          Your commit history should tell a story
+        </_ExternalLink>
+        , and your website <span className="i">must</span>:
+        <ul>
+          <_ListItem>
+            Tell us about who you are and why you are applying for the programme
+          </_ListItem>
+          <_ListItem>
+            Contain a link back to the GitHub repo that contains the code for
+            your site
+          </_ListItem>
+          <_ListItem>
+            Contain links to your freeCodeCamp (please make sure that your
+            profile is public) and Codewars pages{" "}
+          </_ListItem>
+          <_ListItem>
+            Contain a link to <span className="fw5">challenge 2</span> (see{" "}
+            <span className="fw5">coding challenge</span>
+            ), if you choose that option
+          </_ListItem>
+          <_ListItem>Be hosted on Github</_ListItem>
           <_ListItem>Not use a GitHub theme</_ListItem>
-          <_ListItem>Not use a framework like Bootstrap or libraries like jQuery</_ListItem>
+          <_ListItem>
+            Not use a framework like Bootstrap or libraries like jQuery
+          </_ListItem>
         </ul>
+      </div>
+    </Step>
+    <Step>
+      <div className="pb3 pb0-l">
+        <_SubHeading className="mb1">Codewars</_SubHeading>
+        Reach 5 kyu and 300 honor points in JavaScript on{" "}
+        <_ExternalLink href="https://www.codewars.com">Codewars</_ExternalLink>.
       </div>
       <br />
       <div>
-      <_SubHeading className="mb1">Codewars</_SubHeading>
-        Reach 5 kyu and 300 honor points in JavaScript on <_ExternalLink href="https://www.codewars.com">Codewars</_ExternalLink>.
+        <_SubHeading className="mb1">Coding Challenge</_SubHeading>
+        Please choose <span className="fw5">just one</span> of the two
+        challenges below:
+        <br />
+        <span className="fw5">Challenge 1: </span>
+        <_ExternalLink href="https://www.codewars.com/kata/new/javascript">
+          Create at least one JavaScript kata
+        </_ExternalLink>
+        <ul>
+          <_ListItem>
+            Before creating your kata, you must carefully read through tips from
+            Codewars on{" "}
+            <_ExternalLink href="https://github.com/Codewars/codewars.com/wiki/Tutorial%3A-Create-Your-First-Kata">
+              creating your first kata
+            </_ExternalLink>{" "}
+            and{" "}
+            <_ExternalLink href="https://github.com/Codewars/codewars.com/wiki/Kata-Best-Practices">
+              kata best practices
+            </_ExternalLink>
+            ;
+          </_ListItem>
+          <_ListItem>
+            Don’t forget to{" "}
+            <_ExternalLink href="https://github.com/codingforeveryone/READMEs/blob/master/codewars/random-test-cases-for-complete-beginners.md">
+              write random tests
+            </_ExternalLink>
+            !
+          </_ListItem>
+          <_ListItem>
+            Before publishing your kata, publish it as a draft first and ask for
+            feedback in the{" "}
+            <_ExternalLink href="https://gitter.im/Codewars/codewars.com/kata-authoring-help">
+              Codewars community
+            </_ExternalLink>{" "}
+            (bear in mind this is not moderated by Founders and Coders);
+          </_ListItem>
+        </ul>
+        <span className="fw5">Challenge 2: </span>
+        <_ExternalLink href="https://github.com/foundersandcoders/master-reference/blob/master/coursebook/prerequisites/image-carousel.md">
+          Create an image carousel
+        </_ExternalLink>
       </div>
     </Step>
     <Step step="03" colour="red" title="Submit an application">
       <p>
-        Use <_ExternalLink href="https://prereq-check.herokuapp.com/">prereq-check</_ExternalLink> to ensure you are prepared to submit your
-        application. Plan to spend about an hour completing the application
-        form. If you submit your application before the deadline, we encourage you to
-        keep learning and tidying up your website. We will evaluate your
+        Plan to spend about an hour completing the application form.
+        <br />
+        <br />
+        If you submit your application before the deadline, keep working on the
+        prerequisites and tidying up your website. We will evaluate your
         progress as of the date the window closes.
       </p>
     </Step>
-    <Step step="04" colour="green" title="The conversational interview" last={true}>
+    <Step
+      step="04"
+      colour="green"
+      title="The conversational interview"
+      last={true}
+    >
       We invite a minimum of 24 people to interview (in person or remotely), and{" "}
-      <span className="b">offer places to sixteen people per cohort</span>.
+      <span className="fw5">offer places to sixteen people per cohort</span>.
       You’ll be interviewed by a panel of Founders and Coders staff and alumni.
     </Step>
   </Fragment>

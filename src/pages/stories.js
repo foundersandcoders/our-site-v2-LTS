@@ -9,8 +9,7 @@ import DoubleLine from "../components/DoubleLine"
 import Story from "../components/Story"
 import HeadingWithBody from "../components/HeadingWithBody"
 import { Cursor } from "../components/Cursor"
-import { BigUnderline } from "../components/Text"
-import { NextPanel, Panel } from "../components/Panel"
+import { NextPanel, PageHeadingPanel } from "../components/Panel"
 
 import storyData from "../storyData"
 
@@ -22,36 +21,42 @@ const podcasts = storyData.filter(s => s.storyType === "podcast")
 const _StoryContainer = styled.section.attrs({
   className: "flex flex-wrap justify-between",
 })``
-const colourOptions = ["yellow","blue","green","red"]
+const colourOptions = ["yellow", "blue", "green", "red"]
 
 const mapStories = (array, limit) => {
   return array.slice(0, limit).map((story, key) => {
-    return <Story
-      key={key}
-      colour={colourOptions[key%4]}
-      heading={story.heading && story.heading}
-      subtitle={story.subtitle && story.subtitle}
-      author={story.author && story.author}
-      publication={story.publication && story.publication}
-      date={story.date && story.date}
-      url={story.url}
-    />
+    return (
+      <Story
+        key={key}
+        colour={colourOptions[key % 4]}
+        heading={story.heading && story.heading}
+        subtitle={story.subtitle && story.subtitle}
+        author={story.author && story.author}
+        publication={story.publication && story.publication}
+        date={story.date && story.date}
+        url={story.url}
+        img={story.img && story.img}
+      />
+    )
   })
 }
 
-const StorySection = ({title, array, seeMoreStories, limit}) => {
+const StorySection = ({ title, array, seeMoreStories, limit }) => {
   return (
-  <HeadingWithBody title={title} className="mb7">
-    <_StoryContainer>
-      {mapStories(array, limit)}
-    </_StoryContainer>
-    {array.length > limit && (
-      <div className="mt2 lh-copy ttu flex items-center pointer f4" onClick={() => {seeMoreStories(title)}}>
-        More
-        <img className="ml2 w1 h1" src={arrow_right_black} />
-      </div>
-    )}
-  </HeadingWithBody>
+    <HeadingWithBody title={title} className="mb7">
+      <_StoryContainer>{mapStories(array, limit)}</_StoryContainer>
+      {array.length > limit && (
+        <div
+          className="mt2 lh-copy ttu flex items-center pointer f4"
+          onClick={() => {
+            seeMoreStories(title)
+          }}
+        >
+          More
+          <img className="ml2 w1 h1" src={arrow_right_black} />
+        </div>
+      )}
+    </HeadingWithBody>
   )
 }
 
@@ -61,25 +66,25 @@ class StoriesPage extends Component {
     byUsLimit: 4,
     aboutUsLimit: 4,
     pressLimit: 4,
-    podcastLimit: 4
+    podcastLimit: 4,
   }
-  incremementLimit (stateSection) {
-    this.setState((state, props) => {
-      return {[stateSection]: state[stateSection] + 4}
+  incremementLimit(stateSection) {
+    this.setState(state => {
+      return { [stateSection]: state[stateSection] + 4 }
     })
   }
-  seeMoreStories = (section) => {
-    switch(section) {
+  seeMoreStories = section => {
+    switch (section) {
       case "Stories by us":
         return this.incremementLimit("byUsLimit")
       case "Stories about us":
-        return this.incremementLimit("aboutUsLimit")  
+        return this.incremementLimit("aboutUsLimit")
       case "From the press":
-        return this.incremementLimit("pressLimit")      
+        return this.incremementLimit("pressLimit")
       case "Podcasts":
-        return this.incremementLimit("podcastLimit")      
+        return this.incremementLimit("podcastLimit")
       default:
-      break;
+        break
     }
   }
   render() {
@@ -89,22 +94,38 @@ class StoriesPage extends Component {
         <Cursor cursor={cursor} colour="green" />
         <main>
           <InnerGridContainer>
-            <Panel justify="center justify-end-ns" className="mt7 mb6-ns mb5">
-              <div className="w-75-ns w-90">
-                <BigUnderline>Stories by and about us</BigUnderline>
-              </div>
-            </Panel>
-            <HeadingWithBody title="Overview">
+            <PageHeadingPanel title="Stories by and about us" />
+            <HeadingWithBody title="Overview" className="mr7-m">
               Curious to learn more about us? Here you’ll find stories by and
               about our diverse community of founders and coders making a social
               impact with technology all over the world.
             </HeadingWithBody>
             <DoubleLine colour="red" />
-            
-            <StorySection title="Stories by us" array={storiesByUs} limit={this.state.byUsLimit} seeMoreStories={this.seeMoreStories}/>
-            <StorySection title="Stories about us" array={storiesAboutUs} limit={this.state.aboutUsLimit} seeMoreStories={this.seeMoreStories}/>
-            <StorySection title="From the press" array={storiesInPress} limit={this.state.pressLimit} seeMoreStories={this.seeMoreStories}/>
-            <StorySection title="Podcasts" array={podcasts} limit={this.state.podcastLimit} seeMoreStories={this.seeMoreStories}/>
+
+            <StorySection
+              title="Stories by us"
+              array={storiesByUs}
+              limit={this.state.byUsLimit}
+              seeMoreStories={this.seeMoreStories}
+            />
+            <StorySection
+              title="Stories about us"
+              array={storiesAboutUs}
+              limit={this.state.aboutUsLimit}
+              seeMoreStories={this.seeMoreStories}
+            />
+            <StorySection
+              title="From the press"
+              array={storiesInPress}
+              limit={this.state.pressLimit}
+              seeMoreStories={this.seeMoreStories}
+            />
+            <StorySection
+              title="Podcasts"
+              array={podcasts}
+              limit={this.state.podcastLimit}
+              seeMoreStories={this.seeMoreStories}
+            />
 
             <NextPanel component={this} to="/" topBorder>
               Back to homepage

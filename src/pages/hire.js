@@ -5,8 +5,8 @@ import { DOWN_CURSOR } from "../constants"
 import { HIRE_CONTACT_FORM } from "../maintenance"
 
 import Layout from "../components/Layout"
-import { BigUnderline, _ExternalLink } from "../components/Text"
-import { Panel, NextPanel } from "../components/Panel"
+import { _ExternalLink } from "../components/Text"
+import { NextPanel, PageHeadingPanel } from "../components/Panel"
 import HeadingWithBody from "../components/HeadingWithBody"
 import DoubleLine from "../components/DoubleLine"
 import { Cursor } from "../components/Cursor"
@@ -46,17 +46,17 @@ const _NameAndCompany = styled(NameAndCompany).attrs({
 })`
   ${breakpoint.ns`
   bottom: -72px;
-  right: -166px;
+  right: -100px;
 `};
   bottom: -80px;
-  right: 0;
+  right: 20px;
   letter-spacing: var(--letter-spacing-tight);
 `
 
 const QuoteSlideContainer = styled.div.attrs({
   className: "bg-white mt6 ph3 pv2 tc font-3-ns font-4 i",
 })`
-  margin-bottom: 152px;
+  margin-bottom: 122px;
 `
 
 const QuoteImg = styled(BackgroundImg).attrs({
@@ -67,8 +67,8 @@ const QuoteImg = styled(BackgroundImg).attrs({
   left: 5px;
 `
 
-const QuoteSlide = ({ quote, firstName, secondName, company }) => (
-  <div className="w-100-ns w-90 mh2 mh0-ns">
+const QuoteSlide = ({ quote, firstName, secondName, company, topPadding }) => (
+  <div className={"w-100-ns w-90 mh2 mh0-ns " + topPadding}>
     <div className="w-40-l w-60-m w-90 relative center bg-white">
       <QuoteImg src={quotemarks} />
       <QuoteSlideContainer>{quote}</QuoteSlideContainer>
@@ -92,17 +92,17 @@ class HirePage extends Component {
       <Layout>
         <Cursor cursor={cursor} colour="green" />
         <InnerGridContainer>
-          <Panel justify="center justify-end-ns" className="mt7 pt0-ns pt3 mb6-ns mb5 mh2 mh0-ns">
-            <div className="w-100 w-75-ns">
-              <BigUnderline>Hire our graduates</BigUnderline>
-            </div>
-          </Panel>
+          <PageHeadingPanel title="Hire our graduates" />
           <HeadingWithBody title="Overview">
             Our dedicated network of employer partners are an essential part of
             the cooperative community at Founders and Coders. We are always
             looking for new partners committed to building inclusive workplaces
             where our diverse graduates will thrive. Think your company would be
-            a good fit? <_ExternalLink href={HIRE_CONTACT_FORM}>Fill out this short form</_ExternalLink>.
+            a good fit?{" "}
+            <_ExternalLink href={HIRE_CONTACT_FORM}>
+              Fill out this short form
+            </_ExternalLink>
+            .
           </HeadingWithBody>
           <DoubleLine colour="red" />
           <SplashPhoto src={hireSplash} />
@@ -116,6 +116,7 @@ class HirePage extends Component {
             }}
           >
             <QuoteSlide
+              topPadding="pt5"
               quote="You understand our business and which developers will work best in our environment. I love that you offer diverse developers from all backgrounds and cultures. The developers we’ve hired have seamlessly slotted into our team here at Unruly."
               firstName="Vinny"
               secondName="Marino"
@@ -146,11 +147,9 @@ class HirePage extends Component {
               wrapAround: true,
             }}
           >
-            { 
-              partnerLogos.map((logo, key) => {
-                return <PartnerLogo src={logo} key={key} bgSize="contain"/>
-              })
-            }
+            {partnerLogos.map((logo, key) => {
+              return <PartnerLogo src={logo} key={key} bgSize="contain" />
+            })}
           </FlickityCarousel>
         </section>
         <NextPanel component={this} to={"/techforbetter"} topBorder>

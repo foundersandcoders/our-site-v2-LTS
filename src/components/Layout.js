@@ -16,6 +16,16 @@ const AppWrapper = styled.div.attrs({
   max-width: 1440px;
 `
 
+const HideMenu = styled.div`
+  position: fixed;
+  height: 100vh;
+  width: calc((100vw - 1440px) * 0.5);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: var(--white);
+`
+
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -40,8 +50,11 @@ const Layout = ({ children }) => (
           <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
         </Helmet>
         <AppWrapper>
+          <HideMenu />
+          <div className="relative">
+            <Menu />
+          </div>
           <Header siteTitle={data.site.siteMetadata.title} />
-          <Menu />
           <div>{children}</div>
         </AppWrapper>
       </>

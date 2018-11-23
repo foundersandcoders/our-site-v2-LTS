@@ -163,6 +163,12 @@
     font-size: var(--font-size-headline);
   }
 
+  .lilheadline-m {
+    line-height: var(--line-height-lilheadline);
+    font-size: var(--font-size-lilheadline);
+    letter-spacing: 9px;
+  }
+
   .subheadline-m {
     line-height: var(--line-height-subheadline);
     font-size: var(--font-size-subheadline);
@@ -231,7 +237,7 @@
     font-size: var(--font-size-2);
   }
 
-.font-2d5-l {
+  .font-2d5-l {
     line-height: 48px;
     font-size: var(--font-size-2);
     letter-spacing: 3.44px;

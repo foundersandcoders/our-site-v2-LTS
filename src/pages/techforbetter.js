@@ -3,20 +3,20 @@ import styled from "styled-components"
 
 import link_arrow_button from "../assets/ui/link_arrow_button.svg"
 import tech_for_better_splash from "../assets/splashes/tech_for_better_splash.png"
-import photo_splash from "../assets/splashes/tech_better_splash.jpg"
+import photo_splash from "../assets/splashes/T4B_splash.jpg"
 
 import Layout from "../components/Layout"
 import { DOWN_CURSOR, APPLICATION_CAROUSEL } from "../constants"
 import { TECH_FOR_BETTER_APPLICATION_FORM } from "../maintenance"
 
 import { Cursor } from "../components/Cursor"
-import { BigUnderline, _SubHeading, _BigText, _ExternalLink } from "../components/Text"
+import { _SubHeading, _ExternalLink } from "../components/Text"
 import DoubleLine from "../components/DoubleLine"
 import Carousel from "../components/Carousel"
 import Step from "../components/Step"
 import HeadingWithBody from "../components/HeadingWithBody"
 import { CollapsableQuestion, QuestionWrapper } from "../components/Question"
-import { Panel, ExtendedPanel, NextPanel } from "../components/Panel"
+import { PageHeadingPanel, ExtendedPanel, NextPanel } from "../components/Panel"
 import InnerGridContainer from "../components/InnerGridContainer"
 import { SplashPhoto } from "../components/SplashPhoto"
 
@@ -66,18 +66,26 @@ const _Link = styled.a.attrs({
 
 const Button = styled.button.attrs({
   className: "db font-2 b fw5 pv2 ph6 bg-black white pointer tc center",
-})``
+})`
+  transition: 0.5s;
+  border: 2px solid transparent;
+  :hover {
+    border: 2px solid var(--black);
+    background: var(--white);
+    color: var(--black);
+  }
+`
 
 const LinkWrapper = styled.a.attrs({
   className: "no-underline block w-100 flex justify-center items-center",
-  target: "_blank"
+  target: "_blank",
 })``
 
 const CaseStudy = ({ title, url, children }) => (
   <div className="flex flex-column justify-between font-4 mb5-ns mb3">
     <_SubHeading className="mb1">{title}</_SubHeading>
     {children}
-    <_Link href={url} className="mt1" target="_blank">
+    <_Link href={url} className="mt1" target="_blank" rel="noopener noreferrer">
       <img src={link_arrow_button} className="mr1" />
       Check it out!
     </_Link>
@@ -96,32 +104,22 @@ class TechForBetterPage extends Component {
         <Cursor cursor={cursor} colour="blue" />
         <main>
           <InnerGridContainer>
-            <Panel justify="center justify-end-ns">
-              <_BigText className="pt5 ph1 ph0-ns w-100 w-75-ns">
-                Tech for Better Programme
-              </_BigText>
-            </Panel>
+            <PageHeadingPanel title="Tech for Better Programme" textSize="XL" />
             <DoubleLine colour="yellow" />
-            <Panel
-              justify="center justify-end-ns"
-              className="mb6-ns mb5 mh2 mh0-ns"
-            >
-              <div className="w-75-ns">
-                <BigUnderline>
-                  Your ideas can make the world a better place.
-                </BigUnderline>
-              </div>
-            </Panel>
-            <HeadingWithBody title="Overview">
+            <PageHeadingPanel title="Your ideas can make the world a better place." />
+            <HeadingWithBody title="Overview" className="mr4-m">
               Tech for Better is a pro-bono programme for nonprofits to build
               mobile web apps using developers in London and Gaza. Our
               developers will work closely with you to identify your needs, then
               build an app that meet those needs and helps you do what you do,
-              but better. The only thing it will cost is your time.
+              but better.{" "}
+              <span className="b">
+                The only thing it will cost is your time.
+              </span>
             </HeadingWithBody>
             <Splash src={tech_for_better_splash} />
           </InnerGridContainer>
-          <ExtendedPanel className="bg-light-gray mb7-ns dn db-ns">
+          <ExtendedPanel className="bg-light-gray mb7-ns dn db-l">
             <Carousel
               title="How does it work?"
               carouselWidth="200vw"
@@ -129,13 +127,13 @@ class TechForBetterPage extends Component {
               type={APPLICATION_CAROUSEL}
               component={this}
             >
-            <TechforBetterSteps />
+              <TechforBetterSteps />
             </Carousel>
           </ExtendedPanel>
           <div className="bg-light-gray mb5">
             <HeadingWithBody
               title="How do I apply?"
-              className="db dn-ns bg-light-gray pv6"
+              className="db dn-l bg-light-gray pv6 mr7-m"
             >
               <TechforBetterSteps />
             </HeadingWithBody>
@@ -148,7 +146,10 @@ class TechForBetterPage extends Component {
                   colour="yellow"
                 >
                   <p>
-                  You will gain experience working with a software development team and see your ideas take shape in digital form. By the end of the process you will have a working mobile web app that you can test with users.
+                    You will gain experience working with a software development
+                    team and see your ideas take shape in digital form. By the
+                    end of the process you will have a working mobile web app
+                    that you can test with users.
                   </p>
                 </CollapsableQuestion>
                 <CollapsableQuestion
@@ -156,7 +157,9 @@ class TechForBetterPage extends Component {
                   colour="green"
                 >
                   <p>
-                  After the initial workshops, around 20 hours over the one-month product development period, testing the app, giving feedback and meeting with the developers.
+                    After the initial workshops, around 20 hours over the
+                    one-month product development period, testing the app,
+                    giving feedback and meeting with the developers.
                   </p>
                 </CollapsableQuestion>
 
@@ -165,7 +168,8 @@ class TechForBetterPage extends Component {
                   colour="blue"
                 >
                   <p>
-                  We are in the process of identifying potential sources of funding for continued development of projects.
+                    We are in the process of identifying potential sources of
+                    funding for continued development of projects.
                   </p>
                 </CollapsableQuestion>
                 <CollapsableQuestion
@@ -173,7 +177,10 @@ class TechForBetterPage extends Component {
                   colour="red"
                 >
                   <p>
-                  This programme provides an opportunity for our developers in both London and Gaza to gain experience, improve their employability, and work on projects that make a real difference to people’s lives.
+                    This programme provides an opportunity for our developers in
+                    both London and Gaza to gain experience, improve their
+                    employability, and work on projects that make a real
+                    difference to people’s lives.
                   </p>
                 </CollapsableQuestion>
                 <CollapsableQuestion
@@ -181,7 +188,10 @@ class TechForBetterPage extends Component {
                   colour="green"
                 >
                   <p>
-                  A web app is a website that looks and feels like a mobile app. This means that users won’t have to download anything from an app store. Web apps can be accessed by anyone using a web browser on a computer, tablet, or smartphone.
+                    A web app is a website that looks and feels like a mobile
+                    app. This means that users won’t have to download anything
+                    from an app store. Web apps can be accessed by anyone using
+                    a web browser on a computer, tablet, or smartphone.
                   </p>
                 </CollapsableQuestion>
                 <CollapsableQuestion
@@ -189,12 +199,12 @@ class TechForBetterPage extends Component {
                   colour="yellow"
                 >
                   <p>
-                  Three examples of previous projects are linked to below. 
+                    Three examples of previous projects are linked to below.
                   </p>
                 </CollapsableQuestion>
               </QuestionWrapper>
             </HeadingWithBody>
-            <HeadingWithBody title="Case studies" className="mb3 mb0-ns">
+            <HeadingWithBody title="Case studies" className="mb3 mb0-l mr7-m">
               <CaseStudy
                 title="Breathe With Me (Anna Freud Centre, 2016)"
                 url="https://breathewithme.co.uk/"
@@ -206,34 +216,63 @@ class TechForBetterPage extends Component {
               <CaseStudy
                 title="Down to Earth (Quaker Social Action, CAST, 2016)"
                 url="https://quaker-social-action.github.io/dte-website/www/"
-              ><div>
-                is a service that provides practical support for people
-                struggling with funeral costs. During the <_ExternalLink href="https://wearecast.org.uk/for-nonprofits/fellowship/">CAST Digital
-                Fellowship</_ExternalLink>, our developers built a funeral costs calculator
-                which was shortlisted for the <_ExternalLink href="https://www.comicrelief.com/news/tech-for-good-2018">2018 Comic Relief Tech for Good
-                awards</_ExternalLink>.
+              >
+                <div>
+                  is a service that provides practical support for people
+                  struggling with funeral costs. During the{" "}
+                  <_ExternalLink href="https://wearecast.org.uk/for-nonprofits/fellowship/">
+                    CAST Digital Fellowship
+                  </_ExternalLink>
+                  , our developers built a funeral costs calculator which was
+                  shortlisted for the{" "}
+                  <_ExternalLink href="https://www.comicrelief.com/news/tech-for-good-2018">
+                    2018 Comic Relief Tech for Good awards
+                  </_ExternalLink>
+                  .
                 </div>
               </CaseStudy>
-              <CaseStudy title="Little Window (CHAYN, 2018)" url="https://chayn.co/">
+              <CaseStudy
+                title="Little Window (CHAYN, 2018)"
+                url="https://chayn.co/"
+              >
                 <div>
-                is a chatbot to help women who are victims of domestic abuse
-                find information on the Chayn website relevant to their needs,
-                funded by <_ExternalLink href="https://www.filament.ai/">Filament Consultancy Group</_ExternalLink>. Read about both <_ExternalLink href="https://medium.com/hack-for-chayn/were-trying-something-new-say-hello-to-little-window-our-chatbot-36a65ac44fda">the
-                client’s</_ExternalLink> and <_ExternalLink href="https://medium.com/hack-for-chayn/building-little-window-how-we-created-a-chatbot-for-chayn-682ecf7bd495">the developers’</_ExternalLink> experience of the project.
+                  is a chatbot to help women who are victims of domestic abuse
+                  find information on the Chayn website relevant to their needs,
+                  funded by{" "}
+                  <_ExternalLink href="https://www.filament.ai/">
+                    Filament Consultancy Group
+                  </_ExternalLink>
+                  . Read about both{" "}
+                  <_ExternalLink href="https://medium.com/hack-for-chayn/were-trying-something-new-say-hello-to-little-window-our-chatbot-36a65ac44fda">
+                    the client’s
+                  </_ExternalLink>{" "}
+                  and{" "}
+                  <_ExternalLink href="https://medium.com/hack-for-chayn/building-little-window-how-we-created-a-chatbot-for-chayn-682ecf7bd495">
+                    the developers’
+                  </_ExternalLink>{" "}
+                  experience of the project.
                 </div>
               </CaseStudy>
             </HeadingWithBody>
-            <LinkWrapper href={TECH_FOR_BETTER_APPLICATION_FORM} className="mb7"><Button>Apply</Button></LinkWrapper>
-            <SplashPhoto src={photo_splash} margin="160px"/>
+            <LinkWrapper
+              href={TECH_FOR_BETTER_APPLICATION_FORM}
+              className="mb7"
+            >
+              <Button>Apply</Button>
+            </LinkWrapper>
+            <SplashPhoto src={photo_splash} margin="160px" />
             <HeadingWithBody
-              title="What is Founders and Coders?"
+              title="What is Founders and Coders and what do you do?"
               className="mb7 pb2 mr6-ns"
             >
               Founders and Coders CIC is a UK-based nonprofit that develops and
               runs tuition-free training programmes in web development, guided
               by our core values of cooperation, inclusion and social impact. In
-              2017, <_ExternalLink href="https://www.theguardian.com/world/2018/jul/05/wireless-in-gaza-the-code-school-bringing-hope-to-the-strip">we partnered with MercyCorps to establish a campus in Gaza</_ExternalLink>,
-              where youth unemployment is among the highest in the world. The
+              2017,{" "}
+              <_ExternalLink href="https://www.theguardian.com/world/2018/jul/05/wireless-in-gaza-the-code-school-bringing-hope-to-the-strip">
+                we partnered with MercyCorps to establish a campus in Gaza
+              </_ExternalLink>
+              , where youth unemployment is among the highest in the world. The
               Tech for Better programme provides a rare opportunity for our
               developers there to gain experience working on real projects with
               overseas clients.
