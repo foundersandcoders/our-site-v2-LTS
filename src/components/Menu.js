@@ -267,7 +267,7 @@ class Menu extends Component {
       <div className="flex db-ns absolute left-0">
         <MenuContainer>
           <MenuInnerContainer active={menuActive}>
-            <MenuSidebar active={menuActive}>
+            <MenuSidebar color={color} active={menuActive}>
               <HomeLogo className="center mt6-ns" />
             </MenuSidebar>
             <MenuMain active={menuActive}>
