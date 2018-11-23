@@ -46,8 +46,10 @@ class AboutPage extends Component {
 
   render() {
     const { cursor } = this.state
+    const { location } = this.props
+
     return (
-      <Layout>
+      <Layout location={location}>
         <Cursor cursor={cursor} colour="red" />
         <InnerGridContainer>
           <PageHeadingPanel title="What is Founders and Coders?" />

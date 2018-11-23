@@ -88,8 +88,10 @@ class HirePage extends Component {
 
   render() {
     const { cursor } = this.state
+    const { location } = this.props
+
     return (
-      <Layout>
+      <Layout location={location}>
         <Cursor cursor={cursor} colour="green" />
         <InnerGridContainer>
           <PageHeadingPanel title="Hire our graduates" />

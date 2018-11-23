@@ -9,6 +9,14 @@ import { breakpoint } from "../styles/utils"
 
 const universalTransition = "transition: 1s ease-in-out"
 
+const menuItems = [
+  { number: "01", item: "what and who", link: "/about/" },
+  { number: "02", item: "apply", link: "/apply/" },
+  { number: "03", item: "hire", link: "/hire/" },
+  { number: "04", item: "tech for better", link: "/techforbetter/" },
+  { number: "05", item: "stories", link: "/stories/" },
+]
+
 const StickyMenuTriangle = styled.div.attrs({
   className: "fixed pointer ph2 flex items-center justify-between menu-tri",
 })`
@@ -190,14 +198,26 @@ const MenuItemContainer = styled.div.attrs({
   `};
 `
 
-const MenuItem = ({ number, item, active, link }) => (
-  <Link to={`/${link}`} className="link black">
-    <MenuItemContainer active={active}>
-      <MenuNumber active={active}>{number}</MenuNumber>
-      <MenuImage active={active}>{item}</MenuImage>
-    </MenuItemContainer>
-  </Link>
-)
+const MenuItem = ({ number, item, active, link, toggleMenu, location }) => {
+  const Container = ({ children, className }) =>
+    location.pathname === link ? (
+      <div onClick={toggleMenu} className={className}>
+        {children}
+      </div>
+    ) : (
+      <Link to={link} className={className}>
+        {children}
+      </Link>
+    )
+  return (
+    <Container className="pointer black no-underline">
+      <MenuItemContainer active={active}>
+        <MenuNumber active={active}>{number}</MenuNumber>
+        <MenuImage active={active}>{item}</MenuImage>
+      </MenuItemContainer>
+    </Container>
+  )
+}
 
 class Menu extends Component {
   constructor(props) {
@@ -232,6 +252,7 @@ class Menu extends Component {
 
   render() {
     const { menuActive, panelTop, menuTop } = this.state
+    const { location } = this.props
     return (
       <div className="flex db-ns absolute left-0">
         <MenuContainer>
@@ -240,36 +261,14 @@ class Menu extends Component {
               <HomeLogo className="center mt6-ns" />
             </MenuSidebar>
             <MenuMain active={menuActive}>
-              <MenuItem
-                active={menuActive}
-                number="01"
-                item="what and who"
-                link={"about"}
-              />
-              <MenuItem
-                active={menuActive}
-                number="02"
-                item="apply"
-                link={"apply"}
-              />
-              <MenuItem
-                active={menuActive}
-                number="03"
-                item="hire"
-                link={"hire"}
-              />
-              <MenuItem
-                active={menuActive}
-                number="04"
-                item="tech for better"
-                link={"techforbetter"}
-              />
-              <MenuItem
-                active={menuActive}
-                number="05"
-                item="stories"
-                link={"stories"}
-              />
+              {menuItems.map((props, i) => (
+                <MenuItem
+                  {...props}
+                  toggleMenu={this.toggleMenu}
+                  key={i}
+                  location={location}
+                />
+              ))}
             </MenuMain>
           </MenuInnerContainer>
         </MenuContainer>
