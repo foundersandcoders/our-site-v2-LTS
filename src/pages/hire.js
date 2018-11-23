@@ -104,7 +104,7 @@ class HirePage extends Component {
             </_ExternalLink>
             .
           </HeadingWithBody>
-          <DoubleLine colour="red" />
+          <DoubleLine colour="red" showing={true} />
           <SplashPhoto src={hireSplash} />
         </InnerGridContainer>
         <section className="bg-light-gray">

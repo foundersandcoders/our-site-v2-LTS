@@ -107,7 +107,7 @@ class IndexPage extends Component {
               title="we are Founders and Coders"
               textSize="XL"
             />
-            <DoubleLine colour="yellow" />
+            <DoubleLine colour="yellow" showing={true} />
             <VideoContainer percentFull={progress}>
               <Video muted autoPlay loop>
                 <source src={splashVideo} type="video/mp4" />

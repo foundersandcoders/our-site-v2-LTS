@@ -42,10 +42,31 @@ const StaffPanel = styled(Panel).attrs({
 class AboutPage extends Component {
   state = {
     cursor: DOWN_CURSOR,
+    showing: true,
+  }
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleDoubleLines)
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleDoubleLines)
+  }
+  handleDoubleLines = () => {
+    const doubleLine = document
+      .querySelector(".double-line")
+      .getBoundingClientRect().top
+    if (doubleLine < 300) {
+      this.setState({
+        showing: false,
+      })
+    } else {
+      this.setState({
+        showing: true,
+      })
+    }
   }
 
   render() {
-    const { cursor } = this.state
+    const { cursor, showing } = this.state
     return (
       <Layout>
         <Cursor cursor={cursor} colour="red" />
@@ -58,7 +79,7 @@ class AboutPage extends Component {
             to learn more about our cooperative learning community? Read on for
             all your questions answered.
           </HeadingWithBody>
-          <DoubleLine colour="green" />
+          <DoubleLine colour="green" showing={showing} />
           <HeadingWithBody
             title="More information"
             className="mb7-ns mb5 mr0-m"

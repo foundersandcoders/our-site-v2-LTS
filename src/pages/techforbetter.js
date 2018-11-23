@@ -105,7 +105,7 @@ class TechForBetterPage extends Component {
         <main>
           <InnerGridContainer>
             <PageHeadingPanel title="Tech for Better Programme" textSize="XL" />
-            <DoubleLine colour="yellow" />
+            <DoubleLine colour="yellow" showing={true} />
             <PageHeadingPanel title="Your ideas can make the world a better place." />
             <HeadingWithBody title="Overview" className="mr4-m">
               Tech for Better is a pro-bono programme for nonprofits to build

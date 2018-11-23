@@ -90,7 +90,7 @@ class ApplyPage extends Component {
               take initiative, and believe strongly in the value of community
               and helping others.
             </HeadingWithBody>
-            <DoubleLine colour="blue" />
+            <DoubleLine colour="blue" showing={true} />
             <HeadingWithBody
               title="What you need to know"
               className="mb5 mr2-m"
