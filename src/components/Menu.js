@@ -131,9 +131,8 @@ const MenuInnerContainer = styled.div.attrs({
 `};
 `
 
-const MenuSidebar = styled.div.attrs({
-  className: "bg-yellow",
-})`
+const MenuSidebar = styled.div`
+  background: ${({ color = "red" }) => `var(--${color})`};
   height: 100vh;
   width: 30vw;
   ${breakpoint.s`
@@ -202,7 +201,7 @@ const MenuItem = ({ number, item, active, link }) => (
 class Menu extends Component {
   constructor(props) {
     super(props)
-    this.state = { menuActive: false, panelTop: 0, menuTop: 0 }
+    this.state = { menuActive: false, panelTop: 0, menuTop: 0, color: "yellow" }
   }
 
   componentDidMount() {
@@ -213,7 +212,18 @@ class Menu extends Component {
     window.removeEventListener("scroll", this.handleScroll)
   }
 
+  setNewMenuColor() {
+    const colors = ["yellow", "blue", "green", "red"]
+    const n = Math.floor(Math.random() * 4)
+    this.setState(() => ({
+      color: colors[n],
+    }))
+  }
+
   toggleMenu = () => {
+    if (!this.state.menuActive) {
+      this.setNewMenuColor()
+    }
     this.setState(prevProps => ({
       menuActive: !prevProps.menuActive,
     }))
@@ -231,7 +241,7 @@ class Menu extends Component {
   }
 
   render() {
-    const { menuActive, panelTop, menuTop } = this.state
+    const { menuActive, panelTop, menuTop, color } = this.state
     return (
       <div className="flex db-ns absolute left-0">
         <MenuContainer>
