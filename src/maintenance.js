@@ -35,7 +35,7 @@ const COHORT_DATES = [
     cohort: "Winter 2019",
     expression_of_interest: "May - July",
     application_window: "1st August - 31st August",
-    interview_dates: "2nd September - 7th September",
+    interview_dates: "9th September - 14th September",
     course_dates: "28th October 2019 - 21st February 2020",
   },
 ]
