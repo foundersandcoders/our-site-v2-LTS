@@ -13,9 +13,15 @@ const LogoStyled = styled(Link).attrs({
   background-position: center;
   width: 245px;
   height: 107px;
+
   ${breakpoint.m`
     width: 180px;
     height: 78px;
+  `};
+
+  ${breakpoint.ql`
+    width: 217px;
+    height: 94.5px;
   `};
 `
 

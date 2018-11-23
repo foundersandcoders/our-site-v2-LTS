@@ -34,7 +34,7 @@ import Unruly from "../assets/logos/partner_logos/Unruly.png"
 import verkstedt from "../assets/logos/partner_logos/verkstedt.png"
 import Wellcome from "../assets/logos/partner_logos/Wellcome_Trust.png"
 
-const array = [
+export default [
   Light,
   Partners,
   Arup,
@@ -71,5 +71,3 @@ const array = [
   verkstedt,
   Wellcome,
 ]
-
-export default array

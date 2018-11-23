@@ -1,13 +1,19 @@
 import React, { Fragment } from "react"
 import styled from "styled-components"
 import { APPLICATION_FORM, EXPRESSION_OF_INTEREST_FORM } from "../maintenance"
+import { breakpoint } from "../styles/utils"
 
 const _ApplicationsStatus = styled.section.attrs({
   className: ({ areOpen }) =>
     `pv3 pv4-m left-0-l bottom-0-l absolute-l w-100 tc font-3 fw5 bg-${
       areOpen ? "blue white" : "yellow black"
     }`,
-})``
+})`
+  ${breakpoint.ql`
+    padding-top: var(--spacing-extra-small);
+    padding-bottom: var(--spacing-extra-small);
+  `};
+`
 
 const _Button = styled.button.attrs({
   className: ({ areOpen }) =>
