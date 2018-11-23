@@ -37,7 +37,7 @@ const _Step = styled.div.attrs({
     `flex flex-column ${
       step
         ? "bt bb-l bw1 b--black-20 pv3"
-        : "justify-start overflow-y-visible pv4"
+        : "justify-start overflow-y-visible pv4-l pb0"
     }`,
 })`
   ${breakpoint.l`

@@ -10,6 +10,9 @@ const _ListItem = styled.li`
   list-style-position: outside;
   margin-left: 20px;
 `
+const _Bold = styled.span.attrs({
+  className: "fw5",
+})``
 
 const ApplicationSteps = () => (
   <Fragment>
@@ -47,16 +50,16 @@ const ApplicationSteps = () => (
       <br />
       Please read our course prerequisites carefully before planning when to
       apply.
+      <div className="pb4 pb0-l" />
     </Step>
     <Step>
-      <div className="pb3 pb0-l">
+      <div className="pb4  pb3-l">
         <_SubHeading className="mb1">Create a Github account</_SubHeading>
         You will use your{" "}
         <_ExternalLink href="https://github.com/">GitHub</_ExternalLink> account
         to join Gitter and to create your one-page site on GitHub Pages.
       </div>
-      <br />
-      <div>
+      <div className="pb4 pb0-l">
         <_SubHeading className="mb1">FreeCodeCamp</_SubHeading>
         Earn a minimum of 250 points on{" "}
         <_ExternalLink href="https://www.freecodecamp.org/">
@@ -82,7 +85,7 @@ const ApplicationSteps = () => (
       </div>
     </Step>
     <Step>
-      <div className="pb3 pb0-l">
+      <div className="pb4 pb0-l">
         <_SubHeading className="mb1">Create a one-page website</_SubHeading>
         Create a one-page website in HTML and CSS (using some vanilla JavaScript
         if you’d like) and host it on GitHub Pages.{" "}
@@ -103,8 +106,8 @@ const ApplicationSteps = () => (
             profile is public) and Codewars pages{" "}
           </_ListItem>
           <_ListItem>
-            Contain a link to <span className="fw5">challenge 2</span> (see{" "}
-            <span className="fw5">coding challenge</span>
+            Contain a link to <_Bold>challenge 2</_Bold> (see{" "}
+            <_Bold>coding challenge</_Bold>
             ), if you choose that option
           </_ListItem>
           <_ListItem>Be hosted on Github</_ListItem>
@@ -116,24 +119,21 @@ const ApplicationSteps = () => (
       </div>
     </Step>
     <Step>
-      <div className="pb3 pb0-l">
+      <div className="pb4 pb3-l">
         <_SubHeading className="mb1">Codewars</_SubHeading>
-        Reach 5 kyu <span className="fw5">and</span> 300 honor points in
-        JavaScript on{" "}
+        Reach 5 kyu <_Bold>and</_Bold> 300 honor points in JavaScript on{" "}
         <_ExternalLink href="https://www.codewars.com">Codewars</_ExternalLink>.
       </div>
-      <br />
-      <div>
+      <div className="pb4 pb0-l">
         <_SubHeading className="mb1">Coding Challenge</_SubHeading>
-        Please choose <span className="fw5">just one</span> of the two
-        challenges below:
+        Please choose <_Bold>just one</_Bold> of the two challenges below:
         <br />
-        <span className="fw5">Challenge 1: </span>
+        <_Bold>Challenge 1: </_Bold>
         <_ExternalLink href="https://github.com/foundersandcoders/master-reference/blob/master/coursebook/prerequisites/create-kata.md">
           Create at least one JavaScript kata
         </_ExternalLink>
         <br />
-        <span className="fw5">Challenge 2: </span>
+        <_Bold>Challenge 2: </_Bold>
         <_ExternalLink href="https://github.com/foundersandcoders/master-reference/blob/master/coursebook/prerequisites/image-carousel.md">
           Create an image carousel
         </_ExternalLink>
