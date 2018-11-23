@@ -76,10 +76,9 @@ class AboutPage extends Component {
             className="mb7-ns mb5 mr0-m"
           >
             <QuestionWrapper>
-              {StudentFAQs.map((faq, index) => {
-                let params = { color: colours[index % 8] }
-                return faq(params)
-              })}
+              {StudentFAQs.map((Question, index) => (
+                <Question color={colours[index % 8]} key={index} />
+              ))}
             </QuestionWrapper>
             <Footnote>
               Have a question we didn’t answer?{" "}
