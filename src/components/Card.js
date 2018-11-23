@@ -64,11 +64,15 @@ const FacsterContainer = styled(Container)`
     `};
 `
 
-const _Photo = styled.div.attrs({
+const _Photo = styled.a.attrs({
   className: "db top-0 ba bw3 b--yellow",
 })`
   transition: 0.75s ease;
   background: ${({ blueImg }) => `url(${blueImg})`};
+  &::after {
+    content: ${({ normalImg }) => `url(${normalImg})`};
+    visibility: hidden;
+  }
   &:hover {
     background: ${({ normalImg }) => `url(${normalImg})`};
     background-size: cover;
@@ -194,6 +198,7 @@ const Card = ({
   cardWidth = { l: "50vw", m: "70vw", ns: "70vw", s: "90vw" },
   cardHeight = { l: "80vh", m: "80vh", ns: "80vh", s: "inherit" },
   quote,
+  link,
 }) => (
   <Fragment>
     <div className="dn-ns">
@@ -203,6 +208,9 @@ const Card = ({
             normalImg={normalImg}
             blueImg={blueImg}
             imgHeight={imgHeight}
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
           />
           <Title
             imgHeight={imgHeight}
@@ -218,7 +226,14 @@ const Card = ({
 
     <div className="dn db-ns">
       <FacsterContainer cardWidth={cardWidth} cardHeight={cardHeight}>
-        <_Photo normalImg={normalImg} blueImg={blueImg} imgHeight={imgHeight} />
+        <_Photo
+          normalImg={normalImg}
+          blueImg={blueImg}
+          imgHeight={imgHeight}
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+        />
         <Title
           imgHeight={imgHeight}
           firstName={firstName}
@@ -244,12 +259,16 @@ const StaffCard = ({
   cardWidth = { ns: "33%", m: "45%", s: "66%" },
   cardHeight = { ns: "50%", m: "30%", s: "17%" },
   quote,
+  link,
 }) => (
   <Container cardWidth={cardWidth} cardHeight={cardHeight}>
     <_StaffPhoto
       normalImg={normalImg}
       blueImg={blueImg}
       imgHeight={imgHeight}
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
     />
     <StaffTitle
       imgHeight={imgHeight}
@@ -271,6 +290,7 @@ const Dan = () => (
     imgHeight="75%"
     blueImg={danBlue}
     normalImg={danPlain}
+    link="https://www.linkedin.com/in/dsofer/"
   />
 )
 const Ines = () => (
@@ -281,6 +301,7 @@ const Ines = () => (
     imgHeight="75%"
     blueImg={inesBlue}
     normalImg={inesPlain}
+    link="https://www.linkedin.com/in/iteles/"
   />
 )
 
@@ -293,6 +314,7 @@ const Yvonne = () => (
     imgHeight="75%"
     blueImg={yvonneBlue}
     normalImg={yvonnePlain}
+    link="https://www.linkedin.com/in/liu-yvonne/"
   />
 )
 
@@ -304,6 +326,7 @@ const Joe = () => (
     imgHeight="75%"
     blueImg={joeBlue}
     normalImg={joePlain}
+    link="https://www.linkedin.com/in/josephsullivantanner/"
   />
 )
 
@@ -315,6 +338,7 @@ const Rebecca = () => (
     imgHeight="75%"
     blueImg={rebeccaBlue}
     normalImg={rebeccaPlain}
+    link="https://www.linkedin.com/in/rebecca-radding/"
   />
 )
 
@@ -326,6 +350,7 @@ const Amelie = () => (
     blueImg={amelieBlue}
     normalImg={ameliePlain}
     quote="“Because Founders and Coders is founded on the idea of peer-led learning, it stimulates an environment of support and mutual growth, which results in what feels like a very special community: a safe, creative space, where no question is too silly to ask and no idea is too bold to suggest.”"
+    link="https://github.com/ameliejyc"
   />
 )
 const Helen = () => (
@@ -336,6 +361,7 @@ const Helen = () => (
     blueImg={helenBlue}
     normalImg={helenPlain}
     quote="“Founders and Coders gave me the confidence to, given time and perseverance, grasp complex concepts which initially seemed daunting. I learned how to walk through code thoroughly and truly understand it in order to solve bugs and errors. And I discovered the joys of paired programming - that learning or tackling a problem together can be one of the most rewarding experiences. ”"
+    link="https://github.com/helenzhou6"
   />
 )
 const Owen = () => (
@@ -347,16 +373,18 @@ const Owen = () => (
     blueImg={owenBlue}
     normalImg={owenPlain}
     quote="“The constant focus on pairing and working together means that you're never stuck banging your head against a wall by yourself. You always have someone else to work through the problem with you. After leaving Founders and Coders, I had a lot of faith in my own ability to learn new technologies, which was crucial when I founded my startup, Fat Llama. ”"
+    link="https://github.com/otajor"
   />
 )
 const Ruth = () => (
   <Card
     firstName="Ruth"
-    secondName="Uwedenimo"
+    secondName="Uwemedimo"
     title="FAC cohort #6"
     blueImg={ruthBlue}
     normalImg={ruthPlain}
     quote="“The best part of my experience with Founders and Coders are the people. It is a great community, with members of past cohorts teaching the current cohort. Everyone supports each other in their learning and wants to give back. ”"
+    link="https://github.com/rug1"
   />
 )
 const Fatimat = () => (
@@ -367,6 +395,7 @@ const Fatimat = () => (
     blueImg={fatimatBlue}
     normalImg={fatimatPlain}
     quote="“Joe, our commercial manager, was supportive during and after Founders and Coders. Everybody's situation is different, which Joe recognizes and takes it into account when advising us. He listened to my concerns about working in the industry and paid attention to the kind of environment I wanted to work in, which helped him place me with my current employer, 27Partners.”"
+    link="https://github.com/Gbaja"
   />
 )
 

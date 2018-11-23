@@ -8,11 +8,16 @@ import facebook_logo_white from "../assets/logos/facebook_logo_white.svg"
 import github_logo_white from "../assets/logos/github_logo_white.svg"
 import linkedin_logo_white from "../assets/logos/linkedin_logo_white.svg"
 import twitter_logo_white from "../assets/logos/twitter_logo_white.svg"
+import heart from "../assets/icons/heart.svg"
 
 import { OffsetUnderlineText, _BigText, BigUnderline } from "./Text"
 import { mouseOnNext, mouseOff } from "./Cursor"
 import InnerGridContainer from "./InnerGridContainer"
 import { breakpoint } from "../styles/utils"
+
+const _heart = styled.img.attrs({
+  className: "di",
+})``
 
 const _Footer = styled.div.attrs({
   className:
@@ -67,7 +72,7 @@ const Footer = () => (
         <span className="db di-ns"> All rights reserved</span>
       </div>
       <div className="db ma0-ns mt2">
-        Made with lots of 💖 by{" "}
+        Made with lots of <_heart src={heart} /> by{" "}
         <a className="link underline white" href="https://www.infactcoop.com/">
           InFact Digital Co-op
         </a>
