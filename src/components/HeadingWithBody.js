@@ -5,6 +5,9 @@ import { SmallUnderline } from "./Text"
 
 const Container = styled.div`
   max-width: 1280px;
+  @media screen and (min-width: 1024px) and (max-width: 1440px) {
+    width: 88%;
+  }
 `
 
 const HeadingWithBody = ({

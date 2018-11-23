@@ -17,6 +17,10 @@ const LogoStyled = styled(Link).attrs({
     width: 180px;
     height: 78px;
   `};
+  @media screen and (min-width: 1024px) and (max-width: 1440px) {
+    width: 217px;
+    height: 94.5px;
+  }
 `
 
 const HomeLogo = ({ className }) => <LogoStyled className={className} to="/" />

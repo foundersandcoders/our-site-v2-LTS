@@ -42,6 +42,10 @@ const StickyMenuTriangle = styled.div.attrs({
   ${breakpoint.m`
     left: 0;
   `};
+
+  @media screen and (min-width: 1024px) and (max-width: 1440px) {
+    left: 0;
+  }
 `
 
 const MobileNavBar = styled.div.attrs({
@@ -137,6 +141,9 @@ const MenuInnerContainer = styled.div.attrs({
     right: auto;
     left: 0;
 `};
+  @media screen and (min-width: 1024px) and (max-width: 1440px) {
+    right: ${({ active }) => (active ? "-100vw" : "0")};
+  }
 `
 
 const MenuSidebar = styled.div`

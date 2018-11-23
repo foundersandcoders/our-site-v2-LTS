@@ -8,11 +8,18 @@ const _Header = styled.header.attrs({
   className: "dn flex-ns center pt6 justify-between",
 })`
   max-width: 1280px;
+  @media screen and (min-width: 1024px) and (max-width: 1440px) {
+    width: 88%;
+  }
 `
 
 const _TopNav = styled.nav.attrs({
   className: "flex w-100 w-50-m w-75-l justify-between mr4",
-})``
+})`
+  @media screen and (min-width: 1024px) and (max-width: 1440px) {
+    width: 74.1%;
+  }
+`
 
 const TopNav = () => (
   <_TopNav>

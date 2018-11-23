@@ -7,7 +7,12 @@ const _ApplicationsStatus = styled.section.attrs({
     `pv3 pv4-m left-0-l bottom-0-l absolute-l w-100 tc font-3 fw5 bg-${
       areOpen ? "blue white" : "yellow black"
     }`,
-})``
+})`
+  @media screen and (min-width: 1024px) and (max-width: 1440px) {
+    padding-top: var(--spacing-extra-small);
+    padding-bottom: var(--spacing-extra-small);
+  }
+`
 
 const _Button = styled.button.attrs({
   className: ({ areOpen }) =>
