@@ -24,14 +24,15 @@ const _Step = styled.div.attrs({
   className: ({ step }) =>
     `flex flex-column ${
       step
-        ? "bt bb-l bw1 b--black-20 pt4 pb3-l pb4"
-        : "justify-start overflow-y-visible pb4 pb0-l"
+        ? "bt bb-l bw1 b--black-20 pv3"
+        : "justify-start overflow-y-visible pv4"
     }`,
 })`
   ${breakpoint.l`
   width: 36vw;
   height: 70vh;
   max-height: 75vh;
+  max-width: 490px;
   `};
   border-bottom: ${({ last }) =>
     `${last ? `0.125rem solid rgba(0, 0, 0, 0.2)` : null}`};

@@ -19,6 +19,10 @@ import inesBlue from "../assets/portraits/ines_blue.png"
 import inesPlain from "../assets/portraits/ines_plain.png"
 import joeBlue from "../assets/portraits/joe_blue.png"
 import joePlain from "../assets/portraits/joe_plain.png"
+import yvonneBlue from "../assets/portraits/yvonne_blue.png"
+import yvonnePlain from "../assets/portraits/yvonne_plain.png"
+import rebeccaBlue from "../assets/portraits/rebecca_blue.png"
+import rebeccaPlain from "../assets/portraits/rebecca_plain.png"
 
 const Container = styled.div.attrs({
   className:
@@ -287,8 +291,8 @@ const Yvonne = () => (
     title="Operations and"
     title2=" international development"
     imgHeight="75%"
-    blueImg={fatimatBlue}
-    normalImg={fatimatPlain}
+    blueImg={yvonneBlue}
+    normalImg={yvonnePlain}
   />
 )
 
@@ -309,8 +313,8 @@ const Rebecca = () => (
     secondName="Radding"
     title="Strategy and communications"
     imgHeight="75%"
-    blueImg={fatimatBlue}
-    normalImg={fatimatPlain}
+    blueImg={rebeccaBlue}
+    normalImg={rebeccaPlain}
   />
 )
 

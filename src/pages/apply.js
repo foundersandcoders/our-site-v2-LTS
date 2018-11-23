@@ -138,10 +138,10 @@ class ApplyPage extends Component {
           </section>
 
           <InnerGridContainer className="mb7 mb5-m pb5">
-            <HeadingWithBody title="Join our developer community">
-              <span className="font-5 dark-gray pb3 db">
-                {this.state.carouselCaption}
-              </span>
+            <HeadingWithBody
+              title="Join our developer community"
+              subtitle={this.state.carouselCaption}
+            >
               <FlickityCarousel
                 options={{
                   pageDots: true,
