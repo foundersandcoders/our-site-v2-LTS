@@ -24,7 +24,7 @@ import yvonnePlain from "../assets/portraits/yvonne_plain.png"
 import rebeccaBlue from "../assets/portraits/rebecca_blue.png"
 import rebeccaPlain from "../assets/portraits/rebecca_plain.png"
 
-const Container = styled.div.attrs({
+const Container = styled.a.attrs({
   className:
     "relative flex items-center justify-center flex-column flex-row-ns",
 })`
@@ -64,11 +64,12 @@ const FacsterContainer = styled(Container)`
     `};
 `
 
-const _Photo = styled.div.attrs({
+const _Photo = styled.a.attrs({
   className: "db top-0 ba bw3 b--yellow",
 })`
   transition: 0.75s ease;
-  background: ${({ blueImg }) => `url(${blueImg})`};
+  background: ${({ blueImg, normalImg }) =>
+    `url(${blueImg}), url(${normalImg})`};
   &:hover {
     background: ${({ normalImg }) => `url(${normalImg})`};
     background-size: cover;
@@ -200,18 +201,14 @@ const Card = ({
     <div className="dn-ns">
       <FacsterContainer cardWidth={cardWidth} cardHeight={cardHeight}>
         <div className="relative w-100 mb4">
-          <a
+          <_Photo
+            normalImg={normalImg}
+            blueImg={blueImg}
+            imgHeight={imgHeight}
             href={link}
-            className="pointer"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            <_Photo
-              normalImg={normalImg}
-              blueImg={blueImg}
-              imgHeight={imgHeight}
-            />
-          </a>
+          />
           <Title
             imgHeight={imgHeight}
             firstName={firstName}
@@ -226,18 +223,14 @@ const Card = ({
 
     <div className="dn db-ns">
       <FacsterContainer cardWidth={cardWidth} cardHeight={cardHeight}>
-        <a
+        <_Photo
+          normalImg={normalImg}
+          blueImg={blueImg}
+          imgHeight={imgHeight}
           href={link}
-          className="pointer"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          <_Photo
-            normalImg={normalImg}
-            blueImg={blueImg}
-            imgHeight={imgHeight}
-          />
-        </a>
+        />
         <Title
           imgHeight={imgHeight}
           firstName={firstName}
@@ -266,18 +259,14 @@ const StaffCard = ({
   link,
 }) => (
   <Container cardWidth={cardWidth} cardHeight={cardHeight}>
-    <a
+    <_StaffPhoto
+      normalImg={normalImg}
+      blueImg={blueImg}
+      imgHeight={imgHeight}
       href={link}
-      className="pointer"
       target="_blank"
       rel="noopener noreferrer"
-    >
-      <_StaffPhoto
-        normalImg={normalImg}
-        blueImg={blueImg}
-        imgHeight={imgHeight}
-      />
-    </a>
+    />
     <StaffTitle
       imgHeight={imgHeight}
       firstName={firstName}
