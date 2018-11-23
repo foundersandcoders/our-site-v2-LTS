@@ -13,14 +13,16 @@ const LogoStyled = styled(Link).attrs({
   background-position: center;
   width: 245px;
   height: 107px;
+
   ${breakpoint.m`
     width: 180px;
     height: 78px;
   `};
-  @media screen and (min-width: 1024px) and (max-width: 1440px) {
+
+  ${breakpoint.ql`
     width: 217px;
     height: 94.5px;
-  }
+  `};
 `
 
 const HomeLogo = ({ className }) => <LogoStyled className={className} to="/" />

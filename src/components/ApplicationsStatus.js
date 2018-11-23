@@ -1,6 +1,7 @@
 import React, { Fragment } from "react"
 import styled from "styled-components"
 import { APPLICATION_FORM, EXPRESSION_OF_INTEREST_FORM } from "../maintenance"
+import { breakpoint } from "../styles/utils"
 
 const _ApplicationsStatus = styled.section.attrs({
   className: ({ areOpen }) =>
@@ -8,10 +9,10 @@ const _ApplicationsStatus = styled.section.attrs({
       areOpen ? "blue white" : "yellow black"
     }`,
 })`
-  @media screen and (min-width: 1024px) and (max-width: 1440px) {
+  ${breakpoint.ql`
     padding-top: var(--spacing-extra-small);
     padding-bottom: var(--spacing-extra-small);
-  }
+  `};
 `
 
 const _Button = styled.button.attrs({

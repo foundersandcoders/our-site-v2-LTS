@@ -5,10 +5,10 @@ import { breakpoint } from "../styles/utils"
 import { MassiveUnderline, _Heading } from "./Text"
 
 const InnerContainer = styled.div`
-  @media screen and (min-width: 1024px) and (max-width: 1440px) {
+  ${breakpoint.ql`
     font-size: var(--font-size-5);
     line-height: var(--line-height-5);
-  }
+  `};
 `
 
 const Step = ({ step, title, colour, children, last }) => (
@@ -26,10 +26,10 @@ const Step = ({ step, title, colour, children, last }) => (
 const _HeadingWrapper = styled.div.attrs({
   className: "pv4",
 })`
-  @media screen and (min-width: 1024px) and (max-width: 1440px) {
+  ${breakpoint.ql`
     padding-top: var(--spacing-small);
     padding-bottom: var(--spacing-small);
-  }
+  `};
 `
 
 const _Step = styled.div.attrs({
