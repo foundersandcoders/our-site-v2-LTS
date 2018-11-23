@@ -24,7 +24,7 @@ import yvonnePlain from "../assets/portraits/yvonne_plain.png"
 import rebeccaBlue from "../assets/portraits/rebecca_blue.png"
 import rebeccaPlain from "../assets/portraits/rebecca_plain.png"
 
-const Container = styled.a.attrs({
+const Container = styled.div.attrs({
   className:
     "relative flex items-center justify-center flex-column flex-row-ns",
 })`
@@ -68,8 +68,11 @@ const _Photo = styled.a.attrs({
   className: "db top-0 ba bw3 b--yellow",
 })`
   transition: 0.75s ease;
-  background: ${({ blueImg, normalImg }) =>
-    `url(${blueImg}), url(${normalImg})`};
+  background: ${({ blueImg }) => `url(${blueImg})`};
+  &::after {
+    content: ${({ normalImg }) => `url(${normalImg})`};
+    visibility: hidden;
+  }
   &:hover {
     background: ${({ normalImg }) => `url(${normalImg})`};
     background-size: cover;
