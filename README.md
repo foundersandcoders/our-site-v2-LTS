@@ -17,7 +17,7 @@ We hope you love the fun, contemporary style and enjoy using the new site!
 
 ## Maintenance tasks for the FAC team and Course Facilitator
 
-To make routine maintenance simple, we've put the information that changes regularly all in one place - `maintenance.js` in the root of the project.
+To make routine maintenance simple, we've put most of the information that changes regularly all in one place - `maintenance.js` in the root of the project.
 
 By editing this file you can:
 * Toggle applications open/closed
@@ -28,22 +28,48 @@ By editing this file you can:
 	* Partner Contact form (Hire page)
 	* Tech for Better application form
 
-FAC staff and the Course Facilitator are encouraged to create PRs and merge changes to this file without following the full contributing process.
+FAC staff and the Course Facilitator are encouraged to create PRs and merge changes to this file without following the full contributing process. The same applies for the changes below.
 
-**Other tasks:**
+**Updating the Pre-requestites:**
+
+The pre-requesites can be found in `src/components/StudentApplicationSteps.js`. You will have to edit the components freehand, and if the amount of text changes dramatically, you may need to tweak margins so the text looks well spaced on mobile, tablet and desktop. Use `<_ExternalLinks href="...">` for (shock) external links and the specially styled `<_ListItem >` within a `ul` for bulleted lists.
+
+**Adding Stories:**
 
 To add an article to Stories page, you have to edit `src/storyData.js` and add an object to the array of articles, using the following as a template: 
 
 ```
 {
-  storyType: "",      // SELECT ONE OF: "by_us", "about_us", "in_the_press", "podcast"
-  img: {},            // optional
+  storyType: "",         // SELECT ONE OF: "by_us", "about_us", "in_the_press", "podcast"
+  img: importedVariable, // optional *
   heading: "",
   subtitle: "",
-  author: "",         // optional
-  publication: "",    // optional - only for "in_the_press" stories
-  date: "",           // format `MMM DD YYYY` e.g "Sep 08 2018"
+  author: "",            // optional
+  publication: "",       // optional - only for "in_the_press" stories
+  date: "",              // format `MMM DD YYYY` e.g "Sep 08 2018"
   url: ""
+}
+```
+* to add an image with an article, you will have to add the image to `src/assets/photos` and import it at the top of the `storyData` file. See examples in the file for guidance.
+
+**Adding Student FAQs:**
+
+To add an FAQ to the 'What is Founders and Coders?' page, you will need to add a new functional component to the file in `src/components/StudentFAQs.js`. **You must also ensure it is exported in the array at the bottom of the page**. The order in the array is the order FAQs appear on the page. 
+
+Use this template for your new functional component:
+
+```
+const UniqueName = ({ color }) => {
+  return (
+    <CollapsableQuestion
+      question="Your new question Text?"
+      colour={color}
+    >
+      <p>
+        Your fabulous answer.
+      </p>
+    </CollapsableQuestion>
+  )
 }
 ```
 
