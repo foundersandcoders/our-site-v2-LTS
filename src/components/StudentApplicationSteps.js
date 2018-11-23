@@ -10,10 +10,17 @@ const _ListItem = styled.li`
   list-style-position: outside;
   margin-left: 20px;
 `
+const _Bold = styled.span.attrs({
+  className: "fw5",
+})``
 
 const ApplicationSteps = () => (
   <Fragment>
-    <Step step="01" colour="yellow" title="Submit your expression of interest">
+    <Step
+      step="01"
+      colour="yellow"
+      title="Submit your expression of interest and join our online community"
+    >
       Please submit an expression of interest to get invited to events,
       workshops and meetups for prospective students.
       <br />
@@ -35,25 +42,23 @@ const ApplicationSteps = () => (
       colour="blue"
       title="Start work on our course prerequisites"
     >
-      <span className="fw5">Before we can consider your application</span>, you
-      will need to complete our course prerequisites. We encourage applicants to
-      take as much time as they need to work through the material and to support
-      each other during the preparation process, both online and through our
-      meetups.
-      <br />
+      Before we can consider your application, you will need to complete our
+      course prerequisites. We encourage applicants to take as much time as they
+      need to work through the material and to support each other during the
+      preparation process, both online and through our meetups.
       <br />
       Please read our course prerequisites carefully before planning when to
       apply.
+      <div className="pb4 pb0-l" />
     </Step>
     <Step>
-      <div className="pb3 pb0-l">
+      <div className="pb4  pb3-l">
         <_SubHeading className="mb1">Create a Github account</_SubHeading>
         You will use your{" "}
         <_ExternalLink href="https://github.com/">GitHub</_ExternalLink> account
         to join Gitter and to create your one-page site on GitHub Pages.
       </div>
-      <br />
-      <div>
+      <div className="pb4 pb0-l">
         <_SubHeading className="mb1">FreeCodeCamp</_SubHeading>
         Earn a minimum of 250 points on{" "}
         <_ExternalLink href="https://www.freecodecamp.org/">
@@ -79,7 +84,7 @@ const ApplicationSteps = () => (
       </div>
     </Step>
     <Step>
-      <div className="pb3 pb0-l">
+      <div className="pb4 pb0-l">
         <_SubHeading className="mb1">Create a one-page website</_SubHeading>
         Create a one-page website in HTML and CSS (using some vanilla JavaScript
         if you’d like) and host it on GitHub Pages.{" "}
@@ -100,8 +105,8 @@ const ApplicationSteps = () => (
             profile is public) and Codewars pages{" "}
           </_ListItem>
           <_ListItem>
-            Contain a link to <span className="fw5">challenge 2</span> (see{" "}
-            <span className="fw5">coding challenge</span>
+            Contain a link to <_Bold>challenge 2</_Bold> (see{" "}
+            <_Bold>coding challenge</_Bold>
             ), if you choose that option
           </_ListItem>
           <_ListItem>Be hosted on Github</_ListItem>
@@ -113,51 +118,21 @@ const ApplicationSteps = () => (
       </div>
     </Step>
     <Step>
-      <div className="pb3 pb0-l">
+      <div className="pb4 pb3-l">
         <_SubHeading className="mb1">Codewars</_SubHeading>
-        Reach 5 kyu and 300 honor points in JavaScript on{" "}
+        Reach 5 kyu <_Bold>and</_Bold> 300 honor points in JavaScript on{" "}
         <_ExternalLink href="https://www.codewars.com">Codewars</_ExternalLink>.
       </div>
-      <br />
-      <div>
+      <div className="pb4 pb0-l">
         <_SubHeading className="mb1">Coding Challenge</_SubHeading>
-        Please choose <span className="fw5">just one</span> of the two
-        challenges below:
+        Please choose <_Bold>just one</_Bold> of the two challenges below:
         <br />
-        <span className="fw5">Challenge 1: </span>
-        <_ExternalLink href="https://www.codewars.com/kata/new/javascript">
+        <_Bold>Challenge 1: </_Bold>
+        <_ExternalLink href="https://github.com/foundersandcoders/master-reference/blob/master/coursebook/prerequisites/create-kata.md">
           Create at least one JavaScript kata
         </_ExternalLink>
-        <ul>
-          <_ListItem>
-            Before creating your kata, you must carefully read through tips from
-            Codewars on{" "}
-            <_ExternalLink href="https://github.com/Codewars/codewars.com/wiki/Tutorial%3A-Create-Your-First-Kata">
-              creating your first kata
-            </_ExternalLink>{" "}
-            and{" "}
-            <_ExternalLink href="https://github.com/Codewars/codewars.com/wiki/Kata-Best-Practices">
-              kata best practices
-            </_ExternalLink>
-            ;
-          </_ListItem>
-          <_ListItem>
-            Don’t forget to{" "}
-            <_ExternalLink href="https://github.com/codingforeveryone/READMEs/blob/master/codewars/random-test-cases-for-complete-beginners.md">
-              write random tests
-            </_ExternalLink>
-            !
-          </_ListItem>
-          <_ListItem>
-            Before publishing your kata, publish it as a draft first and ask for
-            feedback in the{" "}
-            <_ExternalLink href="https://gitter.im/Codewars/codewars.com/kata-authoring-help">
-              Codewars community
-            </_ExternalLink>{" "}
-            (bear in mind this is not moderated by Founders and Coders);
-          </_ListItem>
-        </ul>
-        <span className="fw5">Challenge 2: </span>
+        <br />
+        <_Bold>Challenge 2: </_Bold>
         <_ExternalLink href="https://github.com/foundersandcoders/master-reference/blob/master/coursebook/prerequisites/image-carousel.md">
           Create an image carousel
         </_ExternalLink>
@@ -180,8 +155,8 @@ const ApplicationSteps = () => (
       last={true}
     >
       We invite a minimum of 24 people to interview (in person or remotely), and{" "}
-      <span className="fw5">offer places to sixteen people per cohort</span>.
-      You’ll be interviewed by a panel of Founders and Coders staff and alumni.
+      offer places to sixteen people per cohort. You’ll be interviewed by a
+      panel of Founders and Coders staff and alumni.
     </Step>
   </Fragment>
 )
