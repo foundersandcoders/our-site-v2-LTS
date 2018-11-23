@@ -230,7 +230,13 @@ const MenuItem = ({ number, item, active, link, toggleMenu, location }) => {
 class Menu extends Component {
   constructor(props) {
     super(props)
-    this.state = { menuActive: false, panelTop: 0, menuTop: 0, color: "yellow" }
+    this.state = {
+      menuActive: false,
+      panelTop: 0,
+      menuTop: 0,
+      color: "yellow",
+      colorIndex: 0,
+    }
   }
 
   componentDidMount() {
@@ -243,9 +249,9 @@ class Menu extends Component {
 
   setNewMenuColor() {
     const colors = ["yellow", "blue", "green", "red"]
-    const n = Math.floor(Math.random() * 4)
-    this.setState(() => ({
-      color: colors[n],
+    this.setState(prevState => ({
+      color: colors[prevState.colorIndex % 4],
+      colorIndex: prevState.colorIndex + 1,
     }))
   }
 
