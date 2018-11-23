@@ -25,7 +25,7 @@ const TechforBetterSteps = () => (
     <Step
       step="01"
       colour="yellow"
-      title="Step 1: Introductory workshop (2 hours)"
+      title="Step 1: Discovery workshop (2 hours)"
     >
       Start by defining your challenge, describing your users, and identifying
       their needs. Finish up by preparing a user survey, which you will conduct
@@ -99,20 +99,22 @@ class TechForBetterPage extends Component {
 
   render() {
     const { cursor } = this.state
+    const { location } = this.props
+
     return (
-      <Layout>
+      <Layout location={location}>
         <Cursor cursor={cursor} colour="blue" />
         <main>
           <InnerGridContainer>
             <PageHeadingPanel title="Tech for Better Programme" textSize="XL" />
-            <DoubleLine colour="yellow" />
+            <DoubleLine colour="yellow" showing={true} />
             <PageHeadingPanel title="Your ideas can make the world a better place." />
             <HeadingWithBody title="Overview" className="mr4-m">
-              Tech for Better is a pro-bono programme for nonprofits to build
-              mobile web apps using developers in London and Gaza. Our
-              developers will work closely with you to identify your needs, then
-              build an app that meet those needs and helps you do what you do,
-              but better.{" "}
+              Tech for Better is a pro-bono programme for nonprofits to design,
+              test and build new digital service ideas using developers in
+              London and Gaza. Our developers will work closely with you to
+              identify your needs, then build an app that meet those needs and
+              helps you do what you do, but better.{" "}
               <span className="b">
                 The only thing it will cost is your time.
               </span>
@@ -168,8 +170,25 @@ class TechForBetterPage extends Component {
                   colour="blue"
                 >
                   <p>
-                    We are in the process of identifying potential sources of
-                    funding for continued development of projects.
+                    The Tech for Better programme is primarily designed to
+                    develop your expertise in managing digital projects, to test
+                    out new ideas, and to build a case for approaching funders
+                    like{" "}
+                    <_ExternalLink href="https://www.comicrelief.com/">
+                      Comic Relief
+                    </_ExternalLink>
+                    ,{" "}
+                    <_ExternalLink href="https://socialtechtrust.org/">
+                      Social Tech Trust
+                    </_ExternalLink>{" "}
+                    and{" "}
+                    <_ExternalLink href="https://www.biglotteryfund.org.uk/">
+                      Big Lottery Fund
+                    </_ExternalLink>
+                    , but the apps we build are fully documented and open
+                    source. If you already have funding, we have a large
+                    community of freelance developers in both London and Gaza
+                    who can help.
                   </p>
                 </CollapsableQuestion>
                 <CollapsableQuestion
@@ -184,7 +203,7 @@ class TechForBetterPage extends Component {
                   </p>
                 </CollapsableQuestion>
                 <CollapsableQuestion
-                  question="What is a 'web app'?"
+                  question="What is a web app?"
                   colour="green"
                 >
                   <p>
@@ -210,8 +229,10 @@ class TechForBetterPage extends Component {
                 url="https://breathewithme.co.uk/"
               >
                 is a web app that helps young people manage their anxiety, built
-                with input from young people and the clinical team at the Anna
-                Freud Centre.
+                with input from young people and the clinical team at the{" "}
+                <_ExternalLink href="https://www.annafreud.org/">
+                  Anna Freud Centre.
+                </_ExternalLink>
               </CaseStudy>
               <CaseStudy
                 title="Down to Earth (Quaker Social Action, CAST, 2016)"

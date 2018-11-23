@@ -9,6 +9,14 @@ import { breakpoint } from "../styles/utils"
 
 const universalTransition = "transition: 1s ease-in-out"
 
+const menuItems = [
+  { number: "01", item: "what and who", link: "/about/" },
+  { number: "02", item: "apply", link: "/apply/" },
+  { number: "03", item: "hire", link: "/hire/" },
+  { number: "04", item: "tech for better", link: "/techforbetter/" },
+  { number: "05", item: "stories", link: "/stories/" },
+]
+
 const StickyMenuTriangle = styled.div.attrs({
   className: "fixed pointer ph2 flex items-center justify-between menu-tri",
 })`
@@ -32,6 +40,10 @@ const StickyMenuTriangle = styled.div.attrs({
       active || color === "white" ? `var(--white)` : `var(--black)`};
   `};
   ${breakpoint.m`
+    left: 0;
+  `};
+
+  ${breakpoint.ql`
     left: 0;
   `};
 `
@@ -122,13 +134,18 @@ const MenuInnerContainer = styled.div.attrs({
     position: fixed;
     left: ${({ active }) => (active ? "0" : "-100%")};
     right: auto;
-`};
+  `};
+
   ${breakpoint.s`
     position: fixed;
     top: ${({ active }) => (active ? "0" : "-100%")};
     right: auto;
     left: 0;
-`};
+  `};
+
+  ${breakpoint.ql`
+    right: ${({ active }) => (active ? "-100vw" : "0")};
+  `};
 `
 
 const MenuSidebar = styled.div`
@@ -189,19 +206,37 @@ const MenuItemContainer = styled.div.attrs({
   `};
 `
 
-const MenuItem = ({ number, item, active, link }) => (
-  <Link to={`/${link}`} className="link black">
-    <MenuItemContainer active={active}>
-      <MenuNumber active={active}>{number}</MenuNumber>
-      <MenuImage active={active}>{item}</MenuImage>
-    </MenuItemContainer>
-  </Link>
-)
+const MenuItem = ({ number, item, active, link, toggleMenu, location }) => {
+  const Container = ({ children, className }) =>
+    location.pathname === link ? (
+      <div onClick={toggleMenu} className={className}>
+        {children}
+      </div>
+    ) : (
+      <Link to={link} className={className}>
+        {children}
+      </Link>
+    )
+  return (
+    <Container className="pointer black no-underline">
+      <MenuItemContainer active={active}>
+        <MenuNumber active={active}>{number}</MenuNumber>
+        <MenuImage active={active}>{item}</MenuImage>
+      </MenuItemContainer>
+    </Container>
+  )
+}
 
 class Menu extends Component {
   constructor(props) {
     super(props)
-    this.state = { menuActive: false, panelTop: 0, menuTop: 0, color: "yellow" }
+    this.state = {
+      menuActive: false,
+      panelTop: 0,
+      menuTop: 0,
+      color: "yellow",
+      colorIndex: 0,
+    }
   }
 
   componentDidMount() {
@@ -214,9 +249,9 @@ class Menu extends Component {
 
   setNewMenuColor() {
     const colors = ["yellow", "blue", "green", "red"]
-    const n = Math.floor(Math.random() * 4)
-    this.setState(() => ({
-      color: colors[n],
+    this.setState(prevState => ({
+      color: colors[prevState.colorIndex % 4],
+      colorIndex: prevState.colorIndex + 1,
     }))
   }
 
@@ -242,44 +277,23 @@ class Menu extends Component {
 
   render() {
     const { menuActive, panelTop, menuTop, color } = this.state
+    const { location } = this.props
     return (
       <div className="flex db-ns absolute left-0">
         <MenuContainer>
           <MenuInnerContainer active={menuActive}>
-            <MenuSidebar active={menuActive}>
+            <MenuSidebar color={color} active={menuActive}>
               <HomeLogo className="center mt6-ns" />
             </MenuSidebar>
             <MenuMain active={menuActive}>
-              <MenuItem
-                active={menuActive}
-                number="01"
-                item="what and who"
-                link={"about"}
-              />
-              <MenuItem
-                active={menuActive}
-                number="02"
-                item="apply"
-                link={"apply"}
-              />
-              <MenuItem
-                active={menuActive}
-                number="03"
-                item="hire"
-                link={"hire"}
-              />
-              <MenuItem
-                active={menuActive}
-                number="04"
-                item="tech for better"
-                link={"techforbetter"}
-              />
-              <MenuItem
-                active={menuActive}
-                number="05"
-                item="stories"
-                link={"stories"}
-              />
+              {menuItems.map((props, i) => (
+                <MenuItem
+                  {...props}
+                  toggleMenu={this.toggleMenu}
+                  key={i}
+                  location={location}
+                />
+              ))}
             </MenuMain>
           </MenuInnerContainer>
         </MenuContainer>

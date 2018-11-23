@@ -26,7 +26,7 @@ const HideMenu = styled.div`
   background-color: var(--white);
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -52,7 +52,7 @@ const Layout = ({ children }) => (
         <AppWrapper>
           <HideMenu />
           <div className="relative">
-            <Menu />
+            <Menu location={location} />
           </div>
           <Header siteTitle={data.site.siteMetadata.title} />
           <div>{children}</div>

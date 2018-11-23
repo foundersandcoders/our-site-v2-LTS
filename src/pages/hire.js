@@ -88,8 +88,10 @@ class HirePage extends Component {
 
   render() {
     const { cursor } = this.state
+    const { location } = this.props
+
     return (
-      <Layout>
+      <Layout location={location}>
         <Cursor cursor={cursor} colour="green" />
         <InnerGridContainer>
           <PageHeadingPanel title="Hire our graduates" />
@@ -104,7 +106,7 @@ class HirePage extends Component {
             </_ExternalLink>
             .
           </HeadingWithBody>
-          <DoubleLine colour="red" />
+          <DoubleLine colour="red" showing={true} />
           <SplashPhoto src={hireSplash} />
         </InnerGridContainer>
         <section className="bg-light-gray">

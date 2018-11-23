@@ -9,8 +9,7 @@ const APPLICATION_FORM = "/"
 // To update any of the external forms on the site, change these variables
 const EXPRESSION_OF_INTEREST_FORM =
   "https://docs.google.com/forms/d/e/1FAIpQLSepdNxKsrMjhfnbdkzKUgNpeWFmp8WLyiqTe_UY10TsPpFOEQ/viewform"
-const HIRE_CONTACT_FORM =
-  "https://docs.google.com/forms/d/e/1FAIpQLScqtbiYqT7CDDjjYFtcwzlWDuZlsotcDvP1SoSj2SmuVmO4AA/viewform"
+const HIRE_CONTACT_FORM = "https://joe1263.typeform.com/to/oMRl3N"
 const TECH_FOR_BETTER_APPLICATION_FORM =
   "https://airtable.com/shrMtNWdsGQQs65mO"
 
@@ -36,7 +35,7 @@ const COHORT_DATES = [
     cohort: "Winter 2019",
     expression_of_interest: "May - July",
     application_window: "1st August - 31st August",
-    interview_dates: "2nd September - 7th September",
+    interview_dates: "9th September - 14th September",
     course_dates: "28th October 2019 - 21st February 2020",
   },
 ]

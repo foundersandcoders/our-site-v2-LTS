@@ -89,8 +89,10 @@ class StoriesPage extends Component {
   }
   render() {
     const { cursor } = this.state
+    const { location } = this.props
+
     return (
-      <Layout>
+      <Layout location={location}>
         <Cursor cursor={cursor} colour="green" />
         <main>
           <InnerGridContainer>
@@ -100,7 +102,7 @@ class StoriesPage extends Component {
               about our diverse community of founders and coders making a social
               impact with technology all over the world.
             </HeadingWithBody>
-            <DoubleLine colour="red" />
+            <DoubleLine colour="red" showing={true} />
 
             <StorySection
               title="Stories by us"

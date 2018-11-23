@@ -47,6 +47,7 @@ const ApplicationSteps = () => (
       need to work through the material and to support each other during the
       preparation process, both online and through our meetups.
       <br />
+      <br />
       Please read our course prerequisites carefully before planning when to
       apply.
       <div className="pb4 pb0-l" />
