@@ -5,10 +5,10 @@ import { breakpoint } from "../styles/utils"
 import { MassiveUnderline, _Heading } from "./Text"
 
 const InnerContainer = styled.div`
-  ${breakpoint.ql`
+  @media screen and (max-height: 850px) {
     font-size: var(--font-size-5);
     line-height: var(--line-height-5);
-  `};
+  }
 `
 
 const Step = ({ step, title, colour, children, last }) => (
