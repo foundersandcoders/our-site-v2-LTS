@@ -37,13 +37,7 @@ const Video = styled.video.attrs({
 
 const VideoContainer = styled.section.attrs({
   className: "flex justify-center mh6-ns mh2 mb7 video-container pt3",
-})`
-  transition: 0.25s ease;
-  clip-path: ${({ percentFull }) =>
-    `polygon(${percentFull / 2}% ${percentFull / 2}%,${100 -
-      percentFull / 2}% ${percentFull / 2}%, ${100 - percentFull / 2}% ${100 -
-      percentFull / 2}%, ${percentFull / 2}% ${100 - percentFull / 2}%)`};
-`
+})``
 
 const StripeyContainer = styled.div.attrs({})`
   background: url(${stripey_small}) repeat;
@@ -67,16 +61,22 @@ const PartnerLogo = styled(BackgroundImg).attrs({
 })``
 
 class IndexPage extends Component {
-  state = {
-    cursor: DOWN_CURSOR,
-    progress: 99,
+  constructor(props) {
+    super(props)
+    this.myRef = React.createRef()
+    this.state = {
+      cursor: DOWN_CURSOR,
+    }
   }
+
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll)
   }
+
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll)
   }
+
   handleScroll = () => {
     const doubleLine =
       document.querySelector(".double-line").getBoundingClientRect().top - 300
@@ -84,20 +84,24 @@ class IndexPage extends Component {
       document.querySelector(".video-container").getBoundingClientRect().top -
       150
     if (doubleLine < 0 && video > 0) {
-      const total = video - doubleLine
-      const progress = (video / total) * 100
-      this.setState({
-        progress: progress,
-      })
+      const progress = (video / (video - doubleLine)) * 100
+
+      this.myRef.current.setAttribute(
+        "style",
+        `clip-path: polygon(${progress / 2}% ${progress / 2}%,${100 -
+          progress / 2}% ${progress / 2}%, ${100 - progress / 2}% ${100 -
+          progress / 2}%, ${progress / 2}% ${100 - progress / 2}%);`
+      )
     } else if (video < 0) {
-      this.setState({
-        progress: 0,
-      })
+      this.myRef.current.setAttribute(
+        "style",
+        `clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);`
+      )
     }
   }
 
   render() {
-    const { cursor, progress } = this.state
+    const { cursor } = this.state
     const { location } = this.props
 
     return (
@@ -110,7 +114,7 @@ class IndexPage extends Component {
               textSize="XL"
             />
             <DoubleLine colour="yellow" showing={true} />
-            <VideoContainer percentFull={progress}>
+            <VideoContainer innerRef={this.myRef}>
               <Video muted autoPlay loop>
                 <source src={splashVideo} type="video/mp4" />
                 Your browser does not support videos
