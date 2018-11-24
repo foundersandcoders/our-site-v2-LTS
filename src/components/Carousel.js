@@ -44,8 +44,10 @@ const _InnerApplicationContainer = styled.div.attrs({
 
 const _Carousel = styled.section.attrs({
   className: "flex relative items-center justify-between w-75",
+  style: ({ scrollY }) => ({
+    transform: `translate(${0.12 * scrollY}vw, -50%)`,
+  }),
 })`
-  transform: ${({ scrollY }) => `translate(${0.12 * scrollY}vw, -50%)`};
   ${({ carouselClass }) => carouselClass};
   z-index: -1;
   top: 50%;
