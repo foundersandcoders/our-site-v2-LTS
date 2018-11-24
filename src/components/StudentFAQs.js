@@ -1,7 +1,7 @@
 import React from "react"
 import { CollapsableQuestion } from "./Question"
 import { _ExternalLink, _InternalLink } from "./Text"
-import EXPRESSION_OF_INTEREST_FORM from "../maintenance"
+import { EXPRESSION_OF_INTEREST_FORM } from "../maintenance"
 
 const Where = ({ color }) => {
   return (
