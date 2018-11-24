@@ -66,6 +66,7 @@ class IndexPage extends Component {
     this.myRef = React.createRef()
     this.state = {
       cursor: DOWN_CURSOR,
+      showing: true,
     }
   }
 
@@ -78,14 +79,19 @@ class IndexPage extends Component {
   }
 
   handleScroll = () => {
-    const doubleLine =
-      document.querySelector(".double-line").getBoundingClientRect().top - 300
+    const { showing } = this.state
+    const doubleLine = document
+      .querySelector(".double-line")
+      .getBoundingClientRect()
+
+    const doubleLineTopOffset = doubleLine.top - 300
+    const doubleLineBottom = doubleLine.bottom
     const video =
       document.querySelector(".video-container").getBoundingClientRect().top -
       150
-    if (doubleLine < 0 && video > 0) {
-      const progress = (video / (video - doubleLine)) * 100
 
+    if (doubleLineTopOffset < 0 && video > 0) {
+      const progress = (video / (video - doubleLineTopOffset)) * 100
       this.myRef.current.setAttribute(
         "style",
         `clip-path: polygon(${progress / 2}% ${progress / 2}%,${100 -
@@ -98,10 +104,20 @@ class IndexPage extends Component {
         `clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);`
       )
     }
+
+    if (doubleLineBottom >= 500 && !showing) {
+      this.setState({
+        showing: true,
+      })
+    } else if (0 <= doubleLineBottom && doubleLineBottom <= 500 && showing) {
+      this.setState({
+        showing: false,
+      })
+    }
   }
 
   render() {
-    const { cursor } = this.state
+    const { cursor, showing } = this.state
     const { location } = this.props
 
     return (
@@ -113,7 +129,7 @@ class IndexPage extends Component {
               title="we are Founders and Coders"
               textSize="XL"
             />
-            <DoubleLine colour="yellow" showing={true} />
+            <DoubleLine colour="yellow" showing={showing} />
             <VideoContainer innerRef={this.myRef}>
               <Video muted autoPlay loop>
                 <source src={splashVideo} type="video/mp4" />
