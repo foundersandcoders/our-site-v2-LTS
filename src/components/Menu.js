@@ -19,6 +19,9 @@ const menuItems = [
 
 const StickyMenuTriangle = styled.div.attrs({
   className: "fixed pointer ph2 flex items-center justify-between menu-tri",
+  style: ({ active, color }) => ({
+    background: active || color === "white" ? "var(--white)" : "var(--black)",
+  }),
 })`
   ${universalTransition};
   z-index: 12;
@@ -36,8 +39,6 @@ const StickyMenuTriangle = styled.div.attrs({
     left: calc((100vw - 1440px) * 0.5);
     top: calc((100vh - 5rem) * 0.5);
     clip-path: polygon(100% 50%, 0 0, 0 100%);
-    background: ${({ active, color }) =>
-      active || color === "white" ? `var(--white)` : `var(--black)`};
   `};
   ${breakpoint.m`
     left: 0;
