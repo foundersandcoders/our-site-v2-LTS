@@ -76,13 +76,16 @@ const returnCursorImage = ({ cursor, colour }) => {
 
 const _Cursor = styled.div.attrs({
   className: ({ hide }) => `absolute z-999 dn ${!hide && "db-ns"}`,
-  style: ({ left, top }) => ({ left, top }),
+  style: ({ left, top, scrolling }) => ({
+    left,
+    top,
+    opacity: scrolling ? 0 : 1,
+  }),
 })`
   overflow: hidden;
   width: ${({ cursor }) =>
     cursor === RIGHT_CURSOR || NEXT_CURSOR ? "15rem" : "10rem"};
   height: 15rem;
-  opacity: ${({ scrolling }) => (scrolling ? "0" : "1")};
   transition: opacity 0.3s;
   background: url(${({ cursor, colour }) =>
       cursor !== HIDE_CURSOR && returnCursorImage({ cursor, colour })})
@@ -141,12 +144,12 @@ class Cursor extends Component {
 
   render() {
     const { mouseX, mouseY, scrolling } = this.state
-    const { cursor, colour } = this.props
+    const { cursor, colour, menuActive } = this.props
     return (
       <_Cursor
         left={mouseX}
         top={mouseY}
-        cursor={cursor}
+        cursor={menuActive ? HIDE_CURSOR : cursor}
         colour={colour}
         scrolling={scrolling ? "scrolling" : undefined}
         hide={cursor === HIDE_CURSOR}
