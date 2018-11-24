@@ -17,7 +17,7 @@ const breakpoint = {
     }
   `,
   ql: (...args) => css`
-    @media screen and (min-width: 65em) and (max-width: 90em) {
+    @media screen and (min-width: 65em) and (max-width: 89.9em) {
       ${css(...args)};
     }
   `,
