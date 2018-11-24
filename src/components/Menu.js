@@ -228,15 +228,9 @@ const MenuItem = ({ number, item, active, link, toggleMenu, location }) => {
 }
 
 class Menu extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      menuActive: false,
-      panelTop: 0,
-      menuTop: 0,
-      color: "yellow",
-      colorIndex: 0,
-    }
+  state = {
+    panelTop: 0,
+    menuTop: 0,
   }
 
   componentDidMount() {
@@ -245,23 +239,6 @@ class Menu extends Component {
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll)
-  }
-
-  setNewMenuColor() {
-    const colors = ["yellow", "blue", "green", "red"]
-    this.setState(prevState => ({
-      color: colors[prevState.colorIndex % 4],
-      colorIndex: prevState.colorIndex + 1,
-    }))
-  }
-
-  toggleMenu = () => {
-    if (!this.state.menuActive) {
-      this.setNewMenuColor()
-    }
-    this.setState(prevProps => ({
-      menuActive: !prevProps.menuActive,
-    }))
   }
 
   handleScroll = () => {
@@ -276,8 +253,8 @@ class Menu extends Component {
   }
 
   render() {
-    const { menuActive, panelTop, menuTop, color } = this.state
-    const { location } = this.props
+    const { panelTop, menuTop } = this.state
+    const { location, menuActive, toggleMenu, color } = this.props
     return (
       <div className="flex db-ns absolute left-0">
         <MenuContainer>
@@ -289,7 +266,7 @@ class Menu extends Component {
               {menuItems.map((props, i) => (
                 <MenuItem
                   {...props}
-                  toggleMenu={this.toggleMenu}
+                  toggleMenu={toggleMenu}
                   key={i}
                   location={location}
                 />
@@ -299,7 +276,7 @@ class Menu extends Component {
         </MenuContainer>
         <StickyMenuTriangle
           active={menuActive}
-          onClick={this.toggleMenu}
+          onClick={toggleMenu}
           color={panelTop < menuTop ? "white" : "black"}
         >
           <MenuAnimatedSVG
