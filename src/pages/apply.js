@@ -73,10 +73,36 @@ class ApplyPage extends Component {
   state = {
     cursor: DOWN_CURSOR,
     carouselCaption: carouselImages[initialCarouselIdx].caption,
+    showing: true,
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleDoubleLines)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleDoubleLines)
+  }
+
+  handleDoubleLines = () => {
+    const { showing } = this.state
+    const doubleLine = document
+      .querySelector(".double-line")
+      .getBoundingClientRect().bottom
+
+    if (doubleLine >= 500 && !showing) {
+      this.setState({
+        showing: true,
+      })
+    } else if (0 <= doubleLine && doubleLine <= 500 && showing) {
+      this.setState({
+        showing: false,
+      })
+    }
   }
 
   render() {
-    const { cursor } = this.state
+    const { cursor, showing } = this.state
     const { location } = this.props
 
     return (
@@ -91,7 +117,7 @@ class ApplyPage extends Component {
               take initiative, and believe strongly in the value of community
               and helping others.
             </HeadingWithBody>
-            <DoubleLine colour="blue" showing={true} />
+            <DoubleLine colour="blue" showing={showing} />
             <HeadingWithBody
               title="What you need to know"
               className="mb5 mr2-m"

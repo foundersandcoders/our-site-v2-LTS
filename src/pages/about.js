@@ -53,9 +53,36 @@ const StaffPanel = styled(Panel).attrs({
 class AboutPage extends Component {
   state = {
     cursor: DOWN_CURSOR,
+    showing: true,
   }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleDoubleLines)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleDoubleLines)
+  }
+
+  handleDoubleLines = () => {
+    const { showing } = this.state
+    const doubleLine = document
+      .querySelector(".double-line")
+      .getBoundingClientRect().bottom
+
+    if (doubleLine >= 500 && !showing) {
+      this.setState({
+        showing: true,
+      })
+    } else if (0 <= doubleLine && doubleLine <= 500 && showing) {
+      this.setState({
+        showing: false,
+      })
+    }
+  }
+
   render() {
-    const { cursor } = this.state
+    const { cursor, showing } = this.state
     const { location } = this.props
 
     return (
@@ -70,7 +97,7 @@ class AboutPage extends Component {
             to learn more about our London Programme? Read on for all your
             questions answered.
           </HeadingWithBody>
-          <DoubleLine colour="green" showing={true} />
+          <DoubleLine colour="green" showing={showing} />
           <HeadingWithBody
             title="More information"
             className="mb7-ns mb5 mr0-m"

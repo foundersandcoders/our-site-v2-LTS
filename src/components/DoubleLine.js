@@ -13,11 +13,14 @@ const _Container = styled.div.attrs({
 
 const _DoubleLine = styled.img.attrs({
   className: "absolute mt4 mb6-ns mb5 double-line",
+  style: ({ showing }) => ({
+    transform: showing
+      ? "translateX(-50%) scale(1,1)"
+      : "translateX(-50%) scale(1,0)",
+  }),
 })`
   transition: transform 1200ms cubic-bezier(0.86, 0, 0.07, 1);
   transform-origin: bottom center;
-  transform: ${({ showing }) =>
-    showing ? "translateX(-50%) scale(1,1)" : "translateX(-50%) scale(1,0)"};
   left: 50%;
 `
 
