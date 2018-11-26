@@ -67,7 +67,34 @@ class StoriesPage extends Component {
     aboutUsLimit: 4,
     pressLimit: 4,
     podcastLimit: 4,
+    showing: true,
   }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleDoubleLines)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleDoubleLines)
+  }
+
+  handleDoubleLines = () => {
+    const { showing } = this.state
+    const doubleLine = document
+      .querySelector(".double-line")
+      .getBoundingClientRect().bottom
+
+    if (doubleLine >= 500 && !showing) {
+      this.setState({
+        showing: true,
+      })
+    } else if (0 <= doubleLine && doubleLine <= 500 && showing) {
+      this.setState({
+        showing: false,
+      })
+    }
+  }
+
   incremementLimit(stateSection) {
     this.setState(state => {
       return { [stateSection]: state[stateSection] + 4 }
@@ -88,7 +115,7 @@ class StoriesPage extends Component {
     }
   }
   render() {
-    const { cursor } = this.state
+    const { cursor, showing } = this.state
     const { location } = this.props
 
     return (
@@ -102,7 +129,7 @@ class StoriesPage extends Component {
               about our diverse community of founders and coders making a social
               impact with technology all over the world.
             </HeadingWithBody>
-            <DoubleLine colour="red" showing={true} />
+            <DoubleLine colour="red" showing={showing} />
 
             <StorySection
               title="Stories by us"

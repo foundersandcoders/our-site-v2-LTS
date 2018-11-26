@@ -44,8 +44,10 @@ const _InnerApplicationContainer = styled.div.attrs({
 
 const _Carousel = styled.section.attrs({
   className: "flex relative items-center justify-between w-75",
+  style: ({ scrollY }) => ({
+    transform: `translate(${0.12 * scrollY}vw, -50%)`,
+  }),
 })`
-  transform: ${({ scrollY }) => `translate(${0.12 * scrollY}vw, -50%)`};
   ${({ carouselClass }) => carouselClass};
   z-index: -1;
   top: 50%;
@@ -114,11 +116,7 @@ class Carousel extends Component {
           >
             <_InnerApplicationContainer>
               <InnerGridContainer>
-                <HeadingWithBody
-                  title={title}
-                  bgColour="light-gray pv4"
-                  ml_l={0}
-                >
+                <HeadingWithBody title={title} bgColour="light-gray pv4">
                   <_Carousel scrollY={scrollY} carouselWidth={carouselWidth}>
                     {children}
                   </_Carousel>

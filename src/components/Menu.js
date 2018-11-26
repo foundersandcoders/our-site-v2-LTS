@@ -19,6 +19,9 @@ const menuItems = [
 
 const StickyMenuTriangle = styled.div.attrs({
   className: "fixed pointer ph2 flex items-center justify-between menu-tri",
+  style: ({ active, color }) => ({
+    background: active || color === "white" ? "var(--white)" : "var(--black)",
+  }),
 })`
   ${universalTransition};
   z-index: 12;
@@ -36,8 +39,6 @@ const StickyMenuTriangle = styled.div.attrs({
     left: calc((100vw - 1440px) * 0.5);
     top: calc((100vh - 5rem) * 0.5);
     clip-path: polygon(100% 50%, 0 0, 0 100%);
-    background: ${({ active, color }) =>
-      active || color === "white" ? `var(--white)` : `var(--black)`};
   `};
   ${breakpoint.m`
     left: 0;
@@ -228,15 +229,9 @@ const MenuItem = ({ number, item, active, link, toggleMenu, location }) => {
 }
 
 class Menu extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      menuActive: false,
-      panelTop: 0,
-      menuTop: 0,
-      color: "yellow",
-      colorIndex: 0,
-    }
+  state = {
+    panelTop: 0,
+    menuTop: 0,
   }
 
   componentDidMount() {
@@ -245,23 +240,6 @@ class Menu extends Component {
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll)
-  }
-
-  setNewMenuColor() {
-    const colors = ["yellow", "blue", "green", "red"]
-    this.setState(prevState => ({
-      color: colors[prevState.colorIndex % 4],
-      colorIndex: prevState.colorIndex + 1,
-    }))
-  }
-
-  toggleMenu = () => {
-    if (!this.state.menuActive) {
-      this.setNewMenuColor()
-    }
-    this.setState(prevProps => ({
-      menuActive: !prevProps.menuActive,
-    }))
   }
 
   handleScroll = () => {
@@ -276,8 +254,8 @@ class Menu extends Component {
   }
 
   render() {
-    const { menuActive, panelTop, menuTop, color } = this.state
-    const { location } = this.props
+    const { panelTop, menuTop } = this.state
+    const { location, menuActive, toggleMenu, color } = this.props
     return (
       <div className="flex db-ns absolute left-0">
         <MenuContainer>
@@ -289,7 +267,7 @@ class Menu extends Component {
               {menuItems.map((props, i) => (
                 <MenuItem
                   {...props}
-                  toggleMenu={this.toggleMenu}
+                  toggleMenu={toggleMenu}
                   key={i}
                   location={location}
                 />
@@ -299,7 +277,7 @@ class Menu extends Component {
         </MenuContainer>
         <StickyMenuTriangle
           active={menuActive}
-          onClick={this.toggleMenu}
+          onClick={toggleMenu}
           color={panelTop < menuTop ? "white" : "black"}
         >
           <MenuAnimatedSVG

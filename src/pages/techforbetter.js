@@ -95,10 +95,36 @@ const CaseStudy = ({ title, url, children }) => (
 class TechForBetterPage extends Component {
   state = {
     cursor: DOWN_CURSOR,
+    showing: true,
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleDoubleLines)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleDoubleLines)
+  }
+
+  handleDoubleLines = () => {
+    const { showing } = this.state
+    const doubleLine = document
+      .querySelector(".double-line")
+      .getBoundingClientRect().bottom
+
+    if (doubleLine >= 500 && !showing) {
+      this.setState({
+        showing: true,
+      })
+    } else if (0 <= doubleLine && doubleLine <= 500 && showing) {
+      this.setState({
+        showing: false,
+      })
+    }
   }
 
   render() {
-    const { cursor } = this.state
+    const { cursor, showing } = this.state
     const { location } = this.props
 
     return (
@@ -107,7 +133,7 @@ class TechForBetterPage extends Component {
         <main>
           <InnerGridContainer>
             <PageHeadingPanel title="Tech for Better Programme" textSize="XL" />
-            <DoubleLine colour="yellow" showing={true} />
+            <DoubleLine colour="yellow" showing={showing} />
             <PageHeadingPanel title="Your ideas can make the world a better place." />
             <HeadingWithBody title="Overview" className="mr4-m">
               Tech for Better is a pro-bono programme for nonprofits to design,

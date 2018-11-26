@@ -84,10 +84,36 @@ const QuoteSlide = ({ quote, firstName, secondName, company, topPadding }) => (
 class HirePage extends Component {
   state = {
     cursor: DOWN_CURSOR,
+    showing: true,
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleDoubleLines)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleDoubleLines)
+  }
+
+  handleDoubleLines = () => {
+    const { showing } = this.state
+    const doubleLine = document
+      .querySelector(".double-line")
+      .getBoundingClientRect().bottom
+
+    if (doubleLine >= 500 && !showing) {
+      this.setState({
+        showing: true,
+      })
+    } else if (0 <= doubleLine && doubleLine <= 500 && showing) {
+      this.setState({
+        showing: false,
+      })
+    }
   }
 
   render() {
-    const { cursor } = this.state
+    const { cursor, showing } = this.state
     const { location } = this.props
 
     return (
@@ -106,7 +132,7 @@ class HirePage extends Component {
             </_ExternalLink>
             .
           </HeadingWithBody>
-          <DoubleLine colour="red" showing={true} />
+          <DoubleLine colour="red" showing={showing} />
           <SplashPhoto src={hireSplash} />
         </InnerGridContainer>
         <section className="bg-light-gray">
