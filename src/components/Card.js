@@ -28,15 +28,17 @@ const Container = styled.div.attrs({
   className:
     "relative flex items-center justify-center flex-column flex-row-ns",
 })`
-  margin: auto;
   width: 85%;
   height: ${({ cardHeight: { s: cardHeight_s } }) => cardHeight_s};
   width: ${({ cardWidth: { s: cardWidth_s } }) => cardWidth_s};
+  margin-right: auto;
+  margin-left: auto;
 
   ${({ cardHeight: { ns: cardHeight_ns }, cardWidth: { ns: cardWidth_ns } }) =>
     breakpoint.ns`
       height: ${cardHeight_ns};
       width: ${cardWidth_ns};
+      margin-bottom: var(--spacing-medium);
   `};
 
   ${({ cardHeight: { m: cardHeight_m }, cardWidth: { m: cardWidth_m } }) =>
