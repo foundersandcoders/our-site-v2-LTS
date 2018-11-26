@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import * as r from "ramda"
+import { breakpoint } from "../styles/utils"
 
 const OffsetUnderline = styled.span.attrs({
   className: ({ fontSize, fontWeight, colour }) =>
@@ -131,8 +132,12 @@ const _SubHeading = styled.h3.attrs({
 
 const _BigText = styled.h1.attrs({
   className: ({ colour = "black" }) =>
-    `subheadline headline-l lilheadline-m fw5 w-75-l ${colour}`,
-})``
+    `subheadline headline-l lilheadline-m fw5 ${colour}`,
+})`
+  ${breakpoint.l`
+    width: 74.9%;
+  `};
+`
 
 const _ExternalLink = styled.a.attrs({
   className: "blue di pointer",
