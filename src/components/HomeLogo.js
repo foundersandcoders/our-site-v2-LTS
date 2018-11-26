@@ -1,13 +1,15 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import logoPNG from "../assets/logos/fac_logo.png"
+import logoBlack from "../assets/logos/fac_logo.png"
+import logoWhite from "../assets/logos/fac_logo_white.png"
 import { breakpoint } from "../styles/utils"
 
 const LogoStyled = styled(Link).attrs({
   className: "db",
 })`
-  background: url(${logoPNG});
+  background: ${({ color }) =>
+    color && color !== "yellow" ? `url(${logoWhite})` : `url(${logoBlack})`};
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -25,6 +27,8 @@ const LogoStyled = styled(Link).attrs({
   `};
 `
 
-const HomeLogo = ({ className }) => <LogoStyled className={className} to="/" />
+const HomeLogo = ({ className, color }) => (
+  <LogoStyled className={className} color={color} to="/" />
+)
 
 export default HomeLogo
