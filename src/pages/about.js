@@ -40,7 +40,7 @@ const StaffPanel = styled(Panel).attrs({
   background: url("${stripey_small}") center;
   clip-path: polygon(0 100%, 0 5%, 25% 0, 50% 5%, 75% 0, 100% 5%, 100% 100%);
   ${breakpoint.m`
-    height: ${({ panelHeight: { m } }) => m};
+    height: auto;
     clip-path: polygon(0 100%,-4% 5%,3% 5%,10% 0,17% 5%,24% 0,31% 5%,38% 0,45% 5%,52% 0,59% 5%, 66% 0,73% 5%,80% 0,87% 5%,94% 0,100% 5%,100% 100%);
     padding-top: 10rem;
     `}

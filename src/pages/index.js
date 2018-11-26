@@ -37,7 +37,9 @@ const Video = styled.video.attrs({
 
 const VideoContainer = styled.section.attrs({
   className: "flex justify-center mh6-ns mh2 mb7 video-container pt3",
-})``
+})`
+  clip-path: polygon(45% 45%, 45% 45%, 45% 45%, 45% 45%);
+`
 
 const StripeyContainer = styled.div.attrs({})`
   background: url(${stripey_small}) repeat;
@@ -79,13 +81,11 @@ class IndexPage extends Component {
   }
 
   handleScroll = () => {
-    const { showing } = this.state
     const doubleLine = document
       .querySelector(".double-line")
       .getBoundingClientRect()
 
     const doubleLineTopOffset = doubleLine.top - 300
-    const doubleLineBottom = doubleLine.bottom
     const video =
       document.querySelector(".video-container").getBoundingClientRect().top -
       150
@@ -104,20 +104,10 @@ class IndexPage extends Component {
         `clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);`
       )
     }
-
-    if (doubleLineBottom >= 500 && !showing) {
-      this.setState({
-        showing: true,
-      })
-    } else if (0 <= doubleLineBottom && doubleLineBottom <= 500 && showing) {
-      this.setState({
-        showing: false,
-      })
-    }
   }
 
   render() {
-    const { cursor, showing } = this.state
+    const { cursor } = this.state
     const { location } = this.props
 
     return (
@@ -129,7 +119,7 @@ class IndexPage extends Component {
               title="we are Founders and Coders"
               textSize="XL"
             />
-            <DoubleLine colour="yellow" showing={showing} />
+            <DoubleLine colour="yellow" showing={true} />
             <VideoContainer innerRef={this.myRef}>
               <Video muted autoPlay loop>
                 <source src={splashVideo} type="video/mp4" />
