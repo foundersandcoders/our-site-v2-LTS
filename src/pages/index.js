@@ -37,7 +37,9 @@ const Video = styled.video.attrs({
 
 const VideoContainer = styled.section.attrs({
   className: "flex justify-center mh6-ns mh2 mb7 video-container pt3",
-})``
+})`
+  clip-path: polygon(45% 45%, 45% 45%, 45% 45%, 45% 45%);
+`
 
 const StripeyContainer = styled.div.attrs({})`
   background: url(${stripey_small}) repeat;
