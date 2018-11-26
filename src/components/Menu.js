@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 import HomeLogo from "./HomeLogo"
 
-import iconLogo from "../assets/logos/fac_round_logo.png"
+import iconLogo from "../assets/logos/logo-mobile.png"
 import { breakpoint } from "../styles/utils"
 
 const universalTransition = "transition: 1s ease-in-out"
@@ -18,19 +18,14 @@ const menuItems = [
 ]
 
 const StickyMenuTriangle = styled.div.attrs({
-  className: "fixed pointer ph2 flex items-center justify-between menu-tri",
+  className:
+    "fixed pointer ph2 dn flex-ns items-center justify-between menu-tri",
   style: ({ active, color }) => ({
     background: active || color === "white" ? "var(--white)" : "var(--black)",
   }),
 })`
   ${universalTransition};
   z-index: 12;
-  right: 0;
-  top: 0;
-  width: 70px;
-  height: 60px;
-  transition: 0.5s;
-  background: transparent;
   ${breakpoint.ns`
     justify-content: center;
     padding-right: 32px;
@@ -49,31 +44,44 @@ const StickyMenuTriangle = styled.div.attrs({
   `};
 `
 
+const StickyMenuSquare = styled.div.attrs({
+  className: "fixed pointer ph2 pt1 dn-ns items-center justify-between",
+})`
+  z-index: 25;
+  background: transparent;
+  ${universalTransition};
+  right: 0;
+  top: 0;
+  width: 70px;
+  height: 60px;
+`
+
 const MobileNavBar = styled.div.attrs({
-  className: "dn-ns db pa1 w-100 bg-black fixed top-0 left-0 z-5",
+  className: "dn-ns db pa1 w-100 bg-black fixed top-0 left-0",
 })`
   height: 60px;
 `
 const RoundLogoMobile = styled.div`
   background: url(${iconLogo}) no-repeat;
+  background-size: cover;
   height: 46px;
   width: 46px;
 `
 
 const StyledSVG = styled.svg`
   .menu-line {
-    z-index: 24;
+    z-index: 26;
     transform: rotate(180deg) translateY(10px);
     ${universalTransition};
     transform-origin: center;
   }
-  .arrow-formation:nth-of-type(1) {
+  .cross-formation:nth-of-type(1) {
     transform: rotate(405deg);
   }
-  .arrow-formation:nth-of-type(2) {
+  .cross-formation:nth-of-type(2) {
     transform: rotate(405deg) translate(0px, 8px);
   }
-  .arrow-formation:nth-of-type(3) {
+  .cross-formation:nth-of-type(3) {
     transform: rotate(315deg) translate(2px, 19px);
   }
   ${breakpoint.ns`
@@ -93,21 +101,21 @@ const MenuAnimatedSVG = ({ active, color }) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect
-        className={`menu-line ${active ? "arrow-formation" : ""}`}
+        className={`menu-line ${active ? "cross-formation" : ""}`}
         y="16"
         width="40"
         height="2"
         fill={active || color === "black" ? "black" : "white"}
       />
       <rect
-        className={`menu-line ${active ? "arrow-formation" : ""}`}
+        className={`menu-line ${active ? "cross-formation" : ""}`}
         y="8"
         width="40"
         height="2"
         fill={active || color === "black" ? "black" : "white"}
       />
       <rect
-        className={`menu-line ${active ? "arrow-formation" : ""}`}
+        className={`menu-line ${active ? "cross-formation" : ""}`}
         width="40"
         height="2"
         fill={active || color === "black" ? "black" : "white"}
@@ -260,8 +268,12 @@ class Menu extends Component {
       <div className="flex db-ns absolute left-0">
         <MenuContainer>
           <MenuInnerContainer active={menuActive}>
-            <MenuSidebar color={color} active={menuActive}>
-              <HomeLogo className="center mt6-ns" />
+            <MenuSidebar color={color}>
+              <HomeLogo
+                className="center mt6-ns"
+                color={color}
+                active={menuActive}
+              />
             </MenuSidebar>
             <MenuMain active={menuActive}>
               {menuItems.map((props, i) => (
@@ -285,6 +297,9 @@ class Menu extends Component {
             color={panelTop < menuTop ? "black" : "white"}
           />
         </StickyMenuTriangle>
+        <StickyMenuSquare active={menuActive} onClick={toggleMenu}>
+          <MenuAnimatedSVG active={menuActive} />
+        </StickyMenuSquare>
         <MobileNavBar>
           <a href="/">
             <RoundLogoMobile />
