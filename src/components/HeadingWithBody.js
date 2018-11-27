@@ -13,6 +13,7 @@ const Container = styled.div`
 `
 
 const ContentContainer = styled.div`
+  z-index: 1;
   ${breakpoint.l`
     width: 78%;
     `};
