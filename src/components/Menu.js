@@ -10,11 +10,11 @@ import { breakpoint } from "../styles/utils"
 const universalTransition = "transition: 1s ease-in-out"
 
 const menuItems = [
-  { number: "01", item: "what and who", link: "/about/" },
-  { number: "02", item: "apply", link: "/apply/" },
-  { number: "03", item: "hire", link: "/hire/" },
-  { number: "04", item: "tech for better", link: "/techforbetter/" },
-  { number: "05", item: "stories", link: "/stories/" },
+  { number: "01", item: "what and who", link: "/about" },
+  { number: "02", item: "apply", link: "/apply" },
+  { number: "03", item: "hire", link: "/hire" },
+  { number: "04", item: "tech for better", link: "/techforbetter" },
+  { number: "05", item: "stories", link: "/stories" },
 ]
 
 const StickyMenuTriangle = styled.div.attrs({
@@ -45,21 +45,22 @@ const StickyMenuTriangle = styled.div.attrs({
 `
 
 const StickyMenuSquare = styled.div.attrs({
-  className: "fixed pointer ph2 pt1 dn-ns items-center justify-between",
+  className: "fixed pointer ph2 pt1 dn-ns",
 })`
   z-index: 25;
   background: transparent;
   ${universalTransition};
-  right: 0;
   top: 0;
+  left: calc(100vw - 70px);
   width: 70px;
   height: 60px;
 `
 
 const MobileNavBar = styled.div.attrs({
-  className: "dn-ns db pa1 w-100 bg-black fixed top-0 left-0",
+  className: "dn-ns db pa1 bg-black fixed top-0 left-0 z-5",
 })`
   height: 60px;
+  width: 100vw;
 `
 const RoundLogoMobile = styled.div`
   background: url(${iconLogo}) no-repeat;
