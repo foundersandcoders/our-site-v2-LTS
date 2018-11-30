@@ -289,7 +289,7 @@ const Dan = () => (
   <StaffCard
     firstName="Dan"
     secondName="Sofer"
-    title="Executive Director"
+    title="Executive director"
     imgHeight="75%"
     blueImg={danBlue}
     normalImg={danPlain}
@@ -325,7 +325,7 @@ const Joe = () => (
   <StaffCard
     firstName="Joe"
     secondName="Tanner"
-    title="Commercial Partnerships"
+    title="Commercial partnerships"
     imgHeight="75%"
     blueImg={joeBlue}
     normalImg={joePlain}
