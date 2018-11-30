@@ -22,29 +22,17 @@ import { SplashPhoto } from "../components/SplashPhoto"
 
 const TechforBetterSteps = () => (
   <Fragment>
-    <Step
-      step="01"
-      colour="yellow"
-      title="Step 1: Discovery workshop (2 hours)"
-    >
+    <Step step="01" colour="yellow" title="Discovery workshop (2 hours)">
       Start by defining your challenge, describing your users, and identifying
       their needs. Finish up by preparing a user survey, which you will conduct
       over the following week.
     </Step>
-    <Step
-      step="02"
-      colour="green"
-      title="Step 2: Definition workshop (2 hours)"
-    >
+    <Step step="02" colour="green" title="Definition workshop (2 hours)">
       Recap the results of the user survey and redefine the problem, identify a
       specific user journey that addresses that problem, and begin the design
       process with some paper prototyping.
     </Step>
-    <Step
-      step="03"
-      colour="red"
-      title="Step 3: Product owner workshop (2 hours)"
-    >
+    <Step step="03" colour="red" title="Product owner workshop (2 hours)">
       Explore your role as a product owner and familiarise yourself with project
       management tools and the application development process. End by creating
       a series of user stories which can form the basis of your app.
