@@ -284,11 +284,12 @@ const StaffCard = ({
   </Container>
 )
 
+// Staff Cards
 const Dan = () => (
   <StaffCard
     firstName="Dan"
     secondName="Sofer"
-    title="Executive Director"
+    title="Executive director"
     imgHeight="75%"
     blueImg={danBlue}
     normalImg={danPlain}
@@ -324,7 +325,7 @@ const Joe = () => (
   <StaffCard
     firstName="Joe"
     secondName="Tanner"
-    title="Commercial Partnerships"
+    title="Commercial partnerships"
     imgHeight="75%"
     blueImg={joeBlue}
     normalImg={joePlain}
@@ -344,6 +345,8 @@ const Rebecca = () => (
   />
 )
 
+// Alumni Cards
+
 const Amelie = () => (
   <Card
     firstName="Amelie"
@@ -362,7 +365,7 @@ const Helen = () => (
     title="FAC cohort #13"
     blueImg={helenBlue}
     normalImg={helenPlain}
-    quote="“Founders and Coders gave me the confidence to, given time and perseverance, grasp complex concepts which initially seemed daunting. I learned how to walk through code thoroughly and truly understand it in order to solve bugs and errors. And I discovered the joys of paired programming - that learning or tackling a problem together can be one of the most rewarding experiences. ”"
+    quote="“Founders and Coders gave me the confidence to, given time and perseverance, grasp complex concepts which initially seemed daunting. I learned how to walk through code thoroughly and truly understand it in order to solve bugs and errors. And I discovered the joys of paired programming - that learning or tackling a problem together can be one of the most rewarding experiences.”"
     link="https://github.com/helenzhou6"
   />
 )
@@ -374,7 +377,7 @@ const Owen = () => (
     title="FAC cohort #7"
     blueImg={owenBlue}
     normalImg={owenPlain}
-    quote="“The constant focus on pairing and working together means that you're never stuck banging your head against a wall by yourself. You always have someone else to work through the problem with you. After leaving Founders and Coders, I had a lot of faith in my own ability to learn new technologies, which was crucial when I founded my startup, Fat Llama. ”"
+    quote="“The constant focus on pairing and working together means that you're never stuck banging your head against a wall by yourself. You always have someone else to work through the problem with you. After leaving Founders and Coders, I had a lot of faith in my own ability to learn new technologies, which was crucial when I founded my startup, Fat Llama.”"
     link="https://github.com/otajor"
   />
 )
@@ -385,7 +388,7 @@ const Ruth = () => (
     title="FAC cohort #6"
     blueImg={ruthBlue}
     normalImg={ruthPlain}
-    quote="“The best part of my experience with Founders and Coders are the people. It is a great community, with members of past cohorts teaching the current cohort. Everyone supports each other in their learning and wants to give back. ”"
+    quote="“The best part of my experience with Founders and Coders are the people. It is a great community, with members of past cohorts teaching the current cohort. Everyone supports each other in their learning and wants to give back.”"
     link="https://github.com/rug1"
   />
 )

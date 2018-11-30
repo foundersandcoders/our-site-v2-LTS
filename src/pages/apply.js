@@ -61,7 +61,7 @@ const CohortExpandable = ({ obj, color }) => {
 
 const carouselImages = [
   { caption: "London Cohort #14", src: FAC14 },
-  { caption: "Gaza Cohort #4", src: FACG3 },
+  { caption: "Gaza Cohort #3", src: FACG3 },
   { caption: "London Cohort #13", src: FAC13 },
   { caption: "Nazareth Cohort #3", src: FACN3 },
   { caption: "London Cohort #10", src: FAC10 },

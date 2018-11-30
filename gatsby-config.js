@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "Founders & Coders",
+    title: "Founders and Coders",
   },
 
   plugins: [

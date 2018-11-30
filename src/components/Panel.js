@@ -69,7 +69,7 @@ const Footer = () => (
     <div className="font-6 w-100 ph2-ns pb1 ph0 fw3 flex justify-between flex-row-ns flex-column">
       <div>
         <span className="db di-ns">© 2018 Founders and Coders.</span>
-        <span className="db di-ns"> All rights reserved</span>
+        <span className="db di-ns"> All rights reserved.</span>
       </div>
       <div className="db ma0-ns mt2">
         Made with lots of <_heart src={heart} /> by{" "}
