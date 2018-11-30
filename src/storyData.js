@@ -152,7 +152,7 @@ const stories = [
     storyType: "about_us",
     heading: "Fusing nonprofits with tech talent",
     subtitle:
-      "Throw together four of the UK’s most innovative charities (aka our debut Fusiliers), 16 mega-brains in the form of Founders & Coders’ latest cohort, delicious...",
+      "Throw together four of the UK’s most innovative charities (aka our debut Fusiliers), 16 mega-brains in the form of Founders and Coders’ latest cohort, delicious...",
     author: "CAST",
     date: "25 May 2016",
     url:
@@ -232,7 +232,7 @@ const stories = [
     storyType: "about_us",
     heading: "Founders and Coders",
     subtitle:
-      "I've had the pleasure of working these talented coders from Founders & Coders, a social enterprise that offers free coding training...",
+      "I've had the pleasure of working these talented coders from Founders and Coders, a social enterprise that offers free coding training...",
     author: "Lambeth Larder",
     date: "12 Apr 2018",
     url: "http://www.lambethlarder.org/blog/founders-coders",
@@ -359,7 +359,7 @@ const stories = [
   {
     storyType: "in_the_press",
     heading:
-      "Founders & Coders pooling developer talent through free education course",
+      "Founders and Coders pooling developer talent through free education course",
     subtitle:
       "Employers testing students’ skills through freelance projects instead of paying recruitment agency fees",
     publication: "Computer Weekly",
@@ -372,15 +372,15 @@ const stories = [
     storyType: "in_the_press",
     heading: "Founders and Coders Interview",
     subtitle:
-      "Dan Sofer is the founding director of Founders & Coders C.I.C, the first full-time adult programming school in the UK to offer its services completely free of charge.",
+      "Dan Sofer is the founding director of Founders and Coders C.I.C, the first full-time adult programming school in the UK to offer its services completely free of charge.",
     publication: "Farnell",
     url: "https://uk.farnell.com/founders-and-coders-interview",
   },
   {
     storyType: "in_the_press",
-    heading: "Founders & Coders: The UK’s Only Free Coding Academy",
+    heading: "Founders and Coders: The UK’s Only Free Coding Academy",
     subtitle:
-      "Founders & Coders is a non-profit social enterprise based in London. A free school and co-operative of coders...",
+      "Founders and Coders is a non-profit social enterprise based in London. A free school and co-operative of coders...",
     publication: "IntelligentHQ",
     date: "18 Aug 2015",
     url:
