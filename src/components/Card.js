@@ -111,6 +111,7 @@ const TextContainer = styled.div.attrs({
 })`
   left: -12px;
   bottom: -21px;
+  height: fit-content;
   ${breakpoint.ns`
     top: 2rem;
     left: 1rem;
