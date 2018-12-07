@@ -27,7 +27,7 @@ const StickyMenuTriangle = styled.div.attrs({
   }),
 })`
   ${universalTransition};
-  z-index: 12;
+  z-index: 3000001;
   ${breakpoint.ns`
     justify-content: center;
     padding-right: 32px;
