@@ -63,6 +63,10 @@ const _TopLink = styled(Link).attrs({
   &:focus {
     outline: 0;
   }
+  &:active,
+  &:focus:after {
+    width: 100%;
+  }
 `
 const TopLink = ({ to, text, number }) => (
   <_TopLink to={to} activeClassName="active">
