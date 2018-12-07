@@ -45,9 +45,8 @@ const StickyMenuTriangle = styled.div.attrs({
 `
 
 const StickyMenuSquare = styled.div.attrs({
-  className: "fixed pointer ph2 pt1 dn-ns",
+  className: "fixed pointer ph2 pt1 dn-ns z-max",
 })`
-  z-index: 25;
   background: transparent;
   ${universalTransition};
   top: 0;
@@ -57,7 +56,7 @@ const StickyMenuSquare = styled.div.attrs({
 `
 
 const MobileNavBar = styled.div.attrs({
-  className: "dn-ns db pa1 bg-black fixed top-0 left-0 z-5",
+  className: "dn-ns db pa1 bg-black fixed top-0 left-0 z-9999",
 })`
   height: 60px;
   width: 100vw;
@@ -127,7 +126,7 @@ const MenuAnimatedSVG = ({ active, color }) => {
 
 const MenuContainer = styled.div.attrs({})`
   position: fixed;
-  z-index: 11;
+  z-index: "3000000";
 `
 
 const MenuInnerContainer = styled.div.attrs({
@@ -148,7 +147,7 @@ const MenuInnerContainer = styled.div.attrs({
 
   ${breakpoint.s`
     position: fixed;
-    top: ${({ active }) => (active ? "0" : "-100%")};
+    top: ${({ active }) => (active ? "0" : "-110%")};
     right: auto;
     left: 0;
   `};
