@@ -14,7 +14,7 @@ const _Header = styled.header.attrs({
 `
 
 const _TopNav = styled.nav.attrs({
-  className: "flex w-100 w-50-m w-75-l justify-between mr4",
+  className: "flex w-100 w-50-m w-75-l justify-between mr0",
 })`
   ${breakpoint.ql`
     width: 74.1%;
