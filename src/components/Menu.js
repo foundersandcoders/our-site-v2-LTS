@@ -8,6 +8,8 @@ import iconLogo from "../assets/logos/logo-mobile.png"
 import { breakpoint } from "../styles/utils"
 
 const universalTransition = "transition: 1s ease-in-out"
+const mobileMenuTransition =
+  "transition: all 1s ease-in-out 0s, opacity 0.5s ease-in-out 0.1s"
 
 const menuItems = [
   { number: "01", item: "what and who", link: "/about" },
@@ -45,9 +47,8 @@ const StickyMenuTriangle = styled.div.attrs({
 `
 
 const StickyMenuSquare = styled.div.attrs({
-  className: "fixed pointer ph2 pt1 dn-ns",
+  className: "fixed pointer ph2 pt1 dn-ns z-max",
 })`
-  z-index: 25;
   background: transparent;
   ${universalTransition};
   top: 0;
@@ -57,7 +58,7 @@ const StickyMenuSquare = styled.div.attrs({
 `
 
 const MobileNavBar = styled.div.attrs({
-  className: "dn-ns db pa1 bg-black fixed top-0 left-0 z-5",
+  className: "dn-ns db pa1 bg-black fixed top-0 left-0 z-9999",
 })`
   height: 60px;
   width: 100vw;
@@ -127,14 +128,13 @@ const MenuAnimatedSVG = ({ active, color }) => {
 
 const MenuContainer = styled.div.attrs({})`
   position: fixed;
-  z-index: 11;
-  display: ${({ active }) => (active ? "block" : "none")}
+  z-index: 3000000;
 `
 
 const MenuInnerContainer = styled.div.attrs({
   className: "bg-white flex flex-column flex-row-ns",
 })`
-  ${universalTransition};
+  ${mobileMenuTransition};
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -149,7 +149,9 @@ const MenuInnerContainer = styled.div.attrs({
 
   ${breakpoint.s`
     position: fixed;
-    top: ${({ active }) => (active ? "0" : "-100%")};
+    top: ${({ active }) => (active ? "0" : "-110%")};
+    opacity:  ${({ active }) => (active ? "1" : "0")};
+    pointer-events:  ${({ active }) => (active ? "auto" : "none")};
     right: auto;
     left: 0;
   `};
