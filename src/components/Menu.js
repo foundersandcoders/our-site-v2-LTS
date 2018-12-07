@@ -126,7 +126,7 @@ const MenuAnimatedSVG = ({ active, color }) => {
 
 const MenuContainer = styled.div.attrs({})`
   position: fixed;
-  z-index: "3000000";
+  z-index: 3000000;
 `
 
 const MenuInnerContainer = styled.div.attrs({
