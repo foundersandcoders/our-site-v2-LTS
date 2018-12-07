@@ -81,6 +81,7 @@ class LayoutWithState extends Component {
               menuActive={this.state.menuActive}
               toggleMenu={this.toggleMenu}
               color={this.state.color}
+              display={this.state.menuActive}
             />
           </div>
           <Header siteTitle={data.site.siteMetadata.title} />
