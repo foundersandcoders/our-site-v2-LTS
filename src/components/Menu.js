@@ -27,7 +27,7 @@ const StickyMenuTriangle = styled.div.attrs({
   }),
 })`
   ${universalTransition};
-  z-index: 12;
+  z-index: 3000001;
   ${breakpoint.ns`
     justify-content: center;
     padding-right: 32px;
@@ -165,6 +165,8 @@ const MenuSidebar = styled.div`
   background: ${({ color = "red" }) => `var(--${color})`};
   height: 100vh;
   width: 30vw;
+  ${({ active }) => (active ? "" : "display:none")};
+
   ${breakpoint.s`
     height: 149px;
     display: flex;
@@ -183,6 +185,7 @@ const MenuMain = styled.div.attrs({
     height: 100vh;
     width: 70vw;
   `};
+  ${({ active }) => (active ? "" : "display:none")};
 `
 
 const MenuNumber = styled.div.attrs({})`
@@ -272,7 +275,7 @@ class Menu extends Component {
       <div className="flex db-ns absolute left-0">
         <MenuContainer>
           <MenuInnerContainer active={menuActive}>
-            <MenuSidebar color={color}>
+            <MenuSidebar active={menuActive} color={color}>
               <HomeLogo
                 className="center mt6-ns"
                 color={color}

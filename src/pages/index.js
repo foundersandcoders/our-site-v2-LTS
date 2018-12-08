@@ -154,17 +154,17 @@ class IndexPage extends Component {
                 wrapAround: true,
               }}
             >
-              <PartnerLogo src={dwyl} />
+              <PartnerLogo src={cotech} />
               <PartnerLogo src={infact} />
               <PartnerLogo src={outlandish} />
+              <PartnerLogo src={dwyl} />
               <PartnerLogo src={space4} />
-              <PartnerLogo src={cotech} />
               <PartnerLogo src={gaza_sky_geeks} />
-              <PartnerLogo src={dwyl} />
+              <PartnerLogo src={cotech} />
               <PartnerLogo src={infact} />
               <PartnerLogo src={outlandish} />
+              <PartnerLogo src={dwyl} />
               <PartnerLogo src={space4} />
-              <PartnerLogo src={cotech} />
               <PartnerLogo src={gaza_sky_geeks} />
             </FlickityCarousel>
           </section>
