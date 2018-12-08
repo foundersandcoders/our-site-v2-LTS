@@ -227,7 +227,7 @@ const Card = ({
       </FacsterContainer>
     </div>
 
-    <div className="dn db-ns">
+    <div className="dn db-ns mr6">
       <FacsterContainer cardWidth={cardWidth} cardHeight={cardHeight}>
         <_Photo
           normalImg={normalImg}

@@ -34,7 +34,7 @@ const CarouselImg = ({ src }) => (
   />
 )
 
-const colorArray = ["red", "green", "blue", "yellow"]
+const colourArray = ["red", "green", "blue", "yellow"]
 
 const CohortExpandable = ({ obj, color }) => {
   return (
@@ -128,7 +128,7 @@ class ApplyPage extends Component {
                   return (
                     <CohortExpandable
                       obj={obj}
-                      color={colorArray[key % 4]}
+                      color={colourArray[key % colourArray.length]}
                       key={key}
                     />
                   )
@@ -143,11 +143,10 @@ class ApplyPage extends Component {
           <section className="mb7-ns mb6 pb5-ns pb0">
             <ExtendedPanel className="bg-light-gray db-l dn">
               <Carousel
-                carouselWidth="300vw"
-                carouselLength="210vw"
                 type={APPLICATION_CAROUSEL}
                 title="How do I apply?"
                 component={this}
+                extraPadding="1.1"
                 applicationsAreOpen={APPLICATIONS_OPEN}
               >
                 <ApplicationSteps />

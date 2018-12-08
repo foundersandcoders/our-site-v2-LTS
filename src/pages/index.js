@@ -47,7 +47,7 @@ const StripeyContainer = styled.div.attrs({})`
   clip-path: polygon(0 100%, 0 2%, 25% 0, 50% 2%, 75% 0, 100% 2%, 100% 100%);
 `
 
-const FacsterCards = ({ className }) => (
+const MobileFacsterCards = ({ className }) => (
   <StripeyContainer className={className}>
     <Amelie />
     <Helen />
@@ -170,8 +170,6 @@ class IndexPage extends Component {
           </section>
           <Carousel
             type={TESTIMONIAL_CAROUSEL}
-            carouselWidth="350vw"
-            carouselLength={{ m: "640vw", ns: "230vw" }}
             component={this}
             carouselClass="padding-left: 300px;"
           >
@@ -181,7 +179,7 @@ class IndexPage extends Component {
             <Ruth />
             <Fatimat />
           </Carousel>
-          <FacsterCards className="db dn-ns" />
+          <MobileFacsterCards className="db dn-ns" />
           <NextPanel component={this} to="/about">
             What is Founders and Coders?
           </NextPanel>

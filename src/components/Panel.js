@@ -116,27 +116,7 @@ const PanelTopBorder = styled.div.attrs({
 
   clip-path: polygon(0 100%, 0 75%, 25% 0, 50% 75%, 75% 0, 100% 75%, 100% 100%);
   ${breakpoint.ns`
-  clip-path: polygon(
-    0 100%,
-    0 45%,
-    3% 70%,
-    10% 0,
-    17% 70%,
-    24% 0,
-    31% 70%,
-    38% 0,
-    45% 70%,
-    52% 0,
-    59% 70%,
-    66% 0,
-    73% 70%,
-    80% 0,
-    87% 70%,
-    94% 0,
-    100% 70%,
-    100% 100%
-  );
-
+    clip-path: polygon(0 100%, 0 3.25rem, 3% 6.5rem, 10% 0, 17% 6.5rem, 24% 0, 31% 6.5rem, 38% 0, 45% 6.5rem, 52% 0, 59% 6.5rem, 66% 0, 73% 6.5rem, 80% 0, 87% 6.5rem, 94% 0, 100% 6.5rem, 100% 100%);
   `} background-attachment: fixed;
 `
 const NextPanel = ({ component, to, children, topBorder }) => (
