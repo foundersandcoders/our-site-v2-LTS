@@ -34,7 +34,7 @@ const _HeadingWrapper = styled.div.attrs({
 
 const _Step = styled.div.attrs({
   className: ({ step }) =>
-    `flex flex-column ${
+    `flex flex-column mr6 ${
       step
         ? "bt bb-l bw1 b--black-20 pv3"
         : "justify-start overflow-y-visible pv4-l pb0"
