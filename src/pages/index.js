@@ -170,8 +170,6 @@ class IndexPage extends Component {
           </section>
           <Carousel
             type={TESTIMONIAL_CAROUSEL}
-            carouselWidth="350vw"
-            carouselLength={{ m: "640vw", ns: "230vw" }}
             component={this}
             carouselClass="padding-left: 300px;"
           >
