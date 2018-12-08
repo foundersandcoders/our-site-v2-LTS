@@ -47,7 +47,7 @@ const StripeyContainer = styled.div.attrs({})`
   clip-path: polygon(0 100%, 0 2%, 25% 0, 50% 2%, 75% 0, 100% 2%, 100% 100%);
 `
 
-const FacsterCards = ({ className }) => (
+const MobileFacsterCards = ({ className }) => (
   <StripeyContainer className={className}>
     <Amelie />
     <Helen />
@@ -179,7 +179,7 @@ class IndexPage extends Component {
             <Ruth />
             <Fatimat />
           </Carousel>
-          <FacsterCards className="db dn-ns" />
+          <MobileFacsterCards className="db dn-ns" />
           <NextPanel component={this} to="/about">
             What is Founders and Coders?
           </NextPanel>
