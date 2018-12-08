@@ -26,7 +26,7 @@ const _OuterContainer = styled.div.attrs({
 const _OuterApplicationContainer = styled.div.attrs({
   className: "relative w-100 flex-ns outer-carousel dn",
 })`
-  height: ${({ carouselLength }) => carouselLength};
+  height: ${({ carouselWidth }) => `${carouselWidth * 1.1}px`};
 `
 const _InnerContainer = styled.div.attrs({
   className: "sticky w-100 overflow-hidden top-0",
@@ -94,7 +94,6 @@ class Carousel extends Component {
     const {
       type,
       children,
-      carouselLength,
       component,
       applicationsAreOpen,
       className,
@@ -125,7 +124,7 @@ class Carousel extends Component {
         return (
           <_OuterApplicationContainer
             className={className}
-            carouselLength={carouselLength}
+            carouselWidth={carouselWidth}
             onMouseEnter={() => mouseOnCarousel(component)}
             onMouseLeave={() => mouseOff(component)}
           >
