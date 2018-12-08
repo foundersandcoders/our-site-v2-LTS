@@ -138,8 +138,7 @@ class TechForBetterPage extends Component {
           <ExtendedPanel className="bg-light-gray mb7-ns dn db-l">
             <Carousel
               title="How does it work?"
-              carouselWidth="200vw"
-              carouselLength="155vw"
+              extraPadding="1.3"
               type={APPLICATION_CAROUSEL}
               component={this}
             >

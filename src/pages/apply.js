@@ -34,7 +34,7 @@ const CarouselImg = ({ src }) => (
   />
 )
 
-const colorArray = ["red", "green", "blue", "yellow"]
+const colourArray = ["red", "green", "blue", "yellow"]
 
 const CohortExpandable = ({ obj, color }) => {
   return (
@@ -128,7 +128,7 @@ class ApplyPage extends Component {
                   return (
                     <CohortExpandable
                       obj={obj}
-                      color={colorArray[key % 4]}
+                      color={colourArray[key % colourArray.length]}
                       key={key}
                     />
                   )
@@ -146,6 +146,7 @@ class ApplyPage extends Component {
                 type={APPLICATION_CAROUSEL}
                 title="How do I apply?"
                 component={this}
+                extraPadding="1.1"
                 applicationsAreOpen={APPLICATIONS_OPEN}
               >
                 <ApplicationSteps />

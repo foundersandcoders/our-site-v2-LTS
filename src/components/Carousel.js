@@ -19,14 +19,16 @@ const _OuterContainer = styled.div.attrs({
     clip-path: polygon(0 100%, 0 3.25rem, 3% 6.5rem, 10% 0, 17% 6.5rem, 24% 0, 31% 6.5rem, 38% 0, 45% 6.5rem, 52% 0, 59% 6.5rem, 66% 0, 73% 6.5rem, 80% 0, 87% 6.5rem, 94% 0, 100% 6.5rem, 100% 100%);
     padding-top: 15%;
     background-attachment: fixed;
-    height: ${({ carouselWidth }) => `${carouselWidth}px`}
+    height: ${({ carouselWidth, extraPadding }) =>
+      `${carouselWidth * extraPadding}px`}
   `};
 `
 
 const _OuterApplicationContainer = styled.div.attrs({
   className: "relative w-100 flex-ns outer-carousel dn",
 })`
-  height: ${({ carouselWidth }) => `${carouselWidth * 1.1}px`};
+  height: ${({ carouselWidth, extraPadding }) =>
+    `${carouselWidth * extraPadding}px`};
 `
 const _InnerContainer = styled.div.attrs({
   className: "sticky w-100 overflow-hidden top-0",
@@ -95,6 +97,7 @@ class Carousel extends Component {
       type,
       children,
       component,
+      extraPadding = "1",
       applicationsAreOpen,
       className,
       title,
@@ -106,6 +109,7 @@ class Carousel extends Component {
           <_OuterContainer
             className={className}
             carouselWidth={carouselWidth}
+            extraPadding={extraPadding}
             onMouseEnter={() => mouseOnCarousel(component)}
             onMouseLeave={() => mouseOff(component)}
           >
@@ -125,6 +129,7 @@ class Carousel extends Component {
           <_OuterApplicationContainer
             className={className}
             carouselWidth={carouselWidth}
+            extraPadding={extraPadding}
             onMouseEnter={() => mouseOnCarousel(component)}
             onMouseLeave={() => mouseOff(component)}
           >
