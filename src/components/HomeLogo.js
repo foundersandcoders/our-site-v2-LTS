@@ -24,6 +24,7 @@ const LogoStyled = styled(Link).attrs({
   ${breakpoint.ql`
     width: 217px;
     height: 94.5px;
+    margin: 0;
   `};
 `
 
