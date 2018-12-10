@@ -46,7 +46,11 @@ const _TopLink = styled(Link).attrs({
       margin-right: 48px;
       border-color: var(--blue);
     }
-  `} &:after {
+  `} ${breakpoint.l`
+    display: flex;
+  `} 
+  
+  &:after {
     content: "";
     display: block;
     border-top: 2px solid var(--blue);
