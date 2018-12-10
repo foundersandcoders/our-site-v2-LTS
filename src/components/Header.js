@@ -67,7 +67,7 @@ const _TopLink = styled(Link).attrs({
   &:focus {
     outline: 0;
   }
-  &:active,
+
   &:focus:after {
     width: 100%;
   }
