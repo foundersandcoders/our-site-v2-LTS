@@ -10,6 +10,7 @@ import cotech from "../assets/logos/cooperate_logos/cotech_grayscale.png"
 import infact from "../assets/logos/cooperate_logos/infact_grayscale.png"
 import stripey_small from "../assets/ui/stripey_small.svg"
 import splashVideo from "../assets/splashes/home_page_video.mp4"
+import splashImage from "../assets/splashes/home_splash.jpg"
 
 import Layout from "../components/Layout"
 import { SmallUnderline } from "../components/Text"
@@ -121,7 +122,7 @@ class IndexPage extends Component {
             />
             <DoubleLine colour="yellow" showing={true} />
             <VideoContainer>
-              <Video muted autoPlay loop playsInline>
+              <Video muted autoPlay loop playsInline poster={splashImage}>
                 <source src={splashVideo} type="video/mp4" />
               </Video>
             </VideoContainer>
