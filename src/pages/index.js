@@ -73,6 +73,7 @@ class IndexPage extends Component {
   }
 
   componentDidMount() {
+    document.querySelector("video").setAttribute("muted", "")
     window.addEventListener("scroll", this.handleScroll)
   }
 
@@ -120,7 +121,7 @@ class IndexPage extends Component {
             />
             <DoubleLine colour="yellow" showing={true} />
             <VideoContainer>
-              <Video muted autoPlay loop>
+              <Video muted autoPlay loop playsInline>
                 <source src={splashVideo} type="video/mp4" />
               </Video>
             </VideoContainer>
