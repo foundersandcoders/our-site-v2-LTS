@@ -39,7 +39,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        dontCacheBustUrlsMatching: /static\//,
+        globIgnores: ["node_modules/**/*", "*.mp4"],
       },
     },
   ],
