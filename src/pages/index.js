@@ -10,6 +10,7 @@ import cotech from "../assets/logos/cooperate_logos/cotech_grayscale.png"
 import infact from "../assets/logos/cooperate_logos/infact_grayscale.png"
 import stripey_small from "../assets/ui/stripey_small.svg"
 import splashVideo from "../assets/splashes/home_page_video.mp4"
+import splashImage from "../assets/splashes/home_splash.jpg"
 
 import Layout from "../components/Layout"
 import { SmallUnderline } from "../components/Text"
@@ -35,10 +36,10 @@ const Video = styled.video.attrs({
   `};
 `
 
-const VideoContainer = styled.section.attrs({
+const VideoContainer = styled.div.attrs({
   className: "flex justify-center mh6-ns mh2 mb7 video-container pt3",
 })`
-  clip-path: polygon(45% 45%, 45% 45%, 45% 45%, 45% 45%);
+  -webkit-clip-path: polygon(45% 45%, 45% 45%, 45% 45%, 45% 45%);
 `
 
 const StripeyContainer = styled.div.attrs({})`
@@ -73,6 +74,7 @@ class IndexPage extends Component {
   }
 
   componentDidMount() {
+    document.querySelector("video").setAttribute("muted", "")
     window.addEventListener("scroll", this.handleScroll)
   }
 
@@ -86,22 +88,21 @@ class IndexPage extends Component {
       .getBoundingClientRect()
 
     const doubleLineTopOffset = doubleLine.top - 300
-    const video =
-      document.querySelector(".video-container").getBoundingClientRect().top -
-      150
+    const videoContainer = document.querySelector(".video-container")
+    const videoTop = videoContainer.getBoundingClientRect().top - 150
 
-    if (doubleLineTopOffset < 0 && video > 0) {
-      const progress = (video / (video - doubleLineTopOffset)) * 100
-      this.myRef.current.setAttribute(
+    if (doubleLineTopOffset < 0 && videoTop > 0) {
+      const progress = (videoTop / (videoTop - doubleLineTopOffset)) * 100
+      videoContainer.setAttribute(
         "style",
-        `clip-path: polygon(${progress / 2}% ${progress / 2}%,${100 -
+        `-webkit-clip-path: polygon(${progress / 2}% ${progress / 2}%,${100 -
           progress / 2}% ${progress / 2}%, ${100 - progress / 2}% ${100 -
           progress / 2}%, ${progress / 2}% ${100 - progress / 2}%);`
       )
-    } else if (video < 0) {
-      this.myRef.current.setAttribute(
+    } else if (videoTop < 0) {
+      videoContainer.setAttribute(
         "style",
-        `clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);`
+        `-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);`
       )
     }
   }
@@ -120,10 +121,9 @@ class IndexPage extends Component {
               textSize="XL"
             />
             <DoubleLine colour="yellow" showing={true} />
-            <VideoContainer innerRef={this.myRef}>
-              <Video muted autoPlay loop>
+            <VideoContainer>
+              <Video muted autoPlay loop playsInline poster={splashImage}>
                 <source src={splashVideo} type="video/mp4" />
-                Your browser does not support videos
               </Video>
             </VideoContainer>
             <HeadingBody
