@@ -123,7 +123,7 @@ class IndexPage extends Component {
             <DoubleLine colour="yellow" showing={true} />
             <VideoContainer>
               <Video muted autoPlay loop playsInline poster={splashImage}>
-                <source src={splashVideo} type="video/mp4" />
+                <source src="/home_page_video.mp4" />
               </Video>
             </VideoContainer>
             <HeadingBody
