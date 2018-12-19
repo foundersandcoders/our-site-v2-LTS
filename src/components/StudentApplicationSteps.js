@@ -1,18 +1,8 @@
 import Step from "../components/Step"
-import styled from "styled-components"
-import { _SubHeading, _ExternalLink } from "./Text"
+import { _ExternalLink } from "./Text"
 import React, { Fragment } from "react"
 
 import { EXPRESSION_OF_INTEREST_FORM } from "../maintenance"
-
-const _ListItem = styled.li`
-  list-style-type: circle;
-  list-style-position: outside;
-  margin-left: 20px;
-`
-const _Bold = styled.span.attrs({
-  className: "fw5",
-})``
 
 const ApplicationSteps = () => (
   <Fragment>

@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import styled from "styled-components"
 import * as r from "ramda"
 
 import { APPLICATION_CAROUSEL, DOWN_CURSOR } from "../constants"
@@ -18,12 +19,14 @@ import BackgroundImg from "../components/BackgroundImg"
 import InnerGridContainer from "../components/InnerGridContainer"
 import { CollapsableQuestion, QuestionWrapper } from "../components/Question"
 import ApplicationSteps from "../components/StudentApplicationSteps"
+import { _ExternalLink, _SubHeading } from "../components/Text"
 
 import FAC10 from "../assets/photos/FAC10.jpg"
 import FAC13 from "../assets/photos/FAC13.jpg"
 import FAC14 from "../assets/photos/FAC14.jpg"
 import FACN3 from "../assets/photos/FACN3.png"
 import FACG3 from "../assets/photos/FACG3.png"
+import link_arrow_button from "../assets/ui/link_arrow_button.svg"
 
 const CarouselImg = ({ src }) => (
   <BackgroundImg
@@ -35,6 +38,27 @@ const CarouselImg = ({ src }) => (
 )
 
 const colourArray = ["red", "green", "blue", "yellow"]
+
+const PreReq = ({ title, children }) => (
+  <div className="flex flex-column justify-between font-4 mb4-ns mb3">
+    <_SubHeading className="mb1">{title}</_SubHeading>
+    {children}
+  </div>
+)
+
+const _ListItem = styled.li`
+  list-style-type: initial;
+  list-style-position: outside;
+  margin-left: 20px;
+`
+
+const _Bold = styled.span.attrs({
+  className: "fw5",
+})``
+
+const _Link = styled.a.attrs({
+  className: "mt1 v-mid flex items-center blue",
+})``
 
 const CohortExpandable = ({ obj, color }) => {
   return (
@@ -162,6 +186,124 @@ class ApplyPage extends Component {
               <ApplicationsStatus areOpen={APPLICATIONS_OPEN} />
             </div>
           </section>
+
+          <InnerGridContainer className="mb7-ns mb5-m pb4">
+            <HeadingWithBody
+              title="Course prerequesites"
+              className="mb3 mb0-l mr7-m"
+            >
+              <PreReq title="Create a Github Account">
+                <div>
+                  You will use this account to join{" "}
+                  <_ExternalLink href="https://gitter.im">Gitter</_ExternalLink>{" "}
+                  and to create your one-page site on{" "}
+                  <_ExternalLink href="https://github.com">
+                    GitHub
+                  </_ExternalLink>{" "}
+                  Pages.
+                </div>
+              </PreReq>
+              <PreReq title="freeCodeCamp">
+                <div>
+                  Earn a minimum of 250 points on{" "}
+                  <_ExternalLink href="https://www.freecodecamp.org/">
+                    freeCodeCamp
+                  </_ExternalLink>
+                  . We recommend beginning with the following sections:
+                  <h3 className="underline mt4 mb2">
+                    Responsive Web Design Certification
+                  </h3>
+                  <ul>
+                    <_ListItem>Basic HTML and HTML5</_ListItem>
+                    <_ListItem>Basic CSS</_ListItem>
+                    <_ListItem>Responsive Web Design Principles</_ListItem>
+                    <_ListItem>CSS Flexbox</_ListItem>
+                  </ul>
+                  <h3 className="underline mt4 mb2">
+                    Javascript Algorithms and Data Structures Certification
+                  </h3>
+                  <ul>
+                    <_ListItem>Basic JavaScript</_ListItem>
+                    <_ListItem>ES6</_ListItem>
+                    <_ListItem>Basic Data Structures</_ListItem>
+                    <_ListItem>Basic Algorithm Scripting</_ListItem>
+                  </ul>
+                  <h3 className="underline mt4 mb2">
+                    Create a one-page website
+                  </h3>
+                  Create a one-page website in HTML and CSS (using some vanilla
+                  JavaScript if you’d like) and host it on GitHub Pages.{" "}
+                  <_ExternalLink href="https://www.mokacoding.com/blog/your-git-log-should-tell-a-story/">
+                    Your commit history should tell a story
+                  </_ExternalLink>
+                  , and your website <span className="i">must</span>:
+                  <ul className="mt4">
+                    <_ListItem>
+                      Tell us about who you are and why you are applying for the
+                      programme
+                    </_ListItem>
+                    <_ListItem>
+                      Demonstrate your learning from the prerequisites
+                    </_ListItem>
+                    <_ListItem>
+                      Contain a link back to the GitHub repo that contains the
+                      code for your site
+                    </_ListItem>
+                    <_ListItem>
+                      Contain links to your freeCodeCamp (please make sure that
+                      your profile is public) and Codewars pages{" "}
+                    </_ListItem>
+                    <_ListItem>
+                      Contain a link to <_Bold>challenge 2</_Bold> (see{" "}
+                      <_Bold>coding challenge</_Bold>
+                      ), if you choose that option
+                    </_ListItem>
+                    <_ListItem>Be hosted on Github</_ListItem>
+                    <_ListItem>Not use a GitHub theme</_ListItem>
+                    <_ListItem>
+                      Not use a framework like Bootstrap or libraries like
+                      jQuery
+                    </_ListItem>
+                  </ul>
+                </div>
+                <div />
+              </PreReq>
+              <PreReq title="Codewars">
+                <div>
+                  Reach 5 kyu <_Bold>and</_Bold> 300 honor points in JavaScript
+                  on{" "}
+                  <_ExternalLink href="https://www.codewars.com">
+                    Codewars
+                  </_ExternalLink>
+                  .
+                </div>
+              </PreReq>
+              <PreReq title="Coding challenge">
+                <div>
+                  Please choose <_Bold>just one</_Bold> of the two challenges
+                  below:
+                </div>
+                <_Link
+                  href="https://github.com/foundersandcoders/master-reference/blob/master/coursebook/prerequisites/create-kata.md"
+                  className="mt2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={link_arrow_button} className="mr1" />
+                  Create your own JavaScript kata
+                </_Link>
+                <_Link
+                  href="https://github.com/foundersandcoders/master-reference/blob/master/coursebook/prerequisites/image-carousel.md"
+                  className="mt2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={link_arrow_button} className="mr1" />
+                  Create an image carousel
+                </_Link>
+              </PreReq>
+            </HeadingWithBody>
+          </InnerGridContainer>
 
           <InnerGridContainer className="mb7 mb5-m pb5">
             <HeadingWithBody
