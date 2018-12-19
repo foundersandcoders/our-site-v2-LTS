@@ -9,7 +9,7 @@ const APPLICATION_FORM = "/"
 // To update any of the external forms on the site, change these variables
 const EXPRESSION_OF_INTEREST_FORM =
   "https://docs.google.com/forms/d/e/1FAIpQLSepdNxKsrMjhfnbdkzKUgNpeWFmp8WLyiqTe_UY10TsPpFOEQ/viewform"
-const HIRE_CONTACT_FORM = "https://joe1263.typeform.com/to/oMRl3N"
+const HIRE_CONTACT_FORM = "https://airtable.com/shrLFs9AORwMO93cb"
 const TECH_FOR_BETTER_APPLICATION_FORM =
   "https://airtable.com/shrMtNWdsGQQs65mO"
 
