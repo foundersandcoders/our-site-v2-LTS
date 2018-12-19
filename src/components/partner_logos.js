@@ -24,7 +24,6 @@ import Power from "../assets/logos/partner_logos/Power_to_Change.jpg"
 import RDG from "../assets/logos/partner_logos/Rail_Delivery_Group.jpg"
 import Red_Sift from "../assets/logos/partner_logos/Red_Sift.png"
 import Spill from "../assets/logos/partner_logos/Spill.png"
-import Stasher from "../assets/logos/partner_logos/Stasher.png"
 import Syrona from "../assets/logos/partner_logos/Syrona.png"
 import Thoughtworks from "../assets/logos/partner_logos/Thoughtworks.jpg"
 import Ticketmaster from "../assets/logos/partner_logos/Ticketmaster.png"
@@ -58,7 +57,6 @@ export default [
   Nested,
   verkstedt,
   Power,
-  Stasher,
   Red_Sift,
   Syrona,
   RDG,
