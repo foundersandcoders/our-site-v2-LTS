@@ -3,13 +3,14 @@
 //    * set the application form link to the correct link when opening
 //    * Check your local version looks right. That's it!
 
-const APPLICATIONS_OPEN = false
-const APPLICATION_FORM = "/"
+const APPLICATIONS_OPEN = true
+const APPLICATION_FORM =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdvlLQyjC6g_7SY6vbNKVrdZglnW-a5yyw_zHWM-IyDju_F4w/viewform"
 
 // To update any of the external forms on the site, change these variables
 const EXPRESSION_OF_INTEREST_FORM =
   "https://docs.google.com/forms/d/e/1FAIpQLSepdNxKsrMjhfnbdkzKUgNpeWFmp8WLyiqTe_UY10TsPpFOEQ/viewform"
-const HIRE_CONTACT_FORM = "https://joe1263.typeform.com/to/oMRl3N"
+const HIRE_CONTACT_FORM = "https://airtable.com/shrLFs9AORwMO93cb"
 const TECH_FOR_BETTER_APPLICATION_FORM =
   "https://airtable.com/shrMtNWdsGQQs65mO"
 
