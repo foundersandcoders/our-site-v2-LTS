@@ -48,96 +48,9 @@ const ApplicationSteps = () => (
       preparation process, both online and through our meetups.
       <br />
       <br />
-      Please read our course prerequisites carefully before planning when to
-      apply.
+      Please read our course prerequisites (see section below) carefully before
+      planning when to apply.
       <div className="pb4 pb0-l" />
-    </Step>
-    <Step>
-      <div className="pb4  pb3-l">
-        <_SubHeading className="mb1">Create a Github account</_SubHeading>
-        You will use your{" "}
-        <_ExternalLink href="https://github.com/">GitHub</_ExternalLink> account
-        to join Gitter and to create your one-page site on GitHub Pages.
-      </div>
-      <div className="pb4 pb0-l">
-        <_SubHeading className="mb1">FreeCodeCamp</_SubHeading>
-        Earn a minimum of 250 points on{" "}
-        <_ExternalLink href="https://www.freecodecamp.org/">
-          freeCodeCamp
-        </_ExternalLink>
-        . We recommend beginning with the following sections:
-        <h3 className="underline mt1">Responsive Web Design Certification</h3>
-        <ul>
-          <_ListItem>Basic HTML and HTML5</_ListItem>
-          <_ListItem>Basic CSS</_ListItem>
-          <_ListItem>Responsive Web Design Principles</_ListItem>
-          <_ListItem>CSS Flexbox</_ListItem>
-        </ul>
-        <h3 className="underline mt1">
-          Javascript Algorithms and Data Structures Certification
-        </h3>
-        <ul>
-          <_ListItem>Basic JavaScript</_ListItem>
-          <_ListItem>ES6</_ListItem>
-          <_ListItem>Basic Data Structures</_ListItem>
-          <_ListItem>Basic Algorithm Scripting</_ListItem>
-        </ul>
-      </div>
-    </Step>
-    <Step>
-      <div className="pb4 pb0-l">
-        <_SubHeading className="mb1">Create a one-page website</_SubHeading>
-        Create a one-page website in HTML and CSS (using some vanilla JavaScript
-        if you’d like) and host it on GitHub Pages.{" "}
-        <_ExternalLink href="https://www.mokacoding.com/blog/your-git-log-should-tell-a-story/">
-          Your commit history should tell a story
-        </_ExternalLink>
-        , and your website <span className="i">must</span>:
-        <ul>
-          <_ListItem>
-            Tell us about who you are and why you are applying for the programme
-          </_ListItem>
-          <_ListItem>
-            Contain a link back to the GitHub repo that contains the code for
-            your site
-          </_ListItem>
-          <_ListItem>
-            Contain links to your freeCodeCamp (please make sure that your
-            profile is public) and Codewars pages{" "}
-          </_ListItem>
-          <_ListItem>
-            Contain a link to <_Bold>challenge 2</_Bold> (see{" "}
-            <_Bold>coding challenge</_Bold>
-            ), if you choose that option
-          </_ListItem>
-          <_ListItem>Be hosted on Github</_ListItem>
-          <_ListItem>Not use a GitHub theme</_ListItem>
-          <_ListItem>
-            Not use a framework like Bootstrap or libraries like jQuery
-          </_ListItem>
-        </ul>
-      </div>
-    </Step>
-    <Step>
-      <div className="pb4 pb3-l">
-        <_SubHeading className="mb1">Codewars</_SubHeading>
-        Reach 5 kyu <_Bold>and</_Bold> 300 honor points in JavaScript on{" "}
-        <_ExternalLink href="https://www.codewars.com">Codewars</_ExternalLink>.
-      </div>
-      <div className="pb4 pb0-l">
-        <_SubHeading className="mb1">Coding Challenge</_SubHeading>
-        Please choose <_Bold>just one</_Bold> of the two challenges below:
-        <br />
-        <_Bold>Challenge 1: </_Bold>
-        <_ExternalLink href="https://github.com/foundersandcoders/master-reference/blob/master/coursebook/prerequisites/create-kata.md">
-          Create at least one JavaScript kata
-        </_ExternalLink>
-        <br />
-        <_Bold>Challenge 2: </_Bold>
-        <_ExternalLink href="https://github.com/foundersandcoders/master-reference/blob/master/coursebook/prerequisites/image-carousel.md">
-          Create an image carousel
-        </_ExternalLink>
-      </div>
     </Step>
     <Step step="03" colour="red" title="Submit an application">
       <p>

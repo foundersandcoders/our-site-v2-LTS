@@ -146,7 +146,7 @@ class ApplyPage extends Component {
                 type={APPLICATION_CAROUSEL}
                 title="How do I apply?"
                 component={this}
-                extraPadding="1.1"
+                extraPadding="1.3"
                 applicationsAreOpen={APPLICATIONS_OPEN}
               >
                 <ApplicationSteps />
