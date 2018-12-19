@@ -245,8 +245,7 @@ const MenuItem = ({ number, item, active, link, toggleMenu, location }) => {
 
 class Menu extends Component {
   state = {
-    panelTop: 0,
-    menuTop: 0,
+    stickyTriangleWhite: false,
   }
 
   componentDidMount() {
@@ -258,18 +257,25 @@ class Menu extends Component {
   }
 
   handleScroll = () => {
+    const { stickyTriangleWhite } = this.state
     const panel = document
       .querySelector(".panel-container")
       .getBoundingClientRect()
     const menuTri = document.querySelector(".menu-tri").getBoundingClientRect()
-    this.setState({
-      panelTop: panel.top,
-      menuTop: menuTri.top,
-    })
+
+    if (!stickyTriangleWhite && panel.top < menuTri.top)
+      this.setState({
+        stickyTriangleWhite: true,
+      })
+
+    if (stickyTriangleWhite && panel.top > menuTri.top)
+      this.setState({
+        stickyTriangleWhite: false,
+      })
   }
 
   render() {
-    const { panelTop, menuTop } = this.state
+    const { stickyTriangleWhite } = this.state
     const { location, menuActive, toggleMenu, color } = this.props
     return (
       <div className="flex db-ns absolute left-0">
@@ -297,11 +303,11 @@ class Menu extends Component {
         <StickyMenuTriangle
           active={menuActive}
           onClick={toggleMenu}
-          color={panelTop < menuTop ? "white" : "black"}
+          color={stickyTriangleWhite ? "white" : "black"}
         >
           <MenuAnimatedSVG
             active={menuActive}
-            color={panelTop < menuTop ? "black" : "white"}
+            color={stickyTriangleWhite ? "black" : "white"}
           />
         </StickyMenuTriangle>
         <StickyMenuSquare active={menuActive} onClick={toggleMenu}>
