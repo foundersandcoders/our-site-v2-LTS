@@ -10,7 +10,6 @@ import space4 from "../assets/logos/cooperate_logos/Space4.svg"
 import cotech from "../assets/logos/cooperate_logos/cotech_grayscale.png"
 import infact from "../assets/logos/cooperate_logos/infact_grayscale.png"
 import stripey_small from "../assets/ui/stripey_small.svg"
-import splashImage from "../assets/splashes/home_splash.jpg"
 
 import Layout from "../components/Layout"
 import { SmallUnderline } from "../components/Text"
@@ -74,7 +73,6 @@ class IndexPage extends Component {
   }
 
   componentDidMount() {
-    document.querySelector("video").setAttribute("muted", "")
     window.addEventListener("scroll", this.handleScroll)
   }
 
@@ -122,7 +120,7 @@ class IndexPage extends Component {
             />
             <DoubleLine colour="yellow" showing={true} />
             <VideoContainer>
-              <Video muted autoPlay loop playsInline poster={splashImage}>
+              <Video muted autoPlay loop playsInline poster="">
                 <source src={withPrefix("/home_page_video.mp4?no-cache=1")} />
               </Video>
             </VideoContainer>
