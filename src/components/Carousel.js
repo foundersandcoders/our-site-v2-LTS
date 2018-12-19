@@ -43,14 +43,6 @@ const _InnerApplicationContainer = styled.div.attrs({
 
 const _Carousel = styled.section.attrs({
   className: "flex relative items-center justify-between inner-carousel fl",
-  style: ({ scrollY, carouselWidth }) => {
-    const carouselProgress = scrollY / carouselWidth
-    return {
-      transform: `translate3d(${carouselProgress *
-        carouselWidth *
-        1.1}px, -50%, 0)`,
-    }
-  },
 })`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -63,7 +55,6 @@ const _Carousel = styled.section.attrs({
 
 class Carousel extends Component {
   state = {
-    scrollY: 0,
     carouselWidth: 0,
   }
 
@@ -83,21 +74,32 @@ class Carousel extends Component {
     const innerCarousel = document
       .querySelector(".inner-carousel")
       .getBoundingClientRect()
+
     this.setState({
       carouselWidth: innerCarousel.width,
     })
   }
+
   handleScroll = () => {
-    const outerCarousel = document
+    const outerCarouselTop = document
       .querySelector(".outer-carousel")
-      .getBoundingClientRect()
-    this.setState({
-      scrollY: outerCarousel.top,
-    })
+      .getBoundingClientRect().top
+
+    const innerCarousel = document.querySelector(".inner-carousel")
+
+    const carouselProgress = outerCarouselTop / this.state.carouselWidth
+
+    innerCarousel.setAttribute(
+      "style",
+      `transform: translate3d(${carouselProgress *
+        this.state.carouselWidth *
+        1.1}px, -50%, 0);
+    `
+    )
   }
 
   render() {
-    const { scrollY, carouselWidth } = this.state
+    const { carouselWidth } = this.state
     const {
       type,
       children,
@@ -120,7 +122,6 @@ class Carousel extends Component {
           >
             <_InnerContainer>
               <_Carousel
-                scrollY={scrollY}
                 carouselWidth={carouselWidth}
                 carouselClass={carouselClass}
               >
@@ -141,7 +142,7 @@ class Carousel extends Component {
             <_InnerApplicationContainer>
               <InnerGridContainer>
                 <HeadingWithBody title={title} bgColour="light-gray pv4">
-                  <_Carousel scrollY={scrollY} carouselWidth={carouselWidth}>
+                  <_Carousel carouselWidth={carouselWidth}>
                     {children}
                   </_Carousel>
                 </HeadingWithBody>
