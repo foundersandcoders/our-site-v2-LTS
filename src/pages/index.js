@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 import { TESTIMONIAL_CAROUSEL, DOWN_CURSOR } from "../constants"
+import { withPrefix } from "gatsby"
 
 import dwyl from "../assets/logos/cooperate_logos/dwyl_grayscale.png"
 import gaza_sky_geeks from "../assets/logos/cooperate_logos/gaza_sky_geeks_grayscale.png"
@@ -9,8 +10,6 @@ import space4 from "../assets/logos/cooperate_logos/Space4.svg"
 import cotech from "../assets/logos/cooperate_logos/cotech_grayscale.png"
 import infact from "../assets/logos/cooperate_logos/infact_grayscale.png"
 import stripey_small from "../assets/ui/stripey_small.svg"
-import splashVideo from "../assets/splashes/home_page_video.mp4"
-import splashImage from "../assets/splashes/home_splash.jpg"
 
 import Layout from "../components/Layout"
 import { SmallUnderline } from "../components/Text"
@@ -74,7 +73,6 @@ class IndexPage extends Component {
   }
 
   componentDidMount() {
-    document.querySelector("video").setAttribute("muted", "")
     window.addEventListener("scroll", this.handleScroll)
   }
 
@@ -122,8 +120,8 @@ class IndexPage extends Component {
             />
             <DoubleLine colour="yellow" showing={true} />
             <VideoContainer>
-              <Video muted autoPlay loop playsInline poster={splashImage}>
-                <source src={splashVideo} type="video/mp4" />
+              <Video muted autoPlay loop playsInline poster="">
+                <source src={withPrefix("/home_page_video.mp4?no-cache=1")} />
               </Video>
             </VideoContainer>
             <HeadingBody
