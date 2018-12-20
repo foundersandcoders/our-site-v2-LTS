@@ -197,7 +197,7 @@ class ApplyPage extends Component {
 
           <InnerGridContainer className="mb7-ns mb5-m pb4">
             <HeadingWithBody
-              title="Course prerequesites"
+              title="Course prerequisites"
               className="mb3 mb0-l mr7-m"
             >
               <PreReq title="Create a Github Account">
@@ -236,9 +236,11 @@ class ApplyPage extends Component {
                     <_ListItem>Basic Data Structures</_ListItem>
                     <_ListItem>Basic Algorithm Scripting</_ListItem>
                   </ul>
-                  <h3 className="underline mt4 mb2">
-                    Create a one-page website
-                  </h3>
+                </div>
+              </PreReq>
+
+              <PreReq title="Create a one-page website">
+                <div>
                   Create a one-page website in HTML and CSS (using some vanilla
                   JavaScript if you’d like) and host it on GitHub Pages.{" "}
                   <_ExternalLink href="https://www.mokacoding.com/blog/your-git-log-should-tell-a-story/">
