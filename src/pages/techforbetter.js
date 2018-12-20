@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react"
+import Helmet from "react-helmet"
 import styled from "styled-components"
 
 import link_arrow_button from "../assets/ui/link_arrow_button.svg"
@@ -117,6 +118,13 @@ class TechForBetterPage extends Component {
 
     return (
       <Layout location={location}>
+        <Helmet>
+          <meta
+            name="description"
+            content="Discover our Tech for Better programme to design, test and build new digital service ideas using developers in London and Gaza."
+          />
+          <title>Tech For Better - Founders and Coders</title>
+        </Helmet>
         <Cursor cursor={cursor} colour="blue" />
         <main>
           <InnerGridContainer>

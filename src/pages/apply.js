@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Helmet from "react-helmet"
 import styled from "styled-components"
 import * as r from "ramda"
 
@@ -139,6 +140,13 @@ class ApplyPage extends Component {
 
     return (
       <Layout location={location}>
+        <Helmet>
+          <meta
+            name="description"
+            content="Apply to our tuition-free, peer-led coding bootcamp for the most effective and least expensive route into the tech industry."
+          />
+          <title>Apply to our Course - Founders and Coders</title>
+        </Helmet>
         <Cursor cursor={cursor} colour="green" />
         <main>
           <InnerGridContainer>
