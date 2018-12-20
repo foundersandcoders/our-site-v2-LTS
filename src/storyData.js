@@ -262,7 +262,7 @@ const stories = [
   {
     storyType: "in_the_press",
     img: get_with_the_program,
-    heading: "Get with the program: the codeers offering training for free",
+    heading: "Get with the program: the coders offering training for free",
     subtitle:
       "It’s the must-have skill-set of the 21st century, yet unless you’re rich enough to afford the training, or fortunate enough to be attending…",
     author: "Kit Buchan",
