@@ -52,10 +52,10 @@ const _ListItem = styled.li`
   margin-left: 20px;
 `
 const VerticalStepsContainer = styled.div`
-  @media screen and (max-height: 700px), screen and (max-width: 65em) {
+  @media screen and (max-height: 699px), screen and (max-width: 1039px) {
     display: block;
   }
-  @media screen and (min-height: 700px) and (min-width: 65em) {
+  @media screen and (min-height: 700px) and (min-width: 1040px) {
     display: none;
   }
 `

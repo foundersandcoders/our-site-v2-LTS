@@ -14,7 +14,7 @@ const _ApplicationsStatus = styled.section.attrs({
     padding-bottom: var(--spacing-extra-small);
   `};
 
-  @media screen and (min-height: 700px) and (min-width: 65em) {
+  @media screen and (min-height: 700px) and (min-width: 1040px) {
     position: absolute;
   }
 `
