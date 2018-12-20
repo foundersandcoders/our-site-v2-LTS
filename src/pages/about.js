@@ -49,6 +49,9 @@ const StaffPanel = styled(Panel).attrs({
     clip-path: polygon(0 100%, 0 3.25rem, 3% 6.5rem, 10% 0, 17% 6.5rem, 24% 0, 31% 6.5rem, 38% 0, 45% 6.5rem, 52% 0, 59% 6.5rem, 66% 0, 73% 6.5rem, 80% 0, 87% 6.5rem, 94% 0, 100% 6.5rem, 100% 100%);
     padding-top: 10rem;
     `}
+    @media screen and (max-height: 700px) {
+      height: auto;
+    }
 `
 
 class AboutPage extends Component {
