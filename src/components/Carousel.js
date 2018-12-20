@@ -46,10 +46,15 @@ const _Carousel = styled.section.attrs({
   style: ({ scrollY, carouselWidth }) => {
     const carouselProgress = scrollY / carouselWidth
     return {
-      transform: `translate(${carouselProgress * carouselWidth * 1.1}px, -50%)`,
+      transform: `translate3d(${carouselProgress *
+        carouselWidth *
+        1.1}px, -50%, 0)`,
     }
   },
 })`
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  filter: blur(0);
   ${({ carouselClass }) => carouselClass};
   z-index: -1;
   top: 50%;
