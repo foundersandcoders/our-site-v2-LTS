@@ -51,6 +51,14 @@ const _ListItem = styled.li`
   list-style-position: outside;
   margin-left: 20px;
 `
+const VerticalStepsContainer = styled.div`
+  @media screen and (max-height: 700px), screen and (max-width: 65em) {
+    display: block;
+  }
+  @media screen and (min-height: 700px) and (min-width: 65em) {
+    display: none;
+  }
+`
 
 const _Bold = styled.span.attrs({
   className: "fw5",
@@ -165,7 +173,7 @@ class ApplyPage extends Component {
             </HeadingWithBody>
           </InnerGridContainer>
           <section className="mb7-ns mb6 pb5-ns pb0">
-            <ExtendedPanel className="bg-light-gray db-l dn">
+            <ExtendedPanel className="bg-light-gray">
               <Carousel
                 type={APPLICATION_CAROUSEL}
                 title="How do I apply?"
@@ -176,15 +184,15 @@ class ApplyPage extends Component {
                 <ApplicationSteps />
               </Carousel>
             </ExtendedPanel>
-            <div className="bg-light-gray ma0 db dn-l">
+            <VerticalStepsContainer className="bg-light-gray ma0">
               <HeadingWithBody
                 title="How do I apply?"
-                className="db dn-l bg-light-gray pv6 mr7-m"
+                className="bg-light-gray pv6 mr7-m"
               >
                 <ApplicationSteps />
               </HeadingWithBody>
               <ApplicationsStatus areOpen={APPLICATIONS_OPEN} />
-            </div>
+            </VerticalStepsContainer>
           </section>
 
           <InnerGridContainer className="mb7-ns mb5-m pb4">

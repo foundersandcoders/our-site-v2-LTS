@@ -172,6 +172,14 @@ const ExtendedPanel = styled.section.attrs({
     left: 0;
     box-shadow: 9999px 0 0 var(--light-gray);
   }
+
+  @media screen and (min-height: 700px) and (min-width: 65em) {
+    display: block;
+  }
+
+  @media screen and (max-height: 700px), screen and (max-width: 65em) {
+    display: none;
+  }
 `
 
 export { PageHeadingPanel, Panel, NextPanel, ExtendedPanel }
