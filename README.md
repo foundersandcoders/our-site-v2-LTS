@@ -13,10 +13,15 @@ We hope you love the fun, contemporary style and enjoy using the new site!
 - [Maintenance notes](#Maintenance-tasks-for-the-FAC-team-and-Course-Facilitator)
 - [Contributing to the site](#Contributing)
 - [Suggestions for contributions](#Suggestions-for-additional-work)
-- [Running Locally](#Instructions-for-running-locally)
+- [Running locally](#Instructions-for-running-locally)
 - [foundersandcoders.com hosting information](#Hosting-info)
 
-## Maintenance tasks for the FAC team and Course Facilitator
+## Responsbility for routine maintenance
+
+- @yvonne-liu will be updating the Apply page
+- The current course facilitator will coordinate all other maintenance: reviewing issues, assigning work, reviewing PRs, and so on.
+
+## Maintenance tasks for the FAC team and course facilitator
 
 To make routine maintenance simple, we've put most of the information that changes regularly all in one place - `maintenance.js` in the root of the project.
 
@@ -26,13 +31,13 @@ By editing this file you can:
 - Update the table of cohort dates
 - Update any of the various form URLs. These are:
   _ Application form
-  _ Expression of Interest form
-  _ Partner Contact form (Hire page)
+  _ Expression of interest form
+  _ Contact Joe (Hire page)
   _ Tech for Better application form
 
 FAC staff and the Course Facilitator are encouraged to create PRs and merge changes to this file without following the full contributing process. The same applies for the changes below.
 
-**Updating the Pre-requisites:**
+**Updating the Prerequistites:**
 
 The pre-requisites can be found in `src/components/StudentApplicationSteps.js`. You will have to edit the components freehand, and if the amount of text changes dramatically, you may need to tweak margins so the text looks well spaced on mobile, tablet and desktop. Use `<_ExternalLinks href="...">` for (shock) external links and the specially styled `<_ListItem >` within a `ul` for bulleted lists.
 
@@ -80,14 +85,16 @@ const UniqueName = ({ color }) => {
 
 We **welcome** additions and enhancements from the Founders and Coders community!
 
-This guidance is for those wishing to add bug fixes, features or enhancements to the site. For routine maintenance (e.g. opening applications) see the [maintenance section](#Maintenance-tasks-for-the-FAC-team-and-Course-Facilitator).
+The current course facilitator will coordinate additions and enhancements to the site. This guidance is for those wishing to support the current course facilitator by adding bug fixes, features or enhancements to the site.
+
+For routine maintenance (e.g. opening applications) see the [maintenance section](#Maintenance-tasks-for-the-FAC-team-and-Course-Facilitator).
 
 ### Before starting work
 
 1. Search this repo's [issues](https://github.com/foundersandcoders/fac-new-website/issues) to see if an issue exists for the problem you are solving.
 2. If the issue does not exist, create it. Include a descriptive body.
 3. If your new issue relates to any others, reference those issues in the body. This enables others to follow the history of the topic.
-4. Indicate on the issue that you would like to take it on. Assign a reviewer if you need a response.
+4. Indicate on the issue that you would like to take it on. Assign the **current course facilitator**, so that they know what you're working on.
 5. Assign [the appropriate label](#labels).
 6. Once you are sure of what you need to do and that it is needed, assign yourself to the issue.
 7. Clone, and create a new branch for your work
@@ -103,11 +110,11 @@ This guidance is for those wishing to add bug fixes, features or enhancements to
 
 #### Commits
 
-The commit history of each file should tell a story
+The commit history of each file should tell a story:
 
 - [Describe your changes well](https://gist.github.com/mikepea/863f63d6e37281e329f8#describe-your-changes-well-in-each-commit)
 - [Commits should be granular](https://gist.github.com/mikepea/863f63d6e37281e329f8#keep-it-small)
-- **It is important that you reference an issue in each commit** - use multiline messages
+- **Be sure to reference an issue in each commit** - use multiline messages
 
 #### Pull Requests
 
@@ -116,10 +123,11 @@ Once you have finished your work, push up your branch and make a pull request. R
 Make sure your PR has the following:
 
 1. [A descriptive title](https://gist.github.com/mikepea/863f63d6e37281e329f8#ensure-there-is-a-solid-title-and-summary) - distinct from others and therefore searchable
-2. [A body with details of everything in the pull.](https://gist.github.com/mikepea/863f63d6e37281e329f8#ensure-there-is-a-solid-title-and-summary)
-3. Reference to any/all related issues in description.
+2. [A body with details of everything in the pull](https://gist.github.com/mikepea/863f63d6e37281e329f8#ensure-there-is-a-solid-title-and-summary)
+3. Reference to any/all related issues in description
 4. Reviewers
-   - add anyone who you think should be aware of you contents of your PR e.g. anyone else who has collaborated with you on this issue / anyone responsible for maintaining the site
+   - the current course facilitator, who will review all PRs
+   - anyone else who collaborated with you on this issue
 
 ## Suggestions for additional work
 
@@ -179,4 +187,4 @@ eg. techforbetter.foundersandcoders.com redirects to foundersandcoders.com/techf
 
 # Thank you for reading!
 
-P.S. please star this repo 🌟
+P.S. Please star this repo 🌟
