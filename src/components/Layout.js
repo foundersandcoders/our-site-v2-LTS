@@ -72,6 +72,17 @@ class LayoutWithState extends Component {
         >
           <html lang="en" />
           <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-35597887-2"
+          />
+          <script>{`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-35597887-2');
+            `}</script>
         </Helmet>
         <AppWrapper>
           <HideMenu />
