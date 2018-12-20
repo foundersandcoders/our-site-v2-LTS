@@ -17,7 +17,7 @@ We hope you love the fun, contemporary style and enjoy using the new site!
 ## Responsbility for routine maintenance
 
 - @yvonne-liu will be updating the Apply page
-- The current course facilitator will coordinate all other maintenance: reviewing issues, assigning work, reviewing PRs, and so on. 
+- The current course facilitator will coordinate all other maintenance: reviewing issues, assigning work, reviewing PRs, and so on 
 
 ## Maintenance tasks for the FAC team and course facilitator
 
@@ -81,7 +81,7 @@ const UniqueName = ({ color }) => {
 
 We **welcome** additions and enhancements from the Founders and Coders community! 
 
-The current course facilitator will coordinate additions and enhancements to the site. This guidance is for those wishing to support the current course facilitator by adding bug fixes, features or enhancements to the site. 
+The **current course facilitator** will coordinate additions and enhancements to the site. This guidance is for those wishing to support the current course facilitator by adding bug fixes, features or enhancements to the site. 
 
 For routine maintenance (e.g. opening applications) see the [maintenance section](#Maintenance-tasks-for-the-FAC-team-and-Course-Facilitator). 
 
@@ -96,10 +96,10 @@ For routine maintenance (e.g. opening applications) see the [maintenance section
 7. Clone, and create a new branch for your workone, and create a new branch for your work
 
 #### Labels
-`bug` - something in this repo is broken (e.g. a link)
-`discuss` - you'd like the community's input before you start any work
-`question` - you're not actually sure whether this is an issue or not and would like confirmation
-`help wanted` - you would like some help in completing work on this issue
+`bug` - something in this repo is broken (e.g. a link)  
+`discuss` - you'd like the community's input before you start any work  
+`question` - you're not actually sure whether this is an issue or not and would like confirmation  
+`help wanted` - you would like some help in completing work on this issue  
 
 ### Starting work
 
