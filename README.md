@@ -1,12 +1,21 @@
 # Founders and Coders Website
 
-💛💙❤️💚 Welcome to the home of the Founders and Coders website and brand! 💛💙❤️💚
+💛💙❤️💚 Welcome to the home of the Founders and Coders website! 💛💙❤️💚
+
+For brand assets visit [`hq`](https://github.com/foundersandcoders/hq).
 
 ### About
 
-This rebrand and website redesign was directed by @rebeccaradding and lovingly created by [InFact Coop](www.infactcoop.com), an agency composed of Founders and Coders graduates.
+This rebrand and website redesign was directed by @rebeccaradding and lovingly created by [InFact Coop](www.infactcoop.com), an agency composed of Founders and Coders graduates. A rich fabric of influences and inspirations guided us through this creative process, from contemporary web design to modern art movement, including (but not limited to):
 
-We hope you love the fun, contemporary style and enjoy using the new site!
+- [De Stijl](https://en.wikipedia.org/wiki/De_Stijl)
+- [Bahaus](https://en.wikipedia.org/wiki/Bauhaus)
+- [Adobe Hidden Treasures: Bahaus Dessau](https://vimeo.com/274204075)
+- [Bahaus Approached Minimalism](https://dribbble.com/shots/3960551-Bauhaus-approached-minimalism)
+- [The website of Atelier Gymnase](https://www.ateliergymnase.com/), designed by [Jomor Design](https://www.jomordesign.com/)
+- [The Culture page](http://culture.basicagency.com/) of the Basic Agency website
+
+We hope you love the fun, contemporary style and enjoy using the new site! 
 
 ### Contents
 
