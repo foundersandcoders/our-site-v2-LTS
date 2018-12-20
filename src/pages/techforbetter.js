@@ -134,9 +134,13 @@ class TechForBetterPage extends Component {
             <HeadingWithBody title="Overview" className="mr4-m">
               Tech for Better is a pro-bono programme for nonprofits to design,
               test and build new digital service ideas using developers in
-              London and Gaza. Our developers will work closely with you to
-              identify your needs, then build an app that meet those needs and
-              helps you do what you do, but better.{" "}
+              London and Gaza, supported by{" "}
+              <_ExternalLink href="http://intersticia.org/">
+                Interstitia
+              </_ExternalLink>
+              . Our developers will work closely with you to identify your
+              needs, then build an app that meets those needs and helps you do
+              what you do, but better.{" "}
               <span className="b">
                 The only thing it will cost is your time.
               </span>
