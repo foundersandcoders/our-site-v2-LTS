@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Helmet from "react-helmet"
 import styled from "styled-components"
 import { TESTIMONIAL_CAROUSEL, DOWN_CURSOR } from "../constants"
+import { withPrefix } from "gatsby"
 
 import dwyl from "../assets/logos/cooperate_logos/dwyl_grayscale.png"
 import gaza_sky_geeks from "../assets/logos/cooperate_logos/gaza_sky_geeks_grayscale.png"
@@ -10,7 +11,6 @@ import space4 from "../assets/logos/cooperate_logos/Space4.svg"
 import cotech from "../assets/logos/cooperate_logos/cotech_grayscale.png"
 import infact from "../assets/logos/cooperate_logos/infact_grayscale.png"
 import stripey_small from "../assets/ui/stripey_small.svg"
-import splashVideo from "../assets/splashes/home_page_video.mp4"
 
 import Layout from "../components/Layout"
 import { SmallUnderline } from "../components/Text"
@@ -36,10 +36,10 @@ const Video = styled.video.attrs({
   `};
 `
 
-const VideoContainer = styled.section.attrs({
+const VideoContainer = styled.div.attrs({
   className: "flex justify-center mh6-ns mh2 mb7 video-container pt3",
 })`
-  clip-path: polygon(45% 45%, 45% 45%, 45% 45%, 45% 45%);
+  -webkit-clip-path: polygon(45% 45%, 45% 45%, 45% 45%, 45% 45%);
 `
 
 const StripeyContainer = styled.div.attrs({})`
@@ -48,7 +48,7 @@ const StripeyContainer = styled.div.attrs({})`
   clip-path: polygon(0 100%, 0 2%, 25% 0, 50% 2%, 75% 0, 100% 2%, 100% 100%);
 `
 
-const FacsterCards = ({ className }) => (
+const MobileFacsterCards = ({ className }) => (
   <StripeyContainer className={className}>
     <Amelie />
     <Helen />
@@ -87,22 +87,21 @@ class IndexPage extends Component {
       .getBoundingClientRect()
 
     const doubleLineTopOffset = doubleLine.top - 300
-    const video =
-      document.querySelector(".video-container").getBoundingClientRect().top -
-      150
+    const videoContainer = document.querySelector(".video-container")
+    const videoTop = videoContainer.getBoundingClientRect().top - 150
 
-    if (doubleLineTopOffset < 0 && video > 0) {
-      const progress = (video / (video - doubleLineTopOffset)) * 100
-      this.myRef.current.setAttribute(
+    if (doubleLineTopOffset < 0 && videoTop > 0) {
+      const progress = (videoTop / (videoTop - doubleLineTopOffset)) * 100
+      videoContainer.setAttribute(
         "style",
-        `clip-path: polygon(${progress / 2}% ${progress / 2}%,${100 -
+        `-webkit-clip-path: polygon(${progress / 2}% ${progress / 2}%,${100 -
           progress / 2}% ${progress / 2}%, ${100 - progress / 2}% ${100 -
           progress / 2}%, ${progress / 2}% ${100 - progress / 2}%);`
       )
-    } else if (video < 0) {
-      this.myRef.current.setAttribute(
+    } else if (videoTop < 0) {
+      videoContainer.setAttribute(
         "style",
-        `clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);`
+        `-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);`
       )
     }
   }
@@ -128,10 +127,9 @@ class IndexPage extends Component {
               textSize="XL"
             />
             <DoubleLine colour="yellow" showing={true} />
-            <VideoContainer innerRef={this.myRef}>
-              <Video muted autoPlay loop>
-                <source src={splashVideo} type="video/mp4" />
-                Your browser does not support videos
+            <VideoContainer>
+              <Video muted autoPlay loop playsInline poster="">
+                <source src={withPrefix("/home_page_video.mp4?no-cache=1")} />
               </Video>
             </VideoContainer>
             <HeadingBody
@@ -178,8 +176,6 @@ class IndexPage extends Component {
           </section>
           <Carousel
             type={TESTIMONIAL_CAROUSEL}
-            carouselWidth="350vw"
-            carouselLength={{ m: "640vw", ns: "230vw" }}
             component={this}
             carouselClass="padding-left: 300px;"
           >
@@ -189,7 +185,7 @@ class IndexPage extends Component {
             <Ruth />
             <Fatimat />
           </Carousel>
-          <FacsterCards className="db dn-ns" />
+          <MobileFacsterCards className="db dn-ns" />
           <NextPanel component={this} to="/about">
             What is Founders and Coders?
           </NextPanel>

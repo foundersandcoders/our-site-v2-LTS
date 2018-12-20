@@ -11,25 +11,24 @@ import { mouseOnCarousel, mouseOff } from "./Cursor"
 import InnerGridContainer from "./InnerGridContainer"
 
 const _OuterContainer = styled.div.attrs({
-  className: "relative w-100 flex-ns carousel dn",
+  className: "relative w-100 flex-ns outer-carousel dn",
 })`
   background: url(${stripey_small}) repeat;
   clip-path: polygon(0 100%, 0 12%, 25% 0, 50% 12%, 75% 0, 100% 12%, 100% 100%);
   ${breakpoint.ns`
-    clip-path: polygon(0 100%, 0 1.5%, 3% 3%, 10% 0, 17% 3%, 24% 0, 31% 3%, 38% 0, 45% 3%, 52% 0, 59% 3%, 66% 0, 73% 3%, 80% 0, 87% 3%, 94% 0, 100% 3%, 100% 100%);
+    clip-path: polygon(0 100%, 0 3.25rem, 3% 6.5rem, 10% 0, 17% 6.5rem, 24% 0, 31% 6.5rem, 38% 0, 45% 6.5rem, 52% 0, 59% 6.5rem, 66% 0, 73% 6.5rem, 80% 0, 87% 6.5rem, 94% 0, 100% 6.5rem, 100% 100%);
     padding-top: 15%;
     background-attachment: fixed;
-    height: ${({ carouselLength: { ns } }) => ns};
-  `};
-  ${breakpoint.m`
-    height: ${({ carouselLength: { m } }) => m};
+    height: ${({ carouselWidth, extraPadding }) =>
+      `${carouselWidth * extraPadding}px`}
   `};
 `
 
 const _OuterApplicationContainer = styled.div.attrs({
-  className: "relative w-100 flex-ns carousel dn",
+  className: "relative w-100 flex-ns outer-carousel dn",
 })`
-  height: ${({ carouselLength }) => carouselLength};
+  height: ${({ carouselWidth, extraPadding }) =>
+    `${carouselWidth * extraPadding}px`};
 `
 const _InnerContainer = styled.div.attrs({
   className: "sticky w-100 overflow-hidden top-0",
@@ -43,44 +42,67 @@ const _InnerApplicationContainer = styled.div.attrs({
 `
 
 const _Carousel = styled.section.attrs({
-  className: "flex relative items-center justify-between w-75",
-  style: ({ scrollY }) => ({
-    transform: `translate(${0.12 * scrollY}vw, -50%)`,
-  }),
+  className: "flex relative items-center justify-between inner-carousel fl",
+  style: ({ scrollY, carouselWidth }) => {
+    const carouselProgress = scrollY / carouselWidth
+    return {
+      transform: `translate3d(${carouselProgress *
+        carouselWidth *
+        1.1}px, -50%, 0)`,
+    }
+  },
 })`
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  filter: blur(0);
   ${({ carouselClass }) => carouselClass};
   z-index: -1;
   top: 50%;
   will-change: transform;
-  width: ${({ carouselWidth }) => carouselWidth};
 `
 
 class Carousel extends Component {
-  state = { scrollY: 0 }
+  state = {
+    scrollY: 0,
+    carouselWidth: 0,
+  }
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll)
+    window.addEventListener("resize", this.handleResize)
+    this.handleScroll()
+    this.handleResize()
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll)
+    window.removeEventListener("resize", this.handleResize)
   }
 
-  handleScroll = () => {
-    const carousel = document.querySelector(".carousel").getBoundingClientRect()
+  handleResize = () => {
+    const innerCarousel = document
+      .querySelector(".inner-carousel")
+      .getBoundingClientRect()
     this.setState({
-      scrollY: carousel.top,
+      carouselWidth: innerCarousel.width,
+    })
+  }
+  handleScroll = () => {
+    const outerCarousel = document
+      .querySelector(".outer-carousel")
+      .getBoundingClientRect()
+    this.setState({
+      scrollY: outerCarousel.top,
     })
   }
 
   render() {
-    const { scrollY } = this.state
+    const { scrollY, carouselWidth } = this.state
     const {
       type,
       children,
-      carouselWidth,
-      carouselLength,
       component,
+      extraPadding = "1",
       applicationsAreOpen,
       className,
       title,
@@ -91,7 +113,8 @@ class Carousel extends Component {
         return (
           <_OuterContainer
             className={className}
-            carouselLength={carouselLength}
+            carouselWidth={carouselWidth}
+            extraPadding={extraPadding}
             onMouseEnter={() => mouseOnCarousel(component)}
             onMouseLeave={() => mouseOff(component)}
           >
@@ -110,7 +133,8 @@ class Carousel extends Component {
         return (
           <_OuterApplicationContainer
             className={className}
-            carouselLength={carouselLength}
+            carouselWidth={carouselWidth}
+            extraPadding={extraPadding}
             onMouseEnter={() => mouseOnCarousel(component)}
             onMouseLeave={() => mouseOff(component)}
           >
