@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Helmet from "react-helmet"
 import styled from "styled-components"
 import { breakpoint } from "../styles/utils"
 
@@ -87,6 +88,13 @@ class AboutPage extends Component {
 
     return (
       <Layout location={location}>
+        <Helmet>
+          <meta
+            name="description"
+            content="Find out about Founders and Coders, a cooperative community made up of developers from diverse backgrounds."
+          />
+          <title>About Us - Founders and Coders</title>
+        </Helmet>
         <Cursor cursor={cursor} colour="red" />
         <InnerGridContainer>
           <PageHeadingPanel title="What is Founders and Coders?" />

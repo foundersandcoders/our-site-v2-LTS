@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Helmet from "react-helmet"
 import styled from "styled-components"
 import { TESTIMONIAL_CAROUSEL, DOWN_CURSOR } from "../constants"
 
@@ -112,6 +113,13 @@ class IndexPage extends Component {
 
     return (
       <Layout location={location}>
+        <Helmet>
+          <meta
+            name="description"
+            content="Discover Founders and Coders, a tuition-free, peer-led coding bootcamp in London."
+          />
+          <title>Coding Bootcamp in London - Founders and Coders</title>
+        </Helmet>
         <Cursor cursor={cursor} colour="blue" />
         <main>
           <InnerGridContainer>
