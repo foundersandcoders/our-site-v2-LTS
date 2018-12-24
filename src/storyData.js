@@ -36,7 +36,7 @@ const stories = [
   {
     storyType: "by_us",
     img: becky_and_johanna,
-    heading: "From Coders to Founders: The Workbird story",
+    heading: "From Coders to Founders: The Workerbird story",
     subtitle:
       "How Becky Botha and Johanna Herman learnt to code and launched Workerbird, a Tech for Good startup, in less than a year",
     author: "Founders and Coders",
