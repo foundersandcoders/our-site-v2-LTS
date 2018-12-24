@@ -128,17 +128,23 @@ class Cursor extends Component {
   }
 
   handleScroll = () => {
+    const { scrolling } = this.state
     this._timeout && clearTimeout(this._timeout)
 
-    this.setState({
-      scrolling: true,
-    })
+    if (!scrolling) {
+      this.setState({
+        scrolling: true,
+      })
+    }
 
     this._timeout = setTimeout(() => {
       this._timeout = null
-      this.setState({
-        scrolling: false,
-      })
+
+      if (scrolling) {
+        this.setState({
+          scrolling: false,
+        })
+      }
     }, 300)
   }
 

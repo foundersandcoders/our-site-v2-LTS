@@ -82,16 +82,17 @@ class IndexPage extends Component {
   }
 
   handleScroll = () => {
-    const doubleLine = document
+    const { showing } = this.state
+    const doubleLineBottom = document
       .querySelector(".double-line")
-      .getBoundingClientRect()
+      .getBoundingClientRect().bottom
 
-    const doubleLineTopOffset = doubleLine.top - 300
+    const doubleLineOffset = doubleLineBottom - 500
     const videoContainer = document.querySelector(".video-container")
     const videoTop = videoContainer.getBoundingClientRect().top - 150
 
-    if (doubleLineTopOffset < 0 && videoTop > 0) {
-      const progress = (videoTop / (videoTop - doubleLineTopOffset)) * 100
+    if (doubleLineOffset < 0 && videoTop > 0) {
+      const progress = (videoTop / (videoTop - doubleLineOffset)) * 100
       videoContainer.setAttribute(
         "style",
         `-webkit-clip-path: polygon(${progress / 2}% ${progress / 2}%,${100 -
@@ -104,10 +105,20 @@ class IndexPage extends Component {
         `-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);`
       )
     }
+
+    if (doubleLineBottom >= 500 && !showing) {
+      this.setState({
+        showing: true,
+      })
+    } else if (0 <= doubleLineBottom && doubleLineBottom <= 500 && showing) {
+      this.setState({
+        showing: false,
+      })
+    }
   }
 
   render() {
-    const { cursor } = this.state
+    const { cursor, showing } = this.state
     const { location } = this.props
 
     return (
@@ -126,7 +137,7 @@ class IndexPage extends Component {
               title="we are Founders and Coders"
               textSize="XL"
             />
-            <DoubleLine colour="yellow" showing={true} />
+            <DoubleLine colour="yellow" showing={showing} />
             <VideoContainer>
               <Video muted autoPlay loop playsInline poster="">
                 <source src={withPrefix("/home_page_video.mp4?no-cache=1")} />
