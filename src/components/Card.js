@@ -71,10 +71,6 @@ const _Photo = styled.a.attrs({
 })`
   transition: 0.75s ease;
   background: ${({ blueImg }) => `url(${blueImg})`};
-  &::after {
-    content: ${({ normalImg }) => `url(${normalImg})`};
-    visibility: hidden;
-  }
   &:hover {
     background: ${({ normalImg }) => `url(${normalImg})`};
     background-size: cover;
@@ -98,6 +94,13 @@ const _Photo = styled.a.attrs({
   ${breakpoint.m`
     width: 55vw;
   `};
+`
+
+const PreloadPhoto = styled.div`
+  background: ${({ normalImg }) => `url(${normalImg})`};
+  display: none;
+  width: 0px;
+  height: 0px;
 `
 
 const _StaffPhoto = styled(_Photo)`
@@ -215,6 +218,7 @@ const Card = ({
             target="_blank"
             rel="noopener noreferrer"
           />
+          <PreloadPhoto normalImg={normalImg} />
           <Title
             imgHeight={imgHeight}
             firstName={firstName}
@@ -237,6 +241,7 @@ const Card = ({
           target="_blank"
           rel="noopener noreferrer"
         />
+        <PreloadPhoto normalImg={normalImg} />
         <Title
           imgHeight={imgHeight}
           firstName={firstName}
@@ -273,6 +278,7 @@ const StaffCard = ({
       target="_blank"
       rel="noopener noreferrer"
     />
+    <PreloadPhoto normalImg={normalImg} />
     <StaffTitle
       imgHeight={imgHeight}
       firstName={firstName}
