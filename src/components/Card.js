@@ -72,8 +72,11 @@ const _Photo = styled.a.attrs({
   transition: 0.75s ease;
   background: ${({ blueImg }) => `url(${blueImg})`};
   &::after {
-    content: ${({ normalImg }) => `url(${normalImg})`};
-    visibility: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: ${({ normalImg }) => `url(${normalImg})`};
+    content: "";
   }
   &:hover {
     background: ${({ normalImg }) => `url(${normalImg})`};
