@@ -62,7 +62,7 @@ const Footer = () => (
       />
       <Icon to="https://twitter.com/founderscoders" img={twitter_logo_white} />
       <Icon
-        to="https://www.linkedin.com/school/founders-&-coders/"
+        to="https://www.linkedin.com/school/founders-and-coders/"
         img={linkedin_logo_white}
       />
     </div>
