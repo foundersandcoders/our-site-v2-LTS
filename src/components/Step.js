@@ -40,12 +40,13 @@ const _Step = styled.div.attrs({
         : "justify-start overflow-y-visible pv4-l pb0"
     }`,
 })`
-  ${breakpoint.l`
-  width: 36vw;
-  height: 70vh;
-  max-height: 75vh;
-  max-width: 490px;
-  `};
+  @media screen and (min-width: 1040px) and (min-height: 700px) {
+    width: 36vw;
+    height: 70vh;
+    max-height: 75vh;
+    max-width: 490px;
+  }
+
   border-bottom: ${({ last }) =>
     `${last ? `0.125rem solid rgba(0, 0, 0, 0.2)` : null}`};
 `

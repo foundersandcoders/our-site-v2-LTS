@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Helmet from "react-helmet"
 import styled from "styled-components"
 
 import { DOWN_CURSOR } from "../constants"
@@ -118,6 +119,13 @@ class HirePage extends Component {
 
     return (
       <Layout location={location}>
+        <Helmet>
+          <meta
+            name="description"
+            content="Discover how to work with Founders and Coders to hire talented developers from diverse backgrounds."
+          />
+          <title>Hire Our Graduates - Founders and Coders</title>
+        </Helmet>
         <Cursor cursor={cursor} colour="green" />
         <InnerGridContainer>
           <PageHeadingPanel title="Hire our graduates" />

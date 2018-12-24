@@ -62,7 +62,7 @@ const Footer = () => (
       />
       <Icon to="https://twitter.com/founderscoders" img={twitter_logo_white} />
       <Icon
-        to="https://www.linkedin.com/school/founders-&-coders/"
+        to="https://www.linkedin.com/school/founders-and-coders/"
         img={linkedin_logo_white}
       />
     </div>
@@ -171,6 +171,14 @@ const ExtendedPanel = styled.section.attrs({
     bottom: 0;
     left: 0;
     box-shadow: 9999px 0 0 var(--light-gray);
+  }
+
+  @media screen and (max-height: 699px), screen and (max-width: 1039px) {
+    display: none;
+  }
+
+  @media screen and (min-height: 700px) and (min-width: 1040px) {
+    display: block;
   }
 `
 

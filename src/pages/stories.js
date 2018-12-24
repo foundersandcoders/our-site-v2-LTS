@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Helmet from "react-helmet"
 import styled from "styled-components"
 
 import arrow_right_black from "../assets/ui/arrow_right_black.svg"
@@ -120,6 +121,13 @@ class StoriesPage extends Component {
 
     return (
       <Layout location={location}>
+        <Helmet>
+          <meta
+            name="description"
+            content="Read stories by and about our diverse community making a social impact with technology all over the world."
+          />
+          <title>Our Stories - Founders and Coders</title>
+        </Helmet>
         <Cursor cursor={cursor} colour="green" />
         <main>
           <InnerGridContainer>

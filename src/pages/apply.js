@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Helmet from "react-helmet"
 import styled from "styled-components"
 import * as r from "ramda"
 
@@ -50,6 +51,14 @@ const _ListItem = styled.li`
   list-style-type: initial;
   list-style-position: outside;
   margin-left: 20px;
+`
+const VerticalStepsContainer = styled.div`
+  @media screen and (max-height: 699px), screen and (max-width: 1039px) {
+    display: block;
+  }
+  @media screen and (min-height: 700px) and (min-width: 1040px) {
+    display: none;
+  }
 `
 
 const _Bold = styled.span.attrs({
@@ -131,6 +140,13 @@ class ApplyPage extends Component {
 
     return (
       <Layout location={location}>
+        <Helmet>
+          <meta
+            name="description"
+            content="Apply to our tuition-free, peer-led coding bootcamp for the most effective and least expensive route into the tech industry."
+          />
+          <title>Apply to our Course - Founders and Coders</title>
+        </Helmet>
         <Cursor cursor={cursor} colour="green" />
         <main>
           <InnerGridContainer>
@@ -165,7 +181,7 @@ class ApplyPage extends Component {
             </HeadingWithBody>
           </InnerGridContainer>
           <section className="mb7-ns mb6 pb5-ns pb0">
-            <ExtendedPanel className="bg-light-gray db-l dn">
+            <ExtendedPanel className="bg-light-gray">
               <Carousel
                 type={APPLICATION_CAROUSEL}
                 title="How do I apply?"
@@ -176,20 +192,20 @@ class ApplyPage extends Component {
                 <ApplicationSteps />
               </Carousel>
             </ExtendedPanel>
-            <div className="bg-light-gray ma0 db dn-l">
+            <VerticalStepsContainer className="bg-light-gray ma0">
               <HeadingWithBody
                 title="How do I apply?"
-                className="db dn-l bg-light-gray pv6 mr7-m"
+                className="bg-light-gray pv6 mr7-m"
               >
                 <ApplicationSteps />
               </HeadingWithBody>
               <ApplicationsStatus areOpen={APPLICATIONS_OPEN} />
-            </div>
+            </VerticalStepsContainer>
           </section>
 
           <InnerGridContainer className="mb7-ns mb5-m pb4">
             <HeadingWithBody
-              title="Course prerequesites"
+              title="Course prerequisites"
               className="mb3 mb0-l mr7-m"
             >
               <PreReq title="Create a Github Account">
@@ -228,9 +244,11 @@ class ApplyPage extends Component {
                     <_ListItem>Basic Data Structures</_ListItem>
                     <_ListItem>Basic Algorithm Scripting</_ListItem>
                   </ul>
-                  <h3 className="underline mt4 mb2">
-                    Create a one-page website
-                  </h3>
+                </div>
+              </PreReq>
+
+              <PreReq title="Create a one-page website">
+                <div>
                   Create a one-page website in HTML and CSS (using some vanilla
                   JavaScript if you’d like) and host it on GitHub Pages.{" "}
                   <_ExternalLink href="https://www.mokacoding.com/blog/your-git-log-should-tell-a-story/">

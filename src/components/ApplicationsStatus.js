@@ -5,7 +5,7 @@ import { breakpoint } from "../styles/utils"
 
 const _ApplicationsStatus = styled.section.attrs({
   className: ({ areOpen }) =>
-    `pv3 pv4-m left-0-l bottom-0-l absolute-l w-100 tc font-3 fw5 bg-${
+    `pv3 pv4-m left-0-l bottom-0-l w-100 tc font-3 fw5 bg-${
       areOpen ? "blue white" : "yellow black"
     }`,
 })`
@@ -13,6 +13,10 @@ const _ApplicationsStatus = styled.section.attrs({
     padding-top: var(--spacing-extra-small);
     padding-bottom: var(--spacing-extra-small);
   `};
+
+  @media screen and (min-height: 700px) and (min-width: 1040px) {
+    position: absolute;
+  }
 `
 
 const _Button = styled.button.attrs({

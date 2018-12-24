@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Helmet from "react-helmet"
 import styled from "styled-components"
 import { breakpoint } from "../styles/utils"
 
@@ -49,6 +50,9 @@ const StaffPanel = styled(Panel).attrs({
     clip-path: polygon(0 100%, 0 3.25rem, 3% 6.5rem, 10% 0, 17% 6.5rem, 24% 0, 31% 6.5rem, 38% 0, 45% 6.5rem, 52% 0, 59% 6.5rem, 66% 0, 73% 6.5rem, 80% 0, 87% 6.5rem, 94% 0, 100% 6.5rem, 100% 100%);
     padding-top: 10rem;
     `}
+    @media screen and (max-height: 700px) {
+      height: auto;
+    }
 `
 
 class AboutPage extends Component {
@@ -88,6 +92,13 @@ class AboutPage extends Component {
 
     return (
       <Layout location={location}>
+        <Helmet>
+          <meta
+            name="description"
+            content="Find out about Founders and Coders, a cooperative community made up of developers from diverse backgrounds."
+          />
+          <title>About Us - Founders and Coders</title>
+        </Helmet>
         <Cursor cursor={cursor} colour="red" />
         <InnerGridContainer>
           <PageHeadingPanel title="What is Founders and Coders?" />
