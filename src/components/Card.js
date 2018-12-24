@@ -33,6 +33,7 @@ const Container = styled.div.attrs({
   width: ${({ cardWidth: { s: cardWidth_s } }) => cardWidth_s};
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: var(--spacing-large);
 
   ${({ cardHeight: { ns: cardHeight_ns }, cardWidth: { ns: cardWidth_ns } }) =>
     breakpoint.ns`
@@ -55,15 +56,16 @@ const Container = styled.div.attrs({
 `
 
 const FacsterContainer = styled(Container)`
+  margin-bottom: 0;
   ${breakpoint.ns`
     margin-right: 12em;
     margin-left: 12em;
-    `};
+  `};
 
   ${breakpoint.m`
     margin-right: 13em;
     margin-left: 13em;
-    `};
+  `};
 `
 
 const _Photo = styled.a.attrs({
