@@ -142,7 +142,7 @@ const NextPanel = ({ component, to, children, topBorder }) => (
       onMouseLeave={() => mouseOff(component)}
     >
       <StyledLink
-        className="bg-black flex items-start justify-center pointer link min-828-l"
+        className="bg-black flex items-start justify-center pointer link min-828-l pv5 pv0-ns"
         to={to}
       >
         <InnerGridContainer className="w-100">
@@ -152,7 +152,7 @@ const NextPanel = ({ component, to, children, topBorder }) => (
             className="flex-column flex-row-l center mh2 mh0-l pb6-m pb0-l"
             nextpanel
           >
-            <div className="w-25 mb3 mb0-ns">
+            <div className="w-25 mb5 mb0-ns">
               <OffsetUnderlineText
                 className="ml7-l ml5-m"
                 underlineColour="blue"
