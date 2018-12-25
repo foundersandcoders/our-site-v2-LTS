@@ -14,10 +14,13 @@ const _Header = styled.header.attrs({
 `
 
 const _TopNav = styled.nav.attrs({
-  className: "flex w-100 w-50-m w-75-l justify-between mr4 absolute right-0",
+  className: "flex w-100 w-50-m justify-between absolute right-0",
 })`
   ${breakpoint.ql`
-    width: 74.1%;
+    width: 78.1%;
+  `};
+  ${breakpoint.l`
+    width: 78.1%;
   `};
 `
 
