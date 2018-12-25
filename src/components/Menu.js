@@ -7,9 +7,7 @@ import HomeLogo from "./HomeLogo"
 import iconLogo from "../assets/logos/logo-mobile.png"
 import { breakpoint } from "../styles/utils"
 
-const universalTransition = "transition: 1s ease-in-out"
-const mobileMenuTransition =
-  "transition: all 1s ease-in-out 0s, opacity 0.5s ease-in-out 0.1s"
+const universalTransition = "transition: 1s ease-in-out 0s"
 
 const menuItems = [
   { number: "01", item: "what and who", link: "/about" },
@@ -134,7 +132,7 @@ const MenuContainer = styled.div`
 const MenuInnerContainer = styled.div.attrs({
   className: "bg-white flex flex-column flex-row-ns",
 })`
-  ${mobileMenuTransition};
+  ${universalTransition};
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -150,7 +148,6 @@ const MenuInnerContainer = styled.div.attrs({
   ${breakpoint.s`
     position: fixed;
     top: ${({ active }) => (active ? "0" : "-110%")};
-    opacity:  ${({ active }) => (active ? "1" : "0")};
     pointer-events:  ${({ active }) => (active ? "auto" : "none")};
     right: auto;
     left: 0;
