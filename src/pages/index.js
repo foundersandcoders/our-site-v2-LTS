@@ -157,7 +157,7 @@ class IndexPage extends Component {
           </InnerGridContainer>
           <section className="mb7-ns mb5">
             <InnerGridContainer>
-              <SmallUnderline className="ml2 ml6-ns">
+              <SmallUnderline className="ml2 ml6-ns pl2-m">
                 We proudly co-operate with
               </SmallUnderline>
             </InnerGridContainer>
