@@ -13,7 +13,7 @@ const Container = styled.div`
 
 const LogoStyled = styled.img.attrs({
   className: "db aspect-ratio mt6",
-  src: logoBlack,
+  src: ({ color }) => (color && color !== "yellow" ? logoWhite : logoBlack),
 })`
   padding-bottom: 43.48%;
   height: 107px;
