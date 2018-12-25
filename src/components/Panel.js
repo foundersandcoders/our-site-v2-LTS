@@ -95,7 +95,10 @@ const Panel = styled.section.attrs({
 })`
   height: ${({ height }) => height};
   width: ${({ width = "inherit" }) => width};
-  ${({ nextpanel }) => (nextpanel ? "" : "margin-top: 192px")};
+  ${({ nextpanel }) => (nextpanel ? "" : "margin-top: 100px")};
+  ${breakpoint.ns`
+    ${({ nextpanel }) => (nextpanel ? "" : "margin-top: 192px")};
+  `};
 `
 
 const PageHeadingPanel = ({ textSize, title }) => {

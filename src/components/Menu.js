@@ -318,9 +318,9 @@ class Menu extends Component {
           <MenuAnimatedSVG active={menuActive} />
         </StickyMenuSquare>
         <MobileNavBar>
-          <a href="/">
+          <Link to="/">
             <RoundLogoMobile />
-          </a>
+          </Link>
         </MobileNavBar>
       </div>
     )
