@@ -3,8 +3,8 @@
 */
 
 /* CSS reset */
-@import "./_reset";
 @import "tachyons-custom/src/_normalize";
+@import "./_reset";
 
 /* imports all tachyons modules
    (postcss looks for them from node_modules)
