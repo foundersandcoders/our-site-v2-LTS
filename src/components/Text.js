@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import * as r from "ramda"
+import { Link } from "gatsby"
+
 import { breakpoint } from "../styles/utils"
 
 const OffsetUnderline = styled.span.attrs({
@@ -143,7 +145,8 @@ const _ExternalLink = styled.a.attrs({
   className: "blue di pointer",
   target: "_blank",
 })``
-const _InternalLink = styled.a.attrs({
+
+const _InternalLink = styled(Link).attrs({
   className: "blue di pointer",
 })``
 

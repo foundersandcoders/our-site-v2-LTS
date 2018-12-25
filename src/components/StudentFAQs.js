@@ -56,7 +56,7 @@ const Learnings = ({ color }) => (
       During the second half of the course, you’ll tackle two extended team
       projects, one based on ideas pitched within the cohort and a final project
       for an external client that you will select as part of the{" "}
-      <_InternalLink href="/techforbetter">Tech for Better</_InternalLink>{" "}
+      <_InternalLink to="/techforbetter">Tech for Better</_InternalLink>{" "}
       programme.
     </p>
   </CollapsableQuestion>
@@ -117,7 +117,7 @@ const Opportunities = ({ color }) => (
   >
     <p>
       We offer a number of bursaries to work with nonprofits through our{" "}
-      <_InternalLink href="/techforbetter">Tech for Better</_InternalLink>{" "}
+      <_InternalLink to="/techforbetter">Tech for Better</_InternalLink>{" "}
       programme and to mentor at our overseas campuses. We also have a growing
       network of partners through which you can find employment as a web
       developer.
@@ -242,8 +242,8 @@ const Visiting = ({ color }) => (
       <br />
       <br />
       If you’re interested in a partnership, please{" "}
-      <_InternalLink href="#contact">contact us</_InternalLink> or visit our{" "}
-      <_InternalLink href="/hire">Hire</_InternalLink> page.
+      <_InternalLink to="/about#footer">contact us</_InternalLink> or visit our{" "}
+      <_InternalLink to="/hire">Hire</_InternalLink> page.
     </p>
   </CollapsableQuestion>
 )

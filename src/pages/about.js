@@ -121,8 +121,8 @@ class AboutPage extends Component {
             </QuestionWrapper>
             <Footnote>
               Have a question we didn’t answer?{" "}
-              <_InternalLink href="#footer">Contact us</_InternalLink> and we’ll
-              get right back to you!
+              <_InternalLink to="/about#footer">Contact us</_InternalLink> and
+              we’ll get right back to you!
             </Footnote>
           </HeadingWithBody>
           <HeadingWithBody

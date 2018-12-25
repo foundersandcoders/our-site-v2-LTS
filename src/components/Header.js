@@ -5,7 +5,7 @@ import HomeLogo from "./HomeLogo"
 import { breakpoint } from "../styles/utils"
 
 const _Header = styled.header.attrs({
-  className: "dn flex-ns center pt6 justify-between",
+  className: "dn flex-ns center pt6 justify-between relative",
 })`
   max-width: 1280px;
   ${breakpoint.ql`
@@ -14,10 +14,13 @@ const _Header = styled.header.attrs({
 `
 
 const _TopNav = styled.nav.attrs({
-  className: "flex w-100 w-50-m w-75-l justify-between mr0",
+  className: "flex w-100 w-50-m justify-between absolute right-0",
 })`
   ${breakpoint.ql`
-    width: 74.1%;
+    width: 78.1%;
+  `};
+  ${breakpoint.l`
+    width: 78.1%;
   `};
 `
 
@@ -48,8 +51,8 @@ const _TopLink = styled(Link).attrs({
     }
   `} ${breakpoint.l`
     display: flex;
-  `} 
-  
+  `}
+
   &:after {
     content: "";
     display: block;
