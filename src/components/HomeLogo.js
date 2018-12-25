@@ -19,9 +19,9 @@ const LogoStyled = styled.img.attrs({
   max-height: 107px;
 
   ${breakpoint.ns`
+    pointer-events: none;
     height: calc(100vw * 0.079);
     padding-bottom: 43.684210526%;
-    pointer-events: none;
   `};
 
   ${breakpoint.m`
@@ -30,7 +30,7 @@ const LogoStyled = styled.img.attrs({
 `
 
 const Link = styled.div.attrs({
-  className: "mt6 pointer dn-ns",
+  className: "mt6 pointer dn db-ns",
 })`
   position: absolute;
   width: 100%;
