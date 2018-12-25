@@ -33,6 +33,7 @@ const Container = styled.div.attrs({
   width: ${({ cardWidth: { s: cardWidth_s } }) => cardWidth_s};
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: var(--spacing-large);
 
   ${({ cardHeight: { ns: cardHeight_ns }, cardWidth: { ns: cardWidth_ns } }) =>
     breakpoint.ns`
@@ -55,15 +56,16 @@ const Container = styled.div.attrs({
 `
 
 const FacsterContainer = styled(Container)`
+  margin-bottom: 0;
   ${breakpoint.ns`
     margin-right: 12em;
     margin-left: 12em;
-    `};
+  `};
 
   ${breakpoint.m`
     margin-right: 13em;
     margin-left: 13em;
-    `};
+  `};
 `
 
 const _Photo = styled.a.attrs({
@@ -72,8 +74,11 @@ const _Photo = styled.a.attrs({
   transition: 0.75s ease;
   background: ${({ blueImg }) => `url(${blueImg})`};
   &::after {
-    content: ${({ normalImg }) => `url(${normalImg})`};
-    visibility: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: ${({ normalImg }) => `url(${normalImg})`};
+    content: "";
   }
   &:hover {
     background: ${({ normalImg }) => `url(${normalImg})`};
