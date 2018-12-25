@@ -283,9 +283,10 @@ class Menu extends Component {
           <MenuInnerContainer active={menuActive}>
             <MenuSidebar active={menuActive} color={color}>
               <HomeLogo
-                className="center mt6-ns"
+                className="mt6-ns center"
                 color={color}
                 active={menuActive}
+                menu
               />
             </MenuSidebar>
             <MenuMain active={menuActive}>

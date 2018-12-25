@@ -6,7 +6,9 @@ import logoWhite from "../assets/logos/fac_logo_white.png"
 import { breakpoint } from "../styles/utils"
 
 const Container = styled.div`
-  width: 20%;
+  width: ${({ menu }) => (menu ? "30vw" : "20%")};
+  max-width: 432px;
+  min-width: 180px;
 `
 
 const LogoStyled = styled.img.attrs({
@@ -20,8 +22,8 @@ const LogoStyled = styled.img.attrs({
   `};
 `
 
-const HomeLogo = ({ className, color }) => (
-  <Container className="aspect-ratio--object">
+const HomeLogo = ({ className, color, menu }) => (
+  <Container className="aspect-ratio--object" menu={menu}>
     <LogoStyled className={className} color={color} to="/" />
   </Container>
 )

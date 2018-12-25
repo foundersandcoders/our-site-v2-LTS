@@ -24,6 +24,15 @@ const _Footer = styled.div.attrs({
     "bg-black white-80 font-5 fw3 flex flex-column items-center-ns justify-center-ns pb2 mh2 ph0-ns",
 })``
 
+const StyledLink = styled(Link)`
+  ${breakpoint.m`
+    padding-top: 120px;
+  `};
+  ${breakpoint.l`
+    padding-top: 260px;
+  `};
+`
+
 const _Icon = styled.img`
   height: 24px;
   width: 24px;
@@ -86,6 +95,7 @@ const Panel = styled.section.attrs({
 })`
   height: ${({ height }) => height};
   width: ${({ width = "inherit" }) => width};
+  ${({ nextpanel }) => (nextpanel ? "" : "margin-top: 192px")};
 `
 
 const PageHeadingPanel = ({ textSize, title }) => {
@@ -94,13 +104,13 @@ const PageHeadingPanel = ({ textSize, title }) => {
       justify="center justify-end-ns"
       className={
         textSize === "XL"
-          ? "mh7-m pl2-m mh0-l mh2"
+          ? "mh7-m mh0-l mh2"
           : "mt7 mb6-ns mb5 pt0-ns pt3 mh2 mh0-ns"
       }
     >
       <div className={textSize == "XL" ? "w-100 w-75-l" : "mh7-m w-100 w-75-l"}>
         {textSize == "XL" ? (
-          <_BigText className="pt5">{title}</_BigText>
+          <_BigText>{title}</_BigText>
         ) : (
           <BigUnderline>{title}</BigUnderline>
         )}
@@ -119,6 +129,7 @@ const PanelTopBorder = styled.div.attrs({
     clip-path: polygon(0 100%, 0 3.25rem, 3% 6.5rem, 10% 0, 17% 6.5rem, 24% 0, 31% 6.5rem, 38% 0, 45% 6.5rem, 52% 0, 59% 6.5rem, 66% 0, 73% 6.5rem, 80% 0, 87% 6.5rem, 94% 0, 100% 6.5rem, 100% 100%);
   `} background-attachment: fixed;
 `
+
 const NextPanel = ({ component, to, children, topBorder }) => (
   <div className="panel-container">
     {topBorder && <PanelTopBorder />}
@@ -127,15 +138,16 @@ const NextPanel = ({ component, to, children, topBorder }) => (
       onMouseEnter={() => mouseOnNext(component)}
       onMouseLeave={() => mouseOff(component)}
     >
-      <Link
-        className="bg-black flex items-center-ns items-start justify-center pv5 pointer link min-828-l"
+      <StyledLink
+        className="bg-black flex items-start justify-center pointer link min-828-l"
         to={to}
       >
-        <InnerGridContainer>
+        <InnerGridContainer className="w-100">
           <Panel
             justify="start"
             width="92%"
             className="flex-column flex-row-l center mh2 mh0-l"
+            nextpanel
           >
             <div className="w-25 mb3 mb0-ns">
               <OffsetUnderlineText
@@ -155,7 +167,7 @@ const NextPanel = ({ component, to, children, topBorder }) => (
             </_BigText>
           </Panel>
         </InnerGridContainer>
-      </Link>
+      </StyledLink>
       <Footer />
     </div>
   </div>
