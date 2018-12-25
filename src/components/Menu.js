@@ -126,7 +126,7 @@ const MenuAnimatedSVG = ({ active, color }) => {
   )
 }
 
-const MenuContainer = styled.div.attrs({})`
+const MenuContainer = styled.div`
   position: fixed;
   z-index: 3000000;
 `
@@ -165,7 +165,6 @@ const MenuSidebar = styled.div`
   background: ${({ color = "red" }) => `var(--${color})`};
   height: 100vh;
   width: 30vw;
-  ${({ active }) => (active ? "" : "display:none")};
 
   ${breakpoint.s`
     height: 149px;
@@ -185,10 +184,9 @@ const MenuMain = styled.div.attrs({
     height: 100vh;
     width: 70vw;
   `};
-  ${({ active }) => (active ? "" : "display:none")};
 `
 
-const MenuNumber = styled.div.attrs({})`
+const MenuNumber = styled.div`
   padding-top: 3px;
   font-size: 16px;
   ${breakpoint.s`
@@ -225,11 +223,15 @@ const MenuItemContainer = styled.div.attrs({
 const MenuItem = ({ number, item, active, link, toggleMenu, location }) => {
   const Container = ({ children, className }) =>
     location.pathname === link ? (
-      <div onClick={toggleMenu} className={className}>
+      <div
+        onClick={toggleMenu}
+        className={className}
+        tabIndex={active ? "0" : "-1"}
+      >
         {children}
       </div>
     ) : (
-      <Link to={link} className={className}>
+      <Link to={link} className={className} tabIndex={active ? "0" : "-1"}>
         {children}
       </Link>
     )
@@ -281,20 +283,21 @@ class Menu extends Component {
       <div className="flex db-ns absolute left-0">
         <MenuContainer>
           <MenuInnerContainer active={menuActive}>
-            <MenuSidebar active={menuActive} color={color}>
+            <MenuSidebar color={color}>
               <HomeLogo
                 className="center mt6-ns"
                 color={color}
                 active={menuActive}
               />
             </MenuSidebar>
-            <MenuMain active={menuActive}>
+            <MenuMain>
               {menuItems.map((props, i) => (
                 <MenuItem
                   {...props}
                   toggleMenu={toggleMenu}
                   key={i}
                   location={location}
+                  active={menuActive}
                 />
               ))}
             </MenuMain>
