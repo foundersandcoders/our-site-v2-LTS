@@ -146,7 +146,7 @@ const NextPanel = ({ component, to, children, topBorder }) => (
           <Panel
             justify="start"
             width="92%"
-            className="flex-column flex-row-l center mh2 mh0-l"
+            className="flex-column flex-row-l center mh2 mh0-l pb6-m pb0-l"
             nextpanel
           >
             <div className="w-25 mb3 mb0-ns">
