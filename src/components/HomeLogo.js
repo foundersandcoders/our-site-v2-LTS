@@ -13,30 +13,30 @@ const Container = styled.div`
 `
 
 const LogoStyled = styled.img.attrs({
-  className: "db aspect-ratio mt6",
+  className: "db aspect-ratio-ns mt6-ns",
   src: ({ color }) => (color && color !== "yellow" ? logoWhite : logoBlack),
 })`
-  padding-bottom: 43.684210526%;
+  max-height: 107px;
 
   ${breakpoint.ns`
     height: calc(100vw * 0.079);
+    padding-bottom: 43.684210526%;
+    pointer-events: none;
   `};
 
   ${breakpoint.m`
     height: 78px;
   `};
-
-  height: 107px;
-  max-height: 107px;
 `
 
 const Link = styled.div.attrs({
-  className: "mt6 pointer",
+  className: "mt6 pointer dn-ns",
 })`
   position: absolute;
   width: 100%;
   background-color: transparent;
   top: 0;
+  max-height: 107px;
 
   ${breakpoint.ns`
     height: calc(100vw * 0.079);
@@ -45,14 +45,15 @@ const Link = styled.div.attrs({
   ${breakpoint.m`
     height: 78px;
   `};
-
-  height: 107px;
-  max-height: 107px;
 `
 
 const HomeLogo = ({ className, color, menu }) => (
-  <Container className="aspect-ratio--object" styled={{ menu: menu }}>
-    <LogoStyled className={className} color={color} />
+  <Container className="aspect-ratio--object-ns" styled={{ menu: menu }}>
+    <LogoStyled
+      className={className}
+      color={color}
+      onClick={() => navigate("/")}
+    />
     <Link onClick={() => navigate("/")} />
   </Container>
 )
