@@ -147,7 +147,7 @@ const MenuInnerContainer = styled.div.attrs({
 
   ${breakpoint.s`
     position: fixed;
-    top: ${({ active }) => (active ? "0" : "-110%")};
+    top: ${({ active }) => (active ? "0" : "-120%")};
     pointer-events:  ${({ active }) => (active ? "auto" : "none")};
     right: auto;
     left: 0;
@@ -177,6 +177,7 @@ const MenuMain = styled.div.attrs({
   height: calc(100vh - 149px);
   width: 100vw;
   padding-top: 0;
+
   ${breakpoint.ns`
     height: 100vh;
     width: 70vw;
@@ -206,12 +207,22 @@ const MenuImage = styled.div.attrs({
     color: black;
     padding-left: 3px;
   `};
+
+  @media screen and (max-width: 339px) {
+    font-size: 32px;
+  }
 `
 
 const MenuItemContainer = styled.div.attrs({
   className: "border-box pl2 pv3 flex justify-start items-top",
 })`
   width: 100%;
+
+  @media screen and (max-width: 339px) {
+    padding-top: var(--spacing-small);
+    padding-bottom: var(--spacing-small);
+  }
+
   ${breakpoint.ns`
     padding-left: 64px;
   `};
