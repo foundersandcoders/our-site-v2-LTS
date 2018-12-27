@@ -10,36 +10,56 @@ import question_arrow from "../assets/icons/question_arrow.svg"
 import question_cross from "../assets/icons/question_cross.svg"
 
 const Wrapper = styled.div.attrs({
-  className: "relative mb4",
+  className: "relative mb4 pointer",
+})``
+
+const Question = styled.div.attrs({ className: "mt3 mb4" })`
+  ${breakpoint.ns`
+    height: 84px;
+  `}
+`
+
+const _Answer = styled.div.attrs({
+  className: "font-4 fw3 answer",
 })`
   overflow: hidden;
-  transition: all 0.75s;
-  max-height: ${({ collapsed }) => (collapsed ? "147px" : "inherit")};
+  transition: ${({ maxHeight }) => `all ${maxHeight * 0.0026}s ease`};
+  max-height: ${({ collapsed, maxHeight }) =>
+    collapsed ? "0" : `${maxHeight}px`};
+
+  ${({ hiddenAnswer }) =>
+    hiddenAnswer &&
+    `
+    position: absolute;
+    top: -1000vh;
+    max-height: none;
+  `}
 `
 
-const Question = styled.div.attrs({ className: "mt3" })`
-  ${breakpoint.ns`height: 84px`};
-`
-
-const Answer = styled.div.attrs({
-  className: ({ collapsed }) => `font-4 fw3 ${collapsed ? "mv0" : "mt4"}`,
-})`
-  transition: all 0.35s ease-out;
-  p,
-  div {
-    overflow: hidden;
-    transition: all 0.5s ease-out;
-    max-height: ${({ collapsed }) => (collapsed ? "0" : "inherit")};
+class Answer extends Component {
+  myRef = React.createRef()
+  state = {
+    maxHeight: 0,
   }
-`
+
+  componentDidMount = () => {
+    this.setState({ maxHeight: this.myRef.current.scrollHeight })
+  }
+
+  render() {
+    console.log(this.props)
+    return (
+      <div>
+        <_Answer {...this.props} maxHeight={this.state.maxHeight} />
+        <_Answer {...this.props} hiddenAnswer ref={this.myRef} />
+      </div>
+    )
+  }
+}
+
 const Divider = styled.div.attrs({
-  className: "flex items-center justify-center mt5-ns mt4",
+  className: "flex items-center justify-center",
 })`
-  ${breakpoint.ns`
-  margin-top: var(--spacing-large);
-  `};
-  transition: all 0.35s ease-out;
-  margin-top: 38px;
   background-image: linear-gradient(
     to right,
     var(--black-30) 0%,
