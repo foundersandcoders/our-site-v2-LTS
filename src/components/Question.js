@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react"
 import styled from "styled-components"
 import { breakpoint } from "../styles/utils"
 
@@ -47,12 +47,18 @@ class Answer extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
-      <div>
-        <_Answer {...this.props} maxHeight={this.state.maxHeight} />
-        <_Answer {...this.props} hiddenAnswer ref={this.myRef} />
-      </div>
+      <Fragment>
+        <_Answer
+          collapsed={this.props.collapsed}
+          maxHeight={this.state.maxHeight}
+        >
+          <div className="mb4">{this.props.children}</div>
+        </_Answer>
+        <_Answer collapsed={this.props.collapsed} hiddenAnswer ref={this.myRef}>
+          <div className="mb4">{this.props.children}</div>
+        </_Answer>
+      </Fragment>
     )
   }
 }
