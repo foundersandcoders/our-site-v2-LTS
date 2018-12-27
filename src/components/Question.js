@@ -103,7 +103,7 @@ class CollapsableQuestion extends Component {
         />
 
         <Question>
-          <p className="pt3 font-4 fw5">{question}</p>
+          <p className="pt4 pt3-ns font-4 fw5">{question}</p>
         </Question>
         <Answer collapsed={collapsed}>{children}</Answer>
         <Divider>
