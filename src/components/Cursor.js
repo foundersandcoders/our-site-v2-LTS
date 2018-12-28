@@ -75,7 +75,7 @@ const returnCursorImage = ({ cursor, colour }) => {
 }
 
 const _Cursor = styled.div.attrs({
-  className: ({ hide }) => `absolute z-999 dn ${!hide && "db-l"}`,
+  className: ({ hide }) => `absolute z-max dn ${!hide && "db-l"}`,
   style: ({ left, top, scrolling }) => ({
     left,
     top,
