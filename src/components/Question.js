@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react"
 import styled from "styled-components"
 import { breakpoint } from "../styles/utils"
 
@@ -10,36 +10,62 @@ import question_arrow from "../assets/icons/question_arrow.svg"
 import question_cross from "../assets/icons/question_cross.svg"
 
 const Wrapper = styled.div.attrs({
-  className: "relative mb4",
+  className: "relative mb4 pointer",
+})``
+
+const Question = styled.div.attrs({ className: "mt3 mb4" })`
+  ${breakpoint.ns`
+    height: 84px;
+  `}
+`
+
+const _Answer = styled.div.attrs({
+  className: "font-4 fw3 answer",
 })`
   overflow: hidden;
-  transition: all 0.75s;
-  max-height: ${({ collapsed }) => (collapsed ? "147px" : "inherit")};
+  transition: ${({ maxHeight }) => `all ${maxHeight * 0.0026}s ease`};
+  max-height: ${({ collapsed, maxHeight }) =>
+    collapsed ? "0" : `${maxHeight}px`};
+
+  ${({ hiddenAnswer }) =>
+    hiddenAnswer &&
+    `
+    position: absolute;
+    top: -1000vh;
+    max-height: none;
+  `}
 `
 
-const Question = styled.div.attrs({ className: "mt3" })`
-  ${breakpoint.ns`height: 84px`};
-`
-
-const Answer = styled.div.attrs({
-  className: ({ collapsed }) => `font-4 fw3 ${collapsed ? "mv0" : "mt4"}`,
-})`
-  transition: all 0.35s ease-out;
-  p,
-  div {
-    overflow: hidden;
-    transition: all 0.5s ease-out;
-    max-height: ${({ collapsed }) => (collapsed ? "0" : "inherit")};
+class Answer extends Component {
+  myRef = React.createRef()
+  state = {
+    maxHeight: 0,
   }
-`
+
+  componentDidMount = () => {
+    this.setState({ maxHeight: this.myRef.current.scrollHeight })
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <_Answer
+          collapsed={this.props.collapsed}
+          maxHeight={this.state.maxHeight}
+        >
+          <div className="mb4">{this.props.children}</div>
+        </_Answer>
+        <_Answer collapsed={this.props.collapsed} hiddenAnswer ref={this.myRef}>
+          <div className="mb4">{this.props.children}</div>
+        </_Answer>
+      </Fragment>
+    )
+  }
+}
+
 const Divider = styled.div.attrs({
-  className: "flex items-center justify-center mt5-ns mt4",
+  className: "flex items-center justify-center",
 })`
-  ${breakpoint.ns`
-  margin-top: var(--spacing-large);
-  `};
-  transition: all 0.35s ease-out;
-  margin-top: 38px;
   background-image: linear-gradient(
     to right,
     var(--black-30) 0%,
@@ -77,7 +103,7 @@ class CollapsableQuestion extends Component {
         />
 
         <Question>
-          <p className="pt3 font-4 fw5">{question}</p>
+          <p className="pt4 pt3-ns font-4 fw5">{question}</p>
         </Question>
         <Answer collapsed={collapsed}>{children}</Answer>
         <Divider>

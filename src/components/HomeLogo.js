@@ -16,16 +16,16 @@ const LogoStyled = styled.img.attrs({
   className: "db aspect-ratio-ns mt6-ns",
   src: ({ color }) => (color && color !== "yellow" ? logoWhite : logoBlack),
 })`
-  max-height: 107px;
+  max-height: 100px;
 
   ${breakpoint.ns`
     pointer-events: none;
-    height: calc(100vw * 0.079);
+    height: calc(100vw * 0.07);
     padding-bottom: 43.684210526%;
   `};
 
   ${breakpoint.m`
-    height: 78px;
+    height: 86px;
   `};
 `
 
@@ -36,14 +36,14 @@ const Link = styled.div.attrs({
   width: 100%;
   background-color: transparent;
   top: 0;
-  max-height: 107px;
+  max-height: 100px;
 
   ${breakpoint.ns`
-    height: calc(100vw * 0.079);
+    height: calc(100vw * 0.07);
   `};
 
   ${breakpoint.m`
-    height: 78px;
+    height: 86px;
   `};
 `
 
