@@ -106,9 +106,11 @@ const _Photo = styled.a.attrs({
 `
 
 const _StaffPhoto = styled(_Photo)`
-  width: 293px;
-  height: 439px;
-  margin-bottom: 0;
+  & {
+    width: 293px;
+    height: 439px;
+    margin-bottom: 0;
+  }
 `
 
 const TextContainer = styled.div.attrs({
