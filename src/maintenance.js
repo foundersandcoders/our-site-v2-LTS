@@ -22,21 +22,21 @@ const COHORT_DATES = [
     expression_of_interest: "Until 30th November",
     application_window: "1st December - 31st December",
     interview_dates: "7th January - 12th January",
-    course_dates: "4th March, 2019 - June 21st, 2019",
+    course_dates: "4th March - 21st June",
   },
   {
     cohort: "Summer 2019",
     expression_of_interest: "January - March",
     application_window: "1st April - 30th April",
     interview_dates: "7th May - 11th May",
-    course_dates: "1st July 2019 - 18th October, 2019",
+    course_dates: "1st July - 18th October",
   },
   {
     cohort: "Winter 2019",
     expression_of_interest: "May - July",
     application_window: "1st August - 31st August",
     interview_dates: "9th September - 14th September",
-    course_dates: "28th October 2019 - 21st February 2020",
+    course_dates: "28th October - 21st February 2020",
   },
 ]
 
