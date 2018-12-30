@@ -22,7 +22,7 @@ const HideMenu = styled.div`
   width: calc((100vw - 1440px) * 0.5);
   top: 0;
   left: 0;
-  z-index: 3000004;
+  z-index: 304;
   background-color: var(--white);
 `
 
@@ -54,7 +54,7 @@ class LayoutWithState extends Component {
     const { data, children, location } = this.props
 
     const childrenWithProps = React.Children.map(children, child =>
-      child.type.displayName === "Cursor"
+      child.props.cursor
         ? React.cloneElement(child, { menuActive: this.state.menuActive })
         : child
     )

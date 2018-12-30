@@ -48,7 +48,7 @@ const mouseOnHide = component => {
   })
 }
 
-const returnCursorImage = ({ cursor, colour }) => {
+const getCursorImg = ({ cursor, colour }) => {
   const cursorImage = {
     [DOWN_CURSOR]: {
       red: down_cursor_red,
@@ -75,21 +75,24 @@ const returnCursorImage = ({ cursor, colour }) => {
 }
 
 const _Cursor = styled.div.attrs({
-  className: ({ hide }) => `absolute z-max dn ${!hide && "db-l"}`,
+  className: ({ hide }) => `absolute dn ${!hide && "db-l"}`,
   style: ({ left, top, scrolling }) => ({
     left,
     top,
     opacity: scrolling ? 0 : 1,
   }),
 })`
+  z-index: 305;
   overflow: hidden;
   width: ${({ cursor }) =>
-    cursor === RIGHT_CURSOR || NEXT_CURSOR ? "15rem" : "10rem"};
+    cursor === RIGHT_CURSOR || cursor === NEXT_CURSOR ? "15rem" : "10rem"};
   height: 15rem;
   transition: opacity 0.3s;
-  background: url(${({ cursor, colour }) =>
-      cursor !== HIDE_CURSOR && returnCursorImage({ cursor, colour })})
-    center bottom no-repeat;
+  background: ${({ cursor, colour, menuActive }) => {
+    const url =
+      cursor !== HIDE_CURSOR && !menuActive && getCursorImg({ cursor, colour })
+    return `url(${url}) center bottom no-repeat`
+  }};
   background-size: contain;
   pointer-events: none;
 `
@@ -155,10 +158,11 @@ class Cursor extends Component {
       <_Cursor
         left={mouseX}
         top={mouseY}
-        cursor={menuActive ? HIDE_CURSOR : cursor}
+        cursor={cursor}
         colour={colour}
         scrolling={scrolling ? "scrolling" : undefined}
         hide={cursor === HIDE_CURSOR}
+        menuActive={menuActive}
       />
     )
   }
