@@ -82,10 +82,12 @@ const _Cursor = styled.div.attrs({
     opacity: scrolling ? 0 : 1,
   }),
 })`
-  z-index: 3000;
+  z-index: ${({ menuActive }) => {
+    return menuActive ? "299" : "305"
+  }};
   overflow: hidden;
   width: ${({ cursor }) =>
-    cursor === RIGHT_CURSOR || NEXT_CURSOR ? "15rem" : "10rem"};
+    cursor === RIGHT_CURSOR || cursor === NEXT_CURSOR ? "15rem" : "10rem"};
   height: 15rem;
   transition: opacity 0.3s;
   background: url(${({ cursor, colour }) =>

@@ -25,7 +25,7 @@ const StickyMenuTriangle = styled.div.attrs({
   }),
 })`
   ${universalTransition};
-  z-index: 3000001;
+  z-index: 301;
   ${breakpoint.ns`
     justify-content: center;
     padding-right: 32px;
@@ -126,7 +126,7 @@ const MenuAnimatedSVG = ({ active, color }) => {
 
 const MenuContainer = styled.div`
   position: fixed;
-  z-index: 3000000;
+  z-index: 300;
 `
 
 const MenuInnerContainer = styled.div.attrs({
