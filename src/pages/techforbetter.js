@@ -136,7 +136,7 @@ class TechForBetterPage extends Component {
               test and build new digital service ideas using developers in
               London and Gaza, supported by{" "}
               <_ExternalLink href="http://intersticia.org/">
-                Interstitia
+                Intersticia
               </_ExternalLink>
               . Our developers will work closely with you to identify your
               needs, then build an app that meets those needs and helps you do
