@@ -5,6 +5,7 @@ import boot_camp_rebels from "./assets/photos/boot_camp_rebels.png"
 import get_with_the_program from "./assets/photos/get_with_the_program.png"
 import little_window from "./assets/photos/little_window.png"
 import fatimat from "./assets/photos/fatimat.jpeg"
+import alJazeeraGaza from "./assets/photos/aljazeera-gaza.jpg"
 
 // ---- Guide to adding stories to FAC website: ---
 
@@ -18,7 +19,7 @@ import fatimat from "./assets/photos/fatimat.jpeg"
 //   publication: "",       // optional - only for "in_the_press" stories
 //   date: "",              // format `MMM DD YYYY` e.g "Sep 08 2018"
 //   url: ""
-// }
+// },
 
 // Please run locally and check stories page is displaying correctly before making a PR.
 
@@ -260,6 +261,18 @@ const stories = [
     date: "28 Apr 2018",
     url:
       "https://medium.freecodecamp.org/the-post-i-hoped-to-write-for-18-months-2902d074f5ba",
+  },
+  {
+    storyType: "in_the_press",
+    img: alJazeeraGaza,
+    heading: "Palestinian 'geeks' code their way to a better future in Gaza",
+    subtitle:
+      "Coding is empowering a new generation of Palestinians in the besieged Gaza Strip and helping many find work.",
+    author: "Fedaa al-Qedra", // optional
+    publication: "Al Jazeera", // optional - only for "in_the_press" stories
+    date: "Nov 17 2018", // format `MMM DD YYYY` e.g "Sep 08 2018"
+    url:
+      "https://www.aljazeera.com/indepth/features/palestinian-geeks-code-future-gaza-181110115605269.html",
   },
   {
     storyType: "in_the_press",
