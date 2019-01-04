@@ -4,6 +4,7 @@ import coding_stress from "./assets/photos/coding_stress.png"
 import boot_camp_rebels from "./assets/photos/boot_camp_rebels.png"
 import get_with_the_program from "./assets/photos/get_with_the_program.png"
 import little_window from "./assets/photos/little_window.png"
+import fatimat from "./assets/photos/fatimat.jpeg"
 
 // ---- Guide to adding stories to FAC website: ---
 
@@ -22,6 +23,18 @@ import little_window from "./assets/photos/little_window.png"
 // Please run locally and check stories page is displaying correctly before making a PR.
 
 const stories = [
+  {
+    storyType: "by_us",
+    img: fatimat,
+    heading:
+      "Connecting the dots - A story of learning to code and giving back",
+    subtitle:
+      "Fatimat Gbajabiamila talks about challenging stereotypes, her love for pair programming, and why she’s committed to giving back",
+    author: "Founders and Coders", // optional
+    date: "Nov 12 2018", // format `MMM DD YYYY` e.g "Sep 08 2018"
+    url:
+      "https://medium.freecodecamp.org/connecting-the-dots-a-story-of-learning-to-code-and-giving-back-c8867cdffcb1",
+  },
   {
     storyType: "by_us",
     img: rebecca_and_matt,
