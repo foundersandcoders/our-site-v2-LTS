@@ -6,6 +6,7 @@ import get_with_the_program from "./assets/photos/get_with_the_program.png"
 import little_window from "./assets/photos/little_window.png"
 import fatimat from "./assets/photos/fatimat.jpeg"
 import alJazeeraGaza from "./assets/photos/aljazeera-gaza.jpg"
+import personably from "./assets/photos/personably.jpeg"
 
 // ---- Guide to adding stories to FAC website: ---
 
@@ -30,6 +31,18 @@ import alJazeeraGaza from "./assets/photos/aljazeera-gaza.jpg"
 // Stories by us - add most recent item to the top of the array
 
 const by_us = [
+  {
+    storyType: "by_us",
+    img: personably,
+    heading:
+      "How two friends changed careers, learned to code, and built a startup",
+    subtitle:
+      "Katerina Pascoulis and Ruth Uwemedimo talk about what they learned from freelancing and why they love working together at Personably",
+    author: "Founders and Coders", // optional
+    date: "Dec 18 2018", // format `MMM DD YYYY` e.g "Sep 08 2018"
+    url:
+      "https://medium.freecodecamp.org/connecting-the-dots-a-story-of-learning-to-code-and-giving-back-c8867cdffcb1",
+  },
   {
     storyType: "by_us",
     img: fatimat,
