@@ -9,7 +9,7 @@ import alJazeeraGaza from "./assets/photos/aljazeera-gaza.jpg"
 
 // ---- Guide to adding stories to FAC website: ---
 
-// Please add an object to the array below. Feel free to uncomment and use this template:
+// Please add an object to a story array below. Feel free to uncomment and use this template:
 // {
 //   storyType: "",         // SELECT ONE OF: "by_us", "about_us", "in_the_press", "podcast"
 //   img: importedVariable, // optional
@@ -21,9 +21,15 @@ import alJazeeraGaza from "./assets/photos/aljazeera-gaza.jpg"
 //   url: ""
 // },
 
+// To find the correct place to insert your story, you can search #BY_US, #ABOUT_US, #IN_THE_PRESS
+// and #PODCAST in your text editor
+
 // Please run locally and check stories page is displaying correctly before making a PR.
 
-const stories = [
+// #BY_US
+// Stories by us - add most recent item to the top of the array
+
+const by_us = [
   {
     storyType: "by_us",
     img: fatimat,
@@ -69,6 +75,12 @@ const stories = [
     url:
       "https://medium.freecodecamp.org/how-to-run-free-peer-led-coding-bootcamps-an-interview-with-dan-sofer-3e0a82ed45e",
   },
+]
+
+// #ABOUT_US
+// Stories about us - add most recent item to the top of the array
+
+const about_us = [
   {
     storyType: "about_us",
     heading: "How I became a Web Developer in 5 Months",
@@ -262,6 +274,12 @@ const stories = [
     url:
       "https://medium.freecodecamp.org/the-post-i-hoped-to-write-for-18-months-2902d074f5ba",
   },
+]
+
+// #IN_THE_PRESS
+// Stories in the press - add most recent item to the top of the array
+
+const in_the_press = [
   {
     storyType: "in_the_press",
     img: alJazeeraGaza,
@@ -412,6 +430,12 @@ const stories = [
     url:
       "https://www.intelligenthq.com/innovation-management/founders-coders-the-uks-only-free-coding-academy/",
   },
+]
+
+// #PODCAST
+// Podcasts by or about Founders and Coders
+
+const podcast = [
   {
     storyType: "podcast",
     heading:
@@ -458,4 +482,6 @@ const stories = [
   },
 ]
 
+// concatenate story arrays for export to the site
+const stories = by_us.concat(about_us.concat(in_the_press.concat(podcast)))
 export default stories
