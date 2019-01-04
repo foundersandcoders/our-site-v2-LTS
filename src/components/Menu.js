@@ -56,8 +56,9 @@ const StickyMenuSquare = styled.div.attrs({
 `
 
 const MobileNavBar = styled.div.attrs({
-  className: "dn-ns db pa1 bg-black fixed top-0 left-0 z-9999",
+  className: "dn-ns db pa1 bg-black fixed top-0 left-0",
 })`
+  z-index: 299;
   height: 60px;
   width: 100vw;
 `
