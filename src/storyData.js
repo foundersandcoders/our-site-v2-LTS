@@ -62,7 +62,7 @@ const by_us = [
     subtitle:
       "Matt King talks about his experiences mentoring and facilitating at Founders and Coders in London…",
     author: "Founders and Coders",
-    date: "Sep 3",
+    date: "Sep 3 2018",
     url:
       "https://medium.com/founders-coders/user-journey-matt-king-9ee447cff990",
   },
@@ -73,7 +73,7 @@ const by_us = [
     subtitle:
       "How Becky Botha and Johanna Herman learnt to code and launched Workerbird, a Tech for Good startup, in less than a year",
     author: "Founders and Coders",
-    date: "Sep 10",
+    date: "Sep 10 2018",
     url:
       "https://medium.com/@founderscoders/from-coders-to-founders-the-workerbird-story-d62a1cb01c98",
   },
@@ -84,7 +84,7 @@ const by_us = [
     subtitle:
       "Dan Sofer talks about running free, peer-led coding bootcamps in London and Gaza and why he loves working with nonprofits",
     author: "Founders and Coders",
-    date: "Sep 25",
+    date: "Sep 25 2018",
     url:
       "https://medium.freecodecamp.org/how-to-run-free-peer-led-coding-bootcamps-an-interview-with-dan-sofer-3e0a82ed45e",
   },
@@ -100,7 +100,7 @@ const about_us = [
     subtitle:
       "One year ago I was a non-technical founder of a startup at the edge of bankruptcy. Today I work as a…",
     author: "Per Harald Borgen",
-    date: "Nov 26, 2015",
+    date: "Nov 26 2015",
     url:
       "https://medium.com/founders-coders/from-non-technical-to-hired-in-5-months-d010f601b1bc",
   },
@@ -110,7 +110,7 @@ const about_us = [
     subtitle:
       "How Becky Botha and Johanna Herman learnt to code and launched Workerbird, a Tech for Good startup, in less than a year",
     author: "Founders and Coders",
-    date: "Sep 22",
+    date: "Sep 22 2018",
     url:
       "https://www.thenews.coop/130580/topic/technology/london-tech-developers-set-new-worker-co-op/",
   },
@@ -132,7 +132,7 @@ const about_us = [
     subtitle:
       "Little Window — one of the first chatbot and AI innovations at the intersection of gender-based violence and tech for good...",
     author: "Johanna Herman",
-    date: "Apr 15",
+    date: "Apr 15 2018",
     url:
       "https://medium.com/hack-for-chayn/building-little-window-how-we-created-a-chatbot-for-chayn-682ecf7bd495",
   },
@@ -172,7 +172,7 @@ const about_us = [
     subtitle:
       "Little Window — one of the first chatbot and AI innovations at the intersection of gender-based violence and tech for good...",
     author: "Johanna Herman",
-    date: "Apr 15",
+    date: "Apr 14 2018",
     url:
       "https://medium.com/hack-for-chayn/building-little-window-how-we-created-a-chatbot-for-chayn-682ecf7bd495",
   },
@@ -324,7 +324,7 @@ const in_the_press = [
       "It’s the must-have skill-set of the 21st century, yet unless you’re rich enough to afford the training, or fortunate enough to be attending…",
     author: "Kit Buchan",
     publication: "The Guardian",
-    date: "Jul 26, 2015",
+    date: "Jul 26 2015",
     url:
       "https://www.theguardian.com/technology/2015/jul/26/founders-coders-coding-free-training-london",
   },
@@ -335,7 +335,7 @@ const in_the_press = [
       "The world needs more trained software engineers; it’s a basic fact. The world also urgently needs more of those…",
     author: "Adrian Bridgewater",
     publication: "Forbes",
-    date: "Aug 31, 2015",
+    date: "Aug 31 2015",
     url:
       "https://www.forbes.com/sites/adrianbridgwater/2015/08/13/the-free-coding-academy-model-how-to-teach-our-next-generation-of-programmers/#6b07b18829c5",
   },
@@ -346,7 +346,7 @@ const in_the_press = [
     subtitle:
       "Full-time courses in software development do not usually come cheap. Even at the lower end of the market students are likely to be…",
     publication: "Co-op UK",
-    date: "Mar 31, 2015",
+    date: "Mar 31 2015",
     url:
       "http://www.uk.coop/newsroom/web-developers-crack-tuition-code-snap-young-co-operators-prize",
   },
