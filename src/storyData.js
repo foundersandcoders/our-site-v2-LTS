@@ -4,10 +4,13 @@ import coding_stress from "./assets/photos/coding_stress.png"
 import boot_camp_rebels from "./assets/photos/boot_camp_rebels.png"
 import get_with_the_program from "./assets/photos/get_with_the_program.png"
 import little_window from "./assets/photos/little_window.png"
+import fatimat from "./assets/photos/fatimat.jpeg"
+import alJazeeraGaza from "./assets/photos/aljazeera-gaza.jpg"
+import personably from "./assets/photos/personably.jpeg"
 
 // ---- Guide to adding stories to FAC website: ---
 
-// Please add an object to the array below. Feel free to uncomment and use this template:
+// Please add an object to a story array below. Feel free to uncomment and use this template:
 // {
 //   storyType: "",         // SELECT ONE OF: "by_us", "about_us", "in_the_press", "podcast"
 //   img: importedVariable, // optional
@@ -17,11 +20,41 @@ import little_window from "./assets/photos/little_window.png"
 //   publication: "",       // optional - only for "in_the_press" stories
 //   date: "",              // format `MMM DD YYYY` e.g "Sep 08 2018"
 //   url: ""
-// }
+// },
+
+// To find the correct place to insert your story, you can search #BY_US, #ABOUT_US, #IN_THE_PRESS
+// and #PODCAST in your text editor
 
 // Please run locally and check stories page is displaying correctly before making a PR.
 
-const stories = [
+// #BY_US
+// Stories by us - add most recent item to the top of the array
+
+const by_us = [
+  {
+    storyType: "by_us",
+    img: personably,
+    heading:
+      "How two friends changed careers, learned to code, and built a startup",
+    subtitle:
+      "Katerina Pascoulis and Ruth Uwemedimo talk about what they learned from freelancing and why they love working together at Personably",
+    author: "Founders and Coders", // optional
+    date: "Dec 18 2018", // format `MMM DD YYYY` e.g "Sep 08 2018"
+    url:
+      "https://medium.freecodecamp.org/connecting-the-dots-a-story-of-learning-to-code-and-giving-back-c8867cdffcb1",
+  },
+  {
+    storyType: "by_us",
+    img: fatimat,
+    heading:
+      "Connecting the dots - A story of learning to code and giving back",
+    subtitle:
+      "Fatimat Gbajabiamila talks about challenging stereotypes, her love for pair programming, and why she’s committed to giving back",
+    author: "Founders and Coders", // optional
+    date: "Nov 12 2018", // format `MMM DD YYYY` e.g "Sep 08 2018"
+    url:
+      "https://medium.freecodecamp.org/connecting-the-dots-a-story-of-learning-to-code-and-giving-back-c8867cdffcb1",
+  },
   {
     storyType: "by_us",
     img: rebecca_and_matt,
@@ -29,7 +62,7 @@ const stories = [
     subtitle:
       "Matt King talks about his experiences mentoring and facilitating at Founders and Coders in London…",
     author: "Founders and Coders",
-    date: "Sep 3",
+    date: "Sep 3 2018",
     url:
       "https://medium.com/founders-coders/user-journey-matt-king-9ee447cff990",
   },
@@ -40,7 +73,7 @@ const stories = [
     subtitle:
       "How Becky Botha and Johanna Herman learnt to code and launched Workerbird, a Tech for Good startup, in less than a year",
     author: "Founders and Coders",
-    date: "Sep 10",
+    date: "Sep 10 2018",
     url:
       "https://medium.com/@founderscoders/from-coders-to-founders-the-workerbird-story-d62a1cb01c98",
   },
@@ -51,17 +84,23 @@ const stories = [
     subtitle:
       "Dan Sofer talks about running free, peer-led coding bootcamps in London and Gaza and why he loves working with nonprofits",
     author: "Founders and Coders",
-    date: "Sep 25",
+    date: "Sep 25 2018",
     url:
       "https://medium.freecodecamp.org/how-to-run-free-peer-led-coding-bootcamps-an-interview-with-dan-sofer-3e0a82ed45e",
   },
+]
+
+// #ABOUT_US
+// Stories about us - add most recent item to the top of the array
+
+const about_us = [
   {
     storyType: "about_us",
     heading: "How I became a Web Developer in 5 Months",
     subtitle:
       "One year ago I was a non-technical founder of a startup at the edge of bankruptcy. Today I work as a…",
     author: "Per Harald Borgen",
-    date: "Nov 26, 2015",
+    date: "Nov 26 2015",
     url:
       "https://medium.com/founders-coders/from-non-technical-to-hired-in-5-months-d010f601b1bc",
   },
@@ -71,7 +110,7 @@ const stories = [
     subtitle:
       "How Becky Botha and Johanna Herman learnt to code and launched Workerbird, a Tech for Good startup, in less than a year",
     author: "Founders and Coders",
-    date: "Sep 22",
+    date: "Sep 22 2018",
     url:
       "https://www.thenews.coop/130580/topic/technology/london-tech-developers-set-new-worker-co-op/",
   },
@@ -93,7 +132,7 @@ const stories = [
     subtitle:
       "Little Window — one of the first chatbot and AI innovations at the intersection of gender-based violence and tech for good...",
     author: "Johanna Herman",
-    date: "Apr 15",
+    date: "Apr 15 2018",
     url:
       "https://medium.com/hack-for-chayn/building-little-window-how-we-created-a-chatbot-for-chayn-682ecf7bd495",
   },
@@ -133,7 +172,7 @@ const stories = [
     subtitle:
       "Little Window — one of the first chatbot and AI innovations at the intersection of gender-based violence and tech for good...",
     author: "Johanna Herman",
-    date: "Apr 15",
+    date: "Apr 14 2018",
     url:
       "https://medium.com/hack-for-chayn/building-little-window-how-we-created-a-chatbot-for-chayn-682ecf7bd495",
   },
@@ -248,6 +287,24 @@ const stories = [
     url:
       "https://medium.freecodecamp.org/the-post-i-hoped-to-write-for-18-months-2902d074f5ba",
   },
+]
+
+// #IN_THE_PRESS
+// Stories in the press - add most recent item to the top of the array
+
+const in_the_press = [
+  {
+    storyType: "in_the_press",
+    img: alJazeeraGaza,
+    heading: "Palestinian 'geeks' code their way to a better future in Gaza",
+    subtitle:
+      "Coding is empowering a new generation of Palestinians in the besieged Gaza Strip and helping many find work.",
+    author: "Fedaa al-Qedra", // optional
+    publication: "Al Jazeera", // optional - only for "in_the_press" stories
+    date: "Nov 17 2018", // format `MMM DD YYYY` e.g "Sep 08 2018"
+    url:
+      "https://www.aljazeera.com/indepth/features/palestinian-geeks-code-future-gaza-181110115605269.html",
+  },
   {
     storyType: "in_the_press",
     img: boot_camp_rebels,
@@ -267,7 +324,7 @@ const stories = [
       "It’s the must-have skill-set of the 21st century, yet unless you’re rich enough to afford the training, or fortunate enough to be attending…",
     author: "Kit Buchan",
     publication: "The Guardian",
-    date: "Jul 26, 2015",
+    date: "Jul 26 2015",
     url:
       "https://www.theguardian.com/technology/2015/jul/26/founders-coders-coding-free-training-london",
   },
@@ -278,7 +335,7 @@ const stories = [
       "The world needs more trained software engineers; it’s a basic fact. The world also urgently needs more of those…",
     author: "Adrian Bridgewater",
     publication: "Forbes",
-    date: "Aug 31, 2015",
+    date: "Aug 31 2015",
     url:
       "https://www.forbes.com/sites/adrianbridgwater/2015/08/13/the-free-coding-academy-model-how-to-teach-our-next-generation-of-programmers/#6b07b18829c5",
   },
@@ -289,7 +346,7 @@ const stories = [
     subtitle:
       "Full-time courses in software development do not usually come cheap. Even at the lower end of the market students are likely to be…",
     publication: "Co-op UK",
-    date: "Mar 31, 2015",
+    date: "Mar 31 2015",
     url:
       "http://www.uk.coop/newsroom/web-developers-crack-tuition-code-snap-young-co-operators-prize",
   },
@@ -386,6 +443,12 @@ const stories = [
     url:
       "https://www.intelligenthq.com/innovation-management/founders-coders-the-uks-only-free-coding-academy/",
   },
+]
+
+// #PODCAST
+// Podcasts by or about Founders and Coders
+
+const podcast = [
   {
     storyType: "podcast",
     heading:
@@ -432,4 +495,6 @@ const stories = [
   },
 ]
 
+// concatenate story arrays for export to the site
+const stories = by_us.concat(about_us.concat(in_the_press.concat(podcast)))
 export default stories
