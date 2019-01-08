@@ -10,6 +10,7 @@ import outlandish from "../assets/logos/cooperate_logos/outlandish_grayscale.png
 import space4 from "../assets/logos/cooperate_logos/Space4.svg"
 import cotech from "../assets/logos/cooperate_logos/cotech_grayscale.png"
 import infact from "../assets/logos/cooperate_logos/infact_grayscale.png"
+import intersticia from "../assets/logos/cooperate_logos/intersticia.png"
 import stripey_small from "../assets/ui/stripey_small.svg"
 
 import Layout from "../components/Layout"
@@ -61,7 +62,9 @@ const MobileFacsterCards = ({ className }) => (
 const PartnerLogo = styled(BackgroundImg).attrs({
   className: "h4 w5 mt5-ns mt4 mh4 mb3",
   bgSize: "contain",
-})``
+})`
+  filter: saturate(0%);
+`
 
 class IndexPage extends Component {
   constructor(props) {
@@ -177,12 +180,14 @@ class IndexPage extends Component {
               <PartnerLogo src={dwyl} />
               <PartnerLogo src={space4} />
               <PartnerLogo src={gaza_sky_geeks} />
+              <PartnerLogo src={intersticia} />
               <PartnerLogo src={cotech} />
               <PartnerLogo src={infact} />
               <PartnerLogo src={outlandish} />
               <PartnerLogo src={dwyl} />
               <PartnerLogo src={space4} />
               <PartnerLogo src={gaza_sky_geeks} />
+              <PartnerLogo src={intersticia} />
             </FlickityCarousel>
           </section>
           <Carousel
