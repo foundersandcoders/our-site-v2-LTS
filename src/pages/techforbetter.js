@@ -3,7 +3,7 @@ import Helmet from "react-helmet"
 import styled from "styled-components"
 
 import link_arrow_button from "../assets/ui/link_arrow_button.svg"
-import tech_for_better_splash from "../assets/splashes/tech_for_better_splash.png"
+import tech_for_better_splash from "../assets/splashes/tech_for_better_splash.jpg"
 import photo_splash from "../assets/splashes/T4B_splash.jpg"
 
 import Layout from "../components/Layout"
