@@ -121,7 +121,7 @@ class TechForBetterPage extends Component {
         <Helmet>
           <meta
             name="description"
-            content="Discover our Tech for Better programme to design, test and build new digital service ideas using developers in London and Gaza."
+            content="Discover our Tech for Better programme to design, test and build new digital service ideas using developers in London and Palestine."
           />
           <title>Tech For Better - Founders and Coders</title>
         </Helmet>
@@ -134,7 +134,7 @@ class TechForBetterPage extends Component {
             <HeadingWithBody title="Overview" className="mr4-m">
               Tech for Better is a pro-bono programme for nonprofits to design,
               test and build new digital service ideas using developers in
-              London and Gaza, supported by{" "}
+              London and Palestine, supported by{" "}
               <_ExternalLink href="http://intersticia.org/">
                 Intersticia
               </_ExternalLink>
@@ -212,8 +212,8 @@ class TechForBetterPage extends Component {
                     </_ExternalLink>
                     , but the apps we build are fully documented and open
                     source. If you already have funding, we have a large
-                    community of freelance developers in both London and Gaza
-                    who can help.
+                    community of freelance developers in both London and
+                    Palestine who can help.
                   </p>
                 </CollapsableQuestion>
                 <CollapsableQuestion
@@ -222,7 +222,7 @@ class TechForBetterPage extends Component {
                 >
                   <p>
                     This programme provides an opportunity for our developers in
-                    both London and Gaza to gain experience, improve their
+                    both London and Palestine to gain experience, improve their
                     employability, and work on projects that make a real
                     difference to people’s lives.
                   </p>
