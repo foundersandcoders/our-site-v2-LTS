@@ -7,6 +7,7 @@ import little_window from "./assets/photos/little_window.png"
 import fatimat from "./assets/photos/fatimat.jpeg"
 import alJazeeraGaza from "./assets/photos/aljazeera-gaza.jpg"
 import personably from "./assets/photos/personably.jpeg"
+import yasmin from "./assets/photos/yasmin.jpg"
 
 // ---- Guide to adding stories to FAC website: ---
 
@@ -31,6 +32,17 @@ import personably from "./assets/photos/personably.jpeg"
 // Stories by us - add most recent item to the top of the array
 
 const by_us = [
+  {
+    storyType: "by_us",
+    img: yasmin,
+    heading: 'Something in me whispered: "Be the builder"',
+    subtitle:
+      "Former Gaza Code Academy facilitator Yasmin Hillis, a self-declared hippie at heart, talks about how Virginia Woolf inspired her to begin writing code",
+    author: "Founders and Coders", // optional
+    date: "Jan 23 2019", // format `MMM DD YYYY` e.g "Sep 08 2018"
+    url:
+      "https://medium.freecodecamp.org/something-within-me-whispered-be-the-builder-9a47fcc013f",
+  },
   {
     storyType: "by_us",
     img: personably,
