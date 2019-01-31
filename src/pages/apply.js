@@ -302,30 +302,6 @@ class ApplyPage extends Component {
                   .
                 </div>
               </PreReq>
-              <PreReq title="Coding challenge">
-                <div>
-                  Please choose <_Bold>just one</_Bold> of the two challenges
-                  below:
-                </div>
-                <_Link
-                  href="https://github.com/foundersandcoders/master-reference/blob/master/coursebook/prerequisites/create-kata.md"
-                  className="mt2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={link_arrow_button} className="mr1" />
-                  Create your own JavaScript kata
-                </_Link>
-                <_Link
-                  href="https://github.com/foundersandcoders/master-reference/blob/master/coursebook/prerequisites/image-carousel.md"
-                  className="mt2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={link_arrow_button} className="mr1" />
-                  Create an image carousel
-                </_Link>
-              </PreReq>
             </HeadingWithBody>
           </InnerGridContainer>
 
