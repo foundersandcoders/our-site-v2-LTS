@@ -27,7 +27,6 @@ import FAC13 from "../assets/photos/FAC13.jpg"
 import FAC14 from "../assets/photos/FAC14.jpg"
 import FACN3 from "../assets/photos/FACN3.png"
 import FACG3 from "../assets/photos/FACG3.png"
-import link_arrow_button from "../assets/ui/link_arrow_button.svg"
 
 const CarouselImg = ({ src }) => (
   <BackgroundImg
