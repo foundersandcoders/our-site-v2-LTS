@@ -27,7 +27,6 @@ import FAC13 from "../assets/photos/FAC13.jpg"
 import FAC14 from "../assets/photos/FAC14.jpg"
 import FACN3 from "../assets/photos/FACN3.png"
 import FACG3 from "../assets/photos/FACG3.png"
-import link_arrow_button from "../assets/ui/link_arrow_button.svg"
 
 const CarouselImg = ({ src }) => (
   <BackgroundImg
@@ -272,15 +271,21 @@ class ApplyPage extends Component {
                       your profile is public) and Codewars pages{" "}
                     </_ListItem>
                     <_ListItem>
-                      Contain a link to <_Bold>challenge 2</_Bold> (see{" "}
-                      <_Bold>coding challenge</_Bold>
-                      ), if you choose that option
+                      Include an{" "}
+                      <_ExternalLink
+                        href={
+                          "https://github.com/foundersandcoders/master-reference/blob/master/coursebook/prerequisites/image-carousel.md"
+                        }
+                      >
+                        image carousel
+                      </_ExternalLink>
                     </_ListItem>
                     <_ListItem>Be hosted on Github</_ListItem>
                     <_ListItem>Not use a GitHub theme</_ListItem>
                     <_ListItem>
-                      Not use a framework like Bootstrap or libraries like
-                      jQuery
+                      Not use any Javascript or CSS libraries like Bootstrap or
+                      jQuery or use an image carousel package like Flickity - we
+                      want to see your own code.
                     </_ListItem>
                   </ul>
                 </div>
@@ -295,30 +300,6 @@ class ApplyPage extends Component {
                   </_ExternalLink>
                   .
                 </div>
-              </PreReq>
-              <PreReq title="Coding challenge">
-                <div>
-                  Please choose <_Bold>just one</_Bold> of the two challenges
-                  below:
-                </div>
-                <_Link
-                  href="https://github.com/foundersandcoders/master-reference/blob/master/coursebook/prerequisites/create-kata.md"
-                  className="mt2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={link_arrow_button} className="mr1" />
-                  Create your own JavaScript kata
-                </_Link>
-                <_Link
-                  href="https://github.com/foundersandcoders/master-reference/blob/master/coursebook/prerequisites/image-carousel.md"
-                  className="mt2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={link_arrow_button} className="mr1" />
-                  Create an image carousel
-                </_Link>
               </PreReq>
             </HeadingWithBody>
           </InnerGridContainer>
