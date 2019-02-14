@@ -116,11 +116,10 @@ const Opportunities = ({ color }) => (
     colour={color}
   >
     <p>
-      We offer a number of bursaries to work with nonprofits through our{" "}
-      <_InternalLink to="/techforbetter">Tech for Better</_InternalLink>{" "}
-      programme and to mentor at our overseas campuses. We also have a growing
-      network of partners through which you can find employment as a web
-      developer.
+      We have a growing network of partners through which you can find employment as 
+      a web developer. We also run the _Founders_ programme, with a limited number of 
+      bursaries for graduates who want to build their own companies, work with nonprofits, 
+      and mentor at our overseas campuses.
     </p>
   </CollapsableQuestion>
 )
