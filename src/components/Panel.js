@@ -61,7 +61,7 @@ const Footer = () => (
         Space4, 1st floor 149 Fonthill Road, Finsbury Park, London N4 3HF
       </span>
     </div>
-    <div className="flex w-20-ns w-50 justify-between mb7-ns mb6">
+    <div className="flex w-26-ns w-50 justify-between mb7-ns mb6">
       <Icon
         to="https://github.com/foundersandcoders/"
         img={github_logo_white}
