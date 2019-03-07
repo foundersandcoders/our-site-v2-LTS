@@ -8,6 +8,7 @@ import facebook_logo_white from "../assets/logos/facebook_logo_white.svg"
 import github_logo_white from "../assets/logos/github_logo_white.svg"
 import linkedin_logo_white from "../assets/logos/linkedin_logo_white.svg"
 import twitter_logo_white from "../assets/logos/twitter_logo_white.svg"
+import instagram_logo_white from "../assets/logos/instagram_logo_white.svg"
 import heart from "../assets/icons/heart.svg"
 
 import { OffsetUnderlineText, _BigText, BigUnderline } from "./Text"
@@ -73,6 +74,10 @@ const Footer = () => (
       <Icon
         to="https://www.linkedin.com/school/founders-and-coders/"
         img={linkedin_logo_white}
+      />
+      <Icon
+        to="https://www.instagram.com/founderscoders/"
+        img={instagram_logo_white}
       />
     </div>
     <div className="font-6 w-100 ph2-ns pb1 ph0 fw3 flex justify-between flex-row-ns flex-column">

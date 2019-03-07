@@ -7,7 +7,7 @@
     "autoprefixer": "^9.4.3",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.77",
-    "gatsby-plugin-manifest": "^2.0.12",
+    "gatsby-plugin-manifest": "^2.0.22",
     "gatsby-plugin-netlify": "^2.0.6",
     "gatsby-plugin-offline": "^2.0.20",
     "gatsby-plugin-postcss": "^2.0.2",
