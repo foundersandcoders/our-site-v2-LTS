@@ -9,7 +9,7 @@ const Where = ({ color }) => (
     colour={color}
   >
     <p>
-      Each course runs for sixteen weeks at Space4 in Finsbury Park,
+      Each course runs for sixteen weeks on-site in London at Space4 in Finsbury Park,
       <span className="fw5"> five days a week from 10:00 to 18:00. </span>
       We do not offer part-time or remote courses.
     </p>
@@ -116,11 +116,10 @@ const Opportunities = ({ color }) => (
     colour={color}
   >
     <p>
-      We offer a number of bursaries to work with nonprofits through our{" "}
-      <_InternalLink to="/techforbetter">Tech for Better</_InternalLink>{" "}
-      programme and to mentor at our overseas campuses. We also have a growing
-      network of partners through which you can find employment as a web
-      developer.
+      We have a growing network of partners through which you can find employment as 
+      a web developer. We also run the _Founders_ programme, with a limited number of 
+      bursaries for graduates who want to build their own companies, work with nonprofits, 
+      and mentor at our overseas campuses.
     </p>
   </CollapsableQuestion>
 )
