@@ -121,7 +121,7 @@ class TechForBetterPage extends Component {
         <Helmet>
           <meta
             name="description"
-            content="Discover our Tech for Better programme to design, test and build new digital service ideas using developers in London and Palestine."
+            content="Discover our Tech for Better programme to design, build and test new digital service ideas using developers in London and Palestine."
           />
           <title>Tech For Better - Founders and Coders</title>
         </Helmet>
@@ -132,15 +132,12 @@ class TechForBetterPage extends Component {
             <DoubleLine colour="yellow" showing={showing} />
             <PageHeadingPanel title="Your ideas can make the world a better place." />
             <HeadingWithBody title="Overview" className="mr4-m">
-              Tech for Better is a pro-bono programme for nonprofits to design,
-              test and build new digital service ideas using developers in
-              London and Palestine, supported by{" "}
+              A programme for social impact startups and nonprofits to learn how to design, build and 
+              test new digital services, working with developers in London and Palestine, and supported by{" "}
               <_ExternalLink href="http://intersticia.org/">
                 Intersticia
               </_ExternalLink>
-              . Our developers will work closely with you to identify your
-              needs, then build an app that meets those needs and helps you do
-              what you do, but better.{" "}
+              .{" "} 
               <span className="b">
                 The only thing it will cost is your time.
               </span>
