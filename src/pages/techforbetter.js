@@ -128,7 +128,7 @@ class TechForBetterPage extends Component {
         <Cursor cursor={cursor} colour="blue" />
         <main>
           <InnerGridContainer>
-            <PageHeadingPanel title="Tech for Better programme" textSize="XL" />
+            <PageHeadingPanel title="Tech for Better" textSize="XL" />
             <DoubleLine colour="yellow" showing={showing} />
             <PageHeadingPanel title="Your ideas can make the world a better place." />
             <HeadingWithBody title="Overview" className="mr4-m">
