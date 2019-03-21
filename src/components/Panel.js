@@ -8,6 +8,7 @@ import facebook_logo_white from "../assets/logos/facebook_logo_white.svg"
 import github_logo_white from "../assets/logos/github_logo_white.svg"
 import linkedin_logo_white from "../assets/logos/linkedin_logo_white.svg"
 import twitter_logo_white from "../assets/logos/twitter_logo_white.svg"
+import instagram_logo_white from "../assets/logos/instagram_logo_white.svg"
 import heart from "../assets/icons/heart.svg"
 
 import { OffsetUnderlineText, _BigText, BigUnderline } from "./Text"
@@ -60,7 +61,7 @@ const Footer = () => (
         Space4, 1st floor 149 Fonthill Road, Finsbury Park, London N4 3HF
       </span>
     </div>
-    <div className="flex w-20-ns w-50 justify-between mb7-ns mb6">
+    <div className="flex w-25-ns w-50 justify-between mb7-ns mb6">
       <Icon
         to="https://github.com/foundersandcoders/"
         img={github_logo_white}
@@ -68,6 +69,10 @@ const Footer = () => (
       <Icon
         to="https://www.facebook.com/founderscoders/"
         img={facebook_logo_white}
+      />
+      <Icon
+        to="https://www.instagram.com/founderscoders/"
+        img={instagram_logo_white}
       />
       <Icon to="https://twitter.com/founderscoders" img={twitter_logo_white} />
       <Icon
