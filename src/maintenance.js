@@ -3,7 +3,7 @@
 //    * set the application form link to the correct link when opening
 //    * Check your local version looks right. That's it!
 
-const APPLICATIONS_OPEN = false
+const APPLICATIONS_OPEN = true
 const APPLICATION_FORM =
   "https://docs.google.com/forms/d/e/1FAIpQLSdvlLQyjC6g_7SY6vbNKVrdZglnW-a5yyw_zHWM-IyDju_F4w/viewform"
 
@@ -19,26 +19,26 @@ const TECH_FOR_BETTER_APPLICATION_FORM =
 // We suggest you add a new object to the end of the array following the pattern and then remove the first item.
 const COHORT_DATES = [
   {
-    cohort: "Spring 2019",
-    expression_of_interest: "Until 30th November",
-    application_window: "1st December - 31st December",
-    interview_dates: "7th January - 12th January",
-    course_dates: "4th March - 21st June",
-  },
-  {
     cohort: "Summer 2019",
     expression_of_interest: "January - March",
     application_window: "1st April - 30th April",
     interview_dates: "7th May - 11th May",
-    course_dates: "1st July - 18th October",
+    course_dates: "1st July - 1st November",
   },
   {
     cohort: "Winter 2019",
     expression_of_interest: "May - July",
     application_window: "1st August - 31st August",
     interview_dates: "9th September - 14th September",
-    course_dates: "28th October - 21st February 2020",
+    course_dates: "28th October - 6th March 2020",
   },
+  {
+    cohort: "Spring 2020",
+    expression_of_interest: "September - November",
+    application_window: "1st December - 31st December",
+    interview_dates: "6th January - 10th January",
+    course_dates: "2nd March - 3rd July",
+  }
 ]
 
 export {
