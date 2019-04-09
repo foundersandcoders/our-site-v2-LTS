@@ -53,7 +53,7 @@ const by_us = [
     author: "Founders and Coders", // optional
     date: "Dec 18 2018", // format `MMM DD YYYY` e.g "Sep 08 2018"
     url:
-      "https://medium.freecodecamp.org/connecting-the-dots-a-story-of-learning-to-code-and-giving-back-c8867cdffcb1",
+      "https://medium.freecodecamp.org/how-two-friends-changed-careers-learned-to-code-and-built-a-startup-e40c0b060de8",
   },
   {
     storyType: "by_us",
