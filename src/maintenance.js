@@ -22,7 +22,7 @@ const COHORT_DATES = [
     cohort: "Summer 2019",
     expression_of_interest: "January - March",
     application_window: "1st April - 30th April",
-    interview_dates: "7th May - 11th May",
+    interview_dates: "13th May - 17th May",
     course_dates: "1st July - 1st November",
   },
   {
