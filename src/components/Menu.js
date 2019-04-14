@@ -10,7 +10,7 @@ import { breakpoint } from "../styles/utils"
 const universalTransition = "transition: 1s ease-in-out 0s"
 
 const menuItems = [
-  { number: "01", item: "what and who", link: "/about" },
+  { number: "01", item: "about", link: "/about" },
   { number: "02", item: "apply", link: "/apply" },
   { number: "03", item: "hire", link: "/hire" },
   { number: "04", item: "tech for better", link: "/techforbetter" },
