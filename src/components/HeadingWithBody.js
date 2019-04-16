@@ -20,7 +20,7 @@ const ContentContainer = styled.div`
 `
 
 const HeadingWithBody = ({
-  title,
+  title = "",
   className = "",
   bgColour,
   children,
