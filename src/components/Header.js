@@ -26,7 +26,7 @@ const _TopNav = styled.nav.attrs({
 
 const TopNav = () => (
   <_TopNav>
-    <TopLink to="/about" text="What is Founders and Coders?" number="01" />
+    <TopLink to="/about" text="About" number="01" />
     <TopLink to="/apply" text="Apply" number="02" />
     <TopLink to="/hire" text="Hire" number="03" />
     <TopLink to="/techforbetter" text="Tech for Better" number="04" />
