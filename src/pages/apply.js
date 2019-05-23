@@ -27,6 +27,8 @@ import FAC13 from "../assets/photos/FAC13.jpg"
 import FAC14 from "../assets/photos/FAC14.jpg"
 import FACN3 from "../assets/photos/FACN3.png"
 import FACG3 from "../assets/photos/FACG3.png"
+import FAC15 from "../assets/photos/FAC15.jpg"
+import FAC16 from "../assets/photos/FAC16.jpg"
 
 const CarouselImg = ({ src }) => (
   <BackgroundImg
@@ -92,6 +94,8 @@ const CohortExpandable = ({ obj, color }) => {
 }
 
 const carouselImages = [
+  { caption: "London Cohort #16", src: FAC16 },
+  { caption: "London Cohort #15", src: FAC15 },
   { caption: "London Cohort #14", src: FAC14 },
   { caption: "Gaza Cohort #3", src: FACG3 },
   { caption: "London Cohort #13", src: FAC13 },
