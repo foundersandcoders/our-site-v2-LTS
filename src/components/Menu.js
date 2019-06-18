@@ -12,9 +12,10 @@ const universalTransition = "transition: 1s ease-in-out 0s"
 const menuItems = [
   { number: "01", item: "about", link: "/about" },
   { number: "02", item: "apply", link: "/apply" },
-  { number: "03", item: "hire", link: "/hire" },
-  { number: "04", item: "tech for better", link: "/techforbetter" },
-  { number: "05", item: "stories", link: "/stories" },
+  { number: "03", item: "what's on", link: "/shortcourse" },
+  { number: "04", item: "hire", link: "/hire" },
+  { number: "05", item: "tech for better", link: "/techforbetter" },
+  { number: "06", item: "stories", link: "/stories" },
 ]
 
 const StickyMenuTriangle = styled.div.attrs({

@@ -100,7 +100,7 @@ class ShortCoursePage extends Component {
         </Helmet>
         <Cursor cursor={cursor} colour="red" />
         <InnerGridContainer>
-          <PageHeadingPanel title="Short course" />
+          <PageHeadingPanel title="Meetups, workshops and short courses" />
           <HeadingWithBody title="Overview" className="mb7-ns mb5 mr7-m">
             Founders and Coders now runs an{" "}
             <span className="fw5"> introductory evening short course</span>,

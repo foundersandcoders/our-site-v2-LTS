@@ -130,7 +130,7 @@ const QuestionWrapper = styled.section.attrs({
   ${({ hideL }) =>
     hideL &&
     breakpoint.l`
-      display: none;
+    display: none;
   `};
 `
 
