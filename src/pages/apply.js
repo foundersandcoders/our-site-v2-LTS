@@ -65,10 +65,6 @@ const _Bold = styled.span.attrs({
   className: "fw5",
 })``
 
-const _Link = styled.a.attrs({
-  className: "mt1 v-mid flex items-center blue",
-})``
-
 const CohortExpandable = ({ obj, color }) => {
   return (
     <CollapsableQuestion question={`Cohort of ${obj.cohort}`} colour={color}>
