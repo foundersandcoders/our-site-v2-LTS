@@ -38,7 +38,7 @@ const COHORT_DATES = [
     application_window: "1st April - 30th April",
     interview_dates: "4th May - 15th May",
     course_dates: "29th June - 30th October",
-  }
+  },
 ]
 
 export {

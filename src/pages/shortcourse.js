@@ -100,12 +100,25 @@ class ShortCoursePage extends Component {
         </Helmet>
         <Cursor cursor={cursor} colour="red" />
         <InnerGridContainer>
-          <PageHeadingPanel title="Meetups, workshops and short courses" />
+          <PageHeadingPanel title="What's on at Founders and Coders?" />
           <HeadingWithBody title="Overview" className="mb7-ns mb5 mr7-m">
-            Founders and Coders now runs an{" "}
+            As well as our full-time course, there's lots more going on here in
+            Space4.
+            <br />
+            <br />
+            Each Monday, from 18.30 - 20.30, we host our Coding for Everyone
+            meetups. It's an opportunity to bla bla bla, meet current students
+            in a relaxed, beginner-friendly environment.
+            <br />
+            <br />
+            Occasionally we host workshops on Mondays instead, covering topics
+            like Github, DOM manipulation, and Codewars.
+            <br />
+            <br />
+            We also now run an{" "}
             <span className="fw5"> introductory evening short course</span>,
             aimed at helping applicants with getting started on our
-            prerequisites.
+            prerequisites. More info below!
           </HeadingWithBody>
           <DoubleLine colour="green" showing={showing} />
           <HeadingWithBody
