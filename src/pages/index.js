@@ -154,8 +154,7 @@ class IndexPage extends Component {
               runs tuition-free, peer-led training programmes in web
               development, guided by our core values of cooperation, inclusion
               and social impact. We operate in London and work with Mercy Corps
-              and the UK government to deliver programmes in the Middle East and
-              Africa.
+              and the UK government to deliver programmes in the Middle East.
             </HeadingBody>
           </InnerGridContainer>
           <section className="mb7-ns mb5">
