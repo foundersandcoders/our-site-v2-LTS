@@ -100,31 +100,41 @@ class WhatsOnPage extends Component {
         </Helmet>
         <Cursor cursor={cursor} colour="red" />
         <InnerGridContainer>
-          <PageHeadingPanel title="What's on?" />
+          <PageHeadingPanel title="What's on" />
           <HeadingWithBody title="Overview" className="mb7-ns mb5 mr7-m">
             As well as our full-time course, there's lots more going on here in
-            Space4.
+            Space4. Make sure to submit an{" "}
+            <a href="http://www.foundersandcoders.com/apply" target="_blank">
+              expression of interest
+            </a>{" "}
+            and be kept up to date!
             <br />
             <br />
-            Each Monday, from 18.30 - 20.30, we host our Coding for Everyone
-            meetups. It's an opportunity to bla bla bla, meet current students
-            in a relaxed, beginner-friendly environment.
+            <h3>
+              <span className="fw5"> Meetups</span>
+            </h3>
+            Monday evenings, from 18.30 - 20.30 here in Space4, Finsbury Park.
+            An opportunity to improve your coding skills, work on the
+            prerequisites, and meet current students in a relaxed,
+            beginner-friendly environment.
             <br />
             <br />
-            Occasionally we host workshops on Mondays instead, covering topics
-            like Github, DOM manipulation, and Codewars.
+            <h3>
+              <span className="fw5"> Workshops</span>
+            </h3>
+            We occasionally replace our normal Monday meetup with a themed
+            workshop - also from 18.30 - 20.30 here in Space4, Finsbury Park. We
+            focus on topics like Codewars, GitHub and DOM manipulation.
             <br />
             <br />
-            We also now run an{" "}
-            <span className="fw5"> introductory evening short course</span>,
-            aimed at helping applicants with getting started on our
-            prerequisites. More info below!
+            <h3>
+              <span className="fw5"> Short course</span>
+            </h3>
+            This introductory part-time course takes place over four consecutive
+            Tuesday evenings. See below for more info!
           </HeadingWithBody>
           <DoubleLine colour="green" showing={showing} />
-          <HeadingWithBody
-            title="Short course"
-            className="mb7-ns mb5 mr0-m"
-          >
+          <HeadingWithBody title="Short course" className="mb7-ns mb5 mr0-m">
             <QuestionWrapper>
               {ShortCourseFAQs.map((Question, index) => (
                 <Question color={colours[index % 8]} key={index} />
@@ -145,4 +155,4 @@ class WhatsOnPage extends Component {
   }
 }
 
-export default WhatsOnPage;
+export default WhatsOnPage
