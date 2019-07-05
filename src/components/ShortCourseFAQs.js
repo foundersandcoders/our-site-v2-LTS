@@ -24,7 +24,7 @@ const WhoElse = ({ color }) => (
       have experimented a little in the past.
       <br />
       <br />
-      We champion <span className="fw5"> diversity </span> and{" "}
+      We believe in <span className="fw5"> diversity </span> and{" "}
       <span className="fw5"> inclusion </span> on both our full-time course and
       in the wider workplace, and as such, places on our short course are
       <span className="fw5"> prioritised </span> for those who are{" "}
@@ -58,9 +58,22 @@ const Learnings = ({ color }) => (
 const Expectations = ({ color }) => (
   <CollapsableQuestion question="What will be expected of me?" colour={color}>
     <p>
-      We expect attendees to commit to all four sessions, if possible. There
-      will also be a small amount of homework each week, typically just a couple
-      of hours building upon the material we covered in the evening session.
+      We expect attendees to commit to all four sessions. There will also be a
+      small amount of homework each week, typically just a couple of hours
+      building upon the material we covered in the evening session.
+    </p>
+  </CollapsableQuestion>
+)
+
+const Apply = ({ color }) => (
+  <CollapsableQuestion question="How do I apply?" colour={color}>
+    <p>
+      If you have submitted an expression of interest for our{" "}
+      <a href="http://www.foundersandcoders.com/apply" target="_blank">
+        full-time course
+      </a>
+      , then you'll receive an email invite as soon as we've announced the next
+      short course.
     </p>
   </CollapsableQuestion>
 )
@@ -313,6 +326,7 @@ export default [
   WhoElse,
   Learnings,
   Expectations,
+  Apply,
   // TimeOff,
   // PeerLed,
   // Fees,

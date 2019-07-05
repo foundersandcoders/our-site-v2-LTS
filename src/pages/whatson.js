@@ -54,7 +54,7 @@ const StaffPanel = styled(Panel).attrs({
     }
 `
 
-class ShortCoursePage extends Component {
+class WhatsOnPage extends Component {
   state = {
     cursor: DOWN_CURSOR,
     showing: true,
@@ -100,7 +100,7 @@ class ShortCoursePage extends Component {
         </Helmet>
         <Cursor cursor={cursor} colour="red" />
         <InnerGridContainer>
-          <PageHeadingPanel title="What's on at Founders and Coders?" />
+          <PageHeadingPanel title="What's on?" />
           <HeadingWithBody title="Overview" className="mb7-ns mb5 mr7-m">
             As well as our full-time course, there's lots more going on here in
             Space4.
@@ -122,7 +122,7 @@ class ShortCoursePage extends Component {
           </HeadingWithBody>
           <DoubleLine colour="green" showing={showing} />
           <HeadingWithBody
-            title="More information"
+            title="Short course"
             className="mb7-ns mb5 mr0-m"
           >
             <QuestionWrapper>
@@ -145,4 +145,4 @@ class ShortCoursePage extends Component {
   }
 }
 
-export default ShortCoursePage
+export default WhatsOnPage;

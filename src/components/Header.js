@@ -28,7 +28,7 @@ const TopNav = () => (
   <_TopNav>
     <TopLink to="/about" text="About" number="01" />
     <TopLink to="/apply" text="Apply" number="02" />
-    <TopLink to="/shortcourse" text="What's on" number="03" />
+    <TopLink to="/whatson" text="What's on" number="03" />
     <TopLink to="/hire" text="Hire" number="04" />
     <TopLink to="/techforbetter" text="Tech for Better" number="05" />
     <TopLink to="/stories" text="Stories" number="06" />
