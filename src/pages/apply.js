@@ -250,21 +250,23 @@ class ApplyPage extends Component {
                 </div>
               </PreReq>
 
-              <PreReq title="Create a one-page website">
+              <PreReq title="Create a personal website">
                 <div>
                   Create a one-page website in HTML and CSS (using some vanilla
                   JavaScript if you’d like) and host it on GitHub Pages.{" "}
                   <_ExternalLink href="https://www.mokacoding.com/blog/your-git-log-should-tell-a-story/">
                     Your commit history should tell a story
                   </_ExternalLink>
-                  , and your website <span className="i">must</span>:
+                  , and your website <span className="i">must</span> be written by you, and:
                   <ul className="mt4">
                     <_ListItem>
-                      Tell us about who you are and why you are applying for the
-                      programme
+                      Show us with your code who you are
                     </_ListItem>
                     <_ListItem>
                       Demonstrate your learning from the prerequisites
+                    </_ListItem>
+                    <_ListItem>
+                      Tell us about why you are applying for the programme
                     </_ListItem>
                     <_ListItem>
                       Contain a link back to the GitHub repo that contains the
@@ -272,7 +274,7 @@ class ApplyPage extends Component {
                     </_ListItem>
                     <_ListItem>
                       Contain links to your freeCodeCamp (please make sure that
-                      your profile is public) and Codewars pages{" "}
+                      your profile is public) and Codewars pages
                     </_ListItem>
                     <_ListItem>
                       Include an{" "}
@@ -283,12 +285,13 @@ class ApplyPage extends Component {
                       >
                         image carousel
                       </_ExternalLink>
+                      {" "}(the image carousel must be built into your website, a link to a separate page or CodePen will not be accepted)
                     </_ListItem>
                     <_ListItem>Be hosted on Github</_ListItem>
                     <_ListItem>Not use a GitHub theme</_ListItem>
                     <_ListItem>
                       Not use any Javascript or CSS libraries like Bootstrap or
-                      jQuery or use an image carousel package like Flickity - we
+                      jQuery or use an image carousel package like Flickity ⁠— we
                       want to see your own code.
                     </_ListItem>
                   </ul>
