@@ -239,7 +239,7 @@ class ApplyPage extends Component {
                     <_ListItem>CSS Flexbox</_ListItem>
                   </ul>
                   <h3 className="underline mt4 mb2">
-                    Javascript Algorithms and Data Structures Certification
+                    JavaScript Algorithms and Data Structures Certification
                   </h3>
                   <ul>
                     <_ListItem>Basic JavaScript</_ListItem>
@@ -290,7 +290,7 @@ class ApplyPage extends Component {
                     <_ListItem>Be hosted on Github</_ListItem>
                     <_ListItem>Not use a GitHub theme</_ListItem>
                     <_ListItem>
-                      Not use any Javascript or CSS libraries like Bootstrap or
+                      Not use any JavaScript or CSS libraries like Bootstrap or
                       jQuery or use an image carousel package like Flickity ⁠— we
                       want to see your own code.
                     </_ListItem>
