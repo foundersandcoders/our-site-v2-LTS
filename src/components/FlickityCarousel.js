@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
 import * as r from "ramda"
-import { mouseOff, mouseOnHide } from "./Cursor"
 
 const FlickityContainer = styled.div`
   width: ${({ width }) => width};
@@ -39,17 +38,10 @@ class FlickityCarousel extends Component {
       width,
       height,
       component,
-      hideCursor,
     } = this.props
 
     return (
-      <FlickityContainer
-        onMouseEnter={() => hideCursor && mouseOnHide(component)}
-        onMouseLeave={() => hideCursor && mouseOff(component)}
-        className={className}
-        width={width}
-        height={height}
-      >
+      <FlickityContainer className={className} width={width} height={height}>
         {Flickity && (
           <Flickity
             flickityRef={c => (this.flkty = c)}

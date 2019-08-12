@@ -7,10 +7,9 @@ import tech_for_better_splash from "../assets/splashes/tech_for_better_splash.jp
 import photo_splash from "../assets/splashes/T4B_splash.jpg"
 
 import Layout from "../components/Layout"
-import { DOWN_CURSOR, APPLICATION_CAROUSEL } from "../constants"
+import { APPLICATION_CAROUSEL } from "../constants"
 import { TECH_FOR_BETTER_APPLICATION_FORM } from "../maintenance"
 
-import { Cursor } from "../components/Cursor"
 import { _SubHeading, _ExternalLink } from "../components/Text"
 import DoubleLine from "../components/DoubleLine"
 import Carousel from "../components/Carousel"
@@ -83,7 +82,6 @@ const CaseStudy = ({ title, url, children }) => (
 
 class TechForBetterPage extends Component {
   state = {
-    cursor: DOWN_CURSOR,
     showing: true,
   }
 
@@ -113,7 +111,7 @@ class TechForBetterPage extends Component {
   }
 
   render() {
-    const { cursor, showing } = this.state
+    const { showing } = this.state
     const { location } = this.props
 
     return (
@@ -125,19 +123,19 @@ class TechForBetterPage extends Component {
           />
           <title>Tech For Better - Founders and Coders</title>
         </Helmet>
-        <Cursor cursor={cursor} colour="blue" />
         <main>
           <InnerGridContainer>
             <PageHeadingPanel title="Tech for Better" textSize="XL" />
             <DoubleLine colour="yellow" showing={showing} />
             <PageHeadingPanel title="Your ideas can make the world a better place." />
             <HeadingWithBody title="Overview" className="mr4-m">
-              A programme for social impact startups and nonprofits to learn how to design, build and 
-              test new digital services, working with developers in London and Palestine, and supported by{" "}
+              A programme for social impact startups and nonprofits to learn how
+              to design, build and test new digital services, working with
+              developers in London and Palestine, and supported by{" "}
               <_ExternalLink href="http://intersticia.org/">
                 Intersticia
               </_ExternalLink>
-              .{" "} 
+              .{" "}
               <span className="b">
                 The only thing it will cost is your time.
               </span>

@@ -10,7 +10,6 @@ import { _ExternalLink } from "../components/Text"
 import { NextPanel, PageHeadingPanel } from "../components/Panel"
 import HeadingWithBody from "../components/HeadingWithBody"
 import DoubleLine from "../components/DoubleLine"
-import { Cursor } from "../components/Cursor"
 import FlickityCarousel from "../components/FlickityCarousel"
 import { breakpoint } from "../styles/utils"
 import BackgroundImg from "../components/BackgroundImg"
@@ -84,7 +83,6 @@ const QuoteSlide = ({ quote, firstName, secondName, company, topPadding }) => (
 
 class HirePage extends Component {
   state = {
-    cursor: DOWN_CURSOR,
     showing: true,
   }
 
@@ -114,7 +112,7 @@ class HirePage extends Component {
   }
 
   render() {
-    const { cursor, showing } = this.state
+    const { showing } = this.state
     const { location } = this.props
 
     return (
@@ -126,7 +124,6 @@ class HirePage extends Component {
           />
           <title>Hire Our Graduates - Founders and Coders</title>
         </Helmet>
-        <Cursor cursor={cursor} colour="green" />
         <InnerGridContainer>
           <PageHeadingPanel title="Hire our graduates" />
           <HeadingWithBody title="Overview">

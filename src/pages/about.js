@@ -5,7 +5,6 @@ import { breakpoint } from "../styles/utils"
 
 import stripey_small from "../assets/ui/stripey_small.svg"
 import Layout from "../components/Layout"
-import { DOWN_CURSOR } from "../constants"
 
 import { _InternalLink } from "../components/Text"
 import { QuestionWrapper } from "../components/Question"
@@ -13,7 +12,6 @@ import StudentFAQs from "../components/StudentFAQs"
 import { PageHeadingPanel, Panel, NextPanel } from "../components/Panel"
 import HeadingWithBody from "../components/HeadingWithBody"
 import DoubleLine from "../components/DoubleLine"
-import { Cursor } from "../components/Cursor"
 import { Dan, Ines, Yvonne, Joe, Rebecca } from "../components/Card"
 import InnerGridContainer from "../components/InnerGridContainer"
 
@@ -57,7 +55,6 @@ const StaffPanel = styled(Panel).attrs({
 
 class AboutPage extends Component {
   state = {
-    cursor: DOWN_CURSOR,
     showing: true,
   }
 
@@ -87,7 +84,7 @@ class AboutPage extends Component {
   }
 
   render() {
-    const { cursor, showing } = this.state
+    const { showing } = this.state
     const { location } = this.props
 
     return (
@@ -99,7 +96,6 @@ class AboutPage extends Component {
           />
           <title>About Us - Founders and Coders</title>
         </Helmet>
-        <Cursor cursor={cursor} colour="red" />
         <InnerGridContainer>
           <PageHeadingPanel title="What is Founders and Coders?" />
           <HeadingWithBody title="Overview" className="mb7-ns mb5 mr7-m">

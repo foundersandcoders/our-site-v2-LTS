@@ -12,7 +12,6 @@ import instagram_logo_white from "../assets/logos/instagram_logo_white.svg"
 import heart from "../assets/icons/heart.svg"
 
 import { OffsetUnderlineText, _BigText, BigUnderline } from "./Text"
-import { mouseOnNext, mouseOff } from "./Cursor"
 import InnerGridContainer from "./InnerGridContainer"
 import { breakpoint } from "../styles/utils"
 
@@ -141,11 +140,7 @@ const PanelTopBorder = styled.div.attrs({
 const NextPanel = ({ component, to, children, topBorder }) => (
   <div className="panel-container">
     {topBorder && <PanelTopBorder />}
-    <div
-      className="bg-black"
-      onMouseEnter={() => mouseOnNext(component)}
-      onMouseLeave={() => mouseOff(component)}
-    >
+    <div className="bg-black">
       <StyledLink
         className="bg-black flex items-start justify-center pointer link min-828-l pv5 pv0-ns"
         to={to}

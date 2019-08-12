@@ -5,11 +5,9 @@ import styled from "styled-components"
 import arrow_right_black from "../assets/ui/arrow_right_black.svg"
 import Layout from "../components/Layout"
 import InnerGridContainer from "../components/InnerGridContainer"
-import { DOWN_CURSOR } from "../constants"
 import DoubleLine from "../components/DoubleLine"
 import Story from "../components/Story"
 import HeadingWithBody from "../components/HeadingWithBody"
-import { Cursor } from "../components/Cursor"
 import { NextPanel, PageHeadingPanel } from "../components/Panel"
 
 import storyData from "../storyData"
@@ -63,7 +61,6 @@ const StorySection = ({ title, array, seeMoreStories, limit }) => {
 
 class StoriesPage extends Component {
   state = {
-    cursor: DOWN_CURSOR,
     byUsLimit: 4,
     aboutUsLimit: 4,
     pressLimit: 4,
@@ -116,7 +113,7 @@ class StoriesPage extends Component {
     }
   }
   render() {
-    const { cursor, showing } = this.state
+    const { showing } = this.state
     const { location } = this.props
 
     return (
@@ -128,7 +125,6 @@ class StoriesPage extends Component {
           />
           <title>Our Stories - Founders and Coders</title>
         </Helmet>
-        <Cursor cursor={cursor} colour="green" />
         <main>
           <InnerGridContainer>
             <PageHeadingPanel title="Stories by and about us" />

@@ -12,7 +12,6 @@ import ApplicationsStatus from "../components/ApplicationsStatus"
 
 import Table from "../components/Table"
 import Carousel from "../components/Carousel"
-import { Cursor } from "../components/Cursor"
 import HeadingWithBody from "../components/HeadingWithBody"
 import DoubleLine from "../components/DoubleLine"
 import FlickityCarousel from "../components/FlickityCarousel"
@@ -107,7 +106,6 @@ const initialCarouselIdx = 0
 
 class ApplyPage extends Component {
   state = {
-    cursor: DOWN_CURSOR,
     carouselCaption: carouselImages[initialCarouselIdx].caption,
     showing: true,
   }
@@ -138,7 +136,7 @@ class ApplyPage extends Component {
   }
 
   render() {
-    const { cursor, showing } = this.state
+    const { showing } = this.state
     const { location } = this.props
 
     return (
@@ -150,7 +148,6 @@ class ApplyPage extends Component {
           />
           <title>Apply to our Course - Founders and Coders</title>
         </Helmet>
-        <Cursor cursor={cursor} colour="green" />
         <main>
           <InnerGridContainer>
             <PageHeadingPanel title="Apply to our course" />
@@ -257,11 +254,10 @@ class ApplyPage extends Component {
                   <_ExternalLink href="https://www.mokacoding.com/blog/your-git-log-should-tell-a-story/">
                     Your commit history should tell a story
                   </_ExternalLink>
-                  , and your website <span className="i">must</span> be written by you, and:
+                  , and your website <span className="i">must</span> be written
+                  by you, and:
                   <ul className="mt4">
-                    <_ListItem>
-                      Show us with your code who you are
-                    </_ListItem>
+                    <_ListItem>Show us with your code who you are</_ListItem>
                     <_ListItem>
                       Demonstrate your learning from the prerequisites
                     </_ListItem>
@@ -284,15 +280,16 @@ class ApplyPage extends Component {
                         }
                       >
                         image carousel
-                      </_ExternalLink>
-                      {" "}(the image carousel must be built into your website, a link to a separate page or CodePen will not be accepted)
+                      </_ExternalLink>{" "}
+                      (the image carousel must be built into your website, a
+                      link to a separate page or CodePen will not be accepted)
                     </_ListItem>
                     <_ListItem>Be hosted on Github</_ListItem>
                     <_ListItem>Not use a GitHub theme</_ListItem>
                     <_ListItem>
                       Not use any JavaScript or CSS libraries like Bootstrap or
-                      jQuery or use an image carousel package like Flickity ⁠— we
-                      want to see your own code.
+                      jQuery or use an image carousel package like Flickity ⁠—
+                      we want to see your own code.
                     </_ListItem>
                   </ul>
                 </div>
@@ -326,7 +323,6 @@ class ApplyPage extends Component {
                   this.setState({ carouselCaption: caption })
                 }
                 ApplyCarousel
-                hideCursor
                 component={this}
               >
                 {r.map(({ caption, src }) => (
