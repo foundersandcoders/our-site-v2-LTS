@@ -16,7 +16,7 @@ import DoubleLine from "../components/DoubleLine"
 import Carousel from "../components/Carousel"
 import Step from "../components/Step"
 import HeadingWithBody from "../components/HeadingWithBody"
-import { CollapsableQuestion, QuestionWrapper } from "../components/Question"
+import { Question, QuestionWrapper } from "../components/Question"
 import { PageHeadingPanel, ExtendedPanel, NextPanel } from "../components/Panel"
 import InnerGridContainer from "../components/InnerGridContainer"
 import { SplashPhoto } from "../components/SplashPhoto"
@@ -165,7 +165,7 @@ class TechForBetterPage extends Component {
           <InnerGridContainer>
             <HeadingWithBody title="More information" className="mb7-ns pb4-ns">
               <QuestionWrapper>
-                <CollapsableQuestion
+                <Question
                   question="How will this programme benefit me?"
                   colour="yellow"
                 >
@@ -175,8 +175,8 @@ class TechForBetterPage extends Component {
                     end of the process you will have a working mobile web app
                     that you can test with users.
                   </p>
-                </CollapsableQuestion>
-                <CollapsableQuestion
+                </Question>
+                <Question
                   question="What is the total time commitment required of me?"
                   colour="green"
                 >
@@ -185,9 +185,9 @@ class TechForBetterPage extends Component {
                     one-month product development period, testing the app,
                     giving feedback and meeting with the developers.
                   </p>
-                </CollapsableQuestion>
+                </Question>
 
-                <CollapsableQuestion
+                <Question
                   question="What if I want to continue development after the programme ends?"
                   colour="blue"
                 >
@@ -212,8 +212,8 @@ class TechForBetterPage extends Component {
                     community of freelance developers in both London and
                     Palestine who can help.
                   </p>
-                </CollapsableQuestion>
-                <CollapsableQuestion
+                </Question>
+                <Question
                   question="Why are you running this programme?"
                   colour="red"
                 >
@@ -223,8 +223,8 @@ class TechForBetterPage extends Component {
                     employability, and work on projects that make a real
                     difference to people’s lives.
                   </p>
-                </CollapsableQuestion>
-                <CollapsableQuestion
+                </Question>
+                <Question
                   question="What is a web app?"
                   colour="green"
                 >
@@ -234,15 +234,15 @@ class TechForBetterPage extends Component {
                     from an app store. Web apps can be accessed by anyone using
                     a web browser on a computer, tablet, or smartphone.
                   </p>
-                </CollapsableQuestion>
-                <CollapsableQuestion
+                </Question>
+                <Question
                   question="What sorts of apps do you build?"
                   colour="yellow"
                 >
                   <p>
                     Three examples of previous projects are linked to below.
                   </p>
-                </CollapsableQuestion>
+                </Question>
               </QuestionWrapper>
             </HeadingWithBody>
             <HeadingWithBody title="Case studies" className="mb3 mb0-l mr7-m">

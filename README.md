@@ -15,7 +15,7 @@ This rebrand and website redesign was directed by @rebeccaradding and lovingly c
 - [The website of Atelier Gymnase](https://www.ateliergymnase.com/), designed by [Jomor Design](https://www.jomordesign.com/)
 - [The Culture page](http://culture.basicagency.com/) of the Basic Agency website
 
-We hope you love the fun, contemporary style and enjoy using the new site! 
+We hope you love the fun, contemporary style and enjoy using the new site!
 
 ### Contents
 
@@ -78,14 +78,14 @@ Use this template for your new functional component:
 ```
 const UniqueName = ({ color }) => {
   return (
-    <CollapsableQuestion
+    <Question
       question="Your new question Text?"
       colour={color}
     >
       <p>
         Your fabulous answer.
       </p>
-    </CollapsableQuestion>
+    </Question>
   )
 }
 ```

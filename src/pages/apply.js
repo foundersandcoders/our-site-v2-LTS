@@ -10,7 +10,6 @@ import Layout from "../components/Layout"
 import { PageHeadingPanel, NextPanel, ExtendedPanel } from "../components/Panel"
 import ApplicationsStatus from "../components/ApplicationsStatus"
 
-import Table from "../components/Table"
 import Carousel from "../components/Carousel"
 import { Cursor } from "../components/Cursor"
 import HeadingWithBody from "../components/HeadingWithBody"
@@ -18,7 +17,7 @@ import DoubleLine from "../components/DoubleLine"
 import FlickityCarousel from "../components/FlickityCarousel"
 import BackgroundImg from "../components/BackgroundImg"
 import InnerGridContainer from "../components/InnerGridContainer"
-import { CollapsableQuestion, QuestionWrapper } from "../components/Question"
+import { Question, QuestionWrapper } from "../components/Question"
 import ApplicationSteps from "../components/StudentApplicationSteps"
 import { _ExternalLink, _SubHeading } from "../components/Text"
 
@@ -70,9 +69,9 @@ const _Link = styled.a.attrs({
   className: "mt1 v-mid flex items-center blue",
 })``
 
-const CohortExpandable = ({ obj, color }) => {
+const Cohort = ({ obj, color }) => {
   return (
-    <CollapsableQuestion question={`Cohort of ${obj.cohort}`} colour={color}>
+    <Question question={`Cohort of ${obj.cohort}`} colour={color}>
       <div className="font-4 mb2">
         <h3 className="b">Expression of interest</h3>
         <p>{obj.expression_of_interest}</p>
@@ -89,7 +88,7 @@ const CohortExpandable = ({ obj, color }) => {
         <h3 className="b">Course dates</h3>
         <p>{obj.course_dates}</p>
       </div>
-    </CollapsableQuestion>
+    </Question>
   )
 }
 
@@ -165,11 +164,10 @@ class ApplyPage extends Component {
               title="What you need to know"
               className="mb5 mr2-m"
             >
-              <Table />
-              <QuestionWrapper hideL>
+              <QuestionWrapper>
                 {COHORT_DATES.map((obj, key) => {
                   return (
-                    <CohortExpandable
+                    <Cohort
                       obj={obj}
                       color={colourArray[key % colourArray.length]}
                       key={key}

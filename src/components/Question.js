@@ -11,61 +11,21 @@ import question_cross from "../assets/icons/question_cross.svg"
 
 const Wrapper = styled.div.attrs({
   className: "relative mb4 pointer",
-})``
-
-const Question = styled.div.attrs({ className: "mt3 mb4" })`
-  ${breakpoint.ns`
-    height: 84px;
-  `}
+})`
+  display: flex;
+  flex-direction: column;
 `
 
-const _Answer = styled.div.attrs({
+const Answer = styled.div.attrs({
   className: "font-4 fw3 answer",
 })`
-  overflow: hidden;
-  transition: ${({ maxHeight }) => `all ${maxHeight * 0.0026}s ease`};
-  max-height: ${({ collapsed, maxHeight }) =>
-    collapsed ? "0" : `${maxHeight}px`};
-
-  ${({ hiddenAnswer }) =>
-    hiddenAnswer &&
-    `
-    position: absolute;
-    top: -1000vh;
-    max-height: none;
-  `}
+  flex: 1;
 `
-
-class Answer extends Component {
-  myRef = React.createRef()
-  state = {
-    maxHeight: 0,
-  }
-
-  componentDidMount = () => {
-    this.setState({ maxHeight: this.myRef.current.scrollHeight })
-  }
-
-  render() {
-    return (
-      <Fragment>
-        <_Answer
-          collapsed={this.props.collapsed}
-          maxHeight={this.state.maxHeight}
-        >
-          <div className="mb4">{this.props.children}</div>
-        </_Answer>
-        <_Answer collapsed={this.props.collapsed} hiddenAnswer ref={this.myRef}>
-          <div className="mb4">{this.props.children}</div>
-        </_Answer>
-      </Fragment>
-    )
-  }
-}
 
 const Divider = styled.div.attrs({
   className: "flex items-center justify-center",
 })`
+  height: 4px;
   background-image: linear-gradient(
     to right,
     var(--black-30) 0%,
@@ -76,46 +36,24 @@ const Divider = styled.div.attrs({
   background-size: 100% 2px;
 `
 
-class CollapsableQuestion extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      collapsed: true,
-    }
-  }
+function Question({ children, question, colour }) {
+  return (
+    <Wrapper>
+      <img
+        src={colourToCornerIcon(colour)}
+        className="absolute mt2 left-0"
+        alt="colourful corner"
+      />
 
-  toggleCollapse = () => {
-    this.setState({
-      collapsed: !this.state.collapsed,
-    })
-  }
-
-  render() {
-    const { collapsed } = this.state
-    const { children, question, colour } = this.props
-
-    return (
-      <Wrapper onClick={this.toggleCollapse}>
-        <img
-          src={colourToCornerIcon(colour)}
-          className="absolute mt2 left-0"
-          alt="colourful corner"
-        />
-
-        <Question>
-          <p className="pt4 pt3-ns font-4 fw5">{question}</p>
-        </Question>
-        <Answer collapsed={collapsed}>{children}</Answer>
-        <Divider>
-          <img
-            src={collapsed ? question_arrow : question_cross}
-            className="mh1 pointer"
-            alt="down arrow"
-          />
-        </Divider>
-      </Wrapper>
-    )
-  }
+      <div className="mt3 mb4">
+        <p className="pt4 pt3-ns font-4 fw5">{question}</p>
+      </div>
+      <Answer>
+        <div className="mb4">{children}</div>
+      </Answer>
+      <Divider />
+    </Wrapper>
+  )
 }
 
 const QuestionWrapper = styled.section.attrs({
@@ -125,12 +63,6 @@ const QuestionWrapper = styled.section.attrs({
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
-  `};
-
-  ${({ hideL }) =>
-    hideL &&
-    breakpoint.l`
-      display: none;
   `};
 `
 
@@ -147,4 +79,4 @@ const colourToCornerIcon = colour => {
   }
 }
 
-export { CollapsableQuestion, QuestionWrapper }
+export { Question, QuestionWrapper }
