@@ -10,7 +10,6 @@ import Layout from "../components/Layout"
 import { PageHeadingPanel, NextPanel, ExtendedPanel } from "../components/Panel"
 import ApplicationsStatus from "../components/ApplicationsStatus"
 
-import Table from "../components/Table"
 import Carousel from "../components/Carousel"
 import { Cursor } from "../components/Cursor"
 import HeadingWithBody from "../components/HeadingWithBody"
@@ -165,8 +164,7 @@ class ApplyPage extends Component {
               title="What you need to know"
               className="mb5 mr2-m"
             >
-              <Table />
-              <QuestionWrapper hideL>
+              <QuestionWrapper>
                 {COHORT_DATES.map((obj, key) => {
                   return (
                     <Cohort
