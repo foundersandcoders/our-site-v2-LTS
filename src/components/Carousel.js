@@ -7,7 +7,6 @@ import stripey_small from "../assets/ui/stripey_small.svg"
 import { TESTIMONIAL_CAROUSEL, APPLICATION_CAROUSEL } from "../constants"
 import ApplicationsStatus from "./ApplicationsStatus"
 import HeadingWithBody from "./HeadingWithBody"
-import { mouseOnCarousel, mouseOff } from "./Cursor"
 import InnerGridContainer from "./InnerGridContainer"
 
 const _OuterContainer = styled.div.attrs({
@@ -117,8 +116,6 @@ class Carousel extends Component {
             className={className}
             carouselWidth={carouselWidth}
             extraPadding={extraPadding}
-            onMouseEnter={() => mouseOnCarousel(component)}
-            onMouseLeave={() => mouseOff(component)}
           >
             <_InnerContainer>
               <_Carousel
@@ -136,8 +133,6 @@ class Carousel extends Component {
             className={className}
             carouselWidth={carouselWidth}
             extraPadding={extraPadding}
-            onMouseEnter={() => mouseOnCarousel(component)}
-            onMouseLeave={() => mouseOff(component)}
           >
             <_InnerApplicationContainer>
               <InnerGridContainer>

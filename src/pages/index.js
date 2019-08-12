@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Helmet from "react-helmet"
 import styled from "styled-components"
-import { TESTIMONIAL_CAROUSEL, DOWN_CURSOR } from "../constants"
+import { TESTIMONIAL_CAROUSEL } from "../constants"
 import { withPrefix } from "gatsby"
 
 import dwyl from "../assets/logos/cooperate_logos/dwyl_grayscale.png"
@@ -18,7 +18,6 @@ import { SmallUnderline } from "../components/Text"
 import HeadingBody from "../components/HeadingWithBody"
 import { NextPanel, PageHeadingPanel } from "../components/Panel"
 import Carousel from "../components/Carousel"
-import { Cursor } from "../components/Cursor"
 import { Amelie, Helen, Owen, Ruth, Fatimat } from "../components/Card"
 import DoubleLine from "../components/DoubleLine"
 import FlickityCarousel from "../components/FlickityCarousel"
@@ -71,7 +70,6 @@ class IndexPage extends Component {
     super(props)
     this.myRef = React.createRef()
     this.state = {
-      cursor: DOWN_CURSOR,
       showing: true,
     }
   }
@@ -121,7 +119,7 @@ class IndexPage extends Component {
   }
 
   render() {
-    const { cursor, showing } = this.state
+    const { showing } = this.state
     const { location } = this.props
 
     return (
@@ -133,7 +131,6 @@ class IndexPage extends Component {
           />
           <title>Coding Bootcamp in London - Founders and Coders</title>
         </Helmet>
-        <Cursor cursor={cursor} colour="blue" />
         <main>
           <InnerGridContainer>
             <PageHeadingPanel
