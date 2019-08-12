@@ -1,52 +1,43 @@
 import React from "react"
-import { CollapsableQuestion } from "./Question"
+import { Question } from "./Question"
 import { _ExternalLink, _InternalLink } from "./Text"
 import { EXPRESSION_OF_INTEREST_FORM } from "../maintenance"
 
 const Where = ({ color }) => (
-  <CollapsableQuestion
-    question="Where and when are your courses?"
-    colour={color}
-  >
+  <Question question="Where and when are your courses?" colour={color}>
     <p>
       Each course runs for eighteen weeks on-site in London at Space4 in
       Finsbury Park,
       <span className="fw5"> five days a week from 10:00 to 18:00. </span>
       We do not offer part-time or remote courses.
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const WhoElse = ({ color }) => (
-  <CollapsableQuestion
-    question="Who else will be doing the course?"
-    colour={color}
-  >
+  <Question question="Who else will be doing the course?" colour={color}>
     <p>
       In the last two years, 57% of our London intake were women. In our
       experience, cohorts thrive when teams represent a diversity of experiences
       and perspectives, providing many opportunities for people to learn new
       ways of thinking from each other.
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const Expectations = ({ color }) => (
-  <CollapsableQuestion question="What will be expected of me?" colour={color}>
+  <Question question="What will be expected of me?" colour={color}>
     <p>
       As a student, you will spend 1-2 evenings/month mentoring prospective
       applicants. When you graduate, you will spend at least one full week
       volunteering as a mentor during the first eight weeks of the following
       cohort.
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const Learnings = ({ color }) => (
-  <CollapsableQuestion
-    question="What will I learn on the course?"
-    colour={color}
-  >
+  <Question question="What will I learn on the course?" colour={color}>
     <p>
       During the first half of the course, you’ll spend eight weeks learning
       HTML, CSS, JavaScript, Node.JS and other basic building blocks of web
@@ -60,25 +51,22 @@ const Learnings = ({ color }) => (
       <_InternalLink to="/techforbetter">Tech for Better</_InternalLink>{" "}
       programme.
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const PeerLed = ({ color }) => (
-  <CollapsableQuestion
-    question="What do you mean by 'peer-led' programme?"
-    colour={color}
-  >
+  <Question question="What do you mean by 'peer-led' programme?" colour={color}>
     <p>
       We have no paid teaching staff. While we do employ a part-time facilitator
       who coordinates course logistics, the course is primarily “peer-led.” You
       will learn to code by pair programming with a partner, working on team
       projects, and from “near-peer” mentorship by recent graduates.
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const Fees = ({ color }) => (
-  <CollapsableQuestion
+  <Question
     question="How do you run a programme without charging fees?"
     colour={color}
   >
@@ -93,14 +81,11 @@ const Fees = ({ color }) => (
       can help us keep this programme free for future students by working with
       us to find employment, both after you graduate and throughout your career.
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const Suitability = ({ color }) => (
-  <CollapsableQuestion
-    question="Who is this programme suitable for?"
-    colour={color}
-  >
+  <Question question="Who is this programme suitable for?" colour={color}>
     <p>
       There are no academic requirements, but not everyone will be suited to the
       style of learning our courses require. You need to be self-motivated,
@@ -108,11 +93,11 @@ const Suitability = ({ color }) => (
       Coding also requires a deep curiosity about how things work and a certain
       stubbornness in the face of repeated failure.
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const Opportunities = ({ color }) => (
-  <CollapsableQuestion
+  <Question
     question="What are the opportunities after I graduate?"
     colour={color}
   >
@@ -123,11 +108,11 @@ const Opportunities = ({ color }) => (
       skills within the Founders and Coders community through working on social
       impact projects.
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const Founders = ({ color }) => (
-  <CollapsableQuestion
+  <Question
     question="I'd like to start my own business. Should I attend Founders and Coders?"
     colour={color}
   >
@@ -145,11 +130,11 @@ const Founders = ({ color }) => (
       </_ExternalLink>
       .
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const Citizen = ({ color }) => (
-  <CollapsableQuestion
+  <Question
     question="I'm not a UK citizen. Can I attend Founders and Coders?"
     colour={color}
   >
@@ -158,20 +143,20 @@ const Citizen = ({ color }) => (
       the UK and who intend to seek employment in London after the end of the
       programme. We do not offer support for visa applications.
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const Age = ({ color }) => (
-  <CollapsableQuestion
+  <Question
     question="Is there a minimum age for attending Founders and Coders?"
     colour={color}
   >
     <p>Yes, for insurance reasons you need to be 18.</p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const Codewars = ({ color }) => (
-  <CollapsableQuestion
+  <Question
     question="Why do you require applicants to use freeCodeCamp and Codewars?"
     colour={color}
   >
@@ -180,11 +165,11 @@ const Codewars = ({ color }) => (
       resources available for programmers. Regardless of whether you join the
       course, using them will help you grow as a developer.
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const Prereqs = ({ color }) => (
-  <CollapsableQuestion
+  <Question
     question="How long will it take me to complete the prerequisites?"
     colour={color}
   >
@@ -194,14 +179,11 @@ const Prereqs = ({ color }) => (
       start three times a year so the next intake is never more than four months
       away.
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const Interviews = ({ color }) => (
-  <CollapsableQuestion
-    question="What happens in your interviews?"
-    colour={color}
-  >
+  <Question question="What happens in your interviews?" colour={color}>
     <p>
       The conversational interview is an opportunity for us to learn more about
       your interests as a developer, understand why you want to join our
@@ -209,11 +191,11 @@ const Interviews = ({ color }) => (
       learning environment. Interviews typically last for 20 minutes and include
       a short coding challenge.
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const Feedback = ({ color }) => (
-  <CollapsableQuestion
+  <Question
     question="Can you tell me why I wasn't admitted or give me feedback on my application?"
     colour={color}
   >
@@ -223,14 +205,11 @@ const Feedback = ({ color }) => (
       cooperative community. Joining Founders and Coders is just one of many
       pathways to becoming a developer.
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const Visiting = ({ color }) => (
-  <CollapsableQuestion
-    question="Can I visit Founders and Coders?"
-    colour={color}
-  >
+  <Question question="Can I visit Founders and Coders?" colour={color}>
     <p>
       We can’t accommodate drop-ins during the course from potential applicants,
       so please don’t stop by during course hours unannounced. If you’d like to
@@ -246,14 +225,11 @@ const Visiting = ({ color }) => (
       <_InternalLink to="/about#footer">contact us</_InternalLink> or visit our{" "}
       <_InternalLink to="/hire">Hire</_InternalLink> page.
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const TimeOff = ({ color }) => (
-  <CollapsableQuestion
-    question="Can I take time off during the course?"
-    colour={color}
-  >
+  <Question question="Can I take time off during the course?" colour={color}>
     <p>
       It’s okay to miss one or two days of your cohort because of prior
       engagements, however, it’s not okay to miss more than that (e.g., a full
@@ -261,14 +237,11 @@ const TimeOff = ({ color }) => (
       you should apply for another cohort. Note that we generally don’t take
       bank holidays off.
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 const Birth = ({ color }) => (
-  <CollapsableQuestion
-    question="How did Founders and Coders get started?"
-    colour={color}
-  >
+  <Question question="How did Founders and Coders get started?" colour={color}>
     <p>
       In 2013,{" "}
       <_ExternalLink href="https://www.linkedin.com/in/dsofer">
@@ -304,7 +277,7 @@ const Birth = ({ color }) => (
       </_ExternalLink>{" "}
       joining the team as a director and lead technical mentor.
     </p>
-  </CollapsableQuestion>
+  </Question>
 )
 
 export default [
