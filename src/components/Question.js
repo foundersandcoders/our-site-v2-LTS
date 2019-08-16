@@ -10,7 +10,7 @@ import question_arrow from "../assets/icons/question_arrow.svg"
 import question_cross from "../assets/icons/question_cross.svg"
 
 const Wrapper = styled.div.attrs({
-  className: "relative mb4 pointer",
+  className: "relative mb4",
 })`
   display: flex;
   flex-direction: column;
