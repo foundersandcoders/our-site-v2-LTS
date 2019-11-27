@@ -223,7 +223,7 @@ class ApplyPage extends Component {
                   <_ExternalLink href="https://www.freecodecamp.org/">
                     freeCodeCamp
                   </_ExternalLink>
-                  . We recommend beginning with the following sections:
+                  . Please complete the following sections then explore other sections that interests you:
                   <h3 className="underline mt4 mb2">
                     Responsive Web Design Certification
                   </h3>
