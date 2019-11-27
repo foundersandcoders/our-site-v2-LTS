@@ -19,16 +19,9 @@ const TECH_FOR_BETTER_APPLICATION_FORM =
 // We suggest you add a new object to the end of the array following the pattern and then remove the first item.
 const COHORT_DATES = [
   {
-    cohort: "Winter 2019",
-    expression_of_interest: "May - July",
-    application_window: "1st August - 31st August",
-    interview_dates: "9th September - 14th September",
-    course_dates: "28th October - 6th March 2020",
-  },
-  {
     cohort: "Spring 2020",
     expression_of_interest: "September - November",
-    application_window: "1st December - 31st December",
+    application_window: "1st December - 2nd January 2020",
     interview_dates: "6th January - 10th January",
     course_dates: "2nd March - 3rd July",
   },
@@ -38,6 +31,13 @@ const COHORT_DATES = [
     application_window: "1st April - 30th April",
     interview_dates: "4th May - 15th May",
     course_dates: "29th June - 30th October",
+  },
+  {
+    cohort: "Winter 2020",
+    expression_of_interest: "May - July",
+    application_window: "1st August - 31st August",
+    interview_dates: "7th September - 11th September",
+    course_dates: "26th October - 6th March 2021",
   }
 ]
 
