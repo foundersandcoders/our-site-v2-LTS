@@ -3,7 +3,7 @@
 //    * set the application form link to the correct link when opening
 //    * Check your local version looks right. That's it!
 
-const APPLICATIONS_OPEN = false
+const APPLICATIONS_OPEN = true
 const APPLICATION_FORM =
   "https://docs.google.com/forms/d/e/1FAIpQLSdvlLQyjC6g_7SY6vbNKVrdZglnW-a5yyw_zHWM-IyDju_F4w/viewform"
 
