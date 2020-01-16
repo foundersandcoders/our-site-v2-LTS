@@ -140,41 +140,38 @@ const SlackPage = () => (
       </p>
       <section className="coc">
         <h2>Code of Conduct</h2>
+
         <p>
           All members are required to agree with the following code of conduct.{" "}
           <strong>
             All members of the community are expected to enforce this code
-          </strong>
+          </strong>{" "}
           at every community event, class, gathering or exchange (such as{" "}
-          <a href="http://www.foundersandcoders.com" rel="nofollow">
-            Founders &amp; Coders classes
-          </a>
-          or our{" "}
-          <a href="http://www.meetup.com/founderscoders/" rel="nofollow">
-            Coding for Everyone meetups
-          </a>
-          ), in our{" "}
-          <a href="https://github.com/foundersandcoders/master-reference/blob/master/gitter-channels.md">
-            gitter channels
-          </a>
-          , and everywhere we interact under the{" "}
-          <a href="http://www.github.com/foundersandcoders">
-            Founders &amp; Coders
+          <a href="http://www.foundersandcoders.com">
+            Founders and Coders classes
           </a>{" "}
-          or Coding for Everyone banner. We expect cooperation from all
-          participants in the community to
+          or our evening meetups, workshops and short courses), on our online
+          forums (Slack and GitHub), and everywhere we interact under the{" "}
+          <a href="http://www.github.com/foundersandcoders">
+            Founders and Coders
+          </a>{" "}
+          banner.
+        </p>
+
+        <p>
+          We expect cooperation from all participants in the community to{" "}
           <em>help ensure a safe environment for everybody</em>.
         </p>
-        <h3>Need Help?</h3>
+
+        <h2 id="needhelp">Need Help?</h2>
+
         <p>
           Please reach out to us! Our contact details are on{" "}
-          <a href="http://www.foundersandcoders.com" rel="nofollow">
-            our website
-          </a>{" "}
-          or you can find your Course Facilitator or{" "}
-          <a href="http://www.github.com/sofer">@sofer</a> on Gitter. Don't stay
-          silent!
+          <a href="http://www.foundersandcoders.com">our website</a> or you can
+          find your Course Facilitator (if you're a student of ours) or our
+          admins on Slack. Don't stay silent!
         </p>
+
         <p>
           If you wish to make a complaint in London, please first review the{" "}
           <a href="https://github.com/foundersandcoders/london-membership/blob/master/complaints-policy.md">
@@ -186,21 +183,23 @@ const SlackPage = () => (
           </a>
           .
         </p>
+
         <p>
-          Adapted from{" "}
-          <a href="https://communitycodeofconduct.com/" rel="nofollow">
-            Community Code of Conduct
-          </a>
-          , based on the{" "}
-          <a
-            href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy"
-            rel="nofollow"
-          >
-            Ada Initiative anti-harassment conference policy
-          </a>
-          .
+          <small>
+            Adapted from{" "}
+            <a href="https://communitycodeofconduct.com/">
+              Community Code of Conduct
+            </a>
+            , based on the{" "}
+            <a href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy">
+              Ada Initiative anti-harassment conference policy
+            </a>
+            .
+          </small>
         </p>
-        <h3>The Quick Version</h3>
+
+        <h2 id="thequickversion">The Quick Version</h2>
+
         <p>
           Our community is dedicated to providing a harassment-free experience
           for everyone, regardless of gender, gender identity and expression,
@@ -212,12 +211,14 @@ const SlackPage = () => (
           online media or channels. Participants violating these rules may be
           sanctioned or expelled from the event and any future events, as well
           as the from the community itself, at the discretion of{" "}
-          <a href="http://www.foundersandcoders.com" rel="nofollow">
-            the organisers, Founders &amp; Coders
+          <a href="http://www.foundersandcoders.com">
+            the organisers, Founders and Coders
           </a>
           .
         </p>
-        <h3>The Long Version</h3>
+
+        <h2 id="thelongversion">The Long Version</h2>
+
         <p>
           Harassment includes offensive verbal or written comments related to
           gender, gender identity and expression, age, sexual orientation,
@@ -227,20 +228,24 @@ const SlackPage = () => (
           sustained disruption of talks or other events, inappropriate physical
           contact, and unwelcome sexual attention.
         </p>
+
         <p>
           Participants asked to stop any harassing behaviour are expected to
           comply immediately.
         </p>
+
         <p>
           All those who interact with the community are also subject to the
           anti-harassment policy. It is the responsibility of <em>all</em> to
           ensure that a sexualised environment is not created.
         </p>
+
         <p>
           If a participant engages in harassing behaviour, the organisers may
           take any action they deem appropriate, including warning the offender
           or expulsion from the event or community without further warning.
         </p>
+
         <p>
           <strong>
             If you are being harassed, notice that someone else is being
@@ -248,6 +253,7 @@ const SlackPage = () => (
             <a href="#need-help">contact an organiser immediately</a>.
           </strong>
         </p>
+
         <p>
           Particularly in the case of physical events, organisers will be happy
           to help participants contact venue security or local law enforcement,
@@ -255,20 +261,19 @@ const SlackPage = () => (
           feel safe for the duration of the event. We value your attendance and
           contributions to the community.
         </p>
+
         <p>
           We expect participants to follow these rules in all community
           interactions, whether professional, social or a mix of both.
         </p>
+
         <p>
           If someone has violated these rules, please review the{" "}
           <a href="https://github.com/foundersandcoders/london-membership/blob/master/complaints-policy.md">
             Complaints Policy
           </a>{" "}
           and make a complaint using our{" "}
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScbvvYpXwUp6lwFoityTUHYfrXgC3r8WH72LowXp5wFS9IxVA/viewform"
-            rel="nofollow"
-          >
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScbvvYpXwUp6lwFoityTUHYfrXgC3r8WH72LowXp5wFS9IxVA/viewform">
             complaints form
           </a>
           .
