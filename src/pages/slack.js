@@ -281,7 +281,7 @@ const SlackPage = () => (
         </p>
       </section>
       <Form
-        action="https://join.slack.com/t/founders-coders-apply/shared_invite/enQtODY1MzIyNTAyMDk5LTc4NzUxY2VjMzcwMjFlYzE4ZGI3NWE5Y2M5MDg1OGJiMDE5NTk3MTRhZjYyY2RhNzE1OGY2M2ZlYmQwMzBmZTM"
+        action="https://join.slack.com/t/founders-coders-apply/shared_invite/enQtOTAxMjQ4MjA5ODkwLTdiMjc4OWQxMWZkZTFkZDM0MmNhMmExZDk1N2M1MjU3MDk0MThlNzMxMGEyOGZhNDYzMmU3N2I1MTAwYTFkN2Q"
         method="GET"
       >
         <div>
